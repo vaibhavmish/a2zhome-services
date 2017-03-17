@@ -1,0 +1,16 @@
+<header id="header">
+    <!--<h1 style="color: rosybrown;">HandyServices.in</h1>-->
+    <img src="images/logo.png" ng-click="gotoHome();" style="margin: 5px">
+    <nav>
+        <ul>
+            <li><a href="#/maintenance"><b><i class="fa fa-wrench"></i> Maintenance Packages</b></a></li>
+            <li><a href="#/corporates"><b><i class="glyphicon glyphicon-home"/> Home Maintenance Packages</b></a></li>
+            <li><a href="#/corporates"><b><i class="fa fa-area-chart"></i> For Corporate</b></a></li>
+            <li><a href="#"><i class="fa fa-location-arrow"></i> Track</a></li>
+            <li><a href="tel:+91-7878000666"><b><i class="fa fa-phone"></i> 7878000666</b></a></li>
+            <li><a href="#/feedback"><b><i class="fa fa-question"></i> Feedback</b></a></li>
+            <li><a style="cursor: pointer" ng-click="openLoginModal();"><b><i class="fa fa-user"></i> {{ user.name || 'Login'}} </b></a></li>
+            <li><a style="cursor: pointer" ng-click="openLocationModal();"><b><i class="glyphicon glyphicon-map-marker"></i> {{selectedCity.city_name || 'Select City'}}</b></a></li>
+        </ul>
+    </nav>
+</header>

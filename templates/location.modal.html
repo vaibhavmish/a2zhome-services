@@ -1,0 +1,23 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-top: 20%">
+            <div class="modal-body">
+                <button type="button" class="close" style="margin-top: -5%" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Select Location</h4>
+                <div class="row">
+                    <div class="col-md-12">
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="selectCity-nav">
+                            <div class="form-group">
+                                <label class="sr-only" for="selectCity">Select City</label>
+                                <select class="form-control" id="selectCity"
+                                        ng-options="city.city_name for city in cities track by city._id" ng-model="selectedCity" required>
+                                </select>
+                            </div>
+                            <input type="button" ng-click="citySelected();" data-dismiss="modal" value="Done" style="float: right;background-color: #1b6d85"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="modal fade">
+    <div class="modal-dialog" style="margin-top: 10%">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" style="margin-top: -5%" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title tab">
+                    <a class="tablinks" ng-click="openBlock(event, 'Login')" style="cursor: pointer">
+                        <h3 style="float: left;margin-left: 20px">
+                            <i class="fa fa-user"></i> Login
+                        </h3>
+                    </a>
+                    <a class="tablinks" ng-click="openBlock(event, 'SignUp')" style="cursor: pointer">
+                        <h3 style="float: right;margin-right: 20px">
+                            <i class="fa fa-user-plus"></i> New User
+                        </h3>
+                    </a>
+                    <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
+                </div>
+
+                <div id="Login" class="tabcontent">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <center>
+                            <input style="background-color: #1b6d85;width: 100%" type="button" data-dismiss="modal" id="sign-in-google" value="Sign In with Google">
+                            </center>
+                        </div>
+                        <div class="col-lg-6">
+                            <center>
+                            <input style="background-color: #1b6d85;width: 100%" type="button" data-dismiss="modal" id="sign-in-twitter" value="Sign In with Twitter">
+                            </center>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <span style="font-size: 30px"> OR </span>
+                    </center>
+                    <div class="row" style="padding: 30px">
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                <input type="text" ng-model="loginUser.email" class="form-control" id="exampleInputEmail2" placeholder="Email / Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                <input type="password" ng-model="loginUser.password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                            </div>
+                            <div class="form-group">
+                                <center>
+                                <input ng-click="userLogin();" data-dismiss="modal" style="background-color: #1b6d85;width: 80%" type="button" id="sign-in" value="Login">
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="SignUp" class="tabcontent" style="display: none">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <center>
+                                <input style="background-color: #1b6d85;width: 100%" data-dismiss="modal" type="button" id="sign-up-google" value="Sign Up with Google">
+                            </center>
+                        </div>
+                        <div class="col-lg-6">
+                            <center>
+                                <input style="background-color: #1b6d85;width: 100%" data-dismiss="modal" type="button" id="sign-up-twitter" value="Sign Up with Twitter">
+                            </center>
+                        </div>
+                    </div>
+                    <br>
+                    <center>
+                        <span style="font-size: 30px"> OR </span>
+                    </center>
+                    <div class="row" style="padding: 30px">
+                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="register-nav">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail2">First Name</label>
+                                    <input type="text" ng-model="user.name" class="form-control" id="exampleInputNameF1" placeholder="First Name" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail2">Password</label>
+                                    <input type="password" ng-model="user.password" class="form-control" id="exampleInputNameL1" placeholder="Password" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                    <input type="email" ng-model="user.email"  class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputPassword2">Mobile Number</label>
+                                    <input type="tel" ng-model="user.number"  class="form-control" id="exampleInputNumber1" placeholder="Mobile Number" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <center>
+                                    <input style="background-color: #1b6d85;width: 80%" data-dismiss="modal" ng-click="sendOTP();" type="button" id="sign-up" value="Submit">
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </div>
+</div>
