@@ -4,7 +4,7 @@
 </div>
 <div class="row">
     <div class="col-lg-8" style="border: 2px solid black;height: auto">
-        <h1>Corporates</h1>
+        <h1>For Partners</h1>
         <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
         <br>
         <p>
@@ -23,7 +23,7 @@
     </div>
     <div class="col-lg-4">
 
-        <div class="row" style="border: 2px solid black;height: 500px;margin-top: -41%;z-index: 0;background-color: rgba(1,1,1,0.7);color: white;font-size: 20px;padding: 20px">
+        <div class="row" style="border: 2px solid black;height: 530px;margin-top: -48%;z-index: 0;background-color: rgba(1,1,1,0.7);color: white;font-size: 20px;padding: 20px">
             <center>
                 <h3> Contact Us </h3>
                 <hr width="100%" style="color: red;background-color: red">
@@ -50,19 +50,12 @@
                                     <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.organization" class="form-control" id="org" placeholder="Name of your organization" />
                                 </div>
                                 <div class="col-lg-6" style="padding: 10px">
-                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.area" class="form-control" id="area" placeholder="Select Area" />
+
+                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.area" class="form-control" id="area" placeholder="Enter Area" />
                                 </div>
                             </div>
                             <div class="row" style="padding: 10px">
-                                <div style="background-color: whitesmoke;border: 1px solid black;padding: 10px 10px 0px;">
-                                    <p style="font-size: 8px;color: black">
-                                        By clicking submit, you confirm that you are interested in being connected with our service manager.
-                                        You will recieved a call wihtin 24 hours to confirm the details.By clicking submit, you confirm that
-                                        you are interested in being connected with our service manager. You will recieved a call wihtin
-                                        24 hours to confirm the details.By clicking submit, you confirm that you are interested in being
-                                        connected with our service manager. You will recieved a call wihtin 24 hours to confirm the details.
-                                    </p>
-                                </div>
+                                <textarea ng-model="corporates.message" class="form-control" id="message" placeholder="Your Message" style="width: 95%;height: 50px"/>
                             </div>
                             <div class="row" style=";padding: 10px;margin-top: -20px">
                                 <div style="padding: 10px;font-size: 8px">
@@ -70,7 +63,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <input type="button" data-target="#resultTab" style="cursor: pointer;background-color: #1c2d3f" data-toggle="tab" value="Corporates">
+                                <input type="button" id="corporates" ng-click="createCorporate();" style="cursor: pointer;background-color: #1c2d3f" data-toggle="tab" value="For Partners">
                             </div>
                         </center>
                     </div>

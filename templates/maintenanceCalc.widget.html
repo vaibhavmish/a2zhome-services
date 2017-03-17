@@ -5,27 +5,27 @@
         <h5>Get instant price of your Maintenance packages</h5>
     </center>
     <div id="rootwizard">
-        <div class="navbar">
+        <div class="navbar" id="nav-header">
             <div class="navbar-inner">
                 <div class="container">
                     <ul>
                         <li style="margin-left: -28px;margin-right: 3px;" class="active">
-                            <a style="cursor: pointer;padding: 5px;font-size: 10px">
+                            <a style="cursor: pointer;padding: 5px;font-size: 10px" data-toggle="tab" ng-click="selectTypeofProperty();">
                                 <i class="glyphicon glyphicon-home"></i> Type of Property!
                             </a>
                         </li>
                         <li style="margin-left: 3px;margin-right: 3px;">
-                            <a style="cursor: pointer;padding: 5px;font-size: 10px">
+                            <a style="cursor: pointer;padding: 5px;font-size: 10px" data-toggle="tab" ng-click="selectServices();">
                                 <i class="glyphicon glyphicon-wrench"></i> Select Services
                             </a>
                         </li>
                         <li style="margin-left: 3px;margin-right: 3px;">
-                            <a style="cursor: pointer;padding: 5px;font-size: 10px">
+                            <a style="cursor: pointer;padding: 5px;font-size: 10px" data-toggle="tab" ng-click="selectRequirements();">
                                 <i class="fa fa-calendar"/> Package Duration
                             </a>
                         </li>
                         <li style="margin-left: 3px;">
-                            <a style="cursor: pointer;padding: 5px;font-size: 10px">
+                            <a style="cursor: pointer;padding: 5px;font-size: 10px" data-toggle="tab" ng-click="getQuote();">
                                 <i class="fa fa-book"></i> Required Services
                             </a>
                         </li>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div id="bar" class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
         </div>
         <div class="tab-content">
             <div class="tab-pane active" id="tab1">
@@ -78,7 +78,7 @@
                 </ul>
             </div>
             <div class="tab-pane" id="resultTab">
-                <div style="display: flex;flex: 1">
+                <div style="display: flex;flex: 1;margin-top: 20%">
                     <i class="fa fa-inr"/> Quotation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <div style="background-color: #007bb6;color: white;width: auto;border-radius: 10px;padding: 2px 2px 2px 10px;"><i class='fa fa-inr'/> 3,999</div>
                 </div>
@@ -100,8 +100,8 @@
                         <td>Electrical, Carpentry</td>
                     </tr>
                 </table>
-                <ul class="pager wizard">
-                    Save upto 25%. <li class="next"><a style="cursor: pointer"> Add Package -> </a></li>
+                <ul class="pager wizard" style="margin-top: 10%">
+                    Save upto 25%. <li class="next"><a style="cursor: pointer" ng-click="addPackage();"> Add Package -> </a></li>
                 </ul>
             </div>
         </div>

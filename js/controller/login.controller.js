@@ -86,6 +86,7 @@
         $scope.userLogin = function () {
             AuthenticationService.userLogin($scope.loginUser.email,$scope.loginUser.password).then(function (response) {
                 if(response.success){
+                    $rootScope.loginModalOpened = true;
                     $.alert("Logged in successfully");
                     $rootScope.user = response.data;
                     $rootScope.temps.user = response.data;

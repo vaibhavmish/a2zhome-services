@@ -26,7 +26,7 @@
                 });
             }
 
-            if(angular.isUndefined($rootScope.user.user_id)){
+            if(angular.isUndefined($rootScope.user)){
                 ModalService.showModal({
                     templateUrl: "templates/login.modal.html",
                     controller: "LoginController"

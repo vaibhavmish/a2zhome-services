@@ -17,8 +17,11 @@
             $location.path("/home");
         };
 
+        $rootScope.loginModalOpened = false;
+        $rootScope.locationModalOpened = false;
+
         $scope.openLoginModal = function () {
-            if(angular.isUndefined($rootScope.user)) {
+            if(angular.isUndefined($rootScope.user) && !$rootScope.loginModalOpened) {
                 ModalService.showModal({
                     templateUrl: "templates/login.modal.html",
                     controller: "LoginController"
@@ -32,7 +35,7 @@
         };
 
         $scope.openLocationModal = function () {
-            if(angular.isUndefined($rootScope.selectedCity)) {
+            if(angular.isUndefined($rootScope.selectedCity) && !$rootScope.locationModalOpened) {
                 ModalService.showModal({
                     templateUrl: "templates/location.modal.html",
                     controller: "LocationController"
@@ -60,6 +63,19 @@
                 $scope.selectedCity = $rootScope.selectedCity;
             }
         }, true);
+
+        $scope.Logout = function () {
+            $scope.user = null;
+            $rootScope.loginModalOpened = false;
+            $rootScope.user = undefined;
+        }
+
+        $scope.ChangeLocation = function () {
+            $scope.selectedCity = null;
+            $rootScope.locationModalOpened = false;
+            $rootScope.selectedCity = undefined;
+            $scope.openLocationModal();
+        }
 
     }
 })();

@@ -125,15 +125,15 @@
                     var serviceTime = date.getTime();
                     HandyServices.bookService($rootScope.user._id,$rootScope.selectedService._id,serviceDate,serviceTime,"service needed",$scope.mainAddress).then(function (response) {
                         if(response.success){
-                            ModalService.showModal({
-                                templateUrl: "templates/thankyou.modal.html",
-                                controller: "ThankYouController"
-                            }).then(function(modal) {
-                                modal.element.modal();
-                                modal.close.then(function(result) {
-                                    $scope.yesNoResult = result ? "You said Yes" : "You said No";
-                                });
-                            });
+                            // ModalService.showModal({
+                            //     templateUrl: "templates/thankyou.modal.html",
+                            //     controller: "ThankYouController"
+                            // }).then(function(modal) {
+                            //     modal.element.modal();
+                            //     modal.close.then(function(result) {
+                            //         $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                            //     });
+                            // });
                         }else{
                             $.alert("Booking failed");
                         }

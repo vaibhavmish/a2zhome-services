@@ -8,8 +8,8 @@
         .module('app')
         .controller('MaintenanceCalculatorController',MaintenanceCalculatorController);
 
-    MaintenanceCalculatorController.$inject=['$rootScope','$scope','$location','$route'];
-    function MaintenanceCalculatorController($rootScope, $scope, $location, $route) {
+    MaintenanceCalculatorController.$inject=['$rootScope','$scope','$location','ModalService'];
+    function MaintenanceCalculatorController($rootScope, $scope, $location,ModalService) {
         var vm = this;
         vm.user = null;
 
@@ -17,10 +17,11 @@
             var $total = navigation.find('li').length;
             var $current = index+1;
             var $percent = ($current/$total) * 100;
-            $('#rootwizard .progress .progress-bar').css({width:$percent+'%'});
         }});
 
         $scope.properties = ['Home','Society','Offices','Commercial Complex'];
+
+        $scope.propertyChoosing = [];
 
         $scope.selectTypeofProperty = function () {
             $scope.propertiesChosen = [];
@@ -33,7 +34,20 @@
                     }
                 }
                 if($scope.propertiesChosen.length > 0) {
-                    $('#property').data('target', '#tab2');
+                    if($scope.propertyChoosing['Home']) {
+                        $('#property').data('target', '#tab2');
+                        $('#rootwizard .progress .progress-bar').css({width: '50%'});
+                    }else{
+                        ModalService.showModal({
+                            templateUrl: "templates/maintenanceCalcAddress.modal.html",
+                            controller: "MaintenanceCalculatorAddressController"
+                        }).then(function (modal) {
+                            modal.element.modal();
+                            modal.close.then(function (result) {
+                                $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                            });
+                        });
+                    }
                 }else{
                     $.alert("Please Choose type of Property");
                 }
@@ -41,6 +55,8 @@
         };
 
         $scope.services = ['AC Service','Pest Control','Plumbing','Carpentry','RO / Water Purifier'];
+
+        $scope.servicesChoosing = [];
 
         $scope.selectServices = function () {
             $scope.servicesChosen = [];
@@ -54,6 +70,7 @@
                 }
                 if($scope.servicesChosen.length > 0) {
                     $('#services').data('target','#tab3');
+                    $('#rootwizard .progress .progress-bar').css({width:'75%'});
                 }else{
                     $.alert("Please Choose type of Services");
                 }
@@ -61,6 +78,8 @@
         };
 
         $scope.requirements = ['3 Months','6 Months','12 Months'];
+
+        $scope.requirementsChoosing = [];
 
         $scope.selectRequirements = function () {
             $scope.requirementsChosen = [];
@@ -74,6 +93,7 @@
                 }
                 if($scope.requirementsChosen.length > 0) {
                     $('#requirements').data('target','#tab4');
+                    $('#rootwizard .progress .progress-bar').css({width:'100%'});
                 }else{
                     $.alert("Please Choose Package Duration");
                 }
@@ -81,6 +101,8 @@
         };
 
         $scope.requiredServices = ['15','30','Unlimited'];
+
+        $scope.requiredServicesChoosing = [];
 
         $scope.getQuote = function () {
             $scope.requiredServicesChosen = [];
@@ -94,10 +116,24 @@
                 }
                 if($scope.requiredServicesChosen.length > 0) {
                     $('#quote').data('target','#resultTab');
+                    $('#rootwizard .progress').css({display:'none'});
+                    $('#nav-header').css({display:'none'});
                 }else{
                     $.alert("Please Choose Required Services");
                 }
             }
         };
+
+        $scope.addPackage = function () {
+            ModalService.showModal({
+                templateUrl: "templates/maintenanceCalcAddress.modal.html",
+                controller: "MaintenanceCalculatorAddressController"
+            }).then(function (modal) {
+                modal.element.modal();
+                modal.close.then(function (result) {
+                    $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                });
+            });
+        }
     }
 })();

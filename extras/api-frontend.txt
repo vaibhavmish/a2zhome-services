@@ -19,3 +19,4 @@ BASE URl == https://handy-service-server.herokuapp.com/
 /image                  method POST   body {the image file}   query {id: user_id}       return  the url of the uplaoded image from s3.
 
 NOT DONE YET:::::::::::
+/create/corporate       method POST   body {name, email, mobile, org_name, message, location}

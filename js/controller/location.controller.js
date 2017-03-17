@@ -42,6 +42,7 @@
         $scope.selectedCity = {};
 
         $scope.citySelected = function () {
+            $rootScope.locationModalOpened = true;
             $rootScope.selectedCity = $scope.selectedCity;
         }
 
