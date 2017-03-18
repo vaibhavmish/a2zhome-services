@@ -27,7 +27,7 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
             document.getElementById(stateName).style.display = "block";
-            // evt.currentTarget.className += " active";
+            evt.currentTarget.className += " active";
         };
 
         $scope.openOTPModal = function () {

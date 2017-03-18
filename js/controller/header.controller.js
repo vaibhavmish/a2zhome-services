@@ -36,17 +36,23 @@
 
         $scope.openLocationModal = function () {
             if(angular.isUndefined($rootScope.selectedCity) && !$rootScope.locationModalOpened) {
-                ModalService.showModal({
+                $('#location').css({'visibility':'hidden'});
+                var modal = ModalService.showModal({
                     templateUrl: "templates/location.modal.html",
                     controller: "LocationController"
                 }).then(function (modal) {
                     modal.element.modal();
                     modal.close.then(function (result) {
-                        $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                        $('#location').css({'visibility':'visible'});
                     });
+                    modal.hideModal().then(function () {
+                        $('#location').css({'visibility':'visible'});
+                    })
                 });
             }
         };
+
+        $scope.openLocationModal();
 
         $scope.$watch(function () {
             return $rootScope.user;
@@ -61,6 +67,8 @@
         }, function(){
             if(!angular.isUndefined($rootScope.selectedCity)){
                 $scope.selectedCity = $rootScope.selectedCity;
+            }else if($rootScope.locationModalOpened){
+                $('#location').css({'visibility':'visible'});
             }
         }, true);
 

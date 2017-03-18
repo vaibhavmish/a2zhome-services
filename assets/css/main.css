@@ -640,12 +640,14 @@
 		transition: background-color 0.2s ease-in-out;
 		background-color: #98c593;
 		border: 0;
-		border-radius: 3.5em;
+		border-radius: 8px;
 		color: #ffffff;
 		cursor: pointer;
 		display: inline-block;
-		height: 3.5em;
-		line-height: 3.5em;
+		/*height: 3.5em;
+        line-height: 3.5em;
+        border-radius: 3.5em;
+*/		height: 35px;
 		outline: 0;
 		padding: 0 2em 0 2em;
 		position: relative;
@@ -1919,7 +1921,7 @@
 		@media screen and (max-width: 1920px) {
 
 			.main.style2 .content {
-				width: 40%;
+				width: 60%;
 			}
 
 		}
