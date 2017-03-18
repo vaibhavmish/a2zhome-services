@@ -18,6 +18,16 @@
         }, function(){
             if(!angular.isUndefined($rootScope.user)){
                 $scope.user = $rootScope.user;
+            }else{
+                ModalService.showModal({
+                    templateUrl: "templates/login.modal.html",
+                    controller: "LoginController"
+                }).then(function(modal) {
+                    modal.element.modal();
+                    modal.close.then(function(result) {
+                        $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                    });
+                });
             }
         }, true);
 
@@ -66,6 +76,16 @@
                     }else{
                         $scope.services = null;
                     }
+                });
+            }else{
+                ModalService.showModal({
+                    templateUrl: "templates/location.modal.html",
+                    controller: "LocationController"
+                }).then(function(modal) {
+                    modal.element.modal();
+                    modal.close.then(function(result) {
+                        $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                    });
                 });
             }
         }, true);
@@ -125,15 +145,15 @@
                     var serviceTime = date.getTime();
                     HandyServices.bookService($rootScope.user._id,$rootScope.selectedService._id,serviceDate,serviceTime,"service needed",$scope.mainAddress).then(function (response) {
                         if(response.success){
-                            ModalService.showModal({
-                                templateUrl: "templates/thankyou.modal.html",
-                                controller: "ThankYouController"
-                            }).then(function(modal) {
-                                modal.element.modal();
-                                modal.close.then(function(result) {
-                                    $scope.yesNoResult = result ? "You said Yes" : "You said No";
-                                });
-                            });
+                            // ModalService.showModal({
+                            //     templateUrl: "templates/thankyou.modal.html",
+                            //     controller: "ThankYouController"
+                            // }).then(function(modal) {
+                            //     modal.element.modal();
+                            //     modal.close.then(function(result) {
+                            //         $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                            //     });
+                            // });
                         }else{
                             $.alert("Booking failed");
                         }

@@ -42,6 +42,8 @@
         $scope.selectedCity = {};
 
         $scope.citySelected = function () {
+            $('#location').css({'visibility':'visible'});
+            $rootScope.locationModalOpened = true;
             $rootScope.selectedCity = $scope.selectedCity;
         }
 

@@ -18,7 +18,7 @@
         service.postFeedback = postFeedback;
         service.getEnabledCities = getEnabledCities;
         service.uploadImagetoAmazonS3 = uploadImagetoAmazonS3;
-
+        service.createCorporate = createCorporate;
         return service;
 
         function requestCallback(name,email,mobile,location,user_id) {
@@ -99,12 +99,19 @@
             return $http({
                 url: $rootScope.baseurl+'/image',
                 method: 'POST',
-                params:$.param({"image":imageFile}),
                 data: $.param({"user_id":user_id}),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then(handleSuccess, handleError('Error in uploading image in amazon bucket.'));
         }
 
+        function createCorporate(name, email, number, org_name, message, location) {
+            return $http({
+                url: $rootScope.baseurl+'/create/corporate',
+                method: 'POST',
+                data: $.param({"name":name,"email":email,"mobile":number,"org_name":org_name,"message":message,"location":location}),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+            }).then(handleSuccess, handleError('Error in creating corporate enquiry.'));
+        }
         // private functions
 
         function handleSuccess(res) {
