@@ -30,7 +30,9 @@
         }, true);
 
         $scope.processRequestCallback = function(){
-            if(angular.isUndefined($rootScope.selectedCity)){
+            $('#loading').css({'display':'block'});
+            if(angular.isUndefined($rootScope.selectedCity) && !$rootScope.locationModalOpened){
+                $('#loading').css({'display':'none'});
                 ModalService.showModal({
                     templateUrl: "templates/location.modal.html",
                     controller: "LocationController"
@@ -42,7 +44,8 @@
                 });
             }
 
-            if(angular.isUndefined($rootScope.user)){
+            if(angular.isUndefined($rootScope.user) && !$rootScope.loginModalOpened){
+                $('#loading').css({'display':'none'});
                 ModalService.showModal({
                     templateUrl: "templates/login.modal.html",
                     controller: "LoginController"
@@ -55,13 +58,15 @@
             }
 
             if(angular.isUndefined($scope.rc) || angular.isUndefined($scope.rc.name) || angular.isUndefined($scope.rc.email) || angular.isUndefined($scope.rc.mobile)){
+                $('#loading').css({'display':'none'});
                 $('#rc-error').css({'display':'block'});
             }
 
-            HandyServices.requestCallback($scope.rc.name,$scope.rc.email,$scope.rc.mobile,$rootScope.selectedCity,$rootScope.user.user_id).then(function (response) {
+            HandyServices.requestCallback($scope.rc.name,$scope.rc.email,$scope.rc.mobile,$rootScope.selectedCity,$rootScope.user._id).then(function (response) {
                 $('#rc-error').css({'display':'none'});
                 if(response.success){
                     $scope.rc = null;
+                    $('#loading').css({'display':'none'});
                     ModalService.showModal({
                         templateUrl: "templates/thankyou.modal.html",
                         controller: "ThankYouController"
@@ -89,6 +94,43 @@
                     $scope.yesNoResult = result ? "You said Yes" : "You said No";
                 });
             });
+        };
+
+        $scope.sendAppLink = function () {
+            if(angular.isUndefined($scope.numberForApp)){
+                $('#number-error').show();
+                return;
+            }else{
+                $('#number-error').hide();
+                HandyServices.sendAppLink($scope.numberForApp).then(function (response) {
+                    if(response.success){
+                        $.alert("You will recieve download link via SMS shortly!!");
+                    }else{
+                        $.alert(response.message);
+                    }
+                })
+            }
         }
+
+        $scope.ourCustomers = [];
+        HandyServices.getOurCustomers().then(function (res) {
+            if(res.success){
+                $scope.ourCustomers = res.data;
+            }
+        });
+
+        $scope.mediaCoverages = [];
+        HandyServices.getTestimonials().then(function (res) {
+            if(res.success){
+                $scope.mediaCoverages = res.data;
+            }
+        });
+
+        $scope.ourClients = [];
+        HandyServices.getOurClients().then(function (res) {
+            if(res.success){
+                $scope.ourClients = res.data;
+            }
+        });
     }
 })();

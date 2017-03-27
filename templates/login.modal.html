@@ -1,15 +1,18 @@
-<div class="modal fade">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="336458288373-422f41kjqopb7gernjbgs9hiekgoeic8.apps.googleusercontent.com">
+<div id="LoginModal" class="modal" data-backdrop="static" data-keyboard="false" role="dialog">
     <div class="modal-dialog" style="margin-top: 10%">
         <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" style="margin-top: -5%" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="modal-body" style="background: #fff; border-radius: 10px;">
+                 <button type="button" class="close" style="margin-top: -46px;color: red;font-size: 44px;opacity: 10;
+    text-shadow: 3px 1px 5px rgb(21, 20, 20);" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <div class="modal-title tab">
-                    <a class="tablinks" ng-click="openBlock(event, 'Login')" style="cursor: pointer">
+                    <a class="tablinks" ng-click="openLogin();" style="cursor: pointer">
                         <h3 style="float: left;margin-left: 20px">
                             <i class="fa fa-user"></i> Login
                         </h3>
                     </a>
-                    <a class="tablinks" ng-click="openBlock(event, 'SignUp')" style="cursor: pointer">
+                    <a class="tablinks" ng-click="openRegister();" style="cursor: pointer">
                         <h3 style="float: right;margin-right: 20px">
                             <i class="fa fa-user-plus"></i> New User
                         </h3>
@@ -17,88 +20,86 @@
                     <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
                 </div>
 
-                <div id="Login" class="tabcontent">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <center>
-                            <input style="background-color: #1b6d85;width: 100%" type="button" data-dismiss="modal" id="sign-in-google" value="Sign In with Google">
-                            </center>
-                        </div>
-                        <div class="col-lg-6">
-                            <center>
-                            <input style="background-color: #1b6d85;width: 100%" type="button" data-dismiss="modal" id="sign-in-twitter" value="Sign In with Twitter">
-                            </center>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <center>
+                            <button id="customBtn" style="padding:2px;background-color: #CD2525;color:white;width: 100%"
+                                ng-click="processGoogleLogin();">
+                                <i class="fa fa-google-plus" style="font-size: 18px"/> &nbsp; Sign In with Google
+                            </button>
+                        </center>
                     </div>
-                    <br>
-                    <center>
-                        <span style="font-size: 30px"> OR </span>
-                    </center>
+                    <div class="col-lg-6">
+                        <center>
+                            <button style="padding:2px;background-color: #10528F;color:white;width: 100%" type="button" ng-click="fbLogin();" id="sign-in-twitter">
+                                <i class="fa fa-facebook-square" style="font-size: 18px;"/>&nbsp; Sign In with Facebook
+                            </button>
+                        </center>
+                    </div>
+                </div>
+                <br>
+                <center>
+                    <span style="font-size: 30px;" id="login-or"> OR </span>
+                    <img src="../images/gears.svg" style="width: 40px;height: 40px;display: none;" id="login-loading"/>
+                </center>
+                <div id="Login">
                     <div class="row" style="padding: 30px">
                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                <input type="text" ng-model="loginUser.email" class="form-control" id="exampleInputEmail2" placeholder="Email / Phone Number" required>
+                                <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                <input type="text" ng-model="loginUser.email" class="form-control" id="exampleInputEmail2" placeholder="Email / Phone Number" ng-required="true">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                <input type="password" ng-model="loginUser.password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                <input type="password" ng-model="loginUser.password" class="form-control" id="exampleInputPassword2" placeholder="Password" ng-required="true">
                             </div>
+                            <center><span id="login-error" style="display:none;color: red"> Please Fill All Required Details </span></center>
                             <div class="form-group">
                                 <center>
-                                <input ng-click="userLogin();" data-dismiss="modal" style="background-color: #1b6d85;width: 80%" type="button" id="sign-in" value="Login">
+                                <input ng-click="userLogin();" style="background-color: #10528F;width: 80%" type="button" id="sign-in" value="Login">
                                 </center>
                             </div>
                         </form>
                     </div>
                 </div>
 
-                <div id="SignUp" class="tabcontent" style="display: none">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <center>
-                                <input style="background-color: #1b6d85;width: 100%" data-dismiss="modal" type="button" id="sign-up-google" value="Sign Up with Google">
-                            </center>
-                        </div>
-                        <div class="col-lg-6">
-                            <center>
-                                <input style="background-color: #1b6d85;width: 100%" data-dismiss="modal" type="button" id="sign-up-twitter" value="Sign Up with Twitter">
-                            </center>
-                        </div>
-                    </div>
-                    <br>
-                    <center>
-                        <span style="font-size: 30px"> OR </span>
-                    </center>
+                <div id="SignUp" style="display: none">
                     <div class="row" style="padding: 30px">
                         <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="register-nav">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputEmail2">First Name</label>
-                                    <input type="text" ng-model="user.name" class="form-control" id="exampleInputNameF1" placeholder="First Name" required>
+                                    <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                    <input type="text" ng-model="user.name" class="form-control" id="exampleInputNameF1" placeholder="First Name" ng-required="true">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputEmail2">Password</label>
-                                    <input type="password" ng-model="user.password" class="form-control" id="exampleInputNameL1" placeholder="Password" required>
+                                    <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                    <input type="password" ng-model="user.password" class="form-control" id="exampleInputNameL1" placeholder="Password" ng-required="true">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                    <input type="email" ng-model="user.email"  class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                                    <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                    <input type="email" ng-model="user.email"  class="form-control" id="exampleInputEmail1" placeholder="Email" ng-required="true">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="sr-only" for="exampleInputPassword2">Mobile Number</label>
-                                    <input type="tel" ng-model="user.number"  class="form-control" id="exampleInputNumber1" placeholder="Mobile Number" required>
+                                    <span style="color: red;margin-top:-5px;margin-right:-5px;float: left">*</span>
+                                    <input type="tel" ng-model="user.number"  class="form-control" id="exampleInputNumber1" placeholder="Mobile Number" ng-required="true">
                                 </div>
                             </div>
+                            <center><span id="register-error" style="display:none;color: red"> Please Fill All Required Details </span></center>
                             <div class="form-group">
                                 <center>
-                                    <input style="background-color: #1b6d85;width: 80%" data-dismiss="modal" ng-click="sendOTP();" type="button" id="sign-up" value="Submit">
+                                    <input style="background-color: #10528F;width: 80%" ng-click="sendOTP();" type="button" id="sign-up" value="Submit">
                                 </center>
                             </div>
                         </form>

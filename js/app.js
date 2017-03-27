@@ -5,12 +5,15 @@
     'use strict';
 
     angular
-        .module('app' , ['ngRoute'])
+        .module('app' , ['ngRoute','google-signin'])
         .config(config)
         .run(run);
 
-    config.$inject = ['$routeProvider','$locationProvider','$httpProvider'];
-    function config($routeProvider, $locationProvider,$httpProvider) {
+    config.$inject = ['$routeProvider','$locationProvider','$httpProvider','GoogleSigninProvider'];
+    function config($routeProvider, $locationProvider,$httpProvider,GoogleSigninProvider) {
+        GoogleSigninProvider.init({
+            client_id: "336458288373-422f41kjqopb7gernjbgs9hiekgoeic8.apps.googleusercontent.com"
+        });
         $routeProvider
             .when('/home',{
                 controller: 'HomeController',
@@ -35,6 +38,21 @@
             .when('/corporates',{
                 controller: 'CorporatesController',
                 templateUrl: 'templates/corporates.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/partners',{
+                controller: 'PartnersController',
+                templateUrl: 'templates/partners.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/home-makeover',{
+                controller: 'HomeMakeOverController',
+                templateUrl: 'templates/home-makeover.view.html',
+                controllerAs: 'vm'
+            })
+            .when('/profile',{
+                controller: 'ProfileController',
+                templateUrl: 'templates/profile.view.html',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/home'});

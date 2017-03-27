@@ -15,7 +15,8 @@
         service.userRegister = userRegister;
         service.forgotPassword = forgotPassword;
         service.resetPassword = resetPassword;
-
+        service.registerFBUser = registerFBUser;
+        service.registerGoogleUser = registerGoogleUser;
         return service;
 
         function sendOTP(number) {
@@ -70,6 +71,24 @@
                 data: $.param({"email":email,"password":password}),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
             }).then(handleSuccess, handleError('Error in reset password processing.'));
+        }
+
+        function registerFBUser(name, email, id) {
+            return $http({
+                url: $rootScope.baseurl+'/user/login/fb?id='+id,
+                method: 'POST',
+                data: $.param({"name":name,"email":email}),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+            }).then(handleSuccess, handleError('Error in creating corporate enquiry.'));
+        }
+
+        function registerGoogleUser(name, email, id) {
+            return $http({
+                url: $rootScope.baseurl+'/user/login/google?id='+id,
+                method: 'POST',
+                data: $.param({"name":name,"email":email}),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'}
+            }).then(handleSuccess, handleError('Error in creating corporate enquiry.'));
         }
 
         // private functions

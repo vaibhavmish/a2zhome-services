@@ -7,24 +7,65 @@
         <h1>Maintenance Packagaes</h1>
         <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
         <br>
-        <p style="z-index:100;">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-            venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
-        <br>
-        <div style="display: inline-block;padding: 10px;padding-left: 50px">
-            <img src="../images/img_chania2.jpg" style="display:inline;background-color: #1b6d85;width: 70px;height: 70px">
-            <p style="display: inline"> Fast Communication </p>
-        </div>
-        <div style="display: inline-block;padding: 10px">
-            <img src="../images/img_chania2.jpg" style="display:inline;background-color: #1b6d85;width: 70px;height: 70px">
-            <p style="display: inline"> 24x7 Available </p>
-        </div>
-        <div style="display: inline-block;padding: 10px">
-            <img src="../images/img_chania2.jpg" style="display:inline;background-color: #1b6d85;width: 70px;height: 70px">
-            <p style="display: inline"> Feasible in your location </p>
-        </div>
-        <br><br><br>
+        <p class="slideanim">HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work. Our maintenance services include Drain Cleaning Services, RO Water Purification services, Electronic Servicing, carpentry services and many others.</p>
+        <p class="slideanim">Handy Services is a fast growing company which provides best in-class handyman services at your doorstep. We have expert staff to give you the widest range of benefits in terms of quality of work and timely assistance. Every worker has been trained under rigorous standardized procedures to work in perfection.</p><br>
+     <div class="row slideanim" style="text-align:center; margin-top: 10px">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
     </div>
     <div class="col-lg-4">
        <maintenance-calculator></maintenance-calculator>
     </div>
 </div>
+<app-footer></app-footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>

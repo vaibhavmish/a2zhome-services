@@ -8,10 +8,16 @@
         .module('app')
         .controller('LocationController',LocationController);
 
-    LocationController.$inject=['$rootScope','$scope','HandyServices'];
-    function LocationController($rootScope, $scope,HandyServices) {
+    LocationController.$inject=['$rootScope','$scope','HandyServices','close'];
+    function LocationController($rootScope, $scope,HandyServices,close) {
         var vm = this;
         vm.user = null;
+
+        $scope.closeModal = function(result) {
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+            close(result, 500); // close, but give 500ms for bootstrap to animate
+        };
 
         $scope.cities = [
             // {
@@ -34,8 +40,11 @@
 
         HandyServices.getEnabledCities().then(function (response) {
             if(response.success){
-                console.log(response.data);
                 $scope.cities = response.data;
+                $scope.cities.sort(function(a,b) {
+                    return ((a.city_name < b.city_name) ? -1 : ((a.city_name > b.city_name) ? 1 : 0));
+                })
+                $scope.selectedCity = $scope.cities[0];
             }
         })
 

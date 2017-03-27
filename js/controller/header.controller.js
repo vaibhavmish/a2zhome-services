@@ -28,9 +28,12 @@
                 }).then(function (modal) {
                     modal.element.modal();
                     modal.close.then(function (result) {
-                        $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                        $('body').removeClass('modal-open');
+                        $('.modal-backdrop').remove();
                     });
                 });
+            }else{
+                $location.path('/profile');
             }
         };
 
@@ -45,9 +48,6 @@
                     modal.close.then(function (result) {
                         $('#location').css({'visibility':'visible'});
                     });
-                    modal.hideModal().then(function () {
-                        $('#location').css({'visibility':'visible'});
-                    })
                 });
             }
         };
@@ -73,10 +73,25 @@
         }, true);
 
         $scope.Logout = function () {
-            $scope.user = null;
-            $rootScope.loginModalOpened = false;
-            $rootScope.user = undefined;
-        }
+            if($rootScope.user && $rootScope.user.fblogin){
+                FB.logout(function(response) {
+                    $scope.user = null;
+                    $rootScope.loginModalOpened = false;
+                    $rootScope.user = undefined;
+                });
+            }else if($rootScope.user && $rootScope.user.googleLogin) {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    $scope.user = null;
+                    $rootScope.loginModalOpened = false;
+                    $rootScope.user = undefined;
+                });
+            }else{
+                    $scope.user = null;
+                    $rootScope.loginModalOpened = false;
+                    $rootScope.user = undefined;
+            }
+        };
 
         $scope.ChangeLocation = function () {
             $scope.selectedCity = null;

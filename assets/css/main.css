@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url("font-awesome.min.css");
 
 /*
@@ -410,7 +410,7 @@
 			transform-origin: 50% 50%;
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: 'Playfair Display', serif;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
@@ -476,7 +476,7 @@
 /* Type */
 
 	body, input, textarea, select {
-		font-family: "Source Sans Pro", "sans-serif";
+		font-family: 'Playfair Display', serif;
 		font-weight: 300;
 		font-size: 18pt;
 		line-height: 1.75em;
@@ -623,7 +623,6 @@
 
 		}
 
-/* Button */
 
 	input[type="button"],
 	input[type="submit"],
@@ -638,18 +637,16 @@
 		-webkit-transition: background-color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
-		background-color: #98c593;
+		background-color: #10528f;
 		border: 0;
 		border-radius: 8px;
 		color: #ffffff;
 		cursor: pointer;
 		display: inline-block;
-		/*height: 3.5em;
-        line-height: 3.5em;
-        border-radius: 3.5em;
-*/		height: 35px;
+		height: 2.5em;
+		line-height: 2.5em;
 		outline: 0;
-		padding: 0 2em 0 2em;
+		padding: 0 2.5em 2.5em;
 		position: relative;
 		text-align: center;
 		text-decoration: none;
@@ -678,7 +675,7 @@
 			button.down.anchored {
 				bottom: 0;
 				border-bottom: 0;
-				border-radius: 3em 3em 0 0;
+				border-radius: 1em 1em 0 0;
 				height: 4.5em;
 				margin-left: -2.5em;
 			}
@@ -825,10 +822,14 @@
 		width: 100%;
 		padding: 0.65em 0.75em;
 		background: none;
-		border: solid 2px #e5e6e7;
-		color: inherit;
+	    border: solid 2px #5b515f;	
+	    box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);
+	   color: white !important;
 		border-radius: 0.5em;
 		outline: none;
+	}
+	textarea::-webkit-input-placeholder{
+		color: #eee;
 	}
 
 		input[type="text"]:focus,
@@ -888,8 +889,7 @@
 
 		.icon:before {
 			display: inline-block;
-			font-family: FontAwesome;
-			font-size: 1.25em;
+			font-family: 'Playfair Display', serif;			font-size: 1.25em;
 			text-decoration: none;
 			font-style: normal;
 			font-weight: normal;
@@ -1097,7 +1097,7 @@
 				animation: spinner-rotate 0.75s infinite linear !important;
 				-moz-osx-font-smoothing: grayscale;
 				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
+				font-family: 'Playfair Display', serif;
 				font-style: normal;
 				font-weight: normal;
 				text-transform: none !important;
@@ -1673,7 +1673,10 @@
 		top: 0;
 		width: 100%;
 		background: rgba(255, 255, 255, 0.95);
+		font-family: 'Playfair Display', serif !important;
 		height: 3em;
+		    font-size: 12px !important;
+    letter-spacing: -1px;
 		line-height: 3em;
 		box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
 	}
@@ -1692,8 +1695,8 @@
 			}
 
 		#header nav {
-			position: absolute;
-			right: 0.5em;
+			/*position: absolute;
+			right: 0.5em;*/
 			top: 0;
 			height: 3em;
 			line-height: 3em;
@@ -1710,13 +1713,17 @@
 				}
 
 					#header nav ul li a {
-						display: block;
-						color: inherit;
-						text-decoration: none;
-						height: 3em;
-						line-height: 3em;
-						padding: 0 0.5em 0 0.5em;
-						outline: 0;
+					    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 500;
+    height: 3em;
+    font-size: 12px !important;
+    letter-spacing: 1px;
+    line-height: 3em;
+    padding: 0px 1.5em 0 0.5em;
+    outline: 0;
 					}
 
 		@media screen and (max-width: 736px) {
@@ -1739,9 +1746,9 @@
 						font-size: 1em;
 					}
 
-				#header nav {
+				/*#header nav {
 					display: none;
-				}
+				}*/
 
 		}
 
@@ -1921,7 +1928,7 @@
 		@media screen and (max-width: 1920px) {
 
 			.main.style2 .content {
-				width: 60%;
+				width: 40%;
 			}
 
 		}
@@ -2095,7 +2102,7 @@
 /* Intro */
 
 	#intro {
-		background: url("images/overlay.png"), url("../../images/intro.jpg");
+		/*background: url("images/overlay.png"), url("../../images/intro.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -2105,7 +2112,7 @@
 /* One */
 
 	#one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
+		/*background: url("images/overlay.png"), url("../../images/one.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2114,7 +2121,7 @@
 /* Two */
 
 	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+	/*	background: url("images/overlay.png"), url("../../images/two.jpg");*/
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
@@ -2153,3 +2160,122 @@
 			}
 
 		}
+		/* Button */
+*::-webkit-input-placeholder {
+    color: #f1f1f1;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: #f1f1f1;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: #f1f1f1;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #f1f1f1;
+}
+   .ser{ background-color: #fff;
+    color: white;
+    padding: 10px;
+    overflow-y: hidden;
+    height: auto;}
+    .servicediv{
+    cursor: pointer;
+    margin: 5px;
+    display: inline;
+        width: 220px;
+    height: 246px;
+    /*border: 2px solid white; */
+        box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);
+  padding-bottom: 0px;
+    }
+    .servStart{
+    	   margin-top: 47px;
+    color: #101010 !important;
+    box-shadow: 0 0 15px rgb(81, 145, 179);
+    margin-left: -14px;
+    margin-right: -14px;
+    background-color: #fff;
+    }
+ .downloadsec{
+ 	    margin-left: -14px;
+    margin-right: -14px;
+    background-color: #fff;
+    color: #101010 !important;
+ }
+.mediadiv{
+margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; padding-bottom: 25px;box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+.customerdiv{
+	 margin-left:-14px;margin-right:-14px;background-color: #fff; color: #101010; padding-bottom: 25px;box-shadow: 0 0 15px rgba(0,0,0,.5);
+
+}
+.clientdiv{
+	margin-left:-14px;margin-right:-14px;background-color: #eee; padding-bottom: 25px;
+
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+
+	background-color: #cd2525 !important;
+	box-shadow: 0 0 15px rgb(81, 145, 179);
+	color: #fefefe !important;
+
+}
+
+.customTextarea{
+background-color: transparent !important;
+color: #fff;
+	box-shadow: 0 0 15px rgb(81, 145, 179) !important;
+}
+hr{
+	    border-top: 1px solid #cd2525 !important;
+}
+
+/*.slideanim {visibility:hidden;}*/
+.slide {
+    /* The name of the animation */
+    animation-name: slide;
+    -webkit-animation-name: slide; 
+    /* The duration of the animation */
+    animation-duration: 1s; 
+    -webkit-animation-duration: 1s;
+    /* Make the element visible */
+    visibility: visible; 
+}
+
+/* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    } 
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+.newG{
+	position: absolute;
+    font-size: 9px;
+    top: -4px;
+    right: 5px;
+    border-radius: 20px;
+    background: red;
+    line-height: 12px;
+    color: #fff;
+    padding: 0 5px 2px!important;
+
+}

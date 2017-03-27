@@ -17,6 +17,16 @@ BASE URl == https://handy-service-server.herokuapp.com/
 /feedback               method POST   body {type, name, email, mob, message}
 /locations/enabled      method POST   body empty                                        return list of enabled cities
 /image                  method POST   body {the image file}   query {id: user_id}       return  the url of the uplaoded image from s3.
+/create/corporate       method POST   body {name, email, mobile, org_name, message, location}
+/create/hmp             method POST   body {email, number, name, message, location}
+/create/partner         method POST   body {name, email, number, message, location}
+/save/message           method POST   body {name, email, phone, message, location}
+/send/link              method GET    query number
+/testimonial            method GET                                                       return testimonials
+/user/login/fb          method POST   body {name, email}  query id                      return user
+/user/login/google      method POST   body {name, email}  query id                      return user
+/user/update            method POST   body {name, gender, number, email, dob, photo}    query id
 
 NOT DONE YET:::::::::::
-/create/corporate       method POST   body {name, email, mobile, org_name, message, location}
+
+/create/package         method POST   body {type, area, duration, total}

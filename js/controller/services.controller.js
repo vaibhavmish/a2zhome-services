@@ -15,18 +15,6 @@
 
         $scope.services = [];
 
-        if(angular.isUndefined($rootScope.selectedCity)){
-            ModalService.showModal({
-                templateUrl: "templates/location.modal.html",
-                controller: "LocationController"
-            }).then(function(modal) {
-                modal.element.modal();
-                modal.close.then(function(result) {
-                    $scope.yesNoResult = result ? "You said Yes" : "You said No";
-                });
-            });
-        }
-
         $scope.$watch(function () {
             return $rootScope.selectedCity;
         }, function(){
@@ -34,6 +22,10 @@
                 HandyServices.getServiceListCitywise($rootScope.selectedCity.city_name).then(function (response) {
                     if (response.success) {
                         $scope.services = response.data;
+                        $scope.services.sort(function(a,b) {
+                            return a.used - b.used;
+                        });
+                        $scope.selectedService = $scope.services[0];
                     }else{
                         $scope.services = null;
                     }
@@ -80,12 +72,20 @@
                     if (response.success) {
                         console.log(response.data);
                         $scope.services = response.data;
+                        $scope.services.sort(function(a,b) {
+                            return a.used - b.used;
+                        });
+                        $scope.selectedService = $scope.services[0];
                     }else{
                         $scope.services = null;
                     }
                 });
             }
         }, true);
+
+        $scope.goToRequestCallback = function () {
+            $location.path("/home");
+        }
 
     }
 })();
