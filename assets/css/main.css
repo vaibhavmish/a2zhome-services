@@ -823,8 +823,8 @@
 		padding: 0.65em 0.75em;
 		background: none;
 	    border: solid 2px #5b515f;	
-	    box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);
-	   color: white !important;
+	    /*box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);*/
+	 
 		border-radius: 0.5em;
 		outline: none;
 	}
@@ -1076,7 +1076,7 @@
 		box-sizing: content-box;
 		background: #fff;
 		padding-bottom: 3em;
-		box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);
+		/*box-shadow: 0 0.1em 0.15em 0 rgba(0, 0, 0, 0.15);*/
 	}
 
 		.poptrox-popup .loader {
@@ -1215,7 +1215,7 @@
 				width: 40px;
 				height: 40px;
 				border-radius: 100%;
-				box-shadow: inset 0 0 0 2px #fff;
+				/*box-shadow: inset 0 0 0 2px #fff;*/
 				background: url("images/poptrox-closer.svg") center center;
 				color: #ffffff !important;
 			}
@@ -1249,7 +1249,7 @@
 				top: 12px;
 				width: 20px;
 				height: 20px;
-				box-shadow: inset 0 0 0 1px #fff;
+				/*box-shadow: inset 0 0 0 1px #fff;*/
 				background-size: contain;
 				opacity: 0.65;
 			}
@@ -1678,7 +1678,7 @@
 		    font-size: 12px !important;
     letter-spacing: -1px;
 		line-height: 3em;
-		box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+		/*box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);*/
 	}
 
 		#header h1 {
@@ -2188,13 +2188,13 @@
         width: 220px;
     height: 246px;
     /*border: 2px solid white; */
-        box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);
+        /*box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);*/
   padding-bottom: 0px;
     }
     .servStart{
     	   margin-top: 47px;
     color: #101010 !important;
-    box-shadow: 0 0 15px rgb(81, 145, 179);
+   /* box-shadow: 0 0 15px rgb(81, 145, 179);*/
     margin-left: -14px;
     margin-right: -14px;
     background-color: #fff;
@@ -2206,12 +2206,10 @@
     color: #101010 !important;
  }
 .mediadiv{
-margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; padding-bottom: 25px;box-shadow: 0 0 15px rgba(0,0,0,.5);
+margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; padding-bottom: 25px;/*box-shadow: 0 0 15px rgba(0,0,0,.5);*/
 }
 .customerdiv{
-	 margin-left:-14px;margin-right:-14px;background-color: #fff; color: #101010; padding-bottom: 25px;box-shadow: 0 0 15px rgba(0,0,0,.5);
-
-}
+	 margin-left:-14px;margin-right:-14px;background-color: #fff; color: #101010; padding-bottom: 25px;/*box-shadow: 0 0 15px rgba(0,0,0,.5);*/
 .clientdiv{
 	margin-left:-14px;margin-right:-14px;background-color: #eee; padding-bottom: 25px;
 
@@ -2220,7 +2218,7 @@ margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; 
 .btn.focus, .btn:focus, .btn:hover {
 
 	background-color: #cd2525 !important;
-	box-shadow: 0 0 15px rgb(81, 145, 179);
+	/*box-shadow: 0 0 15px rgb(81, 145, 179);*/
 	color: #fefefe !important;
 
 }
@@ -2228,7 +2226,7 @@ margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; 
 .customTextarea{
 background-color: transparent !important;
 color: #fff;
-	box-shadow: 0 0 15px rgb(81, 145, 179) !important;
+	/*box-shadow: 0 0 15px rgb(81, 145, 179) !important;*/
 }
 hr{
 	    border-top: 1px solid #cd2525 !important;
