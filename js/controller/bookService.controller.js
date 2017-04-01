@@ -13,6 +13,19 @@
         var vm = this;
         vm.user = null;
 
+
+        if(angular.isUndefined($rootScope.user) && !$rootScope.loginModalOpened){
+            ModalService.showModal({
+                templateUrl: "templates/login.modal.html",
+                controller: "LoginController"
+            }).then(function(modal) {
+                modal.element.modal();
+                modal.close.then(function(result) {
+                    $scope.yesNoResult = result ? "You said Yes" : "You said No";
+                });
+            });
+        }
+
         $scope.closeModal = function(result) {
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
@@ -46,6 +59,24 @@
             return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
         }
 
+        $scope.validateDate = function () {
+            if(!angular.isUndefined($scope.bservice.datetime)){
+                var d = new Date($scope.bservice.datetime);
+                var today = new Date();
+                if(d >= today){
+                    $('#date-error').css({'display':'none'});
+                    return true;
+                }else{
+                    $('#date-error').css({'display':'block'});
+                    return false;
+                }
+            }else {
+                $('#date-error').css({'display':'block'});
+                return false;
+            }
+            return false;
+        }
+
 
         $scope.$watch(function () {
             return $rootScope.user;
@@ -64,7 +95,10 @@
 
 
         if(!angular.isUndefined($rootScope.selectedService)){
-          $scope.selectedService = $rootScope.selectedService;
+            $scope.selectedService = $rootScope.selectedService;
+            $scope.bservice = {
+                city: $rootScope.selectedCity.city_name
+            };
         }
 
         $scope.$watch(function () {
@@ -121,7 +155,8 @@
                   angular.isUndefined($scope.bservice.city) ||
                   angular.isUndefined($scope.bservice.landmark) ||
                 angular.isUndefined($scope.bservice.state) ||
-                angular.isUndefined($scope.bservice.datetime)){
+                angular.isUndefined($scope.bservice.datetime) ||
+              !$scope.validateDate()){
               $('#bookserv-error').css({'display':'block'});
               return;
           }else{

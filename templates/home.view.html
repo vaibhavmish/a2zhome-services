@@ -1,25 +1,21 @@
-<!-- Header -->
 <app-header></app-header>
 <style>
 #banner{
 }
     .carousel-inner img {
         /* -webkit-filter: grayscale(90%);
-    filter: grayscale(90%);*/
-        /* make all photos black and white */
-        width: 100%;
-        /* Set width to 100% */
+         filter: grayscale(90%);*/ /* make all photos black and white */
+        width: 100%; /* Set width to 100% */
         margin: auto;
     }
-    
+
     .carousel-caption h3 {
         color: #fff !important;
     }
-    
+
     @media (max-width: 600px) {
         .carousel-caption {
-            display: none;
-            /* Hide the carousel text when the screen is less than 600 pixels wide */
+            display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
         }
     }
 	.box {
@@ -109,6 +105,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
+
                     <img src="../images/slide1.png" alt="HandyServices">
                  </div>
 
@@ -122,11 +119,13 @@
                  </div>
             </div>
          </div>
+
     </div>
 </div>
 <!-- form -->
 <section id="form" class="main style1 dark fullscreen" style="background-color: transparent;z-index: 1;">
     <div class="content">
+
         <div class="box" >
             <ul class="actions">
                 <li>
@@ -136,10 +135,12 @@
                     <a href="#/maintenance"><input type="button" class="btn"  value="Book Packages" /></a>
                 </li>
                 <li><input type="button" class="btn"  value="Request Callback" /></li>
+
             </ul>
             <div class="space"></div>
           
             <form method="post" action="#">
+
                 <div class="field first data">
                     <span class="" >Name</span>
                     <input class="marg-top-10" type="text" name="name" ng-model="rc.name" placeholder="John Doe" />
@@ -147,10 +148,12 @@
                 <div class="field data">
                     <span >Mobile No.</span>
                     <input class="marg-top-10" type="text" name="mobileNumber" ng-model="rc.mobile" placeholder="+91-9900099000" />
+
                 </div>
                 <center>
-                    <img src="../images/gears.svg" style="width: 50px;height: 50px;display: none" id="loading" />
+                    <img src="../images/gears.svg" style="width: 50px;height: 50px;display: none" id="loading"/>
                 </center>
+
                 <div class="field data">
                     <span >Email</span>
                     <input class="marg-top-10" type="email" name="email" ng-model="rc.email" placeholder="youremail@example.com" />
@@ -162,6 +165,7 @@
                     <li>
                         <a href="https://play.google.com/store/apps/details?id=in.handyservices.handyservices" target="_blank"><input type="button" style="background-color: #10528F" value="Get App" /></a>
                     </li>
+
                 </ul>
             </form>
         </div>
@@ -172,10 +176,10 @@
 <section id="one" class="main style2 dark fullscreen servStart">
     <div class="container content style2">
         <center>
+
             <h1>Our Services</h1>
             <hr style="width: 100%;color: #cd2525">
             <h3>What We Provide</h3>
-
             <p class=""> Maintenance services include Drain Cleaning Services, RO Water Purification services, Electronic Servicing, carpentry services and many others.
             </p>
         </center>
@@ -184,30 +188,26 @@
 
 
 <section id="work-1" class="content style3 primary left" style="margin-left:-14px;margin-right:-14px;">
-    <div class="content style2 fullscreen dark ser">
+    <div class="content style2 fullscreen dark ser" >
         <div id="twoa" class="content left" style="padding: 10px">
             <marquee style="height:auto;margin-top:-20px; padding:10px;"><span display="inline" style="font-size: 13px !important; color: #101010">Calculate Your Maintenance Packages as per your requirement</span>
                 <ul class="actions" style="display: inline">
-                    <li>
-                        <a href="#/maintenance"><input type="submit" style="background-color: #CD2525" value="Get Maintenance Package" /></a>
-                    </li>
-                </ul>
-            </marquee>
+                    <li><a href="#/maintenance"><input type="submit" style="background-color: #CD2525" value="Get Maintenance Package" /></a></li>
+                </ul></marquee>
             <center>
                 <div style="display: inline-flex;flex: 1" ng-repeat="service in serviceList">
                     <div id="serv" class="servicediv">
                         <div class="row" id="serv-content1">
-                            <img ng-src="{{service.icon}}" style="width: 220px;height:210px;background-color: palegoldenrod;margin-top: 0px;" />
-                            <h4 style="color: #101010">{{service.name}}</h4>
+                            <img ng-src="{{service.icon}}" style="width: 220px;height:210px;background-color: palegoldenrod;margin-top: 0px;"/>
                         </div>
-                        <div class="row" id="serv-content2" style="word-wrap: break-word;word-break: break-all;padding: 0px 10px 10px;">
+                        <div class="row" id="serv-content2" style="width: 220px;height:210px;word-wrap: break-word;word-break: break-all;
+                            padding: 0px 10px 10px; background-color:#101010;text-align: center">
                             <center>
-                                <p style="padding: 10px;margin-top: 10px">
-                                    {{service.description}}
+                                <h4>{{service.name}}</h4>
+                                <p style="padding: 10px;">
+                                    {{service.description | cut:true:100:' ...'}}
                                 </p>
-                                <br>
-                                <a style="padding: 10px;margin-bottom:10px;color: white" href="#/services"> Learn More </a>
-                                <br>
+                                <a style="padding: 10px;margin-bottom:10px;color: white" ng-click="setSelectedService(service);" href="#/services"> Learn More </a>
                                 <input type="button" value="Book Now" ng-click="bookNow(service)" style="background-color:#CD2525;color: white">
                                 <br>
                             </center>
@@ -217,9 +217,7 @@
             </center>
             <center style="margin-top: 20px;">
                 <ul class="actions" style="display: inline">
-                    <li>
-                        <a href="#/services"><input type="submit" class="btn" value="+ View More" style="text-decoration: underline;background-color: #10528F" /></a>
-                    </li>
+                    <li><a href="#/services"><input type="submit" class="btn" value="+ View More" style="text-decoration: underline;background-color: #10528F"/></a></li>
                 </ul>
                 <br>
             </center>
@@ -229,21 +227,19 @@
 </section>
 
 <style>
-    .img1Wrapper:hover .text1 {
+    .img1Wrapper:hover .text1{
         visibility: visible;
     }
-    
     #serv-content2 {
-        display: none;
+        display:none;
     }
-    
     #serv:hover #serv-content2 {
-        display: block;
+        display:block;
     }
-    
     #serv:hover #serv-content1 {
-        display: none;
+        display:none;
     }
+
 </style>
 <!-- Two -->
 <section id="two1" class="main style2 dark fullscreen" style="background-color: #1e1e1e;margin-left:-14px;margin-right:-14px;">
@@ -260,11 +256,13 @@
 
         <div class="row">
 
+
             <div class="col-sm-8 slideanim" style="text-align:justify; padding:15px 40px;">
                 <p>HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work. Our maintenance services include Drain Cleaning Services, RO Water Purification
                     services, Electronic Servicing, carpentry services and many others.</p>
                 <p>Handy Services is a fast growing company which provides best in-class handyman services at your doorstep. We have expert staff to give you the widest range of benefits in terms of quality of work and timely assistance. Every worker has
                     been trained under rigorous standardized procedures to work in perfection.</p>
+
                 <div class="row slideanim" style="text-align:center; margin-top: 10px">
                 <div class="space"></div>
                     <div class="col-xs-4">
@@ -285,6 +283,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
+
                 <iframe class="slideanim" width="100%" style="border: none" height="315" src="https://www.youtube.com/embed/r1NkEGNYx_o" frameborder="0" allowfullscreen></iframe>
                 <ul class="actions socials" style="padding: 10px 10px 10px 30px;text-align: -webkit-center;">
                     Follow Us On: &nbsp;&nbsp;&nbsp;&nbsp;
@@ -292,6 +291,7 @@
                     <li class="social-fb"><a href="#" class="fa fa-facebook"><span class="label"></span></a></li>
                     <li class="social-in"><a href="#" class="fa fa-instagram"><span class="label"></span></a></li>
                     <li class="social-yt"><a href="#" class="fa fa-youtube"><span class="label"></span></a></li>
+
 
                 </ul>
             </div>
@@ -324,10 +324,8 @@
 
 <section id="two3" class="main style2 dark fullscreen downloadsec">
 
-    <!--kcode start -->
 
-
-    <!--kcode end -->
+   
 
     <div class="container-fluid">
         <center>
@@ -335,15 +333,14 @@
                 <h1>Download Handy</h1>
                 <hr style="width: 50%;color: #cd2525">
                 <h3 style="font-size: 26px;text-align: center">Handy Services is now more Handy</h3>
-
-            </center>
+			</center>
             <div class="space"></div>
 
             <div class="row">
                 <div class="col-sm-6 slideanim">
                     <img src="images/intro.jpg" style="width: 100%;height: auto; padding-left:20px;">
                 </div>
-                <div class="col-sm-6 slideanim slide" style="text-align: -webkit-auto;padding-left: 40px;padding-right: 40px;">
+                <div class="col-sm-6 slideanim" style="text-align: -webkit-auto;">
                     <h3>Features: </h3>
                     <br>
                     <h4>Virus Free And Secured</h4>
@@ -358,8 +355,10 @@
                         </div>
                         <ul class="actions" style="display: inline">
                             <li>
+
                                 <span style="color: #cd2525;display: none" id="number-error">Add Mobile Number to recieve LINK via SMS</span>
                                 <input type="submit" value="Get App Link" ng-click="sendAppLink();" />
+
                             </li>
                         </ul>
                     </form>
@@ -378,6 +377,7 @@
 <section id="two5" class="main style2 dark fullscreen customerdiv" style="background-color:#1e1e1e">
     <div class="content style2">
         <center>
+
             <h1  >Our Customers</h1>
             
             <hr style="width: 100%;color: #cd2525">
@@ -385,6 +385,7 @@
             
             <p >
                 Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
             </p>
         </center>
         
@@ -397,6 +398,7 @@
             <div style="display: inline-flex;flex: 1" ng-repeat="cust in ourCustomers">
                 <div id="cust" class="servicediv">
                     <div class="row" id="cust-content1">
+
                         <img ng-src="{{cust.cus.photo}}" style="width: 220px;height:210px;background-color: rosybrown;margin-top: 0px;" />
                         <h4 style="color:#fff">{{cust.cus.name}}</h4>
                     </div>
@@ -408,7 +410,17 @@
                             <p style="color:#fff;padding: 10px;margin-top: 10px">
                                 Rating : {{cust.rating}}
                             </p>
+
                             <br>
+                            <style>
+                                .quotation-mark{
+                                    margin-top:-20px;
+                                    font-weight: bold;
+                                    font-size:18px;
+                                    color:royalblue;
+                                    font-family: "Times New Roman", Georgia, Serif;
+                                }
+                            </style>
                         </center>
                     </div>
                 </div>
@@ -418,16 +430,15 @@
 
 <style>
     #cust-content2 {
-        display: none;
+        display:none;
     }
-    
     #cust:hover #cust-content2 {
-        display: block;
+        display:block;
     }
-    
     #cust:hover #cust-content1 {
-        display: none;
+        display:none;
     }
+
 </style>
 
 <!--section 4-->
@@ -435,10 +446,12 @@
 <section id="two7" class="main style2 dark fullscreen mediadiv">
     <div class="content style2" style="padding-top: 15px; padding-bottom:15px;">
         <center>
+
             <h1 style="color:#101010">Media Coverage</h1>
             <hr style="width: 100%;color: #cd2525">
             <p style="color:#101010">
                 some para.
+
             </p>
         </center>
     </div>
@@ -447,16 +460,20 @@
     <div id="two8" class="content left">
         <center>
             <div style="display: inline-flex;flex: 1" ng-repeat="media in mediaCoverages">
-                <div id="media" class="servicediv">
-                    <a ng-href="{{media.news_link}}" style="text-decoration: none">
+                <div id="media" class="servicediv" style="background-color: transparent">
+                    <a ng-href="{{media.news_link}}" target="_blank" style="text-decoration: none">
                         <div class="row" id="media-content1">
-                            <img ng-src="{{media.photo}}" style="width: 220px;height:210px;background-color: rosybrown;margin-top: 0px;" />
-                            <h4 style="color: #101010">{{media.news_title}}</h4>
+                            <img ng-src="{{media.news_photo}}" style="width: 220px;height:210px;background-color: rosybrown;margin-top: 0px;"/>
+                            <h4 style="color: white">
+                                {{media.news_title}}
+                            </h4>
                         </div>
                         <div class="row" id="media-content2" style="word-wrap: break-word;word-break: break-all;padding: 0px 10px 10px;">
                             <center>
+
                                 <p style="padding: 10px;margin-top: 10px;color: #101010">
-                                    {{media.news_desc}}
+                                	{{media.news_desc}}
+                                    <span class="quotation-mark" style="font-size: 25px;color: white">”</span>
                                 </p>
                                 <br>
                             </center>
@@ -470,19 +487,19 @@
 
 <style>
     #media-content2 {
-        display: none;
+        display:none;
     }
-    
     #media:hover #media-content2 {
-        display: block;
+        display:block;
     }
-    
     #media:hover #media-content1 {
-        display: none;
+        display:none;
     }
+
 </style>
 
 <!--section 5-->
+
 
 <section id="two9" class="main style2 dark fullscreen clientdiv ng-scope" >
     <div class="content style2">
@@ -492,6 +509,7 @@
             
             <p style="color: #101010">
                 Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+
             </p>
         </center>
     </div>
@@ -508,11 +526,11 @@
 </div>
 
 
-<app-footer></app-footer>
+
 
 
 <script>
-    $(document).ready(function() {
+    $(document).ready(function(){
         // Add smooth scrolling to all links in navbar + footer link
         $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
             // Make sure this.hash has a value before overriding default behavior
@@ -527,7 +545,7 @@
                 // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
-                }, 900, function() {
+                }, 900, function(){
 
                     // Add hash (#) to URL when done scrolling (default click behavior)
                     window.location.hash = hash;
@@ -536,7 +554,7 @@
         });
 
         $(window).scroll(function() {
-            $(".slideanim").each(function() {
+            $(".slideanim").each(function(){
                 var pos = $(this).offset().top;
 
                 var winTop = $(window).scrollTop();
@@ -547,3 +565,4 @@
         });
     })
 </script>
+<app-footer></app-footer>
