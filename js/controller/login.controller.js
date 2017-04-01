@@ -14,6 +14,7 @@
         vm.user = null;
 
         $scope.closeModal = function(result) {
+            $rootScope.loginModalOpened = true;
             $('body').removeClass('modal-open');
             $('.modal-backdrop').remove();
             close(result, 500); // close, but give 500ms for bootstrap to animate

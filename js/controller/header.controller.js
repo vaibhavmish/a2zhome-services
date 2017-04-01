@@ -100,5 +100,21 @@
             $scope.openLocationModal();
         }
 
+        $scope.goToFeedback = function () {
+            $location.path('/feedback');
+        }
+
+        $scope.goToHomeMakeover = function () {
+            $location.path('/home-makeover');
+        }
+
+        $scope.goToMaintenance = function () {
+            $location.path('/maintenance');
+        }
+
+        $scope.goToCorporate = function () {
+            $location.path('/corporates');
+        }
+
     }
 })();

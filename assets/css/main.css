@@ -822,7 +822,7 @@
 		width: 100%;
 		padding: 0.65em 0.75em;
 		background: none;
-	    border: solid 2px #5b515f;	
+	    /*border: solid 2px #5b515f;*/	
 	    /*box-shadow: 0 0 15px rgba(54, 199, 139, 0.9);*/
 	 
 		border-radius: 0.5em;
@@ -2183,7 +2183,7 @@
     height: auto;}
     .servicediv{
     cursor: pointer;
-    margin: 5px;
+ /*   margin: 5px;*/
     display: inline;
         width: 220px;
     height: 246px;
@@ -2203,6 +2203,7 @@
  	    margin-left: -14px;
     margin-right: -14px;
     background-color: #fff;
+        border-bottom: 2px solid black;
     color: #101010 !important;
  }
 .mediadiv{
@@ -2210,6 +2211,7 @@ margin-left:-14px;margin-right:-14px;background-color: #10528f; color: #fefefe; 
 }
 .customerdiv{
 	 margin-left:-14px;margin-right:-14px;background-color: #fff; color: #101010; padding-bottom: 25px;/*box-shadow: 0 0 15px rgba(0,0,0,.5);*/
+}
 .clientdiv{
 	margin-left:-14px;margin-right:-14px;background-color: #eee; padding-bottom: 25px;
 
@@ -2276,4 +2278,10 @@ hr{
     color: #fff;
     padding: 0 5px 2px!important;
 
+}
+.fli{
+	font-size: 20px!important;
+}
+.fli:hover{
+	color: #10528f!important;
 }
