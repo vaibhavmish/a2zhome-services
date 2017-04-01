@@ -12,8 +12,7 @@
 	form select,
 	form textarea {
 		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-		border: solid 1px;
+		
 	}
 
 /* Button */
@@ -24,7 +23,7 @@
 	.button,
 	button {
 		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+		
 	}
 
 		input[type="button"].down,
