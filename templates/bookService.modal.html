@@ -50,13 +50,13 @@
                                                     Add More Services
                                                 </h2>
                                                 <div class="form-group" style="overflow-y: scroll;height: 250px">
-                                                    <div ng-repeat="service in services" style="display: flex;flex: 1">
-                                                        <div class="checkbox" style="margin: 10px;display: block">
-                                                            <img src="../images/img_chania.jpg" style="background-color: #1b6d85;width: 100px;height: 90px;border: 1px solid black">
-                                                            <input type="checkbox" value="" ng-checked="isSelectedService(service);"
-                                                                   ng-init="initializeCheckboxes(service);"
-                                                                   ng-model="serviceChoosing[service.name]"/>  {{service.name}}
-                                                        </div>
+                                                    <div ng-repeat="service in services" class="col-lg-6" style="display: flex;flex: 1;padding: 10px">
+                                                        <img ng-src="{{service.icon}}" style="background-color: transparent;width: 100px;height: 90px;border: 1px solid black">
+                                                        <input type="checkbox" value="" ng-checked="isSelectedService(service);"
+                                                               ng-init="initializeCheckboxes(service);"
+                                                               ng-model="serviceChoosing[service.name]"/>
+                                                        <br>
+                                                        <h4>{{service.name}}</h4>
                                                     </div>
                                                 </div>
                                                 <span id="services-error" style="color: red;display: none">Choose atleast 1 service to proceed</span>
@@ -107,13 +107,18 @@
                                                                 <i class="fa fa-clock-o" style="font-size: 25px"/> <span style="color: red;">*</span>&nbsp; Schedule Services
                                                             </h3>
                                                             <br>
-                                                            <input type="datetime-local" ng-model="bservice.datetime" style="width: 100%;font-size:10px;color:black;margin-right: 20px" required/> <i class="glyphicon glyphicon-calendar"/>
-                                                            <!--<p class="input-group">-->
+                                                            <div class="input-group">
+                                                                <input type="datetime-local" ng-model="bservice.datetime" style="width: 100%;font-size:10px;color:black;margin-right: 20px"
+                                                                       ng-change="validateDate();" required/>
+                                                            </div>
+                                                            <br>
+                                                            <h5 style="color: red;display: none" id="date-error">Please enter a valid date! Date should be today or in future.</h5>
+                                                            <!--<div class="input-group">-->
                                                                 <!--<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="bservice.datetime" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />-->
                                                                 <!--<span class="input-group-btn">-->
                             <!--<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>-->
           <!--</span>-->
-                                                            <!--</p>-->
+                                                            <!--</div>-->
                                                         </div>
                                                     </div>
                                                 </div>

@@ -8,6 +8,30 @@
         .module('app')
         .controller('HomeController',HomeController);
 
+    angular.module('app').filter('cut', function () {
+        return function (value, wordwise, max, tail) {
+            if (!value) return '';
+
+            max = parseInt(max, 10);
+            if (!max) return value;
+            if (value.length <= max) return value;
+
+            value = value.substr(0, max);
+            if (wordwise) {
+                var lastspace = value.lastIndexOf(' ');
+                if (lastspace !== -1) {
+                    //Also remove . and , so its gives a cleaner result.
+                    if (value.charAt(lastspace-1) === '.' || value.charAt(lastspace-1) === ',') {
+                        lastspace = lastspace - 1;
+                    }
+                    value = value.substr(0, lastspace);
+                }
+            }
+
+            return value + (tail || ' …');
+        };
+    });
+
     HomeController.$inject=['$rootScope','$scope','ModalService','HandyServices'];
     function HomeController($rootScope, $scope, ModalService, HandyServices) {
         var vm = this;
@@ -22,6 +46,9 @@
                 HandyServices.getServiceListCitywise($rootScope.selectedCity.city_name).then(function (response) {
                     if (response.success) {
                         $scope.serviceList = response.data;
+                        if($scope.serviceList.length > 10){
+                            $scope.serviceList = $scope.serviceList.slice(0,10);
+                        }
                     } else {
                         $.alert(response.message);
                     }
@@ -81,7 +108,16 @@
                 }
             })
 
-        }
+        };
+
+        $scope.getRange = function(num) {
+            var len = parseInt(num);
+            var a = new Array(len);
+            for(var i=0;i<len;i++){
+                a[i]=i;
+            }
+            return a;
+        };
 
         $scope.bookNow = function (service) {
             $rootScope.selectedService = service;
@@ -132,5 +168,9 @@
                 $scope.ourClients = res.data;
             }
         });
+
+        $scope.setSelectedService = function (service) {
+            $rootScope.selectedService = service;
+        }
     }
 })();

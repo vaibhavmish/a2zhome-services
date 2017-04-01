@@ -25,7 +25,9 @@
                         $scope.services.sort(function(a,b) {
                             return a.used - b.used;
                         });
-                        $scope.selectedService = $scope.services[0];
+                        if(angular.isUndefined($rootScope.selectedService)) {
+                            $scope.selectedService = $scope.services[0];
+                        }
                     }else{
                         $scope.services = null;
                     }
@@ -42,12 +44,23 @@
         }, function(){
             if(!angular.isUndefined($scope.selectedService)) {
                 HandyServices.getReviewsListServiceIDwise($scope.selectedService._id).then(function (response) {
-                    if (response.success) {
+                    if (response.success && angular.isArray(response.data)) {
                         $scope.reviewsList = response.data;
                     }else{
                         $scope.reviewsList = null;
                     }
                 })
+            }
+        }, true);
+
+
+        $scope.$watch(function () {
+            return $rootScope.selectedService;
+        }, function(){
+            if(!angular.isUndefined($rootScope.selectedService)) {
+                $scope.selectedService = $rootScope.selectedService;
+            }else{
+                $scope.selectedService = $scope.services[0];
             }
         }, true);
 

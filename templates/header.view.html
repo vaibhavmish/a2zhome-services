@@ -14,12 +14,12 @@
     </div>
     <div class="collapse navbar-collapse navcol" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-      <li id="mp"><a href="#/maintenance"><i class="fa fa-wrench"></i> Handy Maintenance Packages</a><span class="newG"> new</span></li>
-            <li id="hmp"><a href="#/home-makeover"><i class="glyphicon glyphicon-home"/> Home MakeOver Packages</a> <span class="newG"> new</span></li>
-            <li id="corp"><a href="#/corporates"><i class="fa fa-area-chart"></i> For Corporate</a></li>
+      <li id="mp"><a style="cursor: pointer" ng-click="goToMaintenance();"><i class="fa fa-wrench"></i> Handy Maintenance Packages</a><span class="newG"> new</span></li>
+            <li id="hmp"><a style="cursor: pointer" ng-click="goToHomeMakeover();"><i class="glyphicon glyphicon-home"/> Home Makeover Packages</a> <span class="newG"> new</span></li>
+            <li id="corp"><a style="cursor: pointer" ng-click="goToCorporate();"><i class="fa fa-area-chart"></i> For Corporate</a></li>
            <!--  <li id="track"><a href="#"><i class="fa fa-location-arrow"></i> Track</a></li> -->
             <li id="phone"><a href="tel:+91-7878000666"><i class="fa fa-phone"></i> 7878000666</a></li>
-            <li id="feed"><a href="#/feedback"><i class="fa fa-question"></i> Feedback</a></li>
+            <li id="feed"><a style="cursor: pointer" ng-click="goToFeedback();"><i class="fa fa-question"></i> Feedback</a></li>
             <li id="login" class="dropdown"><a style="cursor: pointer" ng-click="openLoginModal();"><i class="fa fa-user"></i> {{ user.name || 'Login'}}</a>
                 <!--<ul class="dropdown-menu" ng-if="loginModalOpened">-->
                     <!--<li>-->

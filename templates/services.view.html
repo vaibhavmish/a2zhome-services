@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-lg-7">
                                 <h2>{{service.name}}</h2>
-                                <h5 style="word-wrap: break-word;word-break: break-all"># {{service.description}}</h5>
+                                <!--<h5 style="word-wrap: break-word;word-break: break-all"># {{service.description | cut:true:100:' ...'}}</h5>-->
                                 <input type="button" ng-click="goToRequestCallback();" value="Request Callback" style="padding:10px;padding-top:0;background-color: #1b6d85;color: white;float: right;margin-top: 10%"/>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-lg-7">
                                 <h2>{{service.name}}</h2>
-                                <h5 style="word-wrap: break-word;word-break: break-all"># {{service.description}}</h5>
+                                <!--<h5 style="word-wrap: break-word;word-break: break-all"># {{service.description | cut:true:100:' ...'}}</h5>-->
                             </div>
                         </div>
                     </div>
@@ -91,34 +91,16 @@
                                     <th style="padding: 10px;border: 2px solid crimson;">Category</th>
                                     <th style="padding: 10px;border: 2px solid crimson;">Price / Unit</th>
                                 </tr>
-                                <tr ng-if="!selectedService">
-                                    <td>&nbsp;&nbsp;
-                                    </td>
-                                    <td>&nbsp;&nbsp
-                                    </td>
-                                </tr>
-                                <tr ng-if="selectedService">
-                                    <td style="padding: 10px;border: 2px solid crimson;">General Service</td>
-                                    <td style="padding: 10px;border: 2px solid crimson;">100</td>
-                                </tr>
-                                <tr ng-if="selectedService">
-                                    <td style="padding: 10px;border: 2px solid crimson;">Fitting Cost</td>
-                                    <td style="padding: 10px;border: 2px solid crimson;">100-150</td>
-                                </tr>
-                                <tr ng-if="selectedService">
-                                    <td style="padding: 10px;border: 2px solid crimson;">Service Charge</td>
-                                    <td style="padding: 10px;border: 2px solid crimson;">100-150</td>
-                                </tr>
-                                <tr ng-if="selectedService">
-                                    <td style="padding: 10px;border: 2px solid crimson;">Spare Parts</td>
-                                    <td style="padding: 10px;border: 2px solid crimson;">As per MRP</td>
+                                <tr ng-repeat="price in selectedService.price">
+                                    <td style="padding: 10px;border: 2px solid crimson;">{{price.option}}</td>
+                                    <td style="padding: 10px;border: 2px solid crimson;">{{price.amount}}</td>
                                 </tr>
                             </center>
                         </table>
                         <h5> Save upto 25%. Check Maintenance Packages </h5>
                     </center>
                 </div>
-                <div class="row" style="width: 107.5%;background-color: lightgreen;height: 227px;padding: 20px;padding-top:5px;margin-top: -5%">
+                <div class="row" style="width: 107.5%;background-color: lightgreen;height: auto;padding: 20px;padding-top:5px;margin-top: -5%">
                     <h3>
                         Happy Customers
                     </h3>
