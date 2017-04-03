@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en_US" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Handyservices.in- Services and Packages</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="google-signin-client_id" content="336458288373-422f41kjqopb7gernjbgs9hiekgoeic8.apps.googleusercontent.com">
+    <meta name="google-signin-scope" content="profile email">
+
+    <link rel="icon" href="images/fevicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/ie8.css" />
+    <link rel="stylesheet" href="assets/css/ie9.css" />
+    
+    <!---- fonts ----------->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="thirdparty/js/jquery-3.1.0.min.js"></script>
+    <script src="thirdparty/js/bootstrap.min.js"></script>
+    <script src="thirdparty/js/jquery-confirm.min.js"></script>
+    <!--angular js -->
+    <script src="thirdparty/js/angular.js"></script>
+    <script src="thirdparty/js/angular-animate.js"></script>
+    <script src="thirdparty/js/angular-resource.js"></script>
+    <script src="thirdparty/js/angular-route.js"></script>
+    <script src = "thirdparty/js/jquery-ui.js"></script>
+    <!--<script src = "thirdparty/js/prettify.js"></script>-->
+    <script src = "thirdparty/js/jquery.bootstrap.wizard.js"></script>
+    <script src = "thirdparty/js/ng-google-signin.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="thirdparty/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="thirdparty/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="thirdparty/css/bootstrap-social.css"/>
+    <link rel="stylesheet" href="thirdparty/css/font-awesome.css"/>
+    <link rel="stylesheet" href="thirdparty/css/jquery-confirm.min.css"/>
+    <link rel="stylesheet" href="thirdparty/css/animate.css"/>
+    <link rel="stylesheet" href="thirdparty/css/jquery-ui.css"/>
+    <!--<link rel="stylesheet" href="thirdparty/css/prettify.css"/>-->
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <script src="thirdparty/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/ie/html5shiv.js"></script>
+    <script src="assets/js/ie/respond.min.js"></script>
+</head>
+<body class="container-fluid" style="background-color:white;">
+<div>
+    <div ng-view></div>
+</div>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1316955518391332',
+            oauth   : true,
+            status  : true, // check login status
+            cookie  : true, // enable cookies to allow the server to access the session
+            xfbml   : true, // parse XFBML
+            version    : 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+
+</script>
+
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src="js/app.js"></script>
+
+<script src="js/controller/header.controller.js"></script>
+<script src="js/controller/home.controller.js"></script>
+<script src="js/controller/maintenance.controller.js"></script>
+<script src="js/controller/feedback.controller.js"></script>
+<script src="js/controller/login.controller.js"></script>
+<script src="js/controller/location.controller.js"></script>
+<script src="js/controller/services.controller.js"></script>
+<script src="js/controller/thankyou.controller.js"></script>
+<script src="js/controller/maintenanceCalc.controller.js"></script>
+<script src="js/controller/bookService.controller.js"></script>
+<script src="js/controller/corporates.controller.js"></script>
+<script src="js/controller/footer.controller.js"></script>
+<script src="js/controller/maintenanceCalcAddress.controller.js"></script>
+<script src="js/controller/partners.controller.js"></script>
+<script src="js/controller/home-makeover.controller.js"></script>
+<script src="js/controller/profile.controller.js"></script>
+
+<script src="js/directive/header.directive.js"></script>
+<script src="js/directive/maintenanceCalc.directive.js"></script>
+<script src="js/directive/thankyou.directive.js"></script>
+<script src="js/directive/footer.directive.js"></script>
+
+<script src="js/service/angular-modal-service.js"></script>
+<script src="js/service/authentication.service.js"></script>
+<script src="js/service/handyservices.service.js"></script>
+</body>
+</html>

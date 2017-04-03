@@ -1,0 +1,143 @@
+<app-header></app-header>
+<div class="row">
+    <div style="width: 100%;height: 400px;z-index: -999;background-color: gainsboro"></div>
+    <div style="z-index: 0;margin-top: -28%;">
+        <center>
+            
+            <br>
+            <div style="background-color:rgba(1,1,1,0.8);width: 50%;padding-bottom:20px;z-index: 100;padding-top: 20px;color: whitesmoke;margin-bottom: 50px">
+                <center>
+                <h2> Feedback </h2>
+            <hr style="width: 50%;color: red;height: 5px;background-color: red;border-color: red;z-index: 100">
+            <p style="z-index:100;padding-left: 20%;padding-right:20%">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
+                  <!--   <h4><span style="color: red;">*</span> Select Type </h4> -->
+                    <form>
+                        <div class="form-inline">
+                            <div class="checkbox" style="margin: 20px">
+                                 <input ng-model="type1" type="checkbox" value="" id="test1" />
+                                 <label for="test1">Services</label>
+                            </div>
+                            <div class="checkbox" style="margin: 20px">
+                             <input ng-model="type2" type="checkbox" value="" id="test2"> <label for="test2">User Experience</label>
+                            </div>
+                            <div class="checkbox" style="margin: 20px">
+                                <input ng-model="type3" type="checkbox" value="" id="test3"> <label for="test3">Functionality</label>
+                            </div>
+                            <div class="checkbox" style="margin: 20px">
+                                <input ng-model="type4" type="checkbox" value="" id="test4"> <label for="test4">Others</label>
+                            </div>
+                            <div class="row" style="padding: 10px">
+                                <div class="col-lg-6" style="margin-top: 10px">
+                                    <span style="color: red;margin-top:-15px;margin-left:10px;float: left">*</span>
+                                    <input type="text" style="width: 100%;margin-left:20px" ng-model="feedback.name" class="form-control" id="name" placeholder="Name" />
+                                </div>
+                                <div class="col-lg-6" style="margin-top: 10px">
+                                    <span style="color: red;margin-top:-15px;margin-left:0px;float: left">*</span>
+                                    <input type="email" style="width: 100%" ng-model="feedback.email" class="form-control" id="email" placeholder="Email Address" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6" style="margin:0;padding: 0">
+                                    <div class="col-lg-12" style="margin-top: 10px">
+                                        <span style="color: red;margin-top:-15px;margin-left:20px;float: left">*</span>
+                                        <input type="tel" style="width: 96.5%;margin-left: 30px" class="form-control" ng-model="feedback.mob" id="mob" placeholder="Phone" />
+                                    </div>
+                                    <div class="col-lg-12" style="margin-top: 10px">
+                                        <span style="color: red;margin-top:-15px;margin-left:20px;float: left">*</span>
+                                        <textarea id="message" style="float: left;width: 96.5%;margin-left: 30px" class="form-control customTextarea" ng-model="feedback.message" placeholder="Message"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <img src="../images/handyman.png" style="margin-top:20px;margin-left:-20px;width: 200px;height: 200px;">
+                                </div>
+                            </div>
+                            <center><span id="feedback-error" style="display:none;color: red;font-size: 10px"> Please Fill All Required Details </span></center>
+                            <div class="col-lg-6" style="margin-top: 10px">
+                                <img src="../images/gears.svg" id="feed-loading" style="display:none;width: 30px;height: 30px;margin-top:10px;margin-bottom: 0px">
+                                <button type="submit" ng-click="postFeedback();" style="margin-top:20px;margin-left:0px;padding:10px;padding-left:20px;padding-right:20px;font-size: 18px;background-color: #CD2525" value="Submit">Submit Feedback</button>
+                            </div>
+                            <br><br><br><br>
+                        </div>
+                    </form>
+                </center>
+            </div>
+        </center>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<style type="text/css">
+    /* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    /* top: .1em; */
+    bottom: 1px;
+    left: 1px;
+    font-size: 2.3em;
+    line-height: 0.8;
+    color: #ad0909;
+    transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9!important;
+}
+
+</style>

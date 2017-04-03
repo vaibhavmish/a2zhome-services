@@ -1,0 +1,131 @@
+<app-header></app-header>
+<div class="row">
+    <img src="../images/intro.jpg" style="width: 100%;height:273px;z-index: -999;background-color: gainsboro">
+</div>
+<div class="row">
+    <div class="col-lg-8" style="border: 2px solid black;height: auto">
+        <h1>For Corporates</h1>
+        <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
+        <br>
+         <p class="slideanim">HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work. Our maintenance services include Drain Cleaning Services, RO Water Purification services, Electronic Servicing, carpentry services and many others.</p>
+        <p class="slideanim">Handy Services is a fast growing company which provides best in-class handyman services at your doorstep. We have expert staff to give you the widest range of benefits in terms of quality of work and timely assistance. Every worker has been trained under rigorous standardized procedures to work in perfection.</p><br>
+     <div class="row slideanim" style="text-align:center; margin-top: 10px">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-large" style="font-size: 40px; color:#cd2525"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+        <br>
+    </div>
+    <div class="col-lg-4">
+
+        <div class="row" style="border: 2px solid black;height: 530px;margin-top: -24%;z-index: 0;background-color: rgba(1,1,1,0.7);color: white;font-size: 20px;padding: 20px">
+            <center>
+                <h3> Contact Us </h3>
+                <hr width="100%" style="color: red;background-color: red">
+            </center>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1" >
+                    <div class="form-group">
+                        <center>
+                            <div class="row" style="padding-right: 10px">
+                                <div class="col-lg-6" style="padding: 10px;">
+                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.name" class="form-control" id="name" placeholder="Enter your Name" />
+                                </div>
+                                <div class="col-lg-6" style="padding: 10px;">
+                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                    <input type="tel" style="width: 99%;margin-left:20px" ng-model="corporates.number" class="form-control" id="number" placeholder="Enter your contact number" />
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 0px;padding-right: 10px">
+                                <div style="padding: 10px;">
+                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                    <input type="email" style="width: 99%;margin-left:20px" ng-model="corporates.email" class="form-control" id="email" placeholder="Enter your email" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 0px;padding-right: 10px">
+                                <div class="col-lg-6" style="padding: 10px">
+                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.organization" class="form-control" id="org" placeholder="Name of your organization" />
+                                </div>
+                                <div class="col-lg-6" style="padding: 10px">
+                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.area" class="form-control" id="area" placeholder="Enter Area" />
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 10px">
+                                <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
+                                <textarea ng-model="corporates.message" class="form-control customTextarea" id="message" placeholder="Your Message" style="width: 95%;height: 50px"/>
+                            </div>
+                            <div class="row" style=";padding: 10px;margin-top: -20px">
+                                <div style="padding: 10px;font-size: 8px">
+                                    By clicking submit, you confirm that you are interested in being connected with our service manager. You will recieved a call wihtin 24 hours to confirm the details.
+                                </div>
+                            </div>
+                            <div class="row">
+                                <center><span id="corporates-error" style="display:none;color: red"> Please Fill All Required Details </span></center>
+                                <img src="../images/gears.svg" id="corp-loading" style="display:none;width: 30px;height: 30px;margin-top:-5px;margin-bottom: 10px">
+                                <input type="button" id="corporates" class="btn" ng-click="createCorporate();" style="cursor: pointer;background-color: #1c2d3f" data-toggle="tab" value="For Corporates  ">
+                            </div>
+                        </center>
+                    </div>
+                </div>
+                <div class="tab-pane" id="resultTab">
+                    <thank-you></thank-you>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<app-footer></app-footer>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
