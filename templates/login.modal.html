@@ -1,27 +1,26 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="336458288373-422f41kjqopb7gernjbgs9hiekgoeic8.apps.googleusercontent.com">
-<div id="LoginModal" class="modal" data-backdrop="static" data-keyboard="false" role="dialog">
-    <div class="modal-dialog" style="margin-top: 10%">
+<div id="LoginModal" class="modal" style="background-color:rgba(0,0,0, .3)"data-backdrop="static" data-keyboard="false" role="dialog">
+    <div class="modal-dialog" style="margin-top: 10%; overflow:hidden;">
         <div class="modal-content">
             <div class="modal-body" style="background: #fff; border-radius: 10px;">
-                 <button type="button" class="close" style="margin-top: -10px;font-size: 44px;opacity: 10;
-    text-shadow:none; box-shadow:none;" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <button type="button" class="close" style="margin-top: -10px;font-size: 44px;opacity: 10; text-shadow:none; box-shadow:none;" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <div class="modal-title tab">
                     <a class="tablinks" ng-click="openLogin();" style="cursor: pointer">
-                        <h4 style="float: left;margin-left: 15px">
+                        <h4 style="float:left; margin-left: 30px; margin-top:-25px !important;">
                             <i class="fa fa-user"></i> Login
                         </h4>
                     </a>
                     <a class="tablinks" ng-click="openRegister();" style="cursor: pointer">
-                        <h4 style="float: right;margin-right: 15px">
+                        <h4 style="float: right; margin-right: 30px; margin-top:-25px !important;">
                             <i class="fa fa-user-plus"></i> New User
                         </h4>
                     </a>
-                    <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
+                    <div id="liner" style=""></div>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                         <center>
                             <button id="customBtn" style="padding:2px;background-color: #d34836;color:white;width: 100%"
                                 ng-click="processGoogleLogin();">
@@ -29,7 +28,7 @@
                             </button>
                         </center>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
                         <center>
                             <button style="padding:2px;background-color:#3b5998;color:white;width: 100%" type="button" ng-click="fbLogin();" id="sign-in-twitter">
                                 <i class="fa fa-facebook-square" style="font-size: 15px;"/>&nbsp; Sign In with Facebook
@@ -113,6 +112,10 @@
 </div>
 
 <style>
+/* style for moz   */
+	#liner {
+		width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100;margin:30px auto;
+	}
 
 .loginInput{
     color: #101010 !important;

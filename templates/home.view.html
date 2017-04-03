@@ -1,17 +1,31 @@
 <app-header></app-header>
 <style>
 #banner{
+	width:100%;
+	height:600px;
+	background-color:#09F;
+	position:absolute;
+	margin:0px 0px -15px -15px;
 }
     .carousel-inner img {
         /* -webkit-filter: grayscale(90%);
          filter: grayscale(90%);*/ /* make all photos black and white */
         width: 100%; /* Set width to 100% */
-        margin: auto;
+        margin-right:0;;
+		height:600px;
+		background-color:#09F;
     }
 
     .carousel-caption h3 {
         color: #fff !important;
     }
+	.carousel-indicators {
+		z-index:1024;
+	}
+	.carousel-indicators a:active {
+		background-color:#cd2525;
+	}
+		
 
     @media (max-width: 600px) {
         .carousel-caption {
@@ -19,8 +33,7 @@
         }
     }
 	.box {
-		background:rgba(255, 255, 255, .8);
-		
+		background:rgba(255, 255, 255, 1);
 		box-shadow:0px 2px 10px #333;
 		border-bottom:1px solid #fff;
 		border-radius:6px;
@@ -56,12 +69,19 @@
 		.box {
 			width:100%;
 			height:auto;
-			margin:2px;
-			padding:0px;
+			margin:0px !important;
+			padding:5px;
 			box-shadow:none;
 		}
 		.actions> li {
 		padding-top:10px;
+	}
+		.bttn {
+		border-radius:25px;
+		height:25px;
+		line-height:25px;
+		max-width:150px;
+		width:100%;
 	}
 	}
 	.bttn {
@@ -78,6 +98,14 @@
 		right:auto;
 		text-align:left !important;
 	}
+	.data> input {
+		width:80%;
+		margin:auto 10%;
+	}
+	.data> input[type:placeholder] {
+		color:#999;
+	}
+		
 	.space {
 		padding-top:40px;
 	}
@@ -92,9 +120,9 @@
 	
 </style>
 <div id="banner">
-    <div class="row" style="z-index: -999;width: 102.2%;height:auto; margin-bottom:25px;margin-top: -20px">
+    <div class="row" style="z-index: -999;width: 100%;height:auto; margin-bottom:25px;margin-top: -20px">
         <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom:10px">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -143,7 +171,7 @@
 
                 <div class="field first data">
                     <span class="" >Name</span>
-                    <input class="marg-top-10" type="text" name="name" ng-model="rc.name" placeholder="John Doe" />
+                    <input class="marg-top-10" type="text" name="name" ng-model="rc.name" placeholder="i.e. John Doe" />
                 </div>
                 <div class="field data">
                     <span >Mobile No.</span>
@@ -198,10 +226,13 @@
                 <div style="display: inline-flex;flex: 1" ng-repeat="service in serviceList">
                     <div id="serv" class="servicediv">
                         <div class="row" id="serv-content1">
-                            <img ng-src="{{service.icon}}" style="width: 220px;height:210px;background-color: palegoldenrod;margin-top: 0px;"/>
+                            <img ng-src="{{service.icon}}" style="width: 120px;height:120px;margin:5px;"/>
+                            <div class="center">
+                            <h4 style="color:#666">{{service.name}}</h4>
+                            </div>
                         </div>
-                        <div class="row" id="serv-content2" style="width: 220px;height:210px;word-wrap: break-word;word-break: break-all;
-                            padding: 0px 10px 10px; background-color:#101010;text-align: center">
+                        <div class="row" id="serv-content2" style="width: 220px;height:auto;word-wrap: break-word;word-break: break-all;
+                            padding: 10px 10px 10px; background-color:rgba(0,0,0, .7);text-align: center">
                             <center>
                                 <h4>{{service.name}}</h4>
                                 <p style="padding: 10px;">
@@ -241,7 +272,7 @@
     }
 
 </style>
-<!-- Two -->
+<!-- Two (About Section)-->
 <section id="two1" class="main style2 dark fullscreen" style="background-color: #1e1e1e;margin-left:-14px;margin-right:-14px;">
 
     <!-- Container (About Section) -->
@@ -258,26 +289,43 @@
 
 
             <div class="col-sm-8 slideanim" style="text-align:justify; padding:15px 40px;">
-                <p>HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work. Our maintenance services include Drain Cleaning Services, RO Water Purification
-                    services, Electronic Servicing, carpentry services and many others.</p>
-                <p>Handy Services is a fast growing company which provides best in-class handyman services at your doorstep. We have expert staff to give you the widest range of benefits in terms of quality of work and timely assistance. Every worker has
-                    been trained under rigorous standardized procedures to work in perfection.</p>
+                <p>HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work.</p>
 
-                <div class="row slideanim" style="text-align:center; margin-top: 10px">
-                <div class="space"></div>
-                    <div class="col-xs-4">
-                        <span class="glyphicon glyphicon-off logo-large glyp-style"></span>
-                        <h4>POWER</h4>
-                        
+                <div class="row slideanim about-q" style="text-align:center; font-size:9px; margin-top: 10px; line-height:14px;">
+                	<div class="space"></div>
+                    <div class="col-md-2 col-sm-4">
+                        <span class="glyphicon glyphicon-plus logo-large glyp-style"></span>
+                        <h5>Emergency services</h5>
+                        <p>Carpenter, Plumber, Electrician within 30 minutes.</p>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-md-2 col-sm-4">
                         <span class="glyphicon glyphicon-heart logo-large glyp-style" ></span>
-                        <h4>LOVE</h4>
+                        <h5>Quality Work Guaranteed</h5>
+                        <p>Our work comes with 15 days free service warranty.</p>
                         
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-md-2 col-sm-4">
+                        <span class="glyphicon glyphicon-time logo-large glyp-style"></span>
+                        <h5>24&times;7 and 365 days </h5>
+                        <p>We are open always including Sunday and public holiday.</p>
+                        
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <span class="glyphicon glyphicon-certificate logo-large glyp-style"></span>
+                        <h5>Highly Trained Technicians</h5>
+                        <p>Our technicians have minimum 3 years experience.</p>
+                        
+                    </div>
+                    <div class="col-md-2 col-sm-4">
                         <span class="glyphicon glyphicon-lock logo-large glyp-style"></span>
-                        <h4>JOB DONE</h4>
+                        <h5>Trust</h5>
+                        <p>Serving since december, 2014, served 15000+ clients</p>
+                        
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <span class="glyphicon glyphicon-usd logo-large glyp-style"></span>
+                        <h5>Economical Prices</h5>
+                        <p>Completely priced with superior quality of work.</p>
                         
                     </div>
                 </div>
@@ -321,13 +369,9 @@
 	text-decoration:none;
 }
 </style>
-
+<!--download handy-->
 <section id="two3" class="main style2 dark fullscreen downloadsec">
-
-
-   
-
-    <div class="container-fluid">
+	<div class="container-fluid">
         <center>
             <center>
                 <h1>Download Handy</h1>
@@ -340,7 +384,7 @@
                 <div class="col-sm-6 slideanim">
                     <img src="images/intro.jpg" style="width: 100%;height: auto; padding-left:20px;">
                 </div>
-                <div class="col-sm-6 slideanim" style="text-align: -webkit-auto;">
+                <div class="col-sm-6 slideanim" style="text-align:left">
                     <h3>Features: </h3>
                     <br>
                     <h4>Virus Free And Secured</h4>
@@ -372,7 +416,7 @@
 
 </section>
 
-<!--section 3-->
+<!--our customer-->
 
 <section id="two5" class="main style2 dark fullscreen customerdiv" style="background-color:#1e1e1e">
     <div class="content style2">
@@ -393,20 +437,22 @@
     
     
 </section>
-<div style="background:#1e1e1e; margin:0px -15px !important;">
+<div style="background:#1e1e1e; margin:0px -14px !important;">
 	<center>
             <div style="display: inline-flex;flex: 1" ng-repeat="cust in ourCustomers">
                 <div id="cust" class="servicediv">
-                    <div class="row" id="cust-content1">
+                    <div class="row" id="cust-content1" style="margin:2px 5px">
 
-                        <img ng-src="{{cust.cus.photo}}" style="width: 220px;height:210px;background-color: rosybrown;margin-top: 0px;" />
+                        <img ng-src="{{cust.cus.photo}}" style="width: 150px;height:150px; border-radius:150px;margin-top: 0px;" alt="image of {{cust.cus.name}} " />
                         <h4 style="color:#fff">{{cust.cus.name}}</h4>
                     </div>
                     <div class="row" id="cust-content2" style="word-wrap: break-word;word-break: break-all;padding: 0px 20px 20px;">
                         <center style="font-size: 14px">
+                        	<!--<p class="doublecoma">"</p> -->
                             <p style="color:#fff;padding: 10px;margin-top: 10px">
-                                Review : {{cust.message}}
+                                 {{cust.message}}
                             </p>
+                            <!--<p class="doublecoma">"</p> -->
                             <p style="color:#fff;padding: 10px;margin-top: 10px">
                                 Rating : {{cust.rating}}
                             </p>
@@ -417,9 +463,17 @@
                                     margin-top:-20px;
                                     font-weight: bold;
                                     font-size:18px;
-                                    color:royalblue;
-                                    font-family: "Times New Roman", Georgia, Serif;
+                                    
+                                    
                                 }
+								.doublecoma {
+									 font-size:100px;
+									 line-height:14px;
+									 padding-bottom:-30px;
+									 font-family: 'Jim Nightshade', cursive;
+									 color:#fff;
+									 
+								}
                             </style>
                         </center>
                     </div>
@@ -441,7 +495,7 @@
 
 </style>
 
-<!--section 4-->
+<!--section 4 media-->
 
 <section id="two7" class="main style2 dark fullscreen mediadiv">
     <div class="content style2" style="padding-top: 15px; padding-bottom:15px;">
@@ -456,22 +510,22 @@
         </center>
     </div>
 </section>
-<div class="content style2 fullscreen dark mediadiv slideanim" style="padding-top: 15px; padding-bottom:15px;">
+<div class="content style2 fullscreen dark mediadiv slideanim" style="padding-top:0px; padding-bottom:0px;">
     <div id="two8" class="content left">
         <center>
             <div style="display: inline-flex;flex: 1" ng-repeat="media in mediaCoverages">
                 <div id="media" class="servicediv" style="background-color: transparent">
                     <a ng-href="{{media.news_link}}" target="_blank" style="text-decoration: none">
-                        <div class="row" id="media-content1">
-                            <img ng-src="{{media.news_photo}}" style="width: 220px;height:210px;background-color: rosybrown;margin-top: 0px;"/>
-                            <h4 style="color: white">
-                                {{media.news_title}}
+                        <div class="row" id="media-content1" style="padding:0px 20px">
+                            <img ng-src="{{media.news_photo}}" style="width: 120px;height:120px;margin-top: 0px;"/>
+                            <h4 style="color: #333;margin-top:15px;">
+                                <strong>{{media.news_title}}</strong>
                             </h4>
                         </div>
                         <div class="row" id="media-content2" style="word-wrap: break-word;word-break: break-all;padding: 0px 10px 10px;">
                             <center>
 
-                                <p style="padding: 10px;margin-top: 10px;color: #101010">
+                                <p style="padding: 10px;margin-top: 10px;color:#333; text-align:center;">
                                 	{{media.news_desc}}
                                     <span class="quotation-mark" style="font-size: 25px;color: white">”</span>
                                 </p>
@@ -518,8 +572,8 @@
 <div class="dark clientdiv slideanim" style="padding-top:0px; padding-bottom:0px;">
     <div id="two10" class="content left">
         <center>
-            <div style="display: inline-flex;flex: 1" ng-repeat="client in ourClients">
-                <img ng-src="{{client.photo}}" style="background-color:rosybrown;margin:10px;display:inline;width: 200px;height: 200px;border: 2px solid white">
+            <div style="display: inline-flex;flex: 1; padding:0px 20px;" ng-repeat="client in ourClients">
+                <img ng-src="{{client.photo}}" style="margin:0px 10px 20px 10px;display:inline;width: 150px;height: 150px;border: 2px solid white" alt="clients photo">
             </div>
         </center>
     </div>
@@ -565,4 +619,5 @@
         });
     })
 </script>
+<link href="https://fonts.googleapis.com/css?family=Jim+Nightshade" rel="stylesheet">
 <app-footer></app-footer>

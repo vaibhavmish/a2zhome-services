@@ -1,17 +1,17 @@
 <div class="modal fade" id="mcadd" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
-        <div class="modal-content" style="background-color:rgba(1,1,1,0.6);color:whitesmoke;margin-top: 10%">
+        <div class="modal-content" style="background-color:rgba(1,1,1,.6);color:whitesmoke;margin-top: 10%">
             <div class="modal-body">
-                <button type="button" class="close" style="margin-top: -5%" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <!--<button type="button" class="close" style="margin-top: -10px; box-shadow:none; font-size:20px; color:#fff;" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>-->
                 <h3>
-                    <button type="button" class="close" style="margin-top: -5%;margin-right:5%;float: left"
+                    <button type="button" class="close" style="margin-top: -5%;margin-right:5%;float: left; color:#fff; box-shadow:none !important"
                             ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">
                         <i class="glyphicon glyphicon-arrow-left"/>
                     </button>
                     Hi, {{user.name}}
                 </h3>
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-md-12">
                         <form name="addressForm">
                             <center>
                                 <h2 style="color: whitesmoke;">
@@ -19,7 +19,7 @@
                                 </h2>
                                 <div class="form-group" style="overflow-y: scroll;overflow-x:hidden;height: 250px">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-md-8">
                                             <center>
                                                 <div class="row" style="padding: 10px">
                                                     <label for="name"><span style="color: red;">*</span>&nbsp; House / Building No.</label>
