@@ -1,8 +1,64 @@
 <app-header></app-header>
 <div class="row">
-    <img src="../images/intro.jpg" style="width: 100%;height:273px;z-index: -999;background-color: gainsboro">
-</div>
-<div class="row">
+    <img src="../images/intro.jpg" style="width: 100%;height:100px;z-index: -999;background-color: gainsboro">
+    <div class="col-md-8 col-md-offset-2 mop" >
+        <h1>For Corporate</h1>
+        <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
+        <br>
+        <p class="slideanim">HandyServices provides express and hassle-free services for our corporate members. An exclusive and one of a kind product across the country,  helps in solving out the office, commercial complexes by providing them the maintenance cover through unlimited services, cashless transactions and guaranteed satisfaction.</p><br>
+        
+        <br>
+     <div class="row slideanim makeover-icons" style="text-align:center; margin-top: 10px">
+    <div class="col-md-4 col-sm-6 ">
+      <span class="glyphicon glyphicon-plus logo-large" style="font-size: 50px; color:#cd2525"></span>
+      <h4>Emergency Service</h4>
+      <p>Carpenter, Plumber, Electrician within 30 minutes.</p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <span class="glyphicon glyphicon-heart logo-large" style="font-size:50px; color:#cd2525"></span>
+      <h4>Quality Work Guaranteed</h4>
+      <p>Our work comes with 15 days free service warranty.</p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <span class="glyphicon glyphicon-time logo-large" style="font-size: 50px; color:#cd2525"></span>
+      <h4>24x7, 365 days</h4>
+      <p>We are open always including Sunday and public holiday.</p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <span class="glyphicon glyphicon-certificate logo-large" style="font-size: 50px; color:#cd2525"></span>
+      <h4>Highly Trained Technicians</h4>
+      <p>Our technicians have minimum 3 years experience.</p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <span class="glyphicon glyphicon-lock logo-large" style="font-size: 50px; color:#cd2525"></span>
+      <h4>Trust</h4>
+      <p>Serving since december, 2014, served 15000+ clients.</p>
+    </div>
+    <div class="col-md-4 col-sm-6">
+      <span class="fa fa-inr logo-large" style="font-size: 50px; color:#cd2525"></span>
+      <h4>Economical Price</h4>
+      <p>Completely priced with superior quality of work.</p>
+    </div>
+  </div>
+ 
+        <style>
+            .mop {
+                margin-bottom:30px;
+            }
+            .makeover-icons div p {
+                text-align: left;
+            }
+            .makeover-icons div {
+                margin: 10px 0px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 0px solid black;
+            }
+        
+        
+        </style>
+    </div>
+   <!--
     <div class="col-lg-8" style="border: 2px solid black;height: auto">
         <h1>For Corporates</h1>
         <hr style="width: 100%;color: red;height: 3px;background-color: red;border-color: red;z-index: 100">
@@ -25,62 +81,66 @@
       <h4>JOB DONE</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
-  </div>
+  </div>-->
         <br>
-    </div>
-    <div class="col-lg-4">
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
 
-        <div class="row" style="border: 2px solid black;height: 530px;margin-top: -24%;z-index: 0;background-color: rgba(1,1,1,0.7);color: white;font-size: 20px;padding: 20px">
-            <center>
-                <h3> Contact Us </h3>
-                <hr width="100%" style="color: red;background-color: red">
-            </center>
+        <div class="row contact" style="height: auto;margin-top:0;z-index: 0;background-color:#fff;color:#1e1e1e;font-size: 20px;">
+            
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1" >
                     <div class="form-group">
                         <center>
-                            <div class="row" style="padding-right: 10px">
-                                <div class="col-lg-6" style="padding: 10px;">
-                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.name" class="form-control" id="name" placeholder="Enter your Name" />
+                        <h3> <strong>Contact Us </strong></h3>
+                        </center>
+                
+                        <center>
+                         <fieldset>
+                            <legend class="mandatory">All the fields are mandatory*</legend>
+                            <div class="row contact-form" >
+                                <div  class="col-md-6" >
+                                    
+                                    <input type="text" ng-model="corporates.name" class="form-control" id="name" placeholder="Enter your Name" />
                                 </div>
-                                <div class="col-lg-6" style="padding: 10px;">
-                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                    <input type="tel" style="width: 99%;margin-left:20px" ng-model="corporates.number" class="form-control" id="number" placeholder="Enter your contact number" />
+                                <div class="col-md-6" >
+                                    
+                                    <input type="tel"  ng-model="corporates.number" class="form-control" id="number" placeholder="Enter your contact number" />
                                 </div>
+                            
+                                <div  class="col-md-6">
+                                    
+                                    <input type="email" ng-model="corporates.email" class="form-control" id="email" placeholder="Enter your email" />
+                                </div>
+                            
+                                <div  class="col-md-6" >
+                                    
+                                    <input type="text"  ng-model="corporates.organization" class="form-control" id="org" placeholder="Name of your organization" />
+                                </div>
+                                <div  class="col-md-12" >
+                                    
+                                    <input type="text"  ng-model="corporates.area" class="form-control" id="area" placeholder="Enter Area" />
+                                </div>
+                            <div class="col-md-12">
+                                
+                                <textarea ng-model="corporates.message" class="form-control customTextarea" id="message" placeholder="Your Message" style="width: 90%;height: 50px padding-left:5%" />
                             </div>
-                            <div class="row" style="margin-top: 0px;padding-right: 10px">
-                                <div style="padding: 10px;">
-                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                    <input type="email" style="width: 99%;margin-left:20px" ng-model="corporates.email" class="form-control" id="email" placeholder="Enter your email" />
-                                </div>
-                            </div>
-                            <div class="row" style="padding: 0px;padding-right: 10px">
-                                <div class="col-lg-6" style="padding: 10px">
-                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.organization" class="form-control" id="org" placeholder="Name of your organization" />
-                                </div>
-                                <div class="col-lg-6" style="padding: 10px">
-                                    <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                    <input type="text" style="width: 99%;margin-left:20px" ng-model="corporates.area" class="form-control" id="area" placeholder="Enter Area" />
-                                </div>
-                            </div>
-                            <div class="row" style="padding: 10px">
-                                <span style="color: red;margin-top:-20px;margin-bottom:-10px;margin-left:10px;float: left">*</span>
-                                <textarea ng-model="corporates.message" class="form-control customTextarea" id="message" placeholder="Your Message" style="width: 95%;height: 50px"/>
-                            </div>
-                            <div class="row" style=";padding: 10px;margin-top: -20px">
-                                <div style="padding: 10px;font-size: 8px">
-                                    By clicking submit, you confirm that you are interested in being connected with our service manager. You will recieved a call wihtin 24 hours to confirm the details.
+                            <div class="row" style="padding: 10px;margin-top: -15px">
+                                <div style="padding: 10px;font-size: 10px">
+                                By clicking submit, you confirm that you are interested in being connected with our service manager. You will recieved a call wihtin 24 hours to confirm the details.
                                 </div>
                             </div>
                             <div class="row">
-                                <center><span id="corporates-error" style="display:none;color: red"> Please Fill All Required Details </span></center>
+                                <center><span id="corporates-error" style="display:none;color: red;font-size:12px;"> Please Fill All Required Details </span></center>
                                 <img src="../images/gears.svg" id="corp-loading" style="display:none;width: 30px;height: 30px;margin-top:-5px;margin-bottom: 10px">
-                                <input type="button" id="corporates" class="btn" ng-click="createCorporate();" style="cursor: pointer;background-color: #1c2d3f" data-toggle="tab" value="For Corporates  ">
+                                <input type="button" id="corporates" class="btn" ng-click="createCorporate();" style="cursor: pointer; width:auto" data-toggle="tab" value="For Corporates">
                             </div>
+                             </div>
+                          </fieldset>
                         </center>
                     </div>
+                        
                 </div>
                 <div class="tab-pane" id="resultTab">
                     <thank-you></thank-you>
@@ -88,10 +148,51 @@
             </div>
 
         </div>
-
+        
+        <style>
+            .contact {
+                box-shadow: 0px 3px 5px #333;
+                padding-top: 10px;
+                padding:10px;
+            }
+            .contact  {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                
+                }
+           
+            
+            .contact-form div {
+                padding: 10px 0px;
+                margin-bottom: 20px;
+                height: auto
+            }
+            .contact-form div input {
+                width:90%;
+                margin-left:10px;
+                border-top: none !important;
+                box-shadow: none;
+            }
+            
+            .mandatory {
+                color: red;
+                margin-top:0;
+                margin-bottom:10px;
+                margin-left:0px;
+                float: left;
+                font-size: 12px;
+                text-align: left;
+            }
+            
+            
+            
+        
+        </style>
 
     </div>
 </div>
+<br>
+
 <app-footer></app-footer>
 <script>
 $(document).ready(function(){

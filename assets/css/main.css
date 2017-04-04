@@ -651,7 +651,7 @@
 		-ms-transition: background-color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out;
 		background-color:#1e1e1e;
-		border: 1px solid #333;
+		border: 0px solid #333;
 		border-radius:40px;
 		color: #ffffff;
 		cursor: pointer;
@@ -843,6 +843,7 @@
 	    border-bottom: solid 2px #CCC;	
 	    border-radius: 0;
 		outline: none;
+        box-shadow: none;
 	}
 	textarea::-webkit-input-placeholder{
 		color: #666;
@@ -857,7 +858,7 @@
 		input[type="url"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #10528f;
+			border-color: transparent;
 		}
 
 	input[type="text"],
@@ -1795,7 +1796,7 @@
 	}
 
 		.main > .content {
-			width: 45em;
+			
 			max-width: calc(100% - 4em);
 			margin: 0 auto;
 		}

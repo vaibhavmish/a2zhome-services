@@ -2,18 +2,18 @@
 <style>
 #banner{
 	width:100%;
-	height:600px;
-	background-color:#09F;
+	height:570px;
+	background-color:none;
 	position:absolute;
-	margin:0px 0px -15px -15px;
+	margin:0px 0px 0px -15px;
 }
     .carousel-inner img {
         /* -webkit-filter: grayscale(90%);
          filter: grayscale(90%);*/ /* make all photos black and white */
         width: 100%; /* Set width to 100% */
         margin-right:0;;
-		height:600px;
-		background-color:#09F;
+		height:570px;
+		background-color:none;
     }
 
     .carousel-caption h3 {
@@ -22,8 +22,11 @@
 	.carousel-indicators {
 		z-index:1024;
 	}
-	.carousel-indicators a:active {
-		background-color:#cd2525;
+    .carousel-indicators li a {
+        background: #1e1e1e !important;
+    }
+	.carousel-indicators li a:active {
+		background-color:#cd2525 !important;
 	}
 		
 
@@ -40,18 +43,14 @@
 		
 	}
 	@media (min-width:769px) {
-		#form {
-			margin:0px 27%;
-		}
+		
 		.box {
 			width:550px;
 			height:auto;
 		}
 	}
 	@media (min-width:420px) and (max-width:768px) {
-		#form {
-			margin:0px 5%;
-		}
+		
 		.box {
 			width:400px;
 			height:auto;
@@ -120,9 +119,9 @@
 	
 </style>
 <div id="banner">
-    <div class="row" style="z-index: -999;width: 100%;height:auto; margin-bottom:25px;margin-top: -20px">
+    <div class="" style="z-index: -999;width: 100%;height:auto; margin-bottom:25px;margin-top: -20px">
         <br>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-bottom:10px">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style="bottom:20px; position: absolute;">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -215,10 +214,10 @@
 </section>
 
 
-<section id="work-1" class="content style3 primary left" style="margin-left:-14px;margin-right:-14px;">
+<section id="work-1" class="content style3 primary left" style="margin-left:-14px;margin-right:-14px;padding:none;">
     <div class="content style2 fullscreen dark ser" >
         <div id="twoa" class="content left" style="padding: 10px">
-            <marquee style="height:auto;margin-top:-20px; padding:10px;"><span display="inline" style="font-size: 13px !important; color: #101010">Calculate Your Maintenance Packages as per your requirement</span>
+            <marquee style="height:60px;padding-bottom:0px;"><span display="inline" style="font-size: 13px !important; color: #101010">Calculate Your Maintenance Packages as per your requirement</span>
                 <ul class="actions" style="display: inline">
                     <li><a href="#/maintenance"><input type="submit" style="background-color: #CD2525" value="Get Maintenance Package" /></a></li>
                 </ul></marquee>
@@ -232,14 +231,14 @@
                             </div>
                         </div>
                         <div class="row" id="serv-content2" style="width: 220px;height:auto;word-wrap: break-word;word-break: break-all;
-                            padding: 10px 10px 10px; background-color:rgba(0,0,0, .7);text-align: center">
+                            padding: 10px 10px 10px; background-color:rgba(0,0,0, .4);text-align: center">
                             <center>
                                 <h4>{{service.name}}</h4>
                                 <p style="padding: 10px;">
                                     {{service.description | cut:true:100:' ...'}}
                                 </p>
-                                <a style="padding: 10px;margin-bottom:10px;color: white" ng-click="setSelectedService(service);" href="#/services"> Learn More </a>
-                                <input type="button" value="Book Now" ng-click="bookNow(service)" style="background-color:#CD2525;color: white">
+                                <a style="padding: 10px;margin-bottom:20px;color: white" ng-click="setSelectedService(service);" href="#/services"> Learn More </a>
+                                <input type="button" value="Book Now" ng-click="bookNow(service)" style="background-color:#CD2525;color: white;margin-bottom:20px;">
                                 <br>
                             </center>
                         </div>
@@ -272,8 +271,11 @@
     }
 
 </style>
+
+
 <!-- Two (About Section)-->
-<section id="two1" class="main style2 dark fullscreen" style="background-color: #1e1e1e;margin-left:-14px;margin-right:-14px;">
+
+<section id="two1" class="main style2 dark fullscreen" style="background-color: #1e1e1e;margin-left:-14px;margin-right:-14px; ">
 
     <!-- Container (About Section) -->
     <div class="container-fluid" style="padding: 20px 20px; letter-spacing: 0.025em;     color: #eee;
@@ -291,40 +293,40 @@
             <div class="col-sm-8 slideanim" style="text-align:justify; padding:15px 40px;">
                 <p>HandyServices is Ahmedabad based maintenance and repair service provider that offer services to All small to big homes on annual contracts as well as individual work.</p>
 
-                <div class="row slideanim about-q" style="text-align:center; font-size:9px; margin-top: 10px; line-height:14px;">
+                <div class="row  about-q" style="text-align:center; font-size:9px; margin-top: 10px; line-height:14px;">
                 	<div class="space"></div>
-                    <div class="col-md-2 col-sm-4">
+                    <div class="col-md-4 col-sm-6">
                         <span class="glyphicon glyphicon-plus logo-large glyp-style"></span>
-                        <h5>Emergency services</h5>
+                        <h4>Emergency services</h4>
                         <p>Carpenter, Plumber, Electrician within 30 minutes.</p>
                     </div>
-                    <div class="col-md-2 col-sm-4">
+                    <div class="col-md-4 col-sm-6">
                         <span class="glyphicon glyphicon-heart logo-large glyp-style" ></span>
-                        <h5>Quality Work Guaranteed</h5>
+                        <h4>Quality Work Guaranteed</h4>
                         <p>Our work comes with 15 days free service warranty.</p>
                         
                     </div>
-                    <div class="col-md-2 col-sm-4">
+                    <div class="col-md-4 col-sm-6">
                         <span class="glyphicon glyphicon-time logo-large glyp-style"></span>
-                        <h5>24&times;7 and 365 days </h5>
+                        <h4>24&times;7 and 365 days </h4>
                         <p>We are open always including Sunday and public holiday.</p>
                         
                     </div>
-                    <div class="col-md-2 col-sm-4">
+                    <div class="col-md-4 col-sm-6">
                         <span class="glyphicon glyphicon-certificate logo-large glyp-style"></span>
-                        <h5>Highly Trained Technicians</h5>
+                        <h4>Highly Trained Technicians</h4>
                         <p>Our technicians have minimum 3 years experience.</p>
                         
                     </div>
-                    <div class="col-md-2 col-sm-4">
+                    <div class="col-md-4 col-sm-6">
                         <span class="glyphicon glyphicon-lock logo-large glyp-style"></span>
-                        <h5>Trust</h5>
-                        <p>Serving since december, 2014, served 15000+ clients</p>
+                        <h4>Trust</h4>
+                        <p>Serving since December, 2014, served 15000+ clients</p>
                         
                     </div>
-                    <div class="col-md-2 col-sm-4">
-                        <span class="glyphicon glyphicon-usd logo-large glyp-style"></span>
-                        <h5>Economical Prices</h5>
+                    <div class="col-md-4 col-sm-6">
+                        <span class="fa fa-inr fa-2x glyp-style"></span>
+                        <h4>Economical Prices</h4>
                         <p>Completely priced with superior quality of work.</p>
                         
                     </div>
@@ -348,7 +350,21 @@
 
 
 </section>
+
 <style>
+    .about-q div {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    .about-q div h5 {
+        height: 30px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+    .about-q div p {
+        font-size: 14px;
+        text-align: left;
+    }
 .socials {
 	font-size:16px;
 }
@@ -369,7 +385,11 @@
 	text-decoration:none;
 }
 </style>
+
+
 <!--download handy-->
+
+
 <section id="two3" class="main style2 dark fullscreen downloadsec">
 	<div class="container-fluid">
         <center>
@@ -427,10 +447,10 @@
             <hr style="width: 100%;color: #cd2525">
             <h3>What they say about us</h3>
             
-            <p >
+            <!--<p >
                 Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
 
-            </p>
+            </p> -->
         </center>
         
     </div>
@@ -466,14 +486,7 @@
                                     
                                     
                                 }
-								.doublecoma {
-									 font-size:100px;
-									 line-height:14px;
-									 padding-bottom:-30px;
-									 font-family: 'Jim Nightshade', cursive;
-									 color:#fff;
-									 
-								}
+								
                             </style>
                         </center>
                     </div>
@@ -504,8 +517,7 @@
             <h1 style="color:#101010">Media Coverage</h1>
             <hr style="width: 100%;color: #cd2525">
             <p style="color:#101010">
-                some para.
-
+              
             </p>
         </center>
     </div>
