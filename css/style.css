@@ -1,0 +1,258 @@
+/* ------------- stylesheet ------------ */
+#banner {
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #37D5AC;
+}
+.city {
+    height: 40px;
+    line-height: 40px;
+    min-width: 160px;
+    align-content: center;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.city div {
+    float: left;
+    font-size: 12px;
+    color: #7a7a7a;
+    background: transperent;
+    border: none !important;
+    box-shadow: none !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+.icon-location-marker {
+    font-size: 20px;
+}
+.cityname input {
+    border: none !important;
+    box-shadow: none !important;
+    background: none;
+}
+
+.bttns {
+    margin:30px auto 50px;
+}
+.bttns li {
+    float: left;
+    
+    
+}
+.bttn {
+    background: #202020;
+    color: #fff;
+    padding: 7px 12px;
+    border-radius: 5px;
+    margin: 0px 10px;
+    cursor:default;
+    box-shadow: 0px 2px 5px #202020;
+}
+.bttns> a:hover {
+    background: #37D5AC;
+}
+.bttns a:focus {
+    background: #37D5AC;
+}
+
+.heading {
+    
+}
+
+.sub-heading {
+    
+}
+.discription {
+    
+}
+#section2 {
+    background:#f8f8f8;
+    
+}
+.center {
+    margin: 0px auto !important;
+    
+}
+#l-menu div {
+    float: left;
+}
+.item {
+    opacity: .5;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    width: 200px;
+    
+}
+.item:hover {
+    opacity: 3;
+}
+.item:focus {
+    opacity: 3;
+}
+.item i {
+    font-size: 60px;
+    text-align: center;
+}
+
+
+#marq {
+    background: #f8f8f8;
+    padding-top: 20px;
+    padding-bottom:20px;
+    z-index: 2;
+}
+
+.light {
+    color: #eaeaea;
+}
+
+.outerbox {
+    padding: 20px;
+}
+.innerbox {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    padding: 20px 30px;
+    
+}
+
+.customer {
+    margin: 0px auto;
+    opacity: .7;
+}
+.customer:hover {
+    opacity: 7;
+}
+.c-img {
+    width: 100%;
+    padding:20px 29%;
+    height: auto;
+    
+    
+}
+.c-img img {
+    border: 3px solid #37D5AC;
+    width: 115px;
+    height: 115px;
+    border-radius: 115px;
+        
+}
+.c-name {
+   margin-bottom:30px;
+}
+.c-reveiw {
+    
+}
+
+#section4 {
+    background: #f8f8f8;
+}
+.quality {
+    align-content: center;
+    
+}
+
+.quality i {
+    font-size: 70px;
+    color: #37D5AC;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.quality h4 {
+    font-weight: 800;
+    padding-bottom: 30px;
+}
+.quality i, .quality h4, .quality p {
+    margin: 0px auto;
+    text-align: center;
+}
+
+
+.app-img {
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.app-disc {
+    padding:20px;
+    
+}
+.app-disc p{
+    font-size: 15px;
+}
+
+
+.send {
+    margin-top: 30px;
+    
+}
+
+.send p {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.typeno {
+    padding: 7px 15px;
+    border: 1px solid #DDD;
+    font-size: 15px;
+    width: 220px;
+    margin-right: 5px;
+}
+
+.typeno input {
+    border: none;
+    
+}
+.send-link {
+    right: 0;
+    border-radius: none;
+}
+
+
+.send button {
+    width: auto;
+    height: auto;
+    background: #37D5AC;
+    right: 0;
+    left: auto;
+    float:right;
+    border: none;
+    padding: 7px 15px;
+}
+
+.send div {
+    float: left;
+}
+
+#section6 {
+    background: #f8f8f8;
+}
+
+.be-part {
+    background:#f8f8f8;
+    margin: 0px auto;
+    width: 100%;
+    padding:40px 10px;
+    height: auto;
+    line-height: 30px;
+    
+}
+
+.be-part div {
+    float: left
+}
+
+
+
+
+
