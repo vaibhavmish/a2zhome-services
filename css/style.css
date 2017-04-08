@@ -88,6 +88,7 @@
     padding-right: 15px;
     text-align: center;
     width: 200px;
+    cursor: default;
     
 }
 .item:hover {
@@ -132,8 +133,9 @@
 }
 .c-img {
     width: 100%;
-    padding:20px 29%;
+    padding:20px auto;
     height: auto;
+    align-self: center;
     
     
 }
@@ -142,6 +144,7 @@
     width: 115px;
     height: 115px;
     border-radius: 115px;
+    
         
 }
 .c-name {
@@ -156,14 +159,20 @@
 }
 .quality {
     align-content: center;
+    cursor: default;
     
 }
 
 .quality i {
-    font-size: 70px;
+    font-size: 60px;
     color: #37D5AC;
     width: 100%;
     padding-bottom: 20px;
+}
+.quality i:hover {
+    color: #15c497;
+    font-size: 85px;
+    padding: 5px;
 }
 .quality h4 {
     font-weight: 800;
@@ -232,6 +241,14 @@
 
 .send div {
     float: left;
+}
+.app {
+    width: 140px;
+    height: 35px;
+    margin:0px 10px 10px;
+}
+.app:hover {
+    box-shadow: 0px 3px 5px #e1e1e1;
 }
 
 #section6 {

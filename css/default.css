@@ -9,6 +9,7 @@
 .bttn a {
     text-decoration: none;
     color: inherit;
+    cursor: default;
 }
 .u-hr {
     width: 100%;
@@ -19,4 +20,7 @@
 }
 .t-center {
     text-align: center;
+}
+input[type="button"]:focus  {
+    border: none !important;
 }
