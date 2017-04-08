@@ -1,10 +1,27 @@
-/* ------------- stylesheet ------------ */
+/* -------header ------*/
+
+
+
+/* -------------Home page stylesheet ------------ */
 #banner {
     background-image: url(../img/banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: #37D5AC;
+}
+@media screen and (max-width:420px) {
+    #jumbotron {
+        font-size: 30px !important;
+    }
+    .bttns {
+        margin: 30px auto !important;
+    }
+    .bttn {
+        padding: 4px 8px;
+        margin: 0px auto;
+        
+    }
 }
 .city {
     height: 40px;
@@ -39,12 +56,16 @@
 
 .bttns {
     margin:30px auto 50px;
+    -webkit-padding-start: 0px;
+    align-adjustment: center;
 }
 .bttns li {
     float: left;
-    
+    margin-bottom: 15px;
+    width: 150px;
     
 }
+
 .bttn {
     background: #202020;
     color: #fff;
@@ -54,7 +75,22 @@
     cursor:default;
     box-shadow: 0px 2px 5px #202020;
 }
-.bttns> a:hover {
+.bttn:hover {
+    background: #249377;
+}
+input[type="text"]:hover,
+input[type="text"]:focus,
+.bttn:focus,
+.bttn:active{
+    border: none;
+    border-color: transparent;
+}
+@media screen and (max-width: 480px) {
+  .bttn {
+    margin:none !important;
+  }
+}
+.bttns a:hover {
     background: #37D5AC;
 }
 .bttns a:focus {
@@ -71,7 +107,7 @@
 .discription {
     
 }
-#section2 {
+#section1 {
     background:#f8f8f8;
     
 }
@@ -98,10 +134,12 @@
     opacity: 3;
 }
 .item i {
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
 }
-
+.item h6 {
+    font-weight: 400;
+}
 
 #marq {
     background: #f8f8f8;
@@ -214,19 +252,25 @@
     padding: 7px 15px;
     border: 1px solid #DDD;
     font-size: 15px;
-    width: 220px;
+    width: auto;
     margin-right: 5px;
 }
-
+.typeno div {
+    float: left;
+}
 .typeno input {
     border: none;
+    border-color: transparent;
     
+    
+}
+.typeno input:focus {
+    border:none !important;
 }
 .send-link {
     right: 0;
     border-radius: none;
 }
-
 
 .send button {
     width: auto;
@@ -268,6 +312,93 @@
 .be-part div {
     float: left
 }
+
+/* ---------     services page ------------ */
+
+
+.s-box {
+    border: 0px solid #f8f8f8;
+    border-radius: 5px;
+    padding:0px;
+    box-shadow: 1px 3px 7px #cdcdcd;
+}
+.s-box img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+}
+.s-box h4 {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-weight: 200;
+}
+.s-box .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: 200px;
+      opacity: 1;
+      transition: .3s ease;
+      
+      z-index: 5;
+      visibility: hidden;
+      padding: 20px;
+      margin: 20px;
+}
+
+.open-text:hover  .text {
+    visibility: visible;
+}
+
+.text {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  height: 200px;
+  width:100%;
+  left: 50%;
+    background-color: rgba(0, 0, 0, .6);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+    margin-left: 0px;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.book {
+    margin:20px auto 50px;
+    background: #37D5AC;
+    padding: 7px 12px;
+    width: 100px;
+    left: 50%-50px;
+    bottom: 0;
+    top: 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

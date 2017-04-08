@@ -789,17 +789,23 @@ pre code {
     padding-left: 15px;
   }
 }
-
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .container {
-    width: 540px;
+    width: 760px;
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
     max-width: 100%;
   }
 }
 
+
 @media (min-width: 768px) {
   .container {
-    width: 720px;
+    width: 760px;
     max-width: 100%;
   }
 }
@@ -2659,8 +2665,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
-          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+  -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0);
+          box-shadow: 0 0 0 2px rgba(2, 117, 216, 0);
 }
 
 .btn.disabled, .btn:disabled {

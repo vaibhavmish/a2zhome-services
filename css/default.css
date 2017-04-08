@@ -11,6 +11,9 @@
     color: inherit;
     cursor: default;
 }
+.bttn a:hover {
+    background-color: transparent !important;
+}
 .u-hr {
     width: 100%;
     color: #37D5AC;
@@ -20,7 +23,12 @@
 }
 .t-center {
     text-align: center;
+    
 }
 input[type="button"]:focus  {
     border: none !important;
+    
 }
+input[type="text"]:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow:none !important;
