@@ -529,18 +529,6 @@ nav {
   }
 }
 
-.btn {
-  border: 0px white solid;
-  border-radius: 4px;
-  height: 30px;
-  line-height: 30px;
-  font-size: 10px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  white-space: nowrap;
-  
-}
 
 /* @media (min-width: 12.5em) {
   .btn {
@@ -569,13 +557,7 @@ nav {
   } */
 
 
-  .btn:hover {
-    background-color: #fff;
-    color: #7a7f82;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
-}
+
 
 @media (min-width: 12.5em) {
   .fa-bars {
@@ -707,13 +689,38 @@ nav {
     width: 300px;
   }
 }
+@media (min-width: 12.5em) {
+  img.social_media {
+    width: 100%;
+  }
+}
+
+@media (min-width: 63em) {
+  img.social_media {
+    height: 50;
+    width: 50;
+  }
+}
+
+
+
+
+
+
+
+
 
 @media (min-width: 12.5em) {
   img {
     width: 100%;
   }
 }
-
+@media (min-width: 63em) {
+  img.logo_ {
+    height: 100px;
+    width: 500px;
+  }
+}
 @media (min-width: 63em) {
   img {
     height: 300px;
@@ -725,6 +732,27 @@ img:hover {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
 }
+
+@media (min-width: 12.5em) {
+  img.social_media {
+    width: 100%;
+  }
+}
+
+@media (min-width: 63em) {
+  img.social_media {
+    height: 50;
+    width: 50;
+  }
+}
+
+
+
+
+
+
+
+
 
 .overlay {
   width: 300px;
@@ -1000,48 +1028,6 @@ font-size: 40px;
   }
 }
 
-.btn {
-  border: 2px white solid;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  white-space: nowrap;
-  font-weight: 600;
-}
-
-@media (min-width: 12.5em) {
-  .btn {
-    padding: 1em;
-    width: 70%;
-  }
-}
-
-@media (min-width: 30em) {
-  .btn {
-    width: 40%;
-  }
-}
-
-@media (min-width: 47.5em) {
-  .btn {
-    padding: 1em 3em;
-    width: 30%;
-  }
-}
-
-@media (min-width: 63em) {
-  .btn {
-    width: 20%;
-    margin-top: 5em;
-  }
-  .btn:hover {
-    background-color: #fff;
-    color: #7a7f82;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-  }
-}
 
 @media (min-width: 12.5em) {
   .fa-bars {
@@ -1095,5 +1081,5 @@ font-size: 40px;
 }
 
 footer {
-  background-color: #7a7f82;
+  background-color: #292b2c;
 }
