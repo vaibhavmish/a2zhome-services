@@ -24,7 +24,14 @@
     .fade.in {
     opacity: 1;
 }
-
+.w3-modal-content {
+    margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    width: 600px;
+}
 </style>
     
       
@@ -33,24 +40,24 @@
     <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> -->
-		    
-	 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+        
+   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     
       
       <!-------bootstrap -------->
        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
-	  
+          <link rel="stylesheet" href="css/myw3.css" type="text/css"> 
+          <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+
       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css" type="text/css">
-	   <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" type="text/css">
-	    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" type="text/css">
-		 <link rel="stylesheet" href="css/sweetalert.css" type="text/css">
-      <link rel="stylesheet" href="css/dropzone.css" type="text/css">
-
-      
+     <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" type="text/css">
+      <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" type="text/css">
+     <link rel="stylesheet" href="css/sweetalert.css" type="text/css">
+  <link rel="stylesheet" href="css/myw3.css" type="text/css"> 
+       <link rel="stylesheet" href="css/dropzone.css" type="text/css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	   
+     
       <!---------- font awesome c------->
       
       <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css" type="text/css">
@@ -64,9 +71,10 @@
       <!--------stylesheet ------------>
     
       <link rel="stylesheet" href="css/style.css" type="text/css">
-      <!--<link rel="stylesheet" href="css/all.css" type="text/css">-->
+      <link rel="stylesheet" href="css/all.css" type="text/css">
       <link rel="stylesheet" href="css/default.css" type="text/css">
-      
+        <link id="bsdp-css" href="css/k_datepicker.css" rel="stylesheet">
+                  <link id="bsdp-css" href="css/k_timepicker.css" rel="stylesheet">
       
         <!-- begin favicon stuff-->
         <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
@@ -84,67 +92,53 @@
         <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="/manifest.json">
         <script src="js/jquery-2.1.4.min.js"></script>
-		<script src="js/bootstrap-datetimepicker.js"></script>
-		<script src="js/bootstrap-datetimepicker.min.js"></script>
-		
+    <script src="js/bootstrap-datetimepicker.js"></script>
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <style type="text/css">
+      footer {
+    background-color: #292b2c;
+}
+    </style>
   </head>
   <body ng-app="book_service" ng-controller="book_controller">
-  <div class="row">
-<div class="col-md-6"><img src="handy1.png" class="logo_"></div><div class="col-md-6"><ul class="bttns" style="margin-top: 49px;">
+<div class="row">
+<div class="col-md-6"><a href="home.veiw.html">
+<img src="handy1.png" class="logo_" style="height: 57px;width: 250px;
+margin-left: 115px;
+margin-top: 16px"></a>
+</div><div class="col-md-6"><ul class="bttns" style="margin-top: 49px;">
                       <li class=""><a href="#" data-toggle="modal" data-target="#bookModal" style="
     color: #767676;;
 ">7878000666</a></li>
-                      <li class=""><a href="#" style="
+                      <li class=""><a href="#" onclick="document.getElementById('id06').style.display='block'"  target="" style="
     color: #767676;;
-">FeedBack</a></li>
-                      <li class="" style=""><a href="#" style="
+">Feedback</a></li>
+                      <li class="" style=""><a href="#" class="hdr_selected_city" onclick="jQuery('#id05').show();" style="
     color: #767676;;
-">Select City</a></li><li class="" style=""><a href="#" data-toggle="modal" data-target="#myModal" style="
+">Select City</a>
+</li>
+<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
-  <li class=""><a href="profile_view.html?id=58eba898261fd511009d81b6" target="_blank" style="
-    color: #767676;;
-">Profile Edit</a></li>
-<li class="profile_views"><a href="#" data-toggle="modal" data-target="" style="
-    color: #767676;;
-">Profile</a>
-                                
-                                <ul class="bttns dropdown-menu dropdown-menu-default" style="
-    display: none;
+<li class="" style=""><a href="#"     style="
+    color: #767676;
+"></a></li>
+
+<li class="dropdown" id="user_pro" style="color: #767676;display:none;    margin-top: -30px;">
+                <a href="#" id="user_info" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #767676;"> <span class="caret"></span></a>
+                <ul class="dropdown-menu" style="
+    padding: 15px;
+    margin-left: -51px;
 ">
-                                    <li>
-                                        <a href="profile_view.html?id=58eba898261fd511009d81b6" target="_blank" >
-                                            <i class="icon-user"></i> My Profile </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_calendar.html">
-                                            <i class="icon-calendar"></i> My Calendar </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_inbox.html">
-                                            <i class="icon-envelope-open"></i> My Inbox
-                                            <span class="badge badge-danger"> 3 </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="app_todo_2.html">
-                                            <i class="icon-rocket"></i> My Tasks
-                                            <span class="badge badge-success"> 7 </span>
-                                        </a>
-                                    </li>
-                                    <li class="divider"> </li>
-                                    <li>
-                                        <a href="page_user_lock_1.html">
-                                            <i class="icon-lock"></i> Lock Screen </a>
-                                    </li>
-                                    <li>
-                                        <a href="page_user_login_1.html">
-                                            <i class="icon-key"></i> Log Out </a>
-                                    </li>
-                                </ul>
-                            </li>
+                  <li><a href="profile_view.html">Profile</a></li>
+                  <li><a href="#">Booking</a></li>
+                 
+                </ul>
+              </li>
+ 
                   </ul>  </div></div>
       <!--------- banner starts here ------>
+      <input type="hidden" name="" id="user_id">
     <section>
         <div id="banner">
          <div class="container">
@@ -161,7 +155,7 @@
                 </div>
                 <div class="row">
                   <ul class="bttns .align-self-xs-center">
-				  
+          
                       <li class="bttn "><a href="bookservice.html" target="_blank"  data-toggle="modal" data-target="#">Book Services</a></li>
                       <li class="bttn "><a href="#">Book Packages</a></li>
                       <li class="bttn" style="background:#37D5AC !important;"><a href="#">Request Callback</a></li>
@@ -222,7 +216,7 @@
          <div class="form-group">
           <label class="col-lg-3 control-label">Address:</label>
           <div class="col-lg-8">
-            <textarea class="form-control" ></textarea> 
+               <select class="form-control" id="all_address" style="padding: initial;"></select>
           </div>
         </div>
         <div class="form-group">
@@ -238,30 +232,119 @@
   </div>
 </div>
       </section>
-      
-      <!-- section1 ends here -->
-      
-      <!-- section2 starts here -->
-     
-      <!-- section2 ends here -->
-     
+   <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 footerleft ">
+        <h6 class="heading7" style="
+    color: white; font-size: 16px;
+">Handy Services</h6>
+        <a href="#"style="color: white;">About Us</p>
+        
+         <a href="#" style="color: white;">Services</p>
+
+         <a href="#" style="color: white;">Maintanance Package</p>
+        <a href="#"  style="color: white;">Privacy Policy</a>
+        <a href="#" style="color: white;">Terms&amp;Conditions</a>
+           <div class="logo" style="
+    margin-top: 102px;
+">
+
+<img src="img/logo/facebook.png" class="social_media"  class="" style="height: 27px;width: 30px;
+
+margin-top: 16px">
+ <img src="img/logo/instagram.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px"><img src="img/logo/twitter.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px;margin-left: 5px;"> 
+</div>
+      </div>
+      <div class="col-md-2 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7" style="
+    color: white;font-size: 16px;
+">Available Area</h6>
+        
+         <div id="footer_area">
+          <p style="color: white;"> Gandhinagar</p>
+          <p style="color: white;">Bhavan Nagar</p>
+          <p style="color: white;">Ahemdabad</p>
+         </div> 
+          
+          
+       
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7" style="
+    color: white;font-size: 16px;
+">Contact Us</h6>
+        <div class="post">
+          <p style="color: white;">Surendra Nagar,209/1</p>
+          <p style="color: white;">Netaji Mark, Navrangpur,</p>
+          <p style="color: white;">Ahemdabad-38001</p>
+<p style="color: white;">services@handyservices.in</p><p style="color: white;">7878000666</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom" style="margin-left: 67px;">
+       <h5 class="text-center" style="color: white;font-weight: normal;font-family: sans-serif;">
+                        Drop Us A Message</h5>
+       <div class="panel panel-default">
+                <div class="panel-body">
+                   
+                    <form class="form form-signup" role="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            
+                            <input type="text" class="form-control" id="m_name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                           
+                            <input type="text" class="form-control" id="m_email" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            
+                            <input type="text" class="form-control" id="m_phone" placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                           
+                            <input type="text" class="form-control" id="m_msg" placeholder="Message">
+                        </div>
+                    </div>
+                   
+                </form></div>
+               
+            </div>
+             <button type="button" class="btn-lg btn-primary btn-block" role="button" id="save_msg" style="background: #37D5AC !important;">
+                    SUBMIT</button> 
+      </div>
+    </div>
+  </div>
+</footer> 
+
 
    
       <!-- section7 ends here -->
       
-
-   
+ <script type="text/javascript" src="js/common.js"></script>
+    <script src="js/k_datepicker.js""></script>
+ <script src="js/k_timepicker.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-multiselect.js"></script>
 <script src="js/sweetalert.min.js"></script>
 <script src="js/sweetalert-dev.js"></script>
-<script src="js/dropzone.js"></script>
-     
+     <script src="js/dropzone.js"></script>
     
   </body>
-  <script>
-
+ <script>
+var location = window.location.search.split('=')[1];
+jQuery('#hdr_selected_city').text(locations);
 $( "#update_user" ).click(function() {
 
 jQuery.ajax({
@@ -303,7 +386,7 @@ $http({
          .success(function(user_info) {
           console.log(user_info);
       $scope.user_info = user_info;
-	   
+     
          });
 
 
@@ -332,7 +415,32 @@ $scope.update_user = function(){
 
        init();
 });
-  
+  function show_address()
+{
+  jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/address/all',
+type:'get',
+data:'id='+jQuery('#user_id').val(),
+success:function(data){
+var address = '<option>Select Address</option>';
+if(Object.keys(data).length>0){
+jQuery.each(data,function(key,val){
+
+address +='<option value="'+val._id+'">'+val.houseno+'</option>';
+
+
+});
+console.log(address);
+jQuery('#all_address').html(address);
+
+}
+}
+});
+
+}
+setTimeout(
+function(){show_address();},2000
+)
   </script>
   
   

@@ -12,3 +12,6 @@
 .panel-body {
     padding: 15px;
 }
+.open>.dropdown-menu {
+    display: block;
+}

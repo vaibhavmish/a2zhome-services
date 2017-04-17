@@ -46,7 +46,7 @@
       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css" type="text/css">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
       
       <!---------- font awesome c------->
       
@@ -90,6 +90,7 @@
         <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
        <!--  <link rel="manifest" href="/manifest.json"> -->
+         <link rel="stylesheet" href="css/footer_form.css">
              <link rel="stylesheet" href="css/k_sweet.css">
         <link rel="stylesheet" href="css/myw3.css" type="text/css">
          <link id="bsdp-css" href="css/k_datepicker.css" rel="stylesheet">
@@ -99,7 +100,11 @@
   </head>
   <body ng-app="profile" ng-controller="profile_controller">
 <div class="row">
-<div class="col-md-6"><img src="handy1.png" class="logo_"></div><div class="col-md-6"><ul class="bttns" style="margin-top: 49px;">
+<div class="col-md-6"><a href="home.veiw.html">
+<img src="handy1.png" class="logo_" style="height: 57px;width: 250px;
+margin-left: 115px;
+margin-top: 16px"></a>
+</div><div class="col-md-6"><ul class="bttns" style="margin-top: 49px;">
                       <li class=""><a href="#" data-toggle="modal" data-target="#bookModal" style="
     color: #767676;;
 ">7878000666</a></li>
@@ -108,9 +113,28 @@
 ">Feedback</a></li>
                       <li class="" style=""><a href="#" class="hdr_selected_city" onclick="jQuery('#id05').show();" style="
     color: #767676;;
-">Select City</a></li><li class="" style=""><a href="#"  onclick="document.getElementById('id03').style.display='block'"  style="
+">Select City</a>
+</li>
+<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
+<li class="" style=""><a href="#"     style="
+    color: #767676;display:none;
+"></a></li>
+
+<li class="dropdown" id="user_pro" onclick="jQuery('#user_pro').toggleClass('open');" style="color: #767676;display:none;    margin-top: -30px;">
+                <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                <ul class="dropdown-menu" style="
+    padding: 15px;
+    margin-left: -51px;
+">
+                  <li><a href="profile_view.html">Profile</a></li>
+                  <li><a href="#">Booking</a></li>
+                 <li class="" style=""><a href="#" id="logout" onclick="" style="
+    color: #767676;
+">Logout</a></li>
+                </ul>
+              </li>
  
                   </ul>  </div></div>
       <!--banner starts here -->
@@ -123,26 +147,22 @@
       <!-- section2 starts here -->
 
            <section>
-        <div id="banner">
+        <div id="banner" style="height: 407px;">
          <div class="container">
               <center>
                 <h1 id="jumbotron">Handyservices</h1>
                 <h2 id="supporting-header"></h2>
                 <div class="row">
-                  <div class="city" style="margin:0 auto;">
-                     
-                     <div class="cityname" ><span class="fa fa-map-marker "></span><input type="button" value="Ahmedabad, Gujrat"> <span class="fa fa-caret-down push-0"></span></div>
-                     
-                  </div>
+                 
                   
                 </div>
-                <div class="row">
+               <!--  <div class="row">
                   <ul class="bttns .align-self-xs-center">
                       <li class="bttn "><a href="bookservice.html" target="_blank"  data-toggle="modal" data-target="#">Book Services</a></li>
-                      <li class="bttn "><a href="#">Book Packages</a></li>
+                      <li class="bttn "><a href="#">Free Services</a></li>
                       <li class="bttn" style="background:#37D5AC !important;"><a href="#">Request Callback</a></li>
                   </ul>
-                </div>
+                </div> -->
               </center>
           </div>
         </div>
@@ -158,7 +178,7 @@
                  
               </div>  
           </div>
-  <div class="row"><div class="col-md-2 col-sm-6 col-xs-12"></div>
+  <div class="row"><div class="col-md-3 col-sm-6 col-xs-12"></div>
     <!-- left column -->
     
     <!-- edit form column -->
@@ -168,39 +188,39 @@
         <div class="form-group">
           <label class="col-lg-3 control-label">First name:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="h_first_name" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Last name:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="last_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="h_last_name" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="h_email" mg-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class="col-lg-3 control-label">Number:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="number" mg-model="user_data.number" value="" type="number">
+            <input class="form-control" id="h_number" mg-model="user_data.number" value="" type="number">
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Message:</label>
           <div class="col-lg-8">
-            <textarea class="form-control" id="message"></textarea> 
+            <textarea class="form-control" id="h_message"></textarea> 
           </div>
         </div>
       
          <div class="form-group">
           <label class="col-lg-3 control-label">Location:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="location"  >
+            <input class="form-control" id="h_location"  >
           </div>
         </div>
         <div class="form-group">
@@ -209,7 +229,7 @@
         
   <div class="col-md-2"></div>
   <div>
-            <input class="bttn btn-primary" id="add_hmp" style="background: #37D5AC !important;" value="Save Changes" type="button">
+            <input class="bttn btn-primary" id="h_add_hmp" style="background: #37D5AC !important;" value="Save Changes" type="button">
             <span></span>
             <input class="bttn btn-default" value="Cancel" style="background: #37D5AC !important;" type="reset">
           </div>
@@ -228,11 +248,26 @@
         <h6 class="heading7" style="
     color: white;
 ">Handy Services</h6>
-        <p style="color: white;">About Us</p>
-        <p style="color: white;">Services</p>
-        <p style="color: white;">Maintanance Package</p>
-        <p style="color: white;">Privacy Policy</p><p>Terms&amp;Conditions</p>
+       <a href="#"style="color: white;">About Us</p>
         
+         <a href="#" style="color: white;">Services</p>
+
+         <a href="#" style="color: white;">Maintanance Package</p>
+        <a href="#"  style="color: white;">Privacy Policy</a>
+        <a href="#" style="color: white;">Terms&amp;Conditions</a>
+          <div class="logo" style="
+    margin-top: 147px;
+">
+
+<img src="img/logo/facebook.png" class="social_media"  class="" style="height: 27px;width: 30px;
+
+margin-top: 16px">
+ <img src="img/logo/instagram.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px"><img src="img/logo/twitter.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px;margin-left: 5px;"> 
+</div>
       </div>
       <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7" style="
@@ -258,7 +293,7 @@
 <p style="color: white;">services@handyservices.in</p><p style="color: white;">7878000666</p>
         </div>
       </div>
- <div class="col-md-3 col-sm-6 paddingtop-bottom">
+ <div class="col-md-3 col-sm-6 paddingtop-bottom" style="margin-left: 67px;">
      <h5 class="text-center" style="color: white;font-weight: normal;font-family: sans-serif;">
                         Drop Us A Message</h5>
        <div class="panel panel-default">
@@ -280,7 +315,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             
-                            <input type="text" class="form-control" id="m_phone" placeholder="Phone">
+                            <input type="number" class="form-control" id="m_phone" placeholder="Phone">
                         </div>
                     </div>
                     <div class="form-group">
@@ -298,13 +333,155 @@
       </div>
     </div>
   </div>
+      <div id="id0991" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id0991').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Select City</h2>
+   
+  </header>
+
+ <form class="w3-container" id="otp_form" style="">
+  <div >
+  <div class="form-group">
+   <label><b>OTP</b></label>
+    <input class="form-control" placeholder="OTP" id="rb_otp_value" type="text">
+      <input class="form-control" placeholder="OTP" id="rb_otp_value_id" type="hidden">
+   </div>
+   <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="rb_otp_send" tabindex="4" class="form-control bttn btn-register" value="Submit">
+                      </div>
+                    </div>
+                  </div></div>
+</form>
+
+    
+
+    </div>
+  </div>
 </footer>
       
+    <div id="id03" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span  onclick="document.getElementById('id03').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   
+   <h2 style="text-align:center">Login</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" id="l_username" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" id="l_password" placeholder="Enter Password" name="psw" required>
+         
+
+
+     <button class="w3-btn-block w3-green w3-section w3-padding" type="button" id="login_user" name="register-submit"  style="width:40%;float:left;">Login Now</button>
+          <div class="w3-btn-block w3-green w3-section w3-padding" style="width:15%; visibility:hidden;"></div>
+
+                     
+     <button class="w3-btn-block w3-green w3-section w3-padding " type="button" name="register-submit" id="register-form-link" style="width:40%;" onclick="document.getElementById('id02').style.display='block'">Register</button>
+        </div> 
+  
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+       <a href=""><i class="fa fa-facebook"></i> Facebook</a>
+       <a href=""><i class="fa fa-google-plus"></i> Google+</a>
+        
+        <span class="w3-right w3-padding w3-hide-small" onclick="document.getElementById('id04').style.display='block';document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='none'">Forgot <a  href="#" style="color:black;text-decoration:none;">password?</a></span>
+      </div>
+
+    </div>
+  </div>     
+<!--fisrt login-->
+
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id02').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Registration</h2>
+   
+  </header>
+
+      <form class="w3-container"  id="register_forms">
+        <div class="w3-section">
+              <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" name="confirm-password" id="number" tabindex="2" class="form-control" placeholder="Number">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                       <div class="col-sm-3"></div><div class="col-sm-6 col-sm-offset-3">
+                        <input type="button" name="register-submit" id="register-submit" tabindex="4" class="form-control bttn btn-register" value="Submit">
+                      </div>
+                    </div>
+                  </div>
+        </div> 
+ 
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small" onclick="document.getElementById('id04').style.display='block';document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='none';">Forgot <a  href="#" style="color:black;text-decoration:none;">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+  <div id="id099" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id099').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Select City</h2>
+   
+  </header>
+
+ <form class="w3-container" id="otp_form" style="">
+  <div >
+  <div class="form-group">
+   <label><b>OTP</b></label>
+    <input class="form-control" placeholder="OTP" id="otp_value" type="text">
+      <input class="form-control" placeholder="OTP" id="otp_value_id" type="hidden">
+   </div>
+   <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="send_opt" tabindex="4" class="form-control bttn btn-register" value="Submit">
+                      </div>
+                    </div>
+                  </div></div>
+</form>
+
     
+
+    </div>
+  </div>
+ 
       
       <!-- section6 ends here -->
       
-
+<input type="hidden" name="" id="user_id">
 
 
 
@@ -314,11 +491,11 @@
 
       <!-- section7 ends here -->
       
-
+ <script type="text/javascript" src="js/common.js"></script>
       <script src="/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
        <script src="js/k_datepicker.js""></script>
  <script src="js/k_timepicker.js"></script>
  <script src="js/k_sweet.js"></script>
@@ -330,14 +507,16 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function(){
-var location = window.location.search.split('=')[1];
-jQuery('#location').val(location)
+var locations = window.location.search.split('=')[1];
+//jQuery('#hdr_selected_city').text(locations);
+jQuery('#h_location').val(locations)
 jQuery('#add_hmp').click(function(){
-if(jQuery('#first_name').val()!='' && jQuery('#last_name').val()!='' && jQuery('#email').val()!='' && jQuery('#number').val()!='' && jQuery('#message').val()!='' &&  jQuery('#location').val()!=''){
+    check_for_login();
+if(jQuery('#h_first_name').val()!='' && jQuery('#h_last_name').val()!='' && jQuery('#h_email').val()!='' && jQuery('#h_number').val()!='' && jQuery('#h_message').val()!='' &&  jQuery('#h_location').val()!=''){
 jQuery.ajax({
 url:'https://handy-service-server.herokuapp.com/create/hmp',
 type:'POST',
-data:'name='+jQuery('#first_name').val()+' '+jQuery('#last_name').val()+'&email='+jQuery('#email').val()+'&mobile='+jQuery('#number').val()+'&message='+jQuery('#message').val()+'&location='+location,
+data:'user_id='+jQuery('#user_id').val()+'&name='+jQuery('#h_first_name').val()+' '+jQuery('#h_last_name').val()+'&email='+jQuery('#h_email').val()+'&mobile='+jQuery('#h_number').val()+'&message='+jQuery('#h_message').val()+'&location='+location,
 success:function(data){
 swal('THANKS','OUR EXECUTIVE WILL CONTACT YOU SOON','success');
 setTimeout(function(){
