@@ -1,1 +1,7 @@
-<?php header( 'Location: /home.html' ) ;  ?>
+<?php
+
+if(!isset($_SESSION['user_id']))
+{
+ header( 'Location: /home.veiw.html' ) ; 
+}
+?>

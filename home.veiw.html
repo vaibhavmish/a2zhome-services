@@ -364,14 +364,14 @@ margin-top: 16px"></a>
     color: #767676;display:none;
 "></a></li>
 
-<li class="dropdown" id="user_pro" onclick="" style="color: #767676;display:none;    margin-top: -30px;">
+<li class="dropdown" id="user_pro" onclick="jQuery(this).toggleClass('open')" style="color: #767676;display:none;    margin-top: -30px;">
                 <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                 <ul class="dropdown-menu" style="
     padding: 15px;
     margin-left: -51px;
 ">
                   <li><a href="profile_view.html">Profile</a></li>
-                  <li><a href="#">Booking</a></li>
+                  <li><a href="user_booking.html">Booking</a></li>
                  <li class="" style=""><a href="#" id="logout" onclick="" style="
     color: #767676; 
 ">Logout</a></li>
@@ -388,8 +388,8 @@ margin-top: 16px"></a>
                 <h2 id="supporting-header"></h2>
                                 <div class="row">
                   <ul class="bttns .align-self-xs-center">
-                      <li class="bttn" onclick="window.location.href='bookservice.html?l='+jQuery('.service_list').val();"><a href="#"  data-toggle="modal" data-target="#">Book Services</a></li>
-                      <li class="bttn "><a href="#">Free Services</a></li>
+                      <li class="bttn" onclick="window.location.href='services.veiw.html?l='+jQuery('.service_list').val();"><a href="#"  data-toggle="modal" data-target="#">Book Services</a></li>
+                      <li class="bttn" id="free_services"><a href="#" >Free Services</a></li>
                       <li class="bttn" onclick="document.getElementById('id09').style.display='block'" style="background:#37D5AC !important;width:163"><a  href="#" style="" >Request Callback</a></li>
                   </ul>
                 </div>
@@ -433,11 +433,10 @@ margin-top: 16px"></a>
                  <div class="sub-heading"><h3>What we Provide</h3></div>
                  
               </div>  
-          </div> <div class="1bxslider">   
-             <div class="row services" >
+          </div> 
+             <div class="row services" ng-repeat="y in services | limitTo:2">
                 
-               
-<div class="container bxslider" ng-repeat="y in services | limitTo:10" style="margin-left:5px">
+
    <div class=" col-md-4 col-sm-4 outerbox" ng-repeat="x in y">    <div class="service s-box">
                              <div class="open-text">
                                 <img src="{{x.icon}}" class="s-image">
@@ -445,7 +444,7 @@ margin-top: 16px"></a>
                                   <div class="text">
                                       <div class="bttn book bookservice_modal" id="{{x._id}}" style="margin-top: -75px;" data-name="{{x.name}}"  data-target="modal">
                                       <a  ng-click="book_service(x._id)"   target="">Book</a></div>
-                                      {{x.description.substr(1,100)}} <span class="fa fa-star"></span> 
+                                      {{x.description.substr(1,100)}}  
                                       
                                    </div>
                                  </div>
@@ -454,7 +453,7 @@ margin-top: 16px"></a>
                              <h4 class="s-name">{{x.name}}</h4>
                             
                         </div>  </div>
-                        </div>
+                        
 
 
 
@@ -480,7 +479,7 @@ margin-top: 16px"></a>
                 <div class="bttn t-center" onclick="window.location.href='services.veiw.html?l='+jQuery('.service_list').val();"><a>View more</a></div>
               </div>
           </div>
-        </div>
+       
       </section>
       <!-- section2 ends here -->
       <hr class="light">
@@ -680,7 +679,7 @@ margin-top: 16px"></a>
               </div>
             </div>
             <div class="media_slider">
-            <div class="row">
+            <div class="row herok" >
                 <figure id="one" ng-repeat="x in testimonials">
                     <figcaption id="img1" class="overlay">caption related to media coverage</figcaption><a href="{{x.news_link}}"><img src="{{x.news_photo}}" alt=""></a>
                 </figure>
@@ -708,11 +707,14 @@ margin-top: 16px"></a>
                  
               </div>
             </div>
+            <div class="our_client">
             <div class="row center">
-                <div class="col-md-4" ng-repeat="y in client"><img src="{{y.photo}}"></div>
+                <div class="col-md-4" ng-repeat="y in client"><img src="{{y.photo}}"  style="height: 260px;width: 250px;"></div>
                
             </div>
-            <div class="row">
+            </div>
+            <div class="our_clientl">
+            <div class="row ">
                 <div class="container" id="marq">
                     <center  class="marquee t-center">Now you can be partner with Handy!<input class="bttn" type="button" onclick="document.getElementById('id011').style.display='block'" style="background:#37D5AC;"value="Become Partner"></center>
                 </div>
@@ -721,7 +723,8 @@ margin-top: 16px"></a>
                     <div  class="bttn t-center pull-right" style="width:140px;background:#37D5AC; right:0;"> Become Partner</div>
                 </div> -->
             </div>
-          </div>      
+          </div>
+          </div>     
       </section>
       
 <footer>
@@ -964,7 +967,7 @@ margin-top: 16px">
         <div class="w3-section ">
         <div class="form-group">
         <label for="inputdefault">City</label>
-  <select  ng-model="select_service" class="form-control service_list input-md" style="height: calc(2.25rem + 8px);">
+  <select  ng-model="select_service" class="form-control service_list input-md" ng-model="curr_select_city" style="height: calc(2.25rem + 8px);">
  <option  value="">Select City</option>
   <option ng-repeat="x in locations_" ng-if="x.enabled==true"   value="{{x.city_name}}">{{x.city_name}}</option>
 </select>
@@ -1290,7 +1293,7 @@ margin-top: 16px">
       <form class="w3-container" >
         <div class="row w3-section">
             <div class=" col-md-12"> 
-                  <table class="table table-user-information">
+                  <table class="table-responsive table table-user-information">
                     <tbody>
                       <tr>
                       <td>Services</td>
@@ -1320,8 +1323,8 @@ margin-top: 16px">
                     </tbody>
                   </table>
                   
-                  <a href="#" onclick="document.getElementById('id08').style.display='none'"  class="bttn btn-primary">Edit</a>
-                  <a href="#" onclick="document.getElementById('id013').style.display='block'"   class="bttn btn-primary">Schedule</a>
+                  <a href="#" onclick="document.getElementById('id08').style.display='none';  document.getElementById('id07').style.display='block';"  class="bttn btn-primary">Edit</a>
+                  <a href="#" onclick="document.getElementById('id013').style.display='block';document.getElementById('id08').style.display='none'"   class="bttn btn-primary">Schedule</a>
                 </div>     
    
         </div> 
@@ -1688,7 +1691,7 @@ margin-top: 16px">
        <header class="w3-container w3-blue" style="height:8vh;"> 
    <span onclick="document.getElementById('id013').style.display='none'" 
    class="w3-closebtn w3-padding-top">&times;</span>
-   <h2 style="text-align:center">Become Partner</h2>
+   <h2 style="text-align:center">Schedule Order</h2>
    
   </header>
     <form class="w3-container" >
@@ -1829,31 +1832,10 @@ swal('Error','Please fill all the fields','error');
 
 
 
-$( "#send_feedback" ).click(function() {
-  type=[];
-  if(typeof user_info._id!=='undefined' && user_info._id!=''){
-jQuery('[name=feedback_type]:checked').each(function(){
-type.push(jQuery(this).val());
-});
-if(jQuery('#first_name').val()!='' && jQuery('#last_name').val()!='' && jQuery('#email').val()!='' && jQuery('#f_number').val()!='' && jQuery('#msg').val()!='' &&  type.length>0){
 
 
-jQuery.ajax({
-url:'https://handy-service-server.herokuapp.com/feedback',
-data:'name='+jQuery('#first_name').val()+' '+jQuery('#last_name').val()+'&email='+jQuery('#email').val()+'&mob='+jQuery('#f_number').val()+'&message='+jQuery('#msg').val()+'&type='+type,
-type:'post',
-success:function(data){
-swal('Thanks','We have received your Handy Maintenance Packages. Our Administration will contact you soon.','success');
-jQuery('#id06').hide();
-}
-});
-}else{
-swal('Error','Please fill all the fields','error');
-}
-}else{
-  swal('Error','Please Login first','error');
-}
-});
+
+
 setTimeout(function(){
  if(typeof user_info._id ==='undefined' || user_info._id =='')
   {//alert('hjh');
@@ -1883,16 +1865,26 @@ url:'https://handy-service-server.herokuapp.com/address/all',
 type:'get',
 data:'id='+jQuery('#user_id').val(),
 success:function(data){
-  console.log(data);
+  //console.log(data);
+
 var address = '<option>Select Address</option>';
 if(Object.keys(data).length>0){
 jQuery.each(data,function(key,val){
+a = [];
 
-address +='<option value="'+val._id+'">'+val.city+'</option>';
+$.each(val,function(key1,data1){
+a.push(key1+':'+data1);
+});
+
+a.join();
+
+
+address +='<option value="'+val._id+'">'+a+'</option>';
+//address +='<option value="'+val._id+'">'+val.city+'</option>';
 
 
 });
-console.log(address);
+//console.log(address);
 jQuery('#all_address').html(address);
 
 }
@@ -1947,7 +1939,7 @@ $http({
          //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
         })
          .success(function(client) {
-          console.log(client);
+         // console.log(client);
           $scope.client = client;
 
          });
@@ -2082,7 +2074,7 @@ $http({
         })
          .success(function(client) {
 
-          console.log(client);
+         // console.log(client);
           $scope.client = client;
 
          });
@@ -2096,6 +2088,10 @@ $http({
          .success(function(locations) {
          // console.log(locations);
       $scope.locations_ = locations;
+       if(typeof user_info._id!=='undefined' && user_info._id!=''){
+setTimeout(function(){  jQuery('.service_list').val(user_info.city);},1000);
+
+       }
      
          });
 
@@ -2129,9 +2125,11 @@ for (var i=0; i<service_info.length;) {
 }
 $scope.services = chunks;
 console.log($scope.services);
-    setTimeout(function(){$('.bxslider').bxSlider();
-      //$('.media_slider').bxSlider();
-      jQuery('.bx-controls-direction a').removeClass('disabled')},1000);
+    setTimeout(function(){//$('.bxslider').bxSlider();
+      $('.media_slider').bxSlider();
+            $('.our_client').bxSlider();
+      
+      jQuery('.bx-controls-direction a').removeClass('disabled');$('.media_slider').parent().css('height',320);},1000);
    angular.forEach(service_info, function (val, key) {
     //console.log(val);
 
@@ -2167,7 +2165,11 @@ console.log(customers_rev);
          });
 };
 $scope.current_city_services = function(){
+  if($scope.select_service){
   $scope.current_services($scope.select_service);
+}else{
+  swal('Error','Please select city','error');
+}
 };
 
 
@@ -2209,16 +2211,20 @@ success:function(){
 
 <script type="text/javascript">
 function confirm_ord(){
+    if(typeof user_info._id!=='undefined' && user_info._id!=''){
   if(jQuery('#b_first_name').val()!='' && jQuery('#b_last_name').val()!='' && jQuery('#b_email').val()!='' && jQuery('#b_number').val()!='' && jQuery('#b_addres').val()!=''){
     jQuery('#tb_name').text(jQuery('#b_first_name').val()+' '+jQuery('#b_last_name').val());
     jQuery('#tb_email').text(jQuery('#b_email').val());
     jQuery('#tb_number').text(jQuery('#b_number').val());
     jQuery('#tb_services').text(jQuery('#b_service_name').val());
     jQuery('#tb_add1').text(jQuery('#all_address option:selected').text());
-
-  document.getElementById('id08').style.display='block';
+ document.getElementById('id08').style.display='block';
+  document.getElementById('id07').style.display='none';
   }else{
 swal('Error','Please fill all the fields','error');
+}
+}else{
+  swal('Error','Please Login first','error');
 }
 }
   jQuery.ajax({
@@ -2456,6 +2462,14 @@ success:function(data){
 
 });
 
+jQuery('#free_services').click(function(){
+ if(typeof user_info._id!=='undefined' && user_info._id!=''){
+ }else{
+  swal('Error','Please fill all the fields','error');
+}
+ }
+});
+
 jQuery('#book_service_now').click(function(){
     if(jQuery('#service_date').val()!='' && jQuery('#service_time').val()!=''){
   jQuery.ajax({
@@ -2463,9 +2477,9 @@ url:'https://handy-service-server.herokuapp.com/book/service',
 data:'user_id='+jQuery('#user_id').val()+'&name='+jQuery('#b_first_name').val()+' '+jQuery('#b_last_name').val()+'&service_id='+jQuery('#b_service_id').val()+'&scheduled_date='+jQuery('#service_date').val()+'&scheduled_time='+jQuery('#service_time').val()+'&reason='+jQuery('#b_reason').val()+'&address='+jQuery('#b_addres').val(),
 type:'POST',
 success:function(data){
-swal('Thanks','For booking the service','success');
+swal('Thanks','For booking the service your Booked Id:'+data.message+'','success');
 setTimeout(function(){
-//  window.location.href = '';
+  window.location.href = '';
 },2000);
 }
 });

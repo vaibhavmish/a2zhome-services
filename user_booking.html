@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+  <head>
+    
+    <title>Handyservices.in - </title>
+    <meta charset="UTF-8">
+    <!-- Facebook meta tags-->
+    <meta property="og:title" content="Home : Handyservices.in">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="handyservices.in">
+    <!-- Responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge">
+    <meta name="robots" content="index, follow">
+    <!-- Description and keywords for search engines-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="msapplication-TileColor" content="#cdcec0">
+    <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    
+      
+    <!-- font link here, change to another google font if you wish!-->
+      
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> -->
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    
+      
+      <!-------bootstrap -------->
+      
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css" type="text/css">
+      
+      
+      <!---------- font awesome c------->
+      
+      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css" type="text/css">
+      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      
+      <!----- pixedon -------->
+      <link rel="stylesheet" href="assets/PIXEDEN/pe-icon-7-stroke/css/pe-icon-7-stroke.css" type="text/css">
+      <link rel="stylesheet" href="assets/PIXEDEN/pe-icon-7-stroke/css/helper.css" type="text/css">
+      
+      <!--------stylesheet ------------>
+      <link rel="stylesheet" href="css/all.css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <link rel="stylesheet" href="css/all.css" type="text/css">
+      <link rel="stylesheet" href="css/default.css" type="text/css">
+        <link rel="stylesheet" href="css/footer_form.css">
+      
+        <!-- begin favicon stuff-->
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+             <link rel="stylesheet" href="css/k_sweet.css">
+        <link rel="stylesheet" href="css/myw3.css" type="text/css">
+         <link id="bsdp-css" href="css/k_datepicker.css" rel="stylesheet">
+                  <link id="bsdp-css" href="css/k_timepicker.css" rel="stylesheet">
+        <script src="js/jquery-2.1.4.min.js"></script>
+  </head>
+  <body ng-app="book_service" id="user_book" ng-controller="book_controller">
+   <div class="row">
+<div class="col-md-6"><a href="home.veiw.html">
+<img src="handy1.png" class="logo_" style="height: 57px;width: 250px;
+margin-left: 115px;
+margin-top: 16px"></a>
+</div><div class="col-md-6"><ul class="bttns" style="margin-top: 49px;">
+                      <li class=""><a href="#" data-toggle="modal" data-target="#bookModal" style="
+    color: #767676;;
+">7878000666</a></li>
+                      <li class=""><a href="#" onclick="document.getElementById('id06').style.display='block'"  target="" style="
+    color: #767676;;
+">Feedback</a></li>
+                      <li class="" style=""><a href="#" class="hdr_selected_city" onclick="jQuery('#id05').show();" style="
+    color: #767676;;
+">Select City</a>
+</li>
+<li class="" style=""><a href="#" id="login_logout"  onclick="login_view();"  style="
+    color: #767676;;
+">Login/SignUp</a></li>
+<li class="" style=""><a href="#"     style="
+    color: #767676;display:none;
+"></a></li>
+
+<li class="dropdown" id="user_pro" onclick="jQuery('#user_pro').toggleClass('open');" style="color: #767676;display:none;    margin-top: -30px;">
+                <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                <ul class="dropdown-menu" style="
+    padding: 15px;
+    margin-left: -51px;
+">
+                  <li><a href="profile_view.html">Profile</a></li>
+                  <li><a href="user_booking.html">Booking</a></li>
+                 <li class="" style=""><a href="#" id="logout" onclick="" style="
+    color: #767676;
+">Logout</a></li>
+                </ul>
+              </li>
+ 
+                  </ul>  </div></div>
+      <!--banner starts here -->
+    <section>
+        <div id="banner" style="height: 407px;">
+         <div class="container">
+              <center>
+                <h1 id="jumbotron">Handyservices</h1>
+                <h2 id="supporting-header"></h2>
+                <div class="row">
+            
+                  
+                </div>
+               <!--  <div class="row">
+                  <ul class="bttns .align-self-xs-center">
+                      <li class="bttn "><a href="bookservice.html" target="_blank"  data-toggle="modal" data-target="#">Book Services</a></li>
+                      <li class="bttn "><a href="#">Book Packages</a></li>
+                      <li class="bttn" style="background:#37D5AC !important;"><a href="#">Request Callback</a></li>
+                  </ul>
+                </div> -->
+              </center>
+          </div>
+        </div>
+    </section>
+      <!-- banner ends here -->
+      
+      <!-- section1 starts here -->
+   <!--   <section id="section1">
+        <div class="container">
+            <div class="row">
+            <div id="l-menu" class="center">
+                <div class="item" onclick="home_makeover();">
+                    <i class="pe pe-7s-tools"></i>
+                    <h6 class="name">Maintenance Packages</h6>
+                </div>
+                <div class="item">
+                    <i class="pe pe-7s-home"></i>
+                    <h6 class="name">Home MakeOver Package</h6>
+                </div>
+                <div class="item" onclick="corporate_view();">
+                    <i class="pe pe-7s-piggy"></i>
+                    <h6 class="name">For Corporate</h6>
+                </div>
+            </div>
+            </div>
+         </div>
+      </section>
+       -->
+      <section4 id="services">
+        <div class="container">
+            <div class="row">
+                <div class="center t-center">
+                    <div class="heading"><h3>User Bookings</h3></div>
+                     <hr class="u-hr">
+                     <div class="sub-heading"><h3></h3></div>
+                </div>
+            </div>
+        
+            <div class="row services ">
+                
+                    <div class="col-md-4 col-sm-4 outerbox" ng-repeat="x in user_booking">
+                        <div class="service s-box">
+                             <div class="open-text">
+                                 <form class="form-horizontal">
+  <hr><div class="form-group">
+    <label class="control-label col-sm-3" for="email">OrderId:</label>
+    <label class="control-label col-sm-8" for="email">{{x.order_id}}</label>
+    
+  </div>
+  <hr>
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">Status:</label><label class="control-label col-sm-2" for="pwd">{{x.status}}</label>
+    
+  </div><hr>
+   <div class="form-group">
+    <label class="control-label col-sm-3" for="pwd">PackageId:</label><label class="control-label col-sm-2" for="pwd">{{x.package_id}}</label>
+    
+  </div>
+  
+</form>
+                                 <div class="overlay">
+                                <div class="text">
+                                      <div class="bttn book bookservice_modal"  id="{{x._id}}"  data-name="{{x.name}}"  style="margin-top: -50px;margin-left: 23px;    width: 124px;"  data-target="modal"><a onclick=""  target="_blank">Re-Schedule</a></div>
+                                        <div class="bttn book" ng-click="cancel_order(x._id)"  id="{{x.order_id}}"  data-name="{{x.name}}" style="margin-top: -86px;margin-left: 175px;" data-target="modal"><a target="_blank">Cancel</a></div>
+                                      
+                                   </div>
+                                 </div>
+                             </div>
+                                
+                             <h4 class="s-name">OrderId: {{x.order_id}}</h4>
+                            
+                        </div>
+                        
+                    </div>
+                  
+              
+             
+              
+               
+            </div>  
+                <div class="row services empty_result" style="display:none">
+                
+                    <div class="col-md-4 col-sm-4 outerbox" >
+                        <div class="service s-box">
+                             
+                                
+                             <h4 class="s-name">No Results Found</h4>
+                            
+                        </div>
+                        
+                    </div>
+                  
+              
+             
+              
+               
+            </div>
+          </div>
+      </section4>
+          <input type="hidden" id="b_service_name" name="">
+      <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 footerleft ">
+        <h6 class="heading7" style="
+    color: white;
+">Handy Services</h6>
+        <a href="#"style="color: white;">About Us</p>
+        
+         <a href="#" style="color: white;">Services</p>
+
+         <a href="#" style="color: white;">Maintanance Package</p>
+        <a href="#"  style="color: white;">Privacy Policy</a>
+        <a href="#" style="color: white;">Terms&amp;Conditions</a>
+           <div class="logo" style="
+    margin-top: 91px;
+">
+
+<img src="img/logo/facebook.png" class="social_media"  class="" style="height: 27px;width: 30px;
+
+margin-top: 16px">
+ <img src="img/logo/instagram.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px"><img src="img/logo/twitter.png" class="social_media" class="" style="height: 27px;width: 30px;
+
+margin-top: 16px;margin-left: 5px;"> 
+</div>
+      </div>
+      <div class="col-md-2 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7" style="
+    color: white;
+">Available Area</h6>
+        
+          <p style="color: white;"> Gandhinagar</p>
+          <p style="color: white;">Bhavan Nagar</p>
+          <p style="color: white;">Ahemdabad</p>
+          
+          
+          
+       
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7" style="
+    color: white;
+">Contact Us</h6>
+        <div class="post">
+          <p style="color: white;">Surendra Nagar,209/1</p>
+          <p style="color: white;">Netaji Mark, Navrangpur,</p>
+          <p style="color: white;">Ahemdabad-38001</p>
+<p style="color: white;">services@handyservices.in</p><p style="color: white;">7878000666</p>
+        </div>
+      </div>
+    <div class="col-md-3 col-sm-6 paddingtop-bottom" style="margin-left: 67px;">
+       <h5 class="text-center" style="color: white;font-weight: normal;font-family: sans-serif;">
+                        Drop Us A Message</h5>
+       <div class="panel panel-default">
+                <div class="panel-body">
+                   
+                    <form class="form form-signup" role="form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            
+                            <input type="text" class="form-control" id="m_name" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                           
+                            <input type="text" class="form-control" id="m_email" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            
+                            <input type="text" class="form-control" id="m_phone" placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                           
+                            <input type="text" class="form-control" id="m_msg" placeholder="Message">
+                        </div>
+                    </div>
+                   
+                </form></div>
+               
+            </div>
+             <button type="button" class="btn-lg btn-primary btn-block" role="button" id="save_msg" style="background: #37D5AC !important;">
+                    SUBMIT</button> 
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="id07" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id07').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Book Services</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      <form class="form-horizontal" role="form">
+     <input type="hidden" id="b_service_id" name="">
+        <div class="form-group">
+          <label class=" control-label">First Name:</label>
+          <div class="">
+            <input class="form-control" id="b_first_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       <div class="form-group">
+          <label class=" control-label">Last Name:</label>
+          <div class="">
+            <input class="form-control" id="b_last_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">Email:</label>
+          <div class="">
+            <input class="form-control" id="b_email" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Number:</label>
+          <div class="">
+            <input class="form-control" id="b_number" mg-model="user_data.number" value="" type="number">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Special Requiement:</label>
+          <div class="">
+             <textarea id="b_reason" class="form-control" ></textarea> 
+          </div>
+        </div>
+        
+         <div class="form-group" id="b_add" style="">
+          <label class=" control-label">Address:</label>
+          <div class="">
+          
+             <select class="form-control" id="b_addres"></select>
+          </div>
+        </div>
+        <div class="form-group">
+      
+            <input class="bttn btn-primary" onclick="" id="b_add_address" value="Add Address" type="button">
+            <input class="bttn btn-primary" onclick="confirm_ord()" id="confirm_odr" style="" value="Confirm Order" type="button">
+            <span></span>
+            
+         
+        </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div>
+
+
+ <div id="id08" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id08').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Confirm Order</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="row w3-section">
+            <div class=" col-md-12"> 
+                  <table class="table-responsive table table-user-information">
+                    <tbody>
+                    <tr>
+                        <td>Service</td>
+                        <td id="tb_services"></td>
+                      </tr>
+                      <tr>
+                        <td>Name</td>
+                        <td id="tb_name"></td>
+                      </tr>
+                      <tr>
+                        <td>Number</td>
+                        <td id="tb_number"></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td id="tb_email"></td>
+                      </tr>
+                   
+                    
+                   
+                        <tr>
+                        <td>Address</td>
+                        <td id="tb_add1"></td>
+                      </tr>
+                     
+                     
+                    </tbody>
+                  </table>
+                  
+                <a href="#" onclick="document.getElementById('id08').style.display='none';  document.getElementById('id07').style.display='block';"  class="bttn btn-primary">Edit</a>
+                  <a href="#" onclick="document.getElementById('id013').style.display='block';document.getElementById('id08').style.display='none'"   class="bttn btn-primary">Schedule</a>
+                </div>     
+   
+        </div> 
+  
+      </form>
+
+   
+
+    </div>
+  </div>
+<div id="id013" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id013').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Become Partner</h2>
+   <input type="hidden" class="order_ids" >
+  </header>
+<div class="col-md-12 personal-info">
+     <form class="w3-container form-horizontal" role="form">
+       
+        <div class="form-group">
+          <label class=" control-label">Date:</label>
+          <div class="">
+            <input class="form-control" id="order_date" ng-model="order.scheduled_date"  value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Time:</label>
+          <div class="">
+            <input class="form-control" id="service_time" ng-model="order.scheduled_time" value="" type="text">
+          </div>
+        </div>
+       
+        
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary"  ng-click="re_schedule()" value="Schedule" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id013').style.display='none'"  type="reset">
+          </div>
+        </div>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey"  style="color:black;display:none;">
+        
+      </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="id014" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id014').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Add Address</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+     <form class="w3-container form-horizontal" role="form">
+       
+        <div class="form-group">
+          <label class=" control-label">House No:</label>
+          <div class="">
+            <input class="form-control" id="s_ad_house_no" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Society:</label>
+          <div class="">
+            <input class="form-control" id="s_ad_society" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">City:</label>
+          <div class="">
+            <input class="form-control" id="s_ad_city" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Landmark :</label>
+          <div class="">
+            <input class="form-control" id="s_ad_landmark" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Zip Code:</label>
+          <div class="">
+            <input class="form-control" id="s_ad_zip_code" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">State:</label>
+          <div class="">
+            <input class="form-control" id="s_ad_state" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="s_ad_save" value="Save" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id014').style.display='none'"  type="reset">
+          </div>
+        </div>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey"  style="color:black;display:none;">
+        
+      </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div> 
+  
+<div id="id06" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id06').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">FeedBack</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      <form class="form-horizontal" role="form">
+       <div class="form-group">
+          <label class=" control-label">Type:</label>
+          <div class="">
+          <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="service" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Service</span>
+</label>
+         <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="finantial" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">UserExperience</span>
+</label>  
+<label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="UserExperience" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Functionality</span>
+</label>    
+    <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="Functionality" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Other</span>
+</label>        
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">First name:</label>
+          <div class="">
+            <input class="form-control" id="first_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Last name:</label>
+          <div class="">
+            <input class="form-control" id="last_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">Email:</label>
+          <div class="">
+            <input class="form-control" id="email" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Number:</label>
+          <div class="">
+            <input class="form-control" id="f_number" mg-model="user_data.number" value="" type="number">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Message:</label>
+          <div class="">
+            <textarea id="msg" class="form-control" ></textarea> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="send_feedback" value="Send" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id06').style.display='none'"  type="reset">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div> 
+   <div id="id03" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span  onclick="document.getElementById('id03').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   
+   <h2 style="text-align:center">Login</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" id="l_username" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="password" id="l_password" placeholder="Enter Password" name="psw" required>
+         
+
+
+     <button class="w3-btn-block w3-green w3-section w3-padding" type="button" id="login_user" name="register-submit"  style="width:40%;float:left;">Login Now</button>
+          <div class="w3-btn-block w3-green w3-section w3-padding" style="width:15%; visibility:hidden;"></div>
+
+                     
+     <button class="w3-btn-block w3-green w3-section w3-padding " type="button" name="register-submit" id="register-form-link" style="width:40%;" onclick="document.getElementById('id02').style.display='block'">Register</button>
+        </div> 
+  
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+       <a href=""><i class="fa fa-facebook"></i> Facebook</a>
+       <a href=""><i class="fa fa-google-plus"></i> Google+</a>
+        
+        <span class="w3-right w3-padding w3-hide-small" onclick="document.getElementById('id04').style.display='block';document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='none'">Forgot <a  href="#" style="color:black;text-decoration:none;">password?</a></span>
+      </div>
+
+    </div>
+  </div> 
+  <div id="id04" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id01').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Forget Password</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <label><b>Email</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" id="l_email" type="text" placeholder="Enter Username" name="usrname" required>
+         
+         
+
+
+     <button class="w3-btn-block w3-green w3-section w3-padding" type="button" id="send_forget" name="register-submit"  style="width:40%;float:left;">Submit</button>
+          <div class="w3-btn-block w3-green w3-section w3-padding" style="width:15%; visibility:hidden;"></div>
+
+                     
+   
+        </div> 
+  
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id03').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small"> <a href="#" style="color:black;text-decoration:none;" onclick="document.getElementById('id04').style.display='none';document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='block'">Login</a></span>
+      </div>
+
+    </div>
+  </div> 
+    <div id="id099" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id099').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">OTP has been sent to you mobile no.</h2>
+   
+  </header>
+
+ <form class="w3-container" id="otp_form" style="">
+  <div >
+  <div class="form-group">
+   <label><b>Enter OTP</b></label>
+    <input class="form-control" placeholder="OTP" id="otp_value" type="text">
+      <input class="form-control" placeholder="OTP" id="otp_value_id" type="hidden">
+   </div>
+   <div class="form-group">
+                    <div class="row">
+                      <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit" name="register-submit" id="send_opt" tabindex="4" class="form-control bttn btn-register" value="Submit">
+                      </div>
+                    </div>
+                  </div></div>
+</form>
+
+    
+
+    </div>
+  </div>
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id02').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Registration</h2>
+   
+  </header>
+
+      <form class="w3-container"  id="register_forms">
+        <div class="w3-section">
+              <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <input type="number" name="confirm-password" id="number" tabindex="2" class="form-control" placeholder="Number">
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                       <div class="col-sm-3"></div><div class="col-sm-6 col-sm-offset-3">
+                        <input type="button" name="register-submit" id="register-submit" tabindex="4" class="form-control bttn btn-register" value="Submit">
+                      </div>
+                    </div>
+                  </div>
+        </div> 
+ 
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id02').style.display='none'" type="button" class="w3-btn w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small" onclick="document.getElementById('id04').style.display='block';document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='none';">Forgot <a  href="#" style="color:black;text-decoration:none;">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+
+ <div id="id013" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id013').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Schedule Order</h2>
+   <input type="hidden" id="user_order_id">
+  </header>
+    <form class="w3-container" >
+<div class="col-md-12 personal-info">
+     <form class="w3-container form-horizontal" role="form">
+       
+        <div class="form-group">
+          <label class=" control-label">Date:</label>
+          <div class="">
+            <input class="form-control" id="service_date" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Time:</label>
+          <div class="">
+            <input class="form-control" id="service_time" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="book_service_now" value="Book Now" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id013').style.display='none'"  type="reset">
+          </div>
+        </div>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey"  style="color:black;display:none;">
+        
+      </div>
+      </form>
+      </div>
+      </form>
+    </div>
+  </div>
+
+<input type="hidden" name="" id="user_id">
+ <script src="js/k_datepicker.js""></script>
+ <script src="js/k_timepicker.js"></script>
+ <script src="js/k_sweet.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/assets/bootstrap/js/bootstrap.js"></script>
+      <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script type="text/javascript" src="js/common.js"></script>
+     <script type="text/javascript">
+
+jQuery('#order_date').click(function(){
+jQuery('.datepicker-days').show();
+});
+ $('#order_date').datepicker();
+
+jQuery('#s_ad_save').click(function(){
+if(jQuery('#s_ad_house_no').val()!='' && jQuery('#s_ad_society').val()!='' && jQuery('#s_ad_city').val()!='' && jQuery('#s_ad_landmark').val()!='' && jQuery('#s_ad_zip_code').val()!='' && jQuery('#s_ad_state').val()!=''){
+jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/add/address',
+type:"POST",
+data:'id='+jQuery('#user_id').val()+'&house_no='+jQuery('#s_ad_house_no').val()+'&society='+jQuery('#s_ad_society').val()+'&city='+jQuery('#s_ad_city').val()+'&landmark='+jQuery('#s_ad_landmark').val()+'&state='+jQuery('#s_ad_state').val(),
+success:function(){
+  swal('Saved!','Your Adress has been saved','success');
+ document.getElementById('id014').style.display='none';
+ show_address();
+}
+});
+}else{
+  swal('Error','Please All the Field','error');
+}
+});
+
+
+
+
+
+$('#service_date').datepicker();
+function home_makeover()
+{
+   window.location.href="home_makeoverpackage.html?l="+jQuery('.service_list').val();
+}
+function corporate_view(){
+  window.location.href="corporates.html?l="+jQuery('.service_list').val();
+}
+jQuery('#service_date').click(function(){
+jQuery('.datepicker-days').show();
+});
+$('#service_time').timepicker();
+function confirm_ord(){
+      if(typeof user_info._id!=='undefined' && user_info._id!=''){
+  if(jQuery('#b_first_name').val()!='' && jQuery('#b_last_name').val()!='' && jQuery('#b_email').val()!='' && jQuery('#b_number').val()!='' && jQuery('#b_addres').val()!=''){
+    jQuery('#tb_name').text(jQuery('#b_first_name').val()+' '+jQuery('#b_last_name').val());
+    jQuery('#tb_email').text(jQuery('#b_email').val());
+    jQuery('#tb_number').text(jQuery('#b_number').val());
+    jQuery('#tb_add1').text(jQuery('#b_addres option:selected').text());
+     jQuery('#tb_services').text(jQuery('#b_service_name').val());
+
+ document.getElementById('id08').style.display='block';
+  document.getElementById('id07').style.display='none';
+  }else{
+swal('Error','Please fill all the fields','error');
+}
+}else{
+  swal('Error','Please Login first','error');
+}
+}
+
+ var locations = window.location.search.split('=')[1];
+jQuery('#hdr_selected_city').text(locations);
+jQuery('#b_add_address').click(function(){
+  if(typeof user_info._id!=='undefined' && user_info._id!=''){
+  document.getElementById('id014').style.display='block'
+jQuery('#b_add').delay(100).fadeIn();
+jQuery('#b_add_address').hide();
+
+jQuery('#confirm_odr').delay(800).fadeIn();
+}
+else{
+  swal('Error','Please Login first','error');
+}
+});
+
+       var app = angular.module("book_service", []);
+app.controller("book_controller", function($scope,$http) {
+
+$scope.re_schedule = function(){
+  console.log($scope.order);
+  
+  if($scope.order.scheduled_date && $scope.order.scheduled_time){
+    $scope.order.id = jQuery('.order_ids').val();
+$http({
+         method  : 'POST',
+         url     : 'https://handy-service-server.herokuapp.com/update/order',
+         data    : {id:$scope.order.id,scheduled_date:$scope.order.scheduled_date,scheduled_time:$scope.order.scheduled_time}, //forms user object
+         //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+        })
+         .success(function(data) {
+         if(data.message == 'updated'){
+           swal('Success','Order Updated','success');
+           document.getElementById('id013').style.display='none';
+         }
+         });
+       }else{
+        swal('Error','Please Fill All Filed','error');
+       }
+
+};
+
+
+$scope.cancel_order = function(id){
+  swal({
+  title: "Are you sure? ",
+  text: "Order Will Be Cancelled",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, cancel order it!",
+  cancelButtonText: "No, cancel plx!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm){
+  if (isConfirm) {
+   $http({
+         method  : 'POST',
+         url     : 'https://handy-service-server.herokuapp.com/order/status',
+         data    : {order_id:id,status:'cancelled'}, //forms user object
+         //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+        })
+         .success(function(data) {
+          if(data.message == 'Status chnaged')
+     { swal("Cancelled", "Order Has Been Cancelled :)", "error");
+window.location.href = '';
+ }
+
+     
+         });
+  } else {
+    swal("Cancelled", "Order Has Not Been Cancelled :)", "error");
+  }
+});
+}
+
+   $scope.user_booking = function (id) {
+$http({
+         method  : 'GET',
+         url     : 'https://handy-service-server.herokuapp.com/bookings?id='+id,
+         // data    : {id:'58eba898261fd511009d81b6'}, //forms user object
+         //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+        })
+         .success(function(user_info) {
+          console.log(user_info);
+      $scope.user_booking= user_info;
+     
+         });
+
+
+
+
+       };
+
+
+});
+setTimeout(
+function(){show_address();},1000
+)
+
+
+
+
+jQuery('.services').on('click','.bookservice_modal',function(){
+  //alert(jQuery(this).attr('id'));
+jQuery('.order_ids').val(jQuery(this).attr('id'));
+document.getElementById('id013').style.display='block';
+
+});
+
+function show_address()
+{
+  jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/address/all',
+type:'get',
+data:'id='+jQuery('#user_id').val(),
+success:function(data){
+var address = '<option>Select Address</option>';
+if(Object.keys(data).length>0){
+jQuery.each(data,function(key,val){
+a = [];
+
+$.each(val,function(key1,data1){
+a.push(key1+':'+data1);
+});
+
+a.join();
+
+
+address +='<option value="'+val._id+'">'+a+'</option>';
+
+
+});
+//console.log(address);
+jQuery('#b_addres').html(address);
+
+}
+}
+});
+
+}
+     </script>
+  </body>
+</html>

@@ -113,21 +113,21 @@ margin-top: 16px"></a>
     color: #767676;;
 ">Select City</a>
 </li>
-<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
+<li class="" style=""><a href="#" id="login_logout"  onclick="login_view();"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
 <li class="" style=""><a href="#"     style="
     color: #767676;display:none;
 "></a></li>
 
-<li class="dropdown" id="user_pro" onclick="jQuery('#user_pro').toggleClass('open');" style="color: #767676;display:none;    margin-top: -30px;">
+<li class="dropdown" id="user_pro" " style="color: #767676;display:none;    margin-top: -30px;">
                 <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                 <ul class="dropdown-menu" style="
     padding: 15px;
     margin-left: -51px;
 ">
                   <li><a href="profile_view.html">Profile</a></li>
-                  <li><a href="#">Booking</a></li>
+                  <li><a href="user_booking.html">Booking</a></li>
                  <li class="" style=""><a href="#" id="logout" onclick="" style="
     color: #767676;
 ">Logout</a></li>
@@ -394,7 +394,7 @@ margin-top: 16px"></a>
         <a href="#"  style="color: white;">Privacy Policy</a>
         <a href="#" style="color: white;">Terms&amp;Conditions</a>
          <div class="logo" style="
-    margin-top: 102px;
+    margin-top: 157px;
 ">
 
 <img src="img/logo/facebook.png" class="social_media"  class="" style="height: 27px;width: 30px;
@@ -559,7 +559,107 @@ margin-top: 16px;margin-left: 5px;">
   </div>
 <input type="hidden" name="" id="user_id">
 
+<div id="id06" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id06').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">FeedBack</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      <form class="form-horizontal" role="form">
+       <div class="form-group">
+          <label class=" control-label">Type:</label>
+          <div class="">
+          <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="service" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Service</span>
+</label>
+         <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="finantial" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">UserExperience</span>
+</label>  
+<label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="UserExperience" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Functionality</span>
+</label>    
+    <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="Functionality" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Other</span>
+</label>        
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">First name:</label>
+          <div class="">
+            <input class="form-control" id="first_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Last name:</label>
+          <div class="">
+            <input class="form-control" id="last_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">Email:</label>
+          <div class="">
+            <input class="form-control" id="email" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Number:</label>
+          <div class="">
+            <input class="form-control" id="f_number" mg-model="user_data.number" value="" type="number">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Message:</label>
+          <div class="">
+            <textarea id="msg" class="form-control" ></textarea> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="send_feedback" value="Send" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id06').style.display='none'"  type="reset">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div>
       <!-- section7 ends here -->
       
 

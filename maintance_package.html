@@ -24,6 +24,14 @@
     .fade.in {
     opacity: 1;
 }
+.bootstrap-select.btn-group .dropdown-menu.inner{
+background: #d4d4d4;
+}
+.dropdown-toggle.btn-default{
+color: #333;
+    background-color: #d4d4d4;
+    border-color: #8c8c8c;
+  }
 .w3-modal-content {
     margin: auto;
     background-color: #fff;
@@ -124,14 +132,14 @@ margin-top: 16px"></a>
     color: #767676;;
 ">Select City</a>
 </li>
-<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
+<li class="" style=""><a href="#" id="login_logout"  onclick="login_view();"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
 <li class="" style=""><a href="#"     style="
     color: #767676;display:none;
 "></a></li>
 
-<li class="dropdown" id="user_pro" onclick="jQuery('#user_pro').toggleClass('open');" style="color: #767676;display:none;    margin-top: -30px;">
+<li class="dropdown" id="user_pro" onclick="" style="color: #767676;display:none;    margin-top: -30px;">
                 <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
                 <ul class="dropdown-menu" style="
     padding: 15px;
@@ -1002,7 +1010,7 @@ jQuery('#home').click(function(){
 jQuery('#handy_sub').click(function(){
    if(typeof user_info._id!=='undefined' && user_info._id!=''){
 
-if(jQuery('[name=req_service]:checked').val()==''){
+if(typeof jQuery('[name=req_service]:checked').val()==='undefined' ){
  swal('Error','Please fill all the fields','error');
 }else{
   test = [];
@@ -1015,9 +1023,11 @@ data:{services :jQuery('#handyservices').val(), type: 'Home', total: jQuery('#ha
 //data:'services='+jQuery('#handyservices').val()+'&total='+1+'&duration='+jQuery('[name=pck_duration]').val(),
 type:'post',
 success:function(data){
+  if(data.length>0){
   jQuery('#pack_id').val(data.package_id);
   jQuery('#pack_price').val(data.price);
   jQuery('#pack_price').parents('.form-group').show();
+}
 //document.getElementById('id013').style.display = "block";
 
 }

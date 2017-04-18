@@ -98,7 +98,7 @@
         <script src="js/jquery-2.1.4.min.js"></script>
         <title>Home MakeOver Package</title>
   </head>
-  <body ng-app="profile" ng-controller="profile_controller">
+  <body ng-app="profile" id="user_book" ng-controller="profile_controller">
 <div class="row">
 <div class="col-md-6"><a href="home.veiw.html">
 <img src="handy1.png" class="logo_" style="height: 57px;width: 250px;
@@ -115,7 +115,7 @@ margin-top: 16px"></a>
     color: #767676;;
 ">Select City</a>
 </li>
-<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
+<li class="" style=""><a href="#" id="login_logout"  onclick="login_view();"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
 <li class="" style=""><a href="#"     style="
@@ -129,7 +129,7 @@ margin-top: 16px"></a>
     margin-left: -51px;
 ">
                   <li><a href="profile_view.html">Profile</a></li>
-                  <li><a href="#">Booking</a></li>
+                  <li><a href="user_booking.html">Booking</a></li>
                  <li class="" style=""><a href="#" id="logout" onclick="" style="
     color: #767676;
 ">Logout</a></li>

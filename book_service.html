@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+  <head>
+  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <title>Handyservices.in - </title>
+    <meta charset="UTF-8">
+    <!-- Facebook meta tags-->
+    <meta property="og:title" content="Home : Handyservices.in">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="handyservices.in">
+    <!-- Responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=Edge">
+    <meta name="robots" content="index, follow">
+    <!-- Description and keywords for search engines-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="msapplication-TileColor" content="#cdcec0">
+    <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <style type="text/css">/* The Modal (background) */
+    .fade.in {
+    opacity: 1;
+}
+
+</style>
+    
+      
+    <!-- font link here, change to another google font if you wish!-->
+      
+    <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> -->
+		    
+	 <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    
+      
+      <!-------bootstrap -------->
+       <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" type="text/css">
+	  
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.css" type="text/css">
+	   <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" type="text/css">
+	    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css" type="text/css">
+		 <link rel="stylesheet" href="css/sweetalert.css" type="text/css">
+      <link rel="stylesheet" href="css/dropzone.css" type="text/css">
+
+      
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   
+      <!---------- font awesome c------->
+      
+      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css" type="text/css">
+      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" type="text/css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      
+      <!----- pixedon -------->
+      <link rel="stylesheet" href="assets/PIXEDEN/pe-icon-7-stroke/css/pe-icon-7-stroke.css" type="text/css">
+      <link rel="stylesheet" href="assets/PIXEDEN/pe-icon-7-stroke/css/helper.css" type="text/css">
+      
+      <!--------stylesheet ------------>
+    
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <!--<link rel="stylesheet" href="css/all.css" type="text/css">-->
+      <link rel="stylesheet" href="css/default.css" type="text/css">
+      
+      
+        <!-- begin favicon stuff-->
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+        <script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/bootstrap-datetimepicker.js"></script>
+		<script src="js/bootstrap-datetimepicker.min.js"></script>
+		
+  </head>
+  <body ng-app="book_service" ng-controller="book_controller">
+      <!--------- banner starts here ------>
+    <section>
+        <div id="banner">
+         <div class="container">
+              <center>
+                <h1 id="jumbotron">Handyservices</h1>
+                <h2 id="supporting-header"></h2>
+                <div class="row">
+                  <div class="city" style="margin:0 auto;">
+                     
+                     <div class="cityname" ><span class="fa fa-map-marker "></span><input type="button" value="Ahmedabad, Gujrat"> <span class="fa fa-caret-down push-0"></span></div>
+                     
+                  </div>
+                  
+                </div>
+                <div class="row">
+                  <ul class="bttns .align-self-xs-center">
+				  
+                      <li class="bttn "><a href="bookservice.html" target="_blank"  data-toggle="modal" data-target="#">Book Services</a></li>
+                      <li class="bttn "><a href="#">Book Packages</a></li>
+                      <li class="bttn" style="background:#37D5AC !important;"><a href="#">Request Callback</a></li>
+                  </ul>
+                </div>
+              </center>
+          </div>
+        </div>
+    </section>
+      <!-- banner ends here -->
+      
+      <!-- section1 starts here -->
+     <section id="section1">
+ 
+<div class="modal fade" id="bookModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: rgba(1,1,1,0.5);color:white;margin-top: 10%">
+            <div class="modal-body">
+                <button type="button" class="close" style="margin-top: -5%;color: white" ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>
+                    <button type="button" class="close" style="margin-top: -5%;margin-right:5%;float: left"
+                            ng-click="closeModal('Cancel')" data-dismiss="modal" aria-hidden="true">
+                        <i class="glyphicon glyphicon-arrow-left"/>
+                    </button>
+                    Hi, {{user.name}}
+                </h3>
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                        <div class="row" style="border: 2px solid black;height: 470px;z-index: 0;background-color: rgba(1,1,1,0.5);color: white;font-size: 20px;padding: 20px">
+                            <div id="rootwizard2">
+                                <div class="navbar" style="display: none">
+                                    <div class="navbar-inner">
+                                        <div class="container">
+                                            <ul style="display: flex;flex: 1;">
+                                                <li style="margin-left: -28px;margin-right: 3px;" class="active">
+                                                    <a style="cursor: pointer;padding: 5px;font-size: 10px" data-target="#tab1" data-toggle="tab">
+                                                        Add More Services
+                                                    </a>
+                                                </li>
+                                                <li style="margin-left: 3px;margin-right: 3px;">
+                                                    <a style="cursor: pointer;padding: 5px;font-size: 10px" data-target="#tab2" data-toggle="tab">
+                                                        Add Address
+                                                    </a>
+                                                </li>
+                                                <li style="margin-left: 3px;margin-right: 3px;">
+                                                    <a style="cursor: pointer;padding: 5px;font-size: 10px" data-target="#tab3" data-toggle="tab">
+                                                        Confirm Order
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div id="bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 33%;"></div>
+                                </div>
+                                <div class="tab-content" style="font-size: 10px">
+                                    <div class="tab-pane active" id="tab1">
+                                        <form name="serviceChoosingForm">
+                                            <center>
+                                                <h2 style="color: whitesmoke;">
+                                                    Add More Services
+                                                </h2>
+                                                <div class="form-group" style="overflow-y: scroll;height: 250px">
+                                                    <div ng-repeat="service in services" class="col-lg-6" style="display: flex;flex: 1;padding: 10px">
+                                                        <img ng-src="{{service.icon}}" style="background-color: transparent;width: 100px;height: 90px;border: 1px solid black">
+                                                        <input type="checkbox" value="" ng-checked="isSelectedService(service);"
+                                                               ng-init="initializeCheckboxes(service);"
+                                                               ng-model="serviceChoosing[service.name]"/>
+                                                        <br>
+                                                        <h4>{{service.name}}</h4>
+                                                    </div>
+                                                </div>
+                                                <span id="services-error" style="color: red;display: none">Choose atleast 1 service to proceed</span>
+                                            </center>
+                                            <ul class="pager wizard">
+                                                <li class="next"><input type="submit" id="addAddress" ng-click="addServicesChoosen();" style="background-color:#1b6d85;cursor: pointer" data-toggle="tab" value="Add Address ->"></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <form name="addressForm">
+                                            <center>
+                                                <h2 style="color: whitesmoke;">
+                                                    Add Address
+                                                </h2>
+                                                <div class="form-group" style="overflow-y: scroll;overflow-x:hidden;height: 250px">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <center>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="name"><span style="color: red;">*</span>&nbsp;House / Building No.</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.houseno" class="form-control" id="name" placeholder="House / Building No." required/>
+                                                                </div>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="soceity"><span style="color: red;">*</span>&nbsp;Society / Locality</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.society" class="form-control" id="soceity" placeholder="Society / Locality" required />
+                                                                </div>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="city"><span style="color: red;">*</span>&nbsp;City</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.city" class="form-control" id="city" placeholder="City" required/>
+                                                                </div>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="landmark"><span style="color: red;">*</span>&nbsp;Landmark</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.landmark" class="form-control" id="landmark" placeholder="Landmark" required />
+                                                                </div>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="state"><span style="color: red;">*</span>&nbsp;State</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.state" class="form-control" id="state" placeholder="State" required />
+                                                                </div>
+                                                                <div class="row" style="padding: 10px">
+                                                                    <label for="contactp"><span style="color: red;">*</span>&nbsp;Contact Person</label>
+                                                                    <input type="text" style="width: 60%;margin-left:20px" ng-model="bservice.contactp" class="form-control" id="contactp" placeholder="Contact Person" required />
+                                                                </div>
+                                                            </center>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <h3>
+                                                                <i class="fa fa-clock-o" style="font-size: 25px"/> <span style="color: red;">*</span>&nbsp; Schedule Services
+                                                            </h3>
+                                                            <br>
+                                                            <div class="input-group">
+                                                                <input type="datetime-local" ng-model="bservice.datetime" style="width: 100%;font-size:10px;color:black;margin-right: 20px"
+                                                                       ng-change="validateDate();" required/>
+                                                            </div>
+                                                            <br>
+                                                            <h5 style="color: red;display: none" id="date-error">Please enter a valid date! Date should be today or in future.</h5>
+                                                            <!--<div class="input-group">-->
+                                                                <!--<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="bservice.datetime" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />-->
+                                                                <!--<span class="input-group-btn">-->
+                            <!--<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>-->
+          <!--</span>-->
+                                                            <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span id="bookserv-error" style="display:none;color: red;font-size: 10px"> Please Fill All Required Details </span>
+                                            </center>
+                                            <ul class="pager wizard">
+                                                <li class="next"><input type="submit" ng-click="addAddress();" id="confirmOrder" style="background-color:#1b6d85;cursor: pointer" data-toggle="tab" value="Confirm Order ->"></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="tab3">
+                                        <form name="confirmForm">
+                                            <center style="overflow-y: scroll;overflow-x: hidden">
+                                                <h2 style="color: whitesmoke;">
+                                                    Confirm Order
+                                                </h2>
+                                                <div class="row" style="height: 120px;display: block">
+                                                    <div class="col-lg-4" style="display: flex;flex: 1;">
+                                                        <i class="fa fa-clock-o" style="font-size: 30px"/>
+                                                        <div style="margin-top: 10px">
+                                                            &nbsp;&nbsp;{{bservice.datetime | date : "MMM d, y h:mm:ss a" }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4" style="display: flex;flex: 1;">
+                                                        <i class="glyphicon glyphicon-map-marker" style="font-size: 30px;"></i>
+                                                        <div style="line-height: 10px;font-size: 10px;">
+                                                            <p>&nbsp;&nbsp;{{bservice.houseno}} , {{bservice.society}}</p>
+                                                            <p>&nbsp;&nbsp;{{bservice.landmark}}</p>
+                                                            <p>&nbsp;&nbsp;{{bservice.city}}</p>
+                                                            <p>&nbsp;&nbsp;{{bservice.state}}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4" style="display: flex;flex: 1">
+                                                        <i class="fa fa-user" style="font-size: 30px"/>
+                                                        <div style="margin-top: 10px">
+                                                            &nbsp;&nbsp; {{bservice.contactp || user.name || 'Login Required'}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="height: 100px;">
+                                                    <div class="row" style="background-color:gray;color: whitesmoke;padding: 2px">
+                                                        <h6>SERVICE DESCRIPTION</h6>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6" style="padding: 10px">
+                                                            <ul style="text-decoration: none;list-style: none">
+                                                                <div ng-repeat="serviceChosen in servicesChosen">
+                                                                    <li><h4><i class="fa fa-check-circle-o"/> &nbsp;&nbsp; {{serviceChosen.name}}</h4></li>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="col-lg-6" style="padding: 40px">
+                                                            <input type="text" style="width: 80%" placeholder="Enter your coupon code"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </center>
+                                            <ul class="pager wizard">
+                                                <li class="next"><input type="submit" id="result" ng-click="confirmOrder();" style="background-color:#1b6d85;cursor: pointer" data-toggle="tab" value="Order Now ->"></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="resultTab" style="padding: 10px">
+                                        <thank-you></thank-you>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      </section>
+      
+      <!-- section1 ends here -->
+      
+      <!-- section2 starts here -->
+     
+      <!-- section2 ends here -->
+     
+
+   
+      <!-- section7 ends here -->
+      
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/bootstrap-multiselect.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script src="js/sweetalert-dev.js"></script>
+<script src="js/dropzone.js"></script>
+     
+    
+  </body>
+  <script>
+
+
+  
+  </script>
+  
+  
+</html>

@@ -27,7 +27,7 @@ beforeSend:function(){
 dataType:'json',
 success:function(data){
 if(data.msg =='valid'){
- // console.log(data.data);
+ console.log(data.data);
   jQuery('#user_info').text(data.data.name);
   jQuery('#user_id').val(data.data._id);
  jQuery('#b_first_name').val(data.data.name.split(' ')[0]);
@@ -37,15 +37,28 @@ if(data.msg =='valid'){
    jQuery('#login_logout').hide();
    jQuery('#user_pro').show();
    jQuery('.hdr_selected_city').text(data.data.city);
-   if(window.location.href.indexOf("home.veiw.html")>-1)
-    {angular.element(document.getElementById('ng-control')).scope().current_services(data.data.city);
-}
+  console.log(data.data.city)
    setTimeout(function(){jQuery('.service_list').val(data.data.city)},1000);
-   
+   //alert(jQuery('.service_list').val(data.data.city));
    jQuery('#user_info').text(data.data.name);
     jQuery('#logout').show();
     user_info = data.data;
     jQuery('body').removeClass('loader_g');
+     if(window.location.href.indexOf("home.veiw.html")>-1)
+      
+    {
+     setTimeout(function(){angular.element(document.getElementById('ng-control')).scope().current_services(data.data.city);},500)
+}
+   if(window.location.href.indexOf("profile_view.html")>-1)
+      
+    {
+     setTimeout(function(){angular.element(document.getElementById('pro-controller')).scope().init(data.data._id);},500)
+}
+  if(window.location.href.indexOf("user_booking.html")>-1)
+      
+    {
+     setTimeout(function(){angular.element(document.getElementById('user_book')).scope().user_booking(data.data._id);},500)
+}
 //console.log(user_info);
 }else{
   jQuery('#id05').show();
@@ -68,6 +81,31 @@ window.location.href='';
 
 }
 });
+});
+$( "#send_feedback" ).click(function() {
+  type=[];
+  if(typeof user_info._id!=='undefined' && user_info._id!=''){
+jQuery('[name=feedback_type]:checked').each(function(){
+type.push(jQuery(this).val());
+});
+if(jQuery('#id06 #first_name').val()!='' && jQuery('#id06 #last_name').val()!='' && jQuery('#id06 #email').val()!='' && jQuery('#id06 #f_number').val()!='' && jQuery('#id06 #msg').val()!='' &&  type.length>0){
+
+
+jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/feedback',
+data:'name='+jQuery('#id06 #first_name').val()+' '+jQuery('#id06 #last_name').val()+'&email='+jQuery('#id06 #email').val()+'&mob='+jQuery('#id06 #f_number').val()+'&message='+jQuery('#id06 #msg').val()+'&type='+type,
+type:'post',
+success:function(data){
+swal('Thanks','We have received your Handy Maintenance Packages. Our Administration will contact you soon.','success');
+jQuery('#id06').hide();
+}
+});
+}else{
+swal('Error','Please fill all the fields','error');
+}
+}else{
+  swal('Error','Please Login first','error');
+}
 });
 
 
@@ -109,10 +147,10 @@ window.location.href = '';
 
 jQuery('#register-submit').click(function(event){
   event.preventDefault();
-if(jQuery('#username').val()!='' && jQuery('#email').val()!='' && jQuery('#number').val()!='' && jQuery('#password').val()!=''){
+if(jQuery('#id02 #username').val()!='' && jQuery('#id02 #email').val()!='' && jQuery('#id02 #number').val()!='' && jQuery('#id02 #password').val()!=''){
 jQuery.ajax({
 url:'https://handy-service-server.herokuapp.com/send/otp',
-data:'number='+jQuery('#number').val(),
+data:'number='+jQuery('#id02 #number').val(),
 type:'POST',
 
 success:function(data){
@@ -149,11 +187,11 @@ success:function(data){
  }else if(data.message=='matched'){
   jQuery.ajax({
 url:'https://handy-service-server.herokuapp.com/user/register',
-data:'name='+jQuery('#username').val()+'&email='+jQuery('#email').val()+'&number='+jQuery('#number').val()+'&pass='+jQuery('#password').val(),
+data:'name='+jQuery('#id02 #username').val()+'&email='+jQuery('#id02 #email').val()+'&number='+jQuery('#id02 #number').val()+'&pass='+jQuery('#id02 #password').val(),
 type:'POST',
 success:function(){
   swal('Saved','Congrates Account has been created','success');
-  u_login(jQuery('#email').val(),jQuery('#password').val());
+  u_login(jQuery('#id02 #email').val(),jQuery('#id02 #password').val());
 }
 });
  }
@@ -193,7 +231,9 @@ data:'number='+jQuery('#rb_number').val(),
 type:'POST',
 success:function(data){
  // swal('Thanks','Otp has been sent to your number','success');
+  document.getElementById('id09').style.display='none';
   jQuery('#id0991').show();
+
 jQuery('#rb_otp_value_id').val(data.id);
 }
 });
@@ -234,4 +274,6 @@ else{
 }
 });
 setTimeout(function(){},2000);
-
+function login_view(){
+  window.location.href="/home.veiw.html";
+}

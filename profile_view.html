@@ -100,7 +100,7 @@
 }
     </style>
   </head>
-  <body ng-app="book_service" ng-controller="book_controller">
+  <body ng-app="book_service" id="pro-controller" ng-controller="book_controller">
 <div class="row">
 <div class="col-md-6"><a href="home.veiw.html">
 <img src="handy1.png" class="logo_" style="height: 57px;width: 250px;
@@ -117,7 +117,7 @@ margin-top: 16px"></a>
     color: #767676;;
 ">Select City</a>
 </li>
-<li class="" style=""><a href="#" id="login_logout"  onclick="document.getElementById('id03').style.display='block'"  style="
+<li class="" style=""><a href="#" id="login_logout"  onclick="login_view();"  style="
     color: #767676;;
 ">Login/SignUp</a></li>
 <li class="" style=""><a href="#"     style="
@@ -131,8 +131,10 @@ margin-top: 16px"></a>
     margin-left: -51px;
 ">
                   <li><a href="profile_view.html">Profile</a></li>
-                  <li><a href="#">Booking</a></li>
-                 
+                  <li><a href="user_booking.html">Booking</a></li>
+                 <li class="" style=""><a href="#" id="logout" onclick="" style="
+    color: #767676; 
+">Logout</a></li>
                 </ul>
               </li>
  
@@ -176,9 +178,9 @@ margin-top: 16px"></a>
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="text-center">
     
-        <img src="http://lorempixel.com/200/200/people/9/" class="avatar img-circle img-thumbnail" alt="avatar">
+        <img src="{{user_info.photo}}" class="pro_pic avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
-        <input type="file" name ="file" class="text-center center-block well well-sm">
+        <input type="button" name ="file" class="btn btn-info" value="Upload">
         <input type="hidden" name ="user_id" value value="58eba898261fd511009d81b6" >
         <input type="hidden" id ="pro_img" class="text-center center-block well well-sm">
       </div>
@@ -216,7 +218,19 @@ margin-top: 16px"></a>
          <div class="form-group">
           <label class="col-lg-3 control-label">Address:</label>
           <div class="col-lg-8">
-               <select class="form-control" id="all_address" style="padding: initial;"></select>
+               <select class="form-control" onchange="show_addrs()" id="all_address" style="padding: initial;"></select>
+          </div>
+        </div>
+          <div class="form-group">
+          <label class="col-lg-3 control-label"></label>
+          <div class="col-lg-4">
+             <textarea  id="show_addr" class="form-control" cols="40"></textarea>
+             
+          </div>
+          <div class="col-lg-4">
+             
+              <input class="btn btn-primary" id="del_addr" value="Delete" type="button">
+                <input class="btn btn-primary" id="add_addr" value="Add Address" type="button">
           </div>
         </div>
         <div class="form-group">
@@ -224,7 +238,7 @@ margin-top: 16px"></a>
           <div class="col-md-8">
             <input class="btn btn-primary" id="update_user" value="Save Changes" type="button">
             <span></span>
-            <input class="btn btn-default" value="Cancel" type="reset">
+            <input class="btn btn-warning" value="Cancel" type="reset">
           </div>
         </div>
       </form>
@@ -327,8 +341,188 @@ margin-top: 16px;margin-left: 5px;">
   </div>
 </footer> 
 
+<div id="id014" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id014').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Add Address</h2>
    
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+     <form class="w3-container form-horizontal" role="form">
+       
+        <div class="form-group">
+          <label class=" control-label">House No:</label>
+          <div class="">
+            <input class="form-control" id="ad_house_no" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Society:</label>
+          <div class="">
+            <input class="form-control" id="ad_society" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">City:</label>
+          <div class="">
+            <input class="form-control" id="ad_city" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Landmark :</label>
+          <div class="">
+            <input class="form-control" id="ad_landmark" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Zip Code:</label>
+          <div class="">
+            <input class="form-control" id="ad_zip_code" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">State:</label>
+          <div class="">
+            <input class="form-control" id="ad_state" mg-model="user_data.number" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="ad_save" value="Save" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id014').style.display='none'"  type="reset">
+          </div>
+        </div>
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey"  style="color:black;display:none;">
+        
+      </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div> 
+   <div id="id06" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id06').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">FeedBack</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      <form class="form-horizontal" role="form">
+       <div class="form-group">
+          <label class=" control-label">Type:</label>
+          <div class="">
+          <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="service" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Service</span>
+</label>
+         <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="finantial" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">UserExperience</span>
+</label>  
+<label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="UserExperience" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Functionality</span>
+</label>    
+    <label class="custom-control custom-radio">
+          <input id="checkbox" name="feedback_type" value="Functionality" type="checkbox" class="custom-control-input">
+  
+  <span class="custom-control-indicator"></span>
+  <span class="custom-control-description">Other</span>
+</label>        
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">First name:</label>
+          <div class="">
+            <input class="form-control" id="first_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class=" control-label">Last name:</label>
+          <div class="">
+            <input class="form-control" id="last_name" mg-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class=" control-label">Email:</label>
+          <div class="">
+            <input class="form-control" id="email" mg-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Number:</label>
+          <div class="">
+            <input class="form-control" id="f_number" mg-model="user_data.number" value="" type="number">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Message:</label>
+          <div class="">
+            <textarea id="msg" class="form-control" ></textarea> 
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input class="bttn btn-primary" id="send_feedback" value="Send" type="button">
+            <span></span>
+            <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id06').style.display='none'"  type="reset">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div>
       <!-- section7 ends here -->
       
  <script type="text/javascript" src="js/common.js"></script>
@@ -343,22 +537,29 @@ margin-top: 16px;margin-left: 5px;">
     
   </body>
  <script>
-var location = window.location.search.split('=')[1];
+var locations = window.location.search.split('=')[1];
 jQuery('#hdr_selected_city').text(locations);
 $( "#update_user" ).click(function() {
 
 jQuery.ajax({
-url:'https://handy-service-server.herokuapp.com/user/update',
+url:'https://handy-service-server.herokuapp.com/user/update?id='+jQuery('#user_id').val(),
 data:'name='+jQuery('#first_name').val()+' '+jQuery('#last_name').val()+'&email='+jQuery('#email').val()+'&number='+jQuery('#number').val()+'&photo='+jQuery('#pro_img').val()+'&id='+jQuery('#user_id').val(),
 type:'post',
 success:function(data){
-jQuery('#user_id').val(data._id);
+if(data=='saved'){
+swal('Saved!','Profile Updated','success');
+setTimeout(function(){
+window.location.href = '';
+},2000)
+
+//jQuery('#user_id').val(data._id);
+}
 
 }
 
 });
 });
-  var myDropzone1 = new Dropzone("[name=file]", { url: "/invokertech/upload_img.php?image_type=serviceman_photo"});
+  var myDropzone1 = new Dropzone("[name=file]", { url: "https://handy-service-server.herokuapp.com/image"});
 
   myDropzone1.on("complete", function(file) {
   myDropzone1.removeFile(file);
@@ -367,8 +568,8 @@ jQuery('#user_id').val(data._id);
 
  
   //console.log(file);
-jQuery('#pro_img').val(response);
-   jQuery('.pro_image').attr('src',response);
+jQuery('#pro_img').val(response.url);
+   jQuery('.pro_pic').attr('src',response.url);
     });
  jQuery('[name=file]').change(function(){
 jQuery('#profile_img').submit();
@@ -376,10 +577,10 @@ jQuery('#profile_img').submit();
 var app = angular.module("book_service", []);
 app.controller("book_controller", function($scope,$http) {
    $scope.user_data = [];
-var init = function () {
+$scope.init = function (id) {
 $http({
          method  : 'GET',
-         url     : 'https://handy-service-server.herokuapp.com/user?id=58eba898261fd511009d81b6',
+         url     : 'https://handy-service-server.herokuapp.com/user?id='+id,
          // data    : {id:'58eba898261fd511009d81b6'}, //forms user object
          //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
         })
@@ -413,7 +614,7 @@ $scope.update_user = function(){
        };
 
 
-       init();
+      // init();
 });
   function show_address()
 {
@@ -422,11 +623,22 @@ url:'https://handy-service-server.herokuapp.com/address/all',
 type:'get',
 data:'id='+jQuery('#user_id').val(),
 success:function(data){
-var address = '<option>Select Address</option>';
+var address = '<option value="">Select Address</option>';
 if(Object.keys(data).length>0){
 jQuery.each(data,function(key,val){
 
-address +='<option value="'+val._id+'">'+val.houseno+'</option>';
+a = [];
+
+$.each(val,function(key1,data1){
+  if(key1!='_id'){
+a.push(key1+':'+data1);
+}
+});
+
+a.join();
+
+
+address +='<option value="'+val._id+'">'+a+'</option>';
 
 
 });
@@ -441,6 +653,74 @@ jQuery('#all_address').html(address);
 setTimeout(
 function(){show_address();},2000
 )
+function show_addrs()
+{//console.log(val);
+  jQuery('#show_addr').val(jQuery('#all_address option:selected').text());
+}
+jQuery('#del_addr').click(function(){
+if(jQuery('#all_address').val()==''){
+  swal('Error','Please select the address');
+}else{
+  swal({
+  title: "Are you sure? ",
+  text: "Address Will Be Deleted For Ever",
+  type: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#DD6B55",
+  confirmButtonText: "Yes, delete it!",
+  cancelButtonText: "No, cancel plx!",
+  closeOnConfirm: false,
+  closeOnCancel: false
+},
+function(isConfirm){
+  if (isConfirm) {
+    jQuery.ajax({
+        url:'https://handy-service-server.herokuapp.com/remove/address',
+        data:'addr_id='+jQuery('#all_address').val()+'&id='+jQuery('#user_id').val(),
+        type:'GET',
+        success:function(data){
+            if(data.message=='not found'){
+                 swal("Error!", "Did not find address", "error");
+                 
+            }else if(data.message=='deleted'){  swal("Success", "Address Deleted ", "success");setTimeout(function(){
+                window.location.href='';
+            },1000);}
+        }
+    })
+  } else {
+    swal("Cancelled", "Address Has Not Been Deleted :)", "error");
+  }
+});
+}
+});
+jQuery('#add_addr').click(function(){
+ if(typeof user_info._id!=='undefined' && user_info._id!=''){
+
+  document.getElementById('id014').style.display='block'
+jQuery('#b_add').delay(100).fadeIn();
+//jQuery('#b_add_address').hide();
+
+jQuery('#confirm_odr').delay(100).fadeIn();
+}else{
+  swal('Error','Please Login first','error');
+}
+});
+jQuery('#ad_save').click(function(){
+if(jQuery('#ad_house_no').val()!='' && jQuery('#ad_society').val()!='' && jQuery('#ad_city').val()!='' && jQuery('#ad_landmark').val()!='' && jQuery('#ad_zip_code').val()!='' && jQuery('#ad_state').val()!=''){
+jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/add/address',
+type:"POST",
+data:'id='+jQuery('#user_id').val()+'&house_no='+jQuery('#ad_house_no').val()+'&society='+jQuery('#ad_society').val()+'&city='+jQuery('#ad_city').val()+'&landmark='+jQuery('#ad_landmark').val()+'&state='+jQuery('#ad_state').val(),
+success:function(){
+  swal('Saved!','Your Adress has been saved','success');
+ document.getElementById('id014').style.display='none';
+ show_address();
+}
+});
+}else{
+  swal('Error','Please All the Field','error');
+}
+});
   </script>
   
   
