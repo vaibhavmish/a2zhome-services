@@ -21,6 +21,11 @@
     <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <style type="text/css">/* The Modal (background) */
+	.active{
+	    color: #fff !important;
+    background-color: #37d5ac !important;
+	}
+	
     .fade.in {
     opacity: 1;
 }
@@ -180,28 +185,31 @@ margin-top: 16px"></a>
       <!-- banner ends here -->
       
       <!-- section1 starts here -->
- <section2>
+ <section>
  <div id="id010" class="" style="paddin-top: -104;margin-top: -60px;">
-    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
-
-       <header class="w3-container w3-blue" style="height:8vh;"> 
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:553px">
+	<section style="background-color:#f6f6f6">
+       <header class="w3-container" style="height:8vh; background-color:#f6f6f6"> 
    <span onclick="document.getElementById('id010').style.display='none'" 
    class="w3-closebtn w3-padding-top">&times;</span>
-   <h2 style="text-align:center">Handy Calculator</h2>
+   <h2 style="text-align:center; font-size:25px; font-weight:700; margin-top:5px">Handy Calculator
+   <div style="border-bottom:3px solid #c7c7c7; width:35%; margin-top:5px; margin-left:31%"></div>
+   </h2>
    
   </header>
-
-      <ul class="w3-pagination w3-white w3-border-bottom" style="width:100%;">
-   <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'enquiry1')">Type Of property</a></li>
-   <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'enquiry2')">Select Services</a></li>
-   <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'enquiry3')">Package Duration</a></li>
+		
+      <ul class="w3-pagination w3-white w3-border" style="width:97%; margin-left:2%; border-radius:5px; margin-top:10px">
+   <li><a href="javascript:void(0)" class="tablink" style="border-right:1px solid #c7c7c7">Type Of property</a></li>
+   <li><a href="javascript:void(0)" class="tablink" style="border-right:1px solid #c7c7c7">Select Services</a></li>
+   <li><a href="javascript:void(0)" class="tablink" style="border-right:1px solid #c7c7c7">Package Duration</a></li>
    
-   <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'enquiry4')">Required Services</a></li>
+   <li><a href="javascript:void(0)" class="tablink">Required Services</a></li>
    
-   <li style="display:none;"><a href="#" class="tablink" onclick="openCity(event, 'enquiry4')">don't remove it</a></li>
+   <li style="display:none;"><a href="#" class="tablink">don't remove it</a></li>
  
  </ul>
-        <div class="w3-container city w3-section" id="enquiry1" style="padding-bottom:35%; padding-left:15%;">
+ </section>
+        <div class="w3-container city w3-section" id="enquiry1" style="padding-bottom:25%; padding-left:15%;">
               <div class="form-group" style="padding-left:5%;">
           
                     <input type="submit" name="home" id="home" tabindex="1" class="form-control bttn t-center w3-large" onclick="openCity(event, 'enquiry2');" value="Home" >
@@ -216,90 +224,125 @@ margin-top: 16px"></a>
            <div class="form-group" style="padding-left:20%;">
                   <input type="submit" name="cc" id="cc" tabindex="1" class="form-control bttn t-center w3-btn  w3-large"  value="Commercial Complex" >
                    </div>
-           <hr style="margin-right: 19%; color: #cccccc;">
-             <div class="form-group" style="padding-left:54%;">
-                  <input type="submit" name="selserv" id="selserv" tabindex="1" class="form-control bttn t-center w3-btn  w3-large"  value="Select Services >>" >
+				   <div class="form-group" style="padding-left:54%; margin-top:23%">
+                  <input type="submit" name="selserv" id="selserv" tabindex="1" style="background-color:#37D5AC !important" class="form-control bttn t-center w3-btn  w3-large tablink"  value="Select Services >>" onclick="openCity(event, 'enquiry2'),move2()">
                    </div>
-        </div> 
-     <div class="w3-container city w3-section" id="enquiry2" style="padding-bottom:35%;display: none;">
-             <!--  <div class="form-group" style="padding-left:5%;">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="dsfsfsd" value="">
-                  </div> -->
 
-                  <div class="form-group">
-                  <select id="handyservices" multiple name="character"  class="form-control">
-                  
-  <option ng-repeat="x in services" value="{{x._id}}">{{x.name}}</option>
-                  </select>
+             
+        </div> 
+     <div class="w3-container city w3-section" id="enquiry2" style="padding-bottom:25%;display: none;">
+             
+				  
+				      <div class="form-group"  style="padding-left:20%;">
+					<ul style="list-style-type:none">
+          <li> <input type="checkbox" id="check" value="C"  ng-model="C" /> Carpentry <br /></li>
+			<li><input type="checkbox" id="check" value="P"   ng-model="P"/> Plumbing <br /></li>
+			<li><input type="checkbox" id="check"  value="E" ng-model="E" /> Electrical <br /></li>
+			
+				<input type="checkbox" id="check" ng-model="check4" />AC Services<br />
+					</ul>
+                 
                   </div>
+				  <div class="form-group" style="">
+				  <label>
+				  <input type="text" class="form-control" name="area" id="area" placeholder="your Area...." ng-show="C" />
+				   <input type="text" class="form-control" name="area" id="area"  placeholder="your Area...." ng-show="P" />
+				    <input type="text" class="form-control" name="area" id="area"  placeholder="your Area...." ng-show="E" />
+				  </label>
+				  <label>
+				  <input type="Number" class="form-control" id="check" placeholder="Number Of Ac" ng-show="check4" />
+				  </label>
+				  </div>
                   <div class="form-group">
                  <input type="text" id="ser_area" class="form-control" style="display:none">
                   </div>
+				  <div class="form-group" style="padding-left:54%; margin-top:8%">
+                  <input type="submit" name="selserv" id="check1" tabindex="1" style="background-color:#37D5AC !important" class="form-control bttn t-center w3-btn  w3-large tablink"  value="Package Duration >>" onclick="openCity(event, 'enquiry3'),move3()">
+                   </div>
+				
                
         </div> 
-  <div class="w3-container city w3-section" id="enquiry3" style="padding-bottom:35%;display: none;">
+  <div class="w3-container city w3-section" id="enquiry3" style="padding-bottom:25%;display: none;">
+  <form>
               <div class="form-group" style="padding-left:5%;">
                      <label class="custom-control custom-radio">
-          <input id="" name="pck_duration" value="3" type="radio" class="custom-control-input">
+          <input id="duration" name="pck_duration" value="3" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>3 Months</h4></span>
 </label><br>
          <label class="custom-control custom-radio">
-          <input id="" name="pck_duration" value="6" type="radio" class="custom-control-input">
+          <input id="duration" name="pck_duration" value="6" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>6 Months</h4></span>
 </label>  <br>
 <label class="custom-control custom-radio">
-          <input id="" name="pck_duration" value="12" type="radio" class="custom-control-input">
+          <input id="duration" name="pck_duration" value="12" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>12 Month</h4></span>
 </label>
 
-                  </div>
-                     <div class="form-group">
 
-  </div>
+                  </div>
+				  <div class="form-group" style="padding-left:54%; margin-top:11%">
+                  <input type="submit" name="selserv" id="selserv" tabindex="1" style="background-color:#37D5AC !important" class="form-control bttn t-center w3-btn  w3-large tablink"  value="Required Services >>" onclick="openCity(event, 'enquiry4'),move4()">
+                   </div>
+        </form>
         </div> 
       <div class="w3-container city w3-section" id="enquiry4" style="padding-bottom:35%;display: none;">
+	  <form>
                <div class="form-group" style="padding-left:5%;">
                      <label class="custom-control custom-radio">
-          <input id="" name="req_service" value="15" type="radio" class="custom-control-input">
+          <input id="total" name="total" value="15" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>15</h4></span>
 </label><br>
          <label class="custom-control custom-radio">
-          <input id="" name="req_service" value="30" type="radio" class="custom-control-input">
+          <input id="total" name="total" value="30" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>30</h4></span>
 </label> <br> 
 <label class="custom-control custom-radio">
-          <input id="" name="req_service" value="unlimited" type="radio" class="custom-control-input">
+          <input id="total" name="total" value="unlimited" type="radio" class="custom-control-input">
   
   <span class="custom-control-indicator"></span>
   <span class="custom-control-description"><h4>Unlimited</h4></span>
 </label>
                   </div><br>
+				 
             <div class="form-group" style="padding-left:5%; display: none; ">
                   <input type="submit" name="cc" id="pack_price" tabindex="1" class="form-control bttn t-center w3-btn w3-green w3-large" value="">
                    </div>
              <div class="form-group" style="padding-left:5%;">
-                  <input type="submit" name="cc" id="handy_sub" tabindex="1" class="form-control bttn t-center w3-btn w3-green w3-large" value="Calculate Price">
+                  <input type="submit" name="cc" id="calculate" tabindex="1" class="form-control bttn t-center w3-btn w3-green w3-large" value="Calculate Price">
                    </div>       <div class="form-group" style="padding-left:5%;">
-                  <input type="submit" name="cc" id="handy_book" tabindex="1" class="form-control bttn t-center w3-btn w3-green w3-large" value="Submit">
+                  <input type="submit" name="cc" id="handy_book" tabindex="1" class="form-control bttn t-center w3-btn w3-green w3-large" value="Submit" onclick="document.getElementById('id07').style.display='block'">
                    </div>
-        </div> 
+				   
+		<div class="form-control" style="padding-left:5%">
+					<label style="font-size:18px">Total Price: 
+								<span id="show"></span>
+					</label>
+
+					</div>	
+        </div>
+			
       </form>
 
-     
+     <section style="background-color:#f6f6f6; padding:60px 50px;" >
+      <div class="w3-light-grey w3-round-xlarge"style="margin-top:-27px" >
+    <div id="myBar" class="w3-green w3-round-xlarge" style="height:10px;width:0;"></div>
+  </div>
+  
+ </section>	
 
     </div>
   </div>
- </section2>
+ </section>
       
       <!-- section1 ends here -->
       
@@ -446,6 +489,80 @@ margin-top: 16px;margin-left: 5px;">
     </div>
   </div>     
 <!--fisrt login-->
+
+<div id="id07" class="w3-modal" style="display:none;">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id07').style.display='none'" class="w3-closebtn w3-padding-top">×</span>
+   <h2 style="text-align:center">Verification Schedule</h2>
+   
+  </header>
+
+      <form class="w3-container ng-pristine ng-valid">
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      
+     <input type="hidden" id="b_service_id" name="" value="58f7286f62af4611001cd610">
+      <input type="hidden" id="b_service_name" name="" value="AC Service">
+        <div class="form-group">
+          <label class=" control-label">Name:</label>
+          <div class="">
+            <input class="form-control ng-pristine ng-untouched ng-valid" id="b_first_name" ng-model="user_data.name" value="" type="text">
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <label class=" control-label">Email:</label>
+          <div class="">
+            <input class="form-control ng-pristine ng-untouched ng-valid" id="b_email" ng-model="user_data.email" value="" type="text">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Number:</label>
+          <div class="">
+            <input class="form-control ng-pristine ng-untouched ng-valid" id="b_number" ng-model="user_data.number" value="" type="number">
+          </div>
+        </div>
+         <div class="form-group">
+          <label class=" control-label">Special Requiement:</label>
+          <div class="">
+             <input type="text" id="b_reason" placeholder="Ex. Hammer, etc" class="form-control"> 
+          </div>
+        </div>
+        
+         <div class="form-group" id="b_add" style="">
+          <label class=" control-label">Address:</label>
+          <div class="">
+          <select class="form-control" id="all_address"></select>
+          </div>
+        </div>
+        <div class="form-group">
+      
+            
+            <input class="bttn btn-primary" onclick="submit()" id="submit_shadule" style="" value="Confirm Order" type="button">
+            <span></span>
+            
+         
+        </div>
+      
+    </div>
+  </div>
+                     
+   
+        </div></form> 
+  
+      
+
+      
+
+    </div>
+  </div>
 
 <div id="id02" class="w3-modal">
     <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
@@ -784,8 +901,41 @@ margin-top: 16px;margin-left: 5px;">
 <script src="js/sweetalert.min.js"></script>
 <script src="js/sweetalert-dev.js"></script>
       <script src="js/k_timepicker.js"></script>
-     <script src="js/k_datepicker.js""></script>
+     <script src="js/k_datepicker.js"></script>
   </body>
+   <script>
+  $(function(){
+  
+    $('#check1').click(function() {
+	var sel = $('input[type=checkbox]:checked').map(function(_, el) {
+        return $(el).val();
+    }).get();
+	
+        if($('input[type=checkbox]').is(':checked'))
+           
+		
+        else
+            swal('Error','Please select service');
+			
+    });
+	
+	
+    
+   
+});
+
+var inputs = table.getElementsByTagName("#check");
+var checked = 0;   
+for (var i = 0; i < inputs.length; i++) {   
+    var input = inputs[i];
+    if('checkbox' == inputs[i].type && inputs[i].checked)
+        checked++;
+}
+
+  </script>
+ 
+ 
+  
   <script type="text/javascript">
   jQuery('#user_pro').click(function(){
 jQuery('#user_pro').toggleClass('open');
@@ -990,10 +1140,10 @@ function openCity(evt, cityName) {
   }
   tablinks = document.getElementsByClassName("tablink");
   for (i = 0; i < x.length; i++) {
-    tablinks[i].classList.remove("w3-light-grey");
+    tablinks[i].classList.remove("active");
   }
   document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.classList.add("w3-light-grey");
+  evt.currentTarget.classList.add("active");
 }
 }
 jQuery('#handyservices').change(function(){
@@ -1080,8 +1230,94 @@ if(jQuery('#hn_first_name').val()!='' && jQuery('#hn_last_name').val()!='' && jQ
 function show_pckg_form(){
   document.getElementById('id012').style.display='block'
 }
+
+
+function move1() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 25) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+function move2() {
+  var elem = document.getElementById("myBar");   
+  var width = 25;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 50) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+function move3() {
+  var elem = document.getElementById("myBar");   
+  var width = 50;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 75) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+function move4() {
+  var elem = document.getElementById("myBar");   
+  var width = 75;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
  
   </script>
+
+
+<script>
+    (function(){
+       var $services = $('#check');
+	   var $duration = $('#duration');
+	   var $total = $('#total');
+	  var $area = $('#area');
+	   
+	   $('#calculate').on('click', function(){
+			
+			var service_pck = {
+				services:$services.val(),
+				duration: $duration.val(),
+				total: $total.val(),
+				area: $area.val()
+			};
+			$.ajax({
+				type: 'POST',
+				url:'http://handy-service-server.herokuapp.com/price/package',
+				data: service_pck,
+				success(data){
+				console.log(data.price);       // Debug your response. 
+			$("#show").html(data.price);
+				}
+			
+				
+			});
+	   });
+	   
+    })(jQuery);
+</script>
   
   
 </html>

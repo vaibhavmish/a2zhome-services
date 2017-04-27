@@ -389,7 +389,7 @@ margin-top: 16px"></a>
                                 <div class="row">
                   <ul class="bttns .align-self-xs-center">
                       <li class="bttn" onclick="window.location.href='services.veiw.html?l='+jQuery('.service_list').val();"><a href="#"  data-toggle="modal" data-target="#">Book Services</a></li>
-                      <li class="bttn" id="free_services"><a href="#" >Free Services</a></li>
+                      <li class="bttn" id="free_services" onclick="document.getElementById('id020').style.display='block'"><a href="#" >Free Services</a></li>
                       <li class="bttn" onclick="document.getElementById('id09').style.display='block'" style="background:#37D5AC !important;width:163"><a  href="#" style="" >Request Callback</a></li>
                   </ul>
                 </div>
@@ -399,6 +399,57 @@ margin-top: 16px"></a>
     </section>
       <!-- banner ends here -->
       
+	  
+<div id="id020" class="w3-modal">
+    <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
+
+       <header class="w3-container w3-blue" style="height:8vh;"> 
+   <span onclick="document.getElementById('id020').style.display='none'" 
+   class="w3-closebtn w3-padding-top">&times;</span>
+   <h2 style="text-align:center">Free Services</h2>
+   
+  </header>
+
+      <form class="w3-container" >
+        <div class="w3-section">
+          <div class="row">
+    <!-- left column -->
+   
+    <!-- edit form column -->
+    <div class="col-md-12 personal-info">
+    
+      <form class="form-horizontal" role="form">
+ 
+         <div class="form-group" id="b_add" style="">
+          <label class=" control-label">Address:</label>
+          <div class="">
+          <select class="form-control" id="all_address"></select>
+          </div>
+        </div>
+		
+        <div class="form-group">
+      
+            <input class="bttn btn-primary"   id="" value="Book" type="button">
+            <input class="bttn btn-primary" onclick="" id="" style="" value="Verification Schedule" type="button">
+            <span></span>
+            
+         
+        </div>
+      </form>
+    </div>
+  </div>
+                     
+   
+        </div> 
+  
+      </form>
+
+      
+
+    </div>
+  </div> 
+
+	  
       <!-- section1 starts here -->
      <section id="section1">
         <div class="container">
@@ -434,6 +485,7 @@ margin-top: 16px"></a>
                  
               </div>  
           </div> 
+		  
              <div class="row services" ng-repeat="y in services | limitTo:2">
                 
 
@@ -443,7 +495,7 @@ margin-top: 16px"></a>
                                  <div class="overlay">
                                   <div class="text">
                                       <div class="bttn book bookservice_modal" id="{{x._id}}" style="margin-top: -75px;" data-name="{{x.name}}"  data-target="modal">
-                                      <a  ng-click="book_service(x._id)"   target="">Book</a></div>
+                                      <a  ng-click="book_service(x._id)" data-toggle="modal" data-target="#" >Book</a></div>
                                       {{x.description.substr(1,100)}}  
                                       
                                    </div>
@@ -957,7 +1009,7 @@ margin-top: 16px">
     <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
        <header class="w3-container w3-blue" style="height:8vh;"> 
-   <span onclick="document.getElementById('id01').style.display='none'" 
+   <span onclick="document.getElementById('id05').style.display='none'" 
    class="w3-closebtn w3-padding-top">&times;</span>
    <h2 style="text-align:center">Select City</h2>
    
@@ -1049,26 +1101,26 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">First name:</label>
           <div class="">
-            <input class="form-control" id="first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="first_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Last name:</label>
           <div class="">
-            <input class="form-control" id="last_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="last_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="email" ng-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="f_number" mg-model="user_data.number" value="" type="number">
+            <input class="form-control" id="f_number" ng-model="user_data.number" value="" type="number">
           </div>
         </div>
          <div class="form-group">
@@ -1126,28 +1178,22 @@ margin-top: 16px">
      <input type="hidden" id="b_service_id" name="">
       <input type="hidden" id="b_service_name" name="">
         <div class="form-group">
-          <label class=" control-label">First Name:</label>
+          <label class=" control-label">Name:</label>
           <div class="">
-            <input class="form-control" id="b_first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="b_first_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
-       <div class="form-group">
-          <label class=" control-label">Last Name:</label>
-          <div class="">
-            <input class="form-control" id="b_last_name" mg-model="user_data.name" value="" type="text">
-          </div>
-        </div>
-       
+      
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="b_email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="b_email" ng-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="b_number" mg-model="user_data.number" value="" type="number">
+            <input class="form-control" id="b_number" ng-model="user_data.number" value="" type="number">
           </div>
         </div>
          <div class="form-group">
@@ -1160,7 +1206,7 @@ margin-top: 16px">
          <div class="form-group" id="b_add" style="">
           <label class=" control-label">Address:</label>
           <div class="">
-          <select class="form-control" id="all_address"></select>
+          <select class="form-control" ng-model="" id="all_address"></select>
           </div>
         </div>
         <div class="form-group">
@@ -1213,38 +1259,38 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">House No:</label>
           <div class="">
-            <input class="form-control" id="ad_house_no" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="ad_house_no" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Society:</label>
           <div class="">
-            <input class="form-control" id="ad_society" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="ad_society" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">City:</label>
           <div class="">
-            <input class="form-control" id="ad_city" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="" ng-model="select_service" value="" type="text" disabled>
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Landmark :</label>
           <div class="">
-            <input class="form-control" id="ad_landmark" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="ad_landmark" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Zip Code:</label>
           <div class="">
-            <input class="form-control" id="ad_zip_code" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="ad_zip_code" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">State:</label>
           <div class="">
-            <input class="form-control" id="ad_state" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="ad_state" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
         <div class="form-group">
@@ -1352,30 +1398,30 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">First name:</label>
           <div class="">
-            <input class="form-control" id="rb_first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="rb_first_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Last name:</label>
           <div class="">
-            <input class="form-control" id="rb_last_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="rb_last_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="rb_email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="rb_email" ng-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="rb_number" mg-model="user_data.number" value="" type="number">
+            <input class="form-control" id="rb_number" ng-model="user_data.number" value="" type="number">
           </div>
         </div>
          
-            <input class="form-control" id="rb_location" mg-model="user_data.number" value="" type="hidden">
+            <input class="form-control" id="rb_location" ng-model="user_data.number" value="" type="hidden">
          
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
@@ -1401,10 +1447,12 @@ margin-top: 16px">
  <div id="id010" class="w3-modal">
     <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
-       <header class="w3-container w3-blue" style="height:8vh;"> 
+       <header class="w3-container w3-white" style="height:8vh;"> 
    <span onclick="document.getElementById('id010').style.display='none'" 
    class="w3-closebtn w3-padding-top">&times;</span>
-   <h2 style="text-align:center">Handy Calculator</h2>
+   <h2 style="text-align:center">Handy Calculator
+   <div style="border-bottom:4px solid #f6f6f6"></div>
+   </h2>
    
   </header>
 
@@ -1521,32 +1569,32 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">First name:</label>
           <div class="">
-            <input class="form-control" id="p_first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="p_first_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Last name:</label>
           <div class="">
-            <input class="form-control" id="p_last_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="p_last_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="p_email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="p_email" ng-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="p_number" mg-model="user_data.number" value="" type="number">
+            <input class="form-control" id="p_number" ng-model="user_data.number" value="" type="number">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Location:</label>
           <div class="">
-            <input class="form-control" id="p_location" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="p_location" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
         <div class="form-group">
@@ -1582,32 +1630,32 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">First name:</label>
           <div class="">
-            <input class="form-control" id="hn_first_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="hn_first_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Last name:</label>
           <div class="">
-            <input class="form-control" id="hn_last_name" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="hn_last_name" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="hn_email" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="hn_email" ng-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="hn_number" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="hn_number" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Location:</label>
           <div class="">
-            <input class="form-control" id="hn_location" mg-model="user_data.number" value="" type="text">
+            <input class="form-control" id="hn_location" ng-model="user_data.number" value="" type="text">
           </div>
         </div>
         <div class="form-group">
@@ -1701,13 +1749,13 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">Date:</label>
           <div class="">
-            <input class="form-control" id="service_date" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="service_date" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Time:</label>
           <div class="">
-            <input class="form-control" id="service_time" mg-model="user_data.name" value="" type="text">
+            <input class="form-control" id="service_time" ng-model="user_data.name" value="" type="text">
           </div>
         </div>
        
@@ -2489,8 +2537,11 @@ setTimeout(function(){
 });
 
 
+
+
+
 </script>
-       
+   
 
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
      <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"> 
