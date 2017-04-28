@@ -366,7 +366,7 @@ margin-top: 16px"></a>
 
 <li class="dropdown" id="user_pro" onclick="jQuery(this).toggleClass('open')" style="color: #767676;display:none;    margin-top: -30px;">
                 <a href="#" id="user_info" style="color: #767676;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
-                <ul class="dropdown-menu" style="
+                <ul class="dropdown-menu" id="open" style="
     padding: 15px;
     margin-left: -51px;
 ">
@@ -489,22 +489,28 @@ margin-top: 16px"></a>
              <div class="row services" ng-repeat="y in services | limitTo:2">
                 
 
-   <div class=" col-md-4 col-sm-4 outerbox" ng-repeat="x in y">    <div class="service s-box">
+   <div class=" col-md-4 col-sm-4 outerbox" ng-repeat="x in y">    
+							<div class="service s-box">
                              <div class="open-text">
+
                                 <img src="{{x.icon}}" class="s-image">
+
                                  <div class="overlay">
+								 
                                   <div class="text">
-                                      <div class="bttn book bookservice_modal" id="{{x._id}}" style="margin-top: -75px;" data-name="{{x.name}}"  data-target="modal">
+                                  <p style="margin-top:-18px; padding:0 5%; text-align: center; color:#fff; position: absolute;">This is services description This is services description</p>
+                                      <div class="bttn book bookservice_modal" id="{{x._id}}" style="margin-top: 65px;" data-name="{{x.name}}"  data-target="modal">
                                       <a  ng-click="book_service(x._id)" data-toggle="modal" data-target="#" >Book</a></div>
                                       {{x.description.substr(1,100)}}  
-                                      
+                                     
                                    </div>
                                  </div>
                              </div>
                                 
                              <h4 class="s-name">{{x.name}}</h4>
                             
-                        </div>  </div>
+                        </div>  
+		</div>
                         
 
 
@@ -1155,7 +1161,6 @@ margin-top: 16px">
 
 
 
-
 <div id="id07" class="w3-modal">
     <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
@@ -1176,42 +1181,43 @@ margin-top: 16px">
     
       <form class="form-horizontal" role="form">
      <input type="hidden" id="b_service_id" name="">
-      <input type="hidden" id="b_service_name" name="">
         <div class="form-group">
-          <label class=" control-label">Name:</label>
+          <label class=" control-label">Full Name:</label>
           <div class="">
-            <input class="form-control" id="b_first_name" ng-model="user_data.name" value="" type="text">
+            <input class="form-control" id="b_first_name" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
       
+       
         <div class="form-group">
           <label class=" control-label">Email:</label>
           <div class="">
-            <input class="form-control" id="b_email" ng-model="user_data.email" value="" type="text">
+            <input class="form-control" id="b_email" mg-model="user_data.email" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Number:</label>
           <div class="">
-            <input class="form-control" id="b_number" ng-model="user_data.number" value="" type="number">
+            <input class="form-control" id="b_number" mg-model="user_data.number" value="" type="number">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Special Requiement:</label>
           <div class="">
-             <input type="text" id="b_reason" placeholder="Ex. Hammer, etc" class="form-control" > 
+             <textarea id="b_reason" class="form-control" ></textarea> 
           </div>
         </div>
         
          <div class="form-group" id="b_add" style="">
           <label class=" control-label">Address:</label>
           <div class="">
-          <select class="form-control" ng-model="" id="all_address"></select>
+          
+             <select class="form-control" id="b_addres"></select>
           </div>
         </div>
         <div class="form-group">
       
-            <input class="bttn btn-primary"   id="b_add_address" value="Add Address" type="button">
+            <input class="bttn btn-primary" onclick="" id="b_add_address" value="Add Address" type="button">
             <input class="bttn btn-primary" onclick="confirm_ord()" id="confirm_odr" style="" value="Confirm Order" type="button">
             <span></span>
             
@@ -1229,13 +1235,10 @@ margin-top: 16px">
       
 
     </div>
-  </div> 
-
-
+  </div>
 
 
         
-
 <div id="id014" class="w3-modal">
     <div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:600px">
 
@@ -1259,44 +1262,44 @@ margin-top: 16px">
         <div class="form-group">
           <label class=" control-label">House No:</label>
           <div class="">
-            <input class="form-control" id="ad_house_no" ng-model="user_data.name" value="" type="text">
+            <input class="form-control" id="s_ad_house_no" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class=" control-label">Society:</label>
           <div class="">
-            <input class="form-control" id="ad_society" ng-model="user_data.name" value="" type="text">
+            <input class="form-control" id="s_ad_society" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
        
         <div class="form-group">
           <label class=" control-label">City:</label>
           <div class="">
-            <input class="form-control" id="" ng-model="select_service" value="" type="text" disabled>
+            <input class="form-control" id="s_ad_city" ng-model="select_service" disabled value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Landmark :</label>
           <div class="">
-            <input class="form-control" id="ad_landmark" ng-model="user_data.number" value="" type="text">
+            <input class="form-control" id="s_ad_landmark" mg-model="user_data.number" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">Zip Code:</label>
           <div class="">
-            <input class="form-control" id="ad_zip_code" ng-model="user_data.number" value="" type="text">
+            <input class="form-control" id="s_ad_zip_code" mg-model="user_data.number" value="" type="text">
           </div>
         </div>
          <div class="form-group">
           <label class=" control-label">State:</label>
           <div class="">
-            <input class="form-control" id="ad_state" ng-model="user_data.number" value="" type="text">
+            <input class="form-control" id="s_ad_state" mg-model="user_data.number" value="" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="bttn btn-primary" id="ad_save" value="Save" type="button">
+            <input class="bttn btn-primary" id="s_ad_save" value="Save" type="button">
             <span></span>
             <input class="bttn btn-default" value="Cancel" onclick="document.getElementById('id014').style.display='none'"  type="reset">
           </div>
@@ -1317,8 +1320,6 @@ margin-top: 16px">
 
     </div>
   </div> 
-
-
 
 
 
@@ -1816,7 +1817,11 @@ margin-top: 16px">
      <script src="js/k_datepicker.js"></script>
  <script src="js/k_timepicker.js"></script>
  <script src="js/k_sweet.js"></script>
-    
+     <script src="js/k_datepicker.js""></script>
+ <script src="js/k_timepicker.js"></script>
+ <script src="js/k_sweet.js"></script>
+      
+      <script type="text/javascript" src="js/common.js"></script>
 
 
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -1826,10 +1831,101 @@ margin-top: 16px">
 
 <script src="js/jquery.bxslider.js"></script> 
 <script src="js/sol.js"></script> 
-<script type="text/javascript">
+ <script type="text/javascript">
 
- 
+jQuery('.services').on('click','.bookservice_modal',function(){
+     if(typeof user_info._id!=='undefined' && user_info._id!=''){
+     
+  document.getElementById('id07').style.display='block';
+  jQuery('#b_service_id').val(jQuery(this).attr('id'));
+  jQuery('#b_service_name').val(jQuery(this).data('name'));
+}else{
+  swal('Error','Please Login First','error');
+}
+});
 
+jQuery('#s_ad_save').click(function(){
+if(jQuery('#s_ad_house_no').val()!='' && jQuery('#s_ad_society').val()!='' && jQuery('#s_ad_city').val()!='' && jQuery('#s_ad_landmark').val()!='' && jQuery('#s_ad_zip_code').val()!='' && jQuery('#s_ad_state').val()!=''){
+jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/add/address',
+type:"POST",
+data:'id='+jQuery('#user_id').val()+'&house_no='+jQuery('#s_ad_house_no').val()+'&society='+jQuery('#s_ad_society').val()+'&city='+jQuery('boo#s_ad_city').val()+'&landmark='+jQuery('#s_ad_landmark').val()+'&state='+jQuery('#s_ad_state').val(),
+success:function(){
+  swal('Saved!','Your Adress has been saved','success');
+ document.getElementById('id014').style.display='none';
+ show_address();
+}
+});
+}else{
+  swal('Error','Please All the Field','error');
+}
+});
+
+
+
+
+
+$('#service_date').datepicker();
+function home_makeover()
+{
+   window.location.href="home_makeoverpackage.html?l="+jQuery('.service_list').val();
+}
+function corporate_view(){
+  window.location.href="corporates.html?l="+jQuery('.service_list').val();
+}
+jQuery('#service_date').click(function(){
+jQuery('.datepicker-days').show();
+});
+$('#service_time').timepicker();
+function confirm_ord(){
+      if(typeof user_info._id!=='undefined' && user_info._id!=''){
+  if(jQuery('#b_first_name').val()!='' && jQuery('#b_last_name').val()!='' && jQuery('#b_email').val()!='' && jQuery('#b_number').val()!='' && jQuery('#b_addres').val()!=''){
+    jQuery('#tb_name').text(jQuery('#b_first_name').val()+' '+jQuery('#b_last_name').val());
+    jQuery('#tb_email').text(jQuery('#b_email').val());
+    jQuery('#tb_number').text(jQuery('#b_number').val());
+    jQuery('#tb_add1').text(jQuery('#b_addres option:selected').text());
+     jQuery('#tb_services').text(jQuery('#b_service_name').val());
+
+ document.getElementById('id08').style.display='block';
+  document.getElementById('id07').style.display='none';
+  }else{
+swal('Error','Please fill all the fields','error');
+}
+}else{
+  swal('Error','Please Login first','error');
+}
+}
+jQuery('#book_service_now').click(function(){
+  if(jQuery('#service_date').val()!='' && jQuery('#service_time').val()!=''){
+  jQuery.ajax({
+url:'https://handy-service-server.herokuapp.com/book/service',
+data:'user_id='+jQuery('#user_id').val()+'&name='+jQuery('#b_first_name').val()+' '+jQuery('#b_last_name').val()+'&service_id='+jQuery('#b_service_id').val()+'&scheduled_date='+jQuery('#service_date').val()+'&scheduled_time='+jQuery('#service_time').val()+'&reason='+jQuery('#b_reason').val()+'&address='+jQuery('#b_addres').val(),
+type:'POST',
+success:function(data){
+swal('Thanks','For booking the service','success');
+setTimeout(function(){
+  window.location.href = '';
+},2000);
+}
+});
+}else{
+  swal('Error','Please fill all the fields','error');
+}
+});
+ var locations = window.location.search.split('=')[1];
+jQuery('#hdr_selected_city').text(locations);
+jQuery('#b_add_address').click(function(){
+  if(typeof user_info._id!=='undefined' && user_info._id!=''){
+  document.getElementById('id014').style.display='block'
+jQuery('#b_add').delay(100).fadeIn();
+jQuery('#b_add_address').hide();
+
+jQuery('#confirm_odr').delay(800).fadeIn();
+}
+else{
+  swal('Error','Please Login first','error');
+}
+});
 
 
 
@@ -1877,13 +1973,6 @@ swal('Error','Please fill all the fields','error');
 
 
 
-
-
-
-
-
-
-
 setTimeout(function(){
  if(typeof user_info._id ==='undefined' || user_info._id =='')
   {//alert('hjh');
@@ -1913,8 +2002,6 @@ url:'https://handy-service-server.herokuapp.com/address/all',
 type:'get',
 data:'id='+jQuery('#user_id').val(),
 success:function(data){
-  //console.log(data);
-
 var address = '<option>Select Address</option>';
 if(Object.keys(data).length>0){
 jQuery.each(data,function(key,val){
@@ -1928,18 +2015,18 @@ a.join();
 
 
 address +='<option value="'+val._id+'">'+a+'</option>';
-//address +='<option value="'+val._id+'">'+val.city+'</option>';
 
 
 });
 //console.log(address);
-jQuery('#all_address').html(address);
+jQuery('#b_addres').html(address);
 
 }
 }
 });
 
 }
+
 setTimeout(
 function(){show_address();},2000
 )
@@ -2541,6 +2628,10 @@ setTimeout(function(){
 
 
 </script>
+
+
+
+
    
 
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>

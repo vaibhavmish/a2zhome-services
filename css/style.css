@@ -337,6 +337,7 @@ input[type="text"]:focus,
     text-align: center;
     font-weight: 200;
 }
+  
 .s-box .overlay {
       position: absolute;
       top: 0;
@@ -350,12 +351,17 @@ input[type="text"]:focus,
       
       z-index: 5;
       visibility: hidden;
-      padding: 20px;
+     
       margin: 20px;
 }
 
-.open-text:hover  .text {
+
+.open-text:hover .text {
     visibility: visible;
+    background-color: #000;
+    opacity: 0.6;
+    padding: 10% 0;
+    margin-top: -30%;
 }
 
 input.text {

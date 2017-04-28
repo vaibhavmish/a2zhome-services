@@ -204,8 +204,10 @@ margin-top: 16px"></a>
                              <div class="open-text">
                                 <img src="{{x.icon}}" class="s-image">
                                  <div class="overlay">
+								 
                                 <div class="text">
-                                      <div class="bttn book bookservice_modal"  id="{{x._id}}"  data-name="{{x.name}}" style="margin-top: -75px;"  data-target="modal"><a  ng-click="book_service(x._id)" id="{{x._id}}" onclick=""  target="_blank">Book</a></div>
+                                <p style="margin-top:-18px; padding:0 5%; text-align: center; color:#fff; position: absolute;">This is services description This is services description</p>
+                                      <div class="bttn book bookservice_modal"  id="{{x._id}}"  data-name="{{x.name}}" style="margin-top: 65px;"  data-target="modal"><a  ng-click="book_service(x._id)" id="{{x._id}}" onclick=""  target="_blank">Book</a></div>
                                       {{x.description.substr(1,40)}}
                                       
                                    </div>
@@ -358,17 +360,12 @@ margin-top: 16px;margin-left: 5px;">
       <form class="form-horizontal" role="form">
      <input type="hidden" id="b_service_id" name="">
         <div class="form-group">
-          <label class=" control-label">First Name:</label>
+          <label class=" control-label">Full Name:</label>
           <div class="">
             <input class="form-control" id="b_first_name" mg-model="user_data.name" value="" type="text">
           </div>
         </div>
-       <div class="form-group">
-          <label class=" control-label">Last Name:</label>
-          <div class="">
-            <input class="form-control" id="b_last_name" mg-model="user_data.name" value="" type="text">
-          </div>
-        </div>
+      
        
         <div class="form-group">
           <label class=" control-label">Email:</label>
@@ -552,7 +549,7 @@ margin-top: 16px;margin-left: 5px;">
         <div class="form-group">
           <label class=" control-label">City:</label>
           <div class="">
-            <input class="form-control" id="s_ad_city" mg-model="user_data.email" value="" type="text">
+            <input class="form-control" id="s_ad_city" ng-model="select_service" disabled value="" type="text">
           </div>
         </div>
          <div class="form-group">
