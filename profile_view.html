@@ -180,7 +180,7 @@ margin-top: 16px"></a>
     
         <img src="{{user_info.photo}}" class="pro_pic avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
-        <input type="button" name ="file" class="btn btn-info" value="Upload">
+        <input type="button" name ="file" id="photo_upload" class="btn btn-info" value="Upload">
         <input type="hidden" name ="user_id" value value="58eba898261fd511009d81b6" >
         <input type="hidden" id ="pro_img" class="text-center center-block well well-sm">
       </div>
@@ -191,17 +191,12 @@ margin-top: 16px"></a>
       <h3>Personal info</h3>
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
+          <label class="col-lg-3 control-label">Full name:</label>
           <div class="col-lg-8">
             <input class="form-control" id="first_name" mg-model="user_data.name" value="{{user_info.name}}" type="text">
           </div>
         </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Last name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" id="last_name" mg-model="user_data.name" value="{{user_info.name}}" type="text">
-          </div>
-        </div>
+        
        
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
@@ -531,7 +526,7 @@ margin-top: 16px;margin-left: 5px;">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-multiselect.js"></script>
-<script src="js/sweetalert.min.js"></script>
+
 <script src="js/sweetalert-dev.js"></script>
      <script src="js/dropzone.js"></script>
     
@@ -595,17 +590,17 @@ $http({
 
        };
 
-$scope.update_user = function(){
+$scope.photo_upload= function(){
   $http({
          method  : 'POST',
          url     : 'https://handy-service-server.herokuapp.com/user/update',
           data    : $scope.user_data, //forms user object
          //headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
         })
-         .success(function(user_info) {
-          console.log(user_info);
-      $scope.user_info = user_info;
-     
+         .success(function(photo) {
+          console.log(photo);
+      $scope.user_info = photo;
+  
          });
 
 
@@ -721,6 +716,9 @@ success:function(){
   swal('Error','Please All the Field','error');
 }
 });
+
+
+
   </script>
   
   
