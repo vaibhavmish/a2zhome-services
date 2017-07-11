@@ -6,12 +6,12 @@
   "trace_route": "false",
   "authConfig": {
     "facebook": {
-      "clientId": "635586089948511",
-      "client_secret": "5f131445b966ef80608d501c2f2b4ade"
+      "clientId": "219945618469052",
+      "client_secret": "53fca0d56d1f7bde43937829074570c1"
     },
     "google": {
-      "clientId": "219459112816-ja2kh2465ic9u0vbjc68fmagaf63v9mo.apps.googleusercontent.com",
-      "client_secret": "Uhtq_mvsSxJsEeE5tNfjd__k"
+      "clientId": "336458288373-422f41kjqopb7gernjbgs9hiekgoeic8.apps.googleusercontent.com",
+      "client_secret": "7HmkLvlIr4BOmjGe_pFrbLRy"
     }
   }
 }
