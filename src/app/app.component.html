@@ -1,0 +1,13 @@
+<header>
+  <app-comp-navbar-top></app-comp-navbar-top>
+</header>
+<main>
+  <cm-modal></cm-modal>
+  <router-outlet>
+    <span *ngIf="showLoader" class="loading"></span>
+  </router-outlet>
+</main>
+
+<footer>
+  <app-comp-footer></app-comp-footer>
+</footer>

@@ -1,0 +1,55 @@
+<div class="form-gap"></div>
+<div class="container animated slideInDown">
+    <div class="row row-centered">
+        <div class="col-md-5 col-sm-7 col-centered">
+            <div class="panel bs-outer">
+                <div class="">
+                    <div class="text-center">
+                        <h3 class="icon-user"><i class="fa fa-user-circle fa-4x"></i></h3>
+                        <h3 class="text-center">Sign Up</h3>
+                        <div class="panel-body">
+                            <form class="form-signin" method="POST" id="login" role="form" #signUpForm="ngForm" novalidate (submit)="signUp(signUpForm.value,signUpForm.valid)">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                        <input name="name" id="name" #fullName="ngModel" [(ngModel)]="registerUser.name" placeholder="Name" class="form-control" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                        <input type="email" class="form-control" name="email" id="email" #email="ngModel" [(ngModel)]="registerUser.email" placeholder="Email address" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                                        <input type="password" class="form-control" name="pass" id="Pass" #pass="ngModel" [(ngModel)]="registerUser.pass" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone color-blue"></i></span>
+                                        <input type="text" class="form-control" name="number" id="number" #mobile="ngModel" [(ngModel)]="registerUser.number" placeholder="Mobile Number" required pattern="^[0-9]{10}$">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input name="submit" class="btn bttn2 btn-block btn-lg" value="Sign Up" type="submit">
+                                    <div class="text-center">
+                                        <br>
+                                        <p *ngIf="responseMessage" [ngClass]="'error-textbox'">{{responseMessage}}</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <span class="" style="margin-right:0px; margin-left:auto; text-align:right; width:auto;">Already have an account? </span>
+                                    <button class="btn bttn1 btn-xs" routerLink='/signin' type="button">Sign In</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

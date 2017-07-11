@@ -1,0 +1,25 @@
+ul {
+    max-height: 245px;
+    min-width: auto;
+    overflow-y: auto;
+    border: 2px solid #bfbfbf;
+    text-align: left
+}
+
+li {
+    padding: 7px 7px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+li:last-child {
+    border-bottom: 0px;
+}
+
+li:hover {
+    background-color: #CFD8DC;
+    cursor: pointer;
+}
+
+.error-textbox {
+    margin-top: 15px;
+}

@@ -1,0 +1,264 @@
+<div class="form-gap"></div>
+<div class="container animated " *ngIf="bookOrderList1 else loading;">
+  <h3>My Booking Order</h3><br>
+  <div>
+    <ul class="nav nav-pills">
+      <li role="presentation"><a [ngClass]="{selectedTab:selectedTab==='1'}" (click)="selectTab('upcoming')">Upcoming</a></li>
+      <li role="presentation"><a [ngClass]="{selectedTab: selectedTab==='2'}" (click)="selectTab('history')">History</a></li>
+    </ul>
+    <br>
+  </div>
+  <div *ngIf="message" [ngClass]="alertType" style="width:auto">
+    {{message}}
+  </div>
+  <div class="row col-md-12  col-sm-12 custyle">
+    <table class="table table-striped" *ngIf="pager.totalPages>0 else NO_DATA">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Service Name</th>
+          <th>Schedule Date</th>
+          <th>View</th>
+          <th>Status</th>
+          <th [hidden]="selectedTab==='2'" class="text-center">Action</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let data of pagedItems">
+        <td>{{data.order_id}}</td>
+        <td>{{data.service_name}}</td>
+        <td>{{data.scheduled_date}} &nbsp; {{data.scheduled_time}}</td>
+        <td> <a class='btn btn-info btn-xs' (click)="viewDetails(data)">
+                        <span class="glyphicon glyphicon-edit"></span>&nbsp;Details
+                    </a></td>
+        <td><span class="label label-success">{{data.status | titlecase}}</span></td>
+        <td class="text-center" [hidden]="selectedTab==='2'">
+         
+          <a class='btn btn-info btn-xs' (click)="showRescheduleBookingOrderForm(data)">
+                        <span class="glyphicon glyphicon-edit"></span>&nbsp;Re-Schedule
+                    </a>
+          <a class='btn btn-info btn-xs' (click)="showCancelBookingOrder(data)">
+                        <span class="glyphicon glyphicon-trash"></span>&nbsp;Cancel
+                    </a>
+        </td>
+      </tr>
+
+    </table>
+    <ng-template #NO_DATA>
+      <h4>No data found.</h4>
+    </ng-template>
+  </div>
+  <div class="clearfix"></div>
+
+  <!-- pager -->
+  <div *ngIf="pager.totalPages>0">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+      <li>
+        <div style="padding-top:5px;font-size: 10pt">
+          &nbsp;&nbsp;Page {{pager.currentPage}} of {{pager.totalPages}}
+        </div>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <!--<li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+        <a (click)="setPage(page)">{{page}}</a>
+      </li>-->
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+        <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<ng-template #loading>
+  <app-comp-loading></app-comp-loading>
+</ng-template>
+
+<!-- Re-Schedule Booking Order modal -->
+<section>
+  <cm-modal2 #reScheduleOrderModal>
+    <div class="app-modal-header">
+      Re-Schedule Booking Order
+      <button type="button" class="close" (click)="reScheduleOrderModal.hide()" data-dismiss="modal">x</button>
+    </div>
+    <div class="app-modal-body">
+      <form #cityForm="ngForm" (ngSubmit)="reScheduleOrder();">
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class='col-md-12'>
+              <div class="form-group">
+                <label class="control-label" for="serviceName">Service Name</label>
+                <div class="input-group bootstrap-timepicker timepicker">
+                  <input class="form-control input-md" readonly name="serviceName" [(ngModel)]="serviceName" type="text">
+                  <span class="input-group-addon"></span>
+                </div>
+                <div *ngIf="showDatePicker" style="position: absolute; z-index:10; min-height:290px;">
+                  <datepicker name="schduleDate" [(ngModel)]="schDate" [minDate]="minDate" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+                </div>
+              </div>
+            </div>
+
+            <div class='col-md-12'>
+              <div class="form-group">
+                <label class="control-label" for="fullName">Schedule Date</label>
+                <div class="input-group bootstrap-timepicker timepicker">
+                  <input class="form-control input-md" required id="scheduleDate" name="scheduleDate" type="text" [(ngModel)]="schedule.scheduleDate"
+                    placeholder="schedule Date">
+                  <span class="input-group-addon" (click)="toggleshowDatePicker()"><i class="glyphicon glyphicon-calendar"></i></span>
+                </div>
+                <div *ngIf="showDatePicker" style="position: absolute; z-index:10; min-height:290px;">
+                  <datepicker name="schduleDate" [(ngModel)]="schDate" [minDate]="minDate" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+                </div>
+              </div>
+            </div>
+            <div class='col-md-2'>
+            </div>
+            <div class='col-md-12'>
+              <div class="form-group">
+                <label class="control-label" for="email">Schedule Time</label>
+                <div class="input-group bootstrap-timepicker timepicker">
+                  <input required id="scheduleTime" name="scheduleTime" class="form-control input-small" type="text" [(ngModel)]="schedule.scheduleTime"
+                    placeholder="schedule time">
+                  <span class="input-group-addon" (click)="toggleshowTimePicker()"><i class="glyphicon glyphicon-time"></i></span>
+                </div>
+                <div *ngIf="showTimePicker" style="position: absolute; z-index:10; min-height:90px;background-color: lightgray">
+                  <timepicker name="schTime" [(ngModel)]="schTime" showSpinners='false'></timepicker>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group" style="text-align:center">
+          <input type="submit" value="Submit" class="btn bttn2">
+          <input type="button" value="Close" class="btn bttn2" (click)="hideScheduleModal()">
+        </div>
+      </form>
+    </div>
+  </cm-modal2>
+</section>
+
+<!-- Booking Order cancellation modal -->
+<section>
+  <cm-modal2 #orderCancellationModal>
+    <div class="app-modal-header">
+      Booking Order Cancellation
+      <button type="button" class="close" (click)="orderCancellationModal.hide()" data-dismiss="modal">x</button>
+    </div>
+    <div class="app-modal-body">
+      <form novalidate [formGroup]="orderCancellationForm" (ngSubmit)="cancelBookingOrder()">
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Service Name</label>
+              <input class="form-control input-md" readonly name="serviceName" formControlName="_serviceName" type="text">
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-12'>
+            <div class="form-group">
+              <label class="control-label" for="reason">Reason</label>
+              <input class="form-control input-md" name="reason" formControlName="_reason" type="text">
+              <div *ngIf="_reason.errors && (_reason.dirty || _reason.touched)">
+                <span class="error-text" *ngIf="_reason.errors.required">Reason is required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="text-align:center">
+          <input type="submit" value="Submit" class="btn bttn2">
+          <input type="button" value="Close" class="btn bttn2" (click)="orderCancellationModal.hide()">
+        </div>
+      </form>
+    </div>
+  </cm-modal2>
+</section>
+
+
+<!-- View-Details Booking Order modal -->
+<section id='viewOrderDetailsModal' *ngIf="showOrderDetailModal" [config]="{ show: true, keyboard:true }" class="modal fade" bsModal #viewOrderDetailsModal="bs-modal"
+  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#37d5ac">
+        <h4 class="modal-title">Order Details</h4>
+      </div>
+      <div class="modal-body" *ngIf="selectedBookingOrder">
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Order ID</label>
+            </div>
+          </div>
+
+          <div class='col-md-9'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">{{selectedBookingOrder.order_id}}</label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Service Name</label>
+            </div>
+          </div>
+
+          <div class='col-md-9'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">{{selectedBookingOrder.service_name}}</label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Scheduled Date</label>
+            </div>
+          </div>
+
+          <div class='col-md-9'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">{{selectedBookingOrder.scheduled_date}}&nbsp;{{selectedBookingOrder.scheduled_time}}</label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Address</label>
+            </div>
+          </div>
+
+          <div class='col-md-9'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">{{selectedBookingOrder.address}}</label>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-3'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">Status</label>
+            </div>
+          </div>
+
+          <div class='col-md-9'>
+            <div class="form-group">
+              <label class="control-label" for="serviceName">{{selectedBookingOrder.status}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" style="text-align:center">
+          <input type="button" value="Close" class="btn bttn2" (click)="showOrderDetailModal=false;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

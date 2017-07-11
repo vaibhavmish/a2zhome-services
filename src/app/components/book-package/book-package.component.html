@@ -1,0 +1,116 @@
+<div class="height-50px"></div>
+<div class="container"  *ngIf="!showAddAddress">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="text-center">{{pageTitle}}</h3>
+            <hr class="u-hr"><br>
+            <div class="panel bs-outer">
+                <div class="panel-body">
+                    <section id="bookPackage" *ngIf="step===STEP.PACKAGE_BOOKING">
+                        <div class="row">
+                            <h4 class="text-center">Package Booking in progress....</h4><br>
+                        </div>
+                        <div class="row">
+                           <app-comp-loading></app-comp-loading>
+                        </div>
+
+                        <br>
+                    </section>
+                    <section *ngIf="step===STEP.PACKAGE_BOOKED">
+                        <div class="row">
+                            <h4 class="text-center">Order ID: {{bookPackageResponse.order_id}}</h4>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <h5 class="text-center success-textbox">Package Booked Successfully!</h5>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <h5 class="text-center">Your Package needs to be verified before you can start booking service with it.</h5>
+                        </div>
+                    </section>
+                    <!-- booking package message ends here-->
+
+                    <section *ngIf="step===STEP.SCHEDULE_VERIFICATION">
+                        <h4 class="text-center">{{stepTitle}}</h4><br>
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class="control-label" for="fullName">Schedule Date</label>
+                                    <div class="input-group bootstrap-timepicker timepicker">
+                                        <input class="form-control" [(ngModel)]="scheduleDate" required id="scheduleDate" name="scheduleDate" type="text" placeholder="schedule Date">
+                                        <span class="input-group-addon" (click)="toggleShowDatePicker()"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                    <div *ngIf="showDatePicker" style="position: absolute; z-index:10; min-height:290px;">
+                                        <datepicker name="schduleDate" [minDate]="minDate" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label class="control-label" for="fullName">Schedule Time</label>
+                                    <div class="input-group bootstrap-timepicker timepicker">
+                                        <input required id="scheduleTime" [(ngModel)]="scheduleTime" name="scheduleTime" class="form-control input-small" type="text">
+                                        <span class="input-group-addon" (click)="toggleShowTimePicker()"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
+                                    <div *ngIf="showTimePicker" style="position: absolute; z-index:10; min-height:90px;background-color: lightgray" (click)="syncTime()">
+                                        <timepicker name="schTime" [min]="minTime" [(ngModel)]="tpkTime" showSpinners='false'></timepicker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="form-group">
+                                    <label class="control-label" for="address">Address</label>
+                                    <select class="form-control" name="address" required [(ngModel)]="address">
+                                      <option *ngFor="let address of addressList" [value]="getCompleteAddress(address)">
+                                        {{getCompleteAddress(address)}}
+                                      </option>
+                                    </select>
+                                    <span class="pull-right"><button type="button" name="addAddr" class="btn-sm bttn2" (click)="showAddAddressModel()">Add New Address</button></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- schedule Package verification section ends here-->
+
+                    <section *ngIf="step===STEP.SCHEDULE_VERIFICATION_SUBMITTED">
+                        <div class="row">
+                            <h3 class="text-center">Verification Scheduled</h3>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <h4 class="text-center">Our Technician will reach you soon for verification and payment at the scheduled Date and Time. You can use this package only after verification.
+                                </h4>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- schedule Package verification message ends here-->
+
+                </div>
+
+                <div *ngIf="message else lineBreak">
+                    <div class="row row-centered">
+                        <div class="col-md-8 col-md-offset-4 error-textbox">
+                            {{message}}
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <ng-template #lineBreak>
+                </ng-template>
+            </div>
+            <div class="row" *ngIf="showNavButtons">
+                <div class="col-md-6 col-md-offset-3">
+                    <button type="button" class="btn btn-md btn-block bttn2" (click)="goToNext()">{{navButtonText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section *ngIf="showAddAddress">
+    <app-comp-address (onButtonSave)="onSaveAddress($event)" (onButtonClose)="hideAddAddress($event)"></app-comp-address>
+</section>

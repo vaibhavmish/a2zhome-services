@@ -1,0 +1,206 @@
+<div class="height-50px"></div>
+<div class="container" style="padding:10px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h3 class="text-center">{{pageTitle}}</h3>
+            <hr class="u-hr"><br>
+        </div>
+    </div>
+
+    <section *ngIf="step===STEP.SHOW_PACKAGES">
+        <div class="row animated" *ngIf="userPackageList else loading">
+            <div class="col-md-4 col-sm-4 col-xs-6 outerbox" *ngFor="let pkg of userPackageList">
+                <div class="service s-box">
+                    <a class="s-boxlink">
+                        <div class="open-text">
+                            <img src="https://s3.ap-south-1.amazonaws.com/handy-api/1492762029160_handy_services.png" (click)="bookFreeService(pkg._id)" class="s-image">
+                            <div class="overlay">
+                                <div class="text">
+                                    <div class="details">
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                Price
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{pkg.price}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                Property
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{pkg.property_type}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                Visits
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{pkg.left}}
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                Duration
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{pkg.duration}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4 col-md-offset-2">
+                                                Area
+                                            </div>
+                                            <div class="col-md-3">
+                                                {{pkg.area}}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="{{pkg._id}}" style="margin-top: 0px;cursor:pointer" data-target="modal">
+                                        <a class="btn bttn1" type="button" (click)="bookFreeService(pkg._id)">Book Service</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <h4 class="s-name">{{pkg.verification_address}}</h4>
+                </div>
+            </div>
+        </div>
+        <ng-template #loading>
+            <app-comp-loading></app-comp-loading>
+        </ng-template>
+        <div *ngIf="userPackageList && userPackageList.length===0">
+            <h3 class="text-center">No data found.</h3>
+        </div>
+    </section>
+    <!--SHOW_PACKAGES ends here -->
+
+    <section class="animated " *ngIf="step===STEP.FREE_SERVICE_BOOK" id="SEC_FREE_SERVICE">
+        <div class="container">
+            <div class="row row-centered">
+                <div class="panel col-md-10 col-centered bs-outer">
+                    <div class="panel-body">
+                        <div class="bs-inner">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="name" [(ngModel)]="name" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="mobile" [(ngModel)]="mobile" placeholder="Mobile">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group input-group bootstrap-timepicker timepicker">
+                                        <input class="form-control" required id="scheduleDate" name="scheduleDate" [(ngModel)]="schDate" type="text" placeholder="schedule Date">
+                                        <span class="input-group-addon" (click)="toggleShowDatePicker()"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                    <div *ngIf="showDatePicker" style="position: absolute; z-index:10; min-height:290px;">
+                                        <datepicker name="schduleDate" [minDate]="minDate" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="form-group input-group bootstrap-timepicker timepicker">
+                                        <input required id="scheduleTime" name="scheduleTime" [(ngModel)]="schTime" class="form-control input-small" type="text">
+                                        <span class="input-group-addon" (click)="toggleShowTimePicker()"><i class="glyphicon glyphicon-time"></i></span>
+                                    </div>
+                                    <div *ngIf="showTimePicker" style="position: absolute; z-index:10; min-height:90px;background-color: lightgray" (click)="syncTime()">
+                                        <timepicker name="schTime" [(ngModel)]="tpkTime" showSpinners='false'></timepicker>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12" style="padding:0px 15px; width:100%;">
+                                    <div class="form-group">
+                                        <textarea rows="3" class="form-control" name="specialReq" [(ngModel)]="specialReq" placeholder="any special requirement"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12" style="padding:0px 15px; width:100%;">
+                                    <div class="form-group">
+                                        <textarea rows="2" class="form-control" name="address" value="{{address}}" readonly></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12" style="padding:0px 15px; width:100%;">
+                                    <div class="form-group" style="border:1px solid #ccc;padding:6px;border-radius: 2px">
+                                        <label style="padding-left:5px" for="">Services: &nbsp;</label>
+                                        <span *ngIf="isServiceExistInPackage(serviceTypes[0])"><input type="checkbox" [(ngModel)]="chkCarpentry" name="chkElectrical">{{serviceTypes[0]}}</span>
+                                        <span *ngIf="isServiceExistInPackage(serviceTypes[1])"><input type="checkbox" [(ngModel)]="chkPlumbing" name="chkPlumbing">{{serviceTypes[1]}}</span>
+                                        <span *ngIf="isServiceExistInPackage(serviceTypes[2])"><input type="checkbox" [(ngModel)]="chkElectrical" name="chkCarpentry">{{serviceTypes[2]}}</span>
+                                        <span *ngIf="isServiceExistInPackage(serviceTypes[3])"><input type="checkbox" [(ngModel)]="chkACService" name="chkACService">{{serviceTypes[3]}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-centered" *ngIf="errorMsg">
+                                <div class="col-md-6 error-textbox">
+                                    {{errorMsg}}
+                                </div>
+                            </div>
+                            <div class="row row-centered">
+                                <div class="col-md-12 col-centered">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-md bttn2" (click)="goToBack()">BACK</button>
+                                        <button type="button" class="btn btn-md  bttn2" (click)="scheduleFreeService()">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--BOOK_FREE_SERVICE ends here -->
+
+<section class="animated " *ngIf="step===STEP.FREE_SERVICE_BOOKING_DONE">
+        <div class="container">
+            <div class="row row-centered">
+                <div class="panel col-md-10 col-centered bs-outer">
+                    <div class="panel-body">
+                        <div class="bs-inner">                           
+                            <div class="row row-centered">
+                                <div class="col-md-12">
+                                    <h4>Order #{{order_id}}</h4><br>
+                                    <h4>Your order is confirmed</h4><br>
+                                    <h4>Our executive will allocate a Technician to your place shortly</h4><br>
+                                    <h4>*Cost is subject to change after inspection of work.</h4><br>
+                                </div>
+                            </div>
+                            <div class="row row-centered">
+                                <div class="col-md-12 col-centered">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-md bttn2" routerLink="/">HOME</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FREE_SERVICE_BOOKING_DONE ends here -->
+</div>

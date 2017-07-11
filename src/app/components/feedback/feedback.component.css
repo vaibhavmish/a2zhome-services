@@ -1,0 +1,29 @@
+input[type="radio"] {
+    margin: 3px;
+}
+
+#feedback .form-group span {
+    margin-left: 5px;
+}
+
+#feedback .form-group span:first-child {
+    margin-left: 0;
+}
+
+.bs-outer {
+    padding-top: 20px;
+}
+
+.bs-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.h p {
+    font-size: 80%;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,66 @@
+.bttn1:hover,
+.bttn1:focus {
+  background: #51ad6b;
+  color: #fff;
+}
+
+section {
+  border: 1px solid #cdcdcd;
+  padding: 10px;
+  border-radius: 4px;
+  height: auto;
+}
+
+.btn-default {
+  border-color: rgba(0, 0, 0, .7) !important;
+}
+
+.tabSelected {
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+}
+
+.btn-group .btn {
+  box-shadow: none;
+  outline: 0;
+  cursor: default;
+  border-collapse: collapse;
+}
+
+.btn-block {
+  margin: 10px;
+}
+
+.pad-15 {
+  padding: 0px -15px;
+}
+
+.form-content {
+  border: none;
+}
+
+.btn1 {
+  width: 200px;
+  margin: 5px;
+}
+
+.btn1:focus {
+  color: #fff;
+}
+
+.select .bttn1 {
+  box-shadow: none;
+  background: transparent;
+  border: .5px solid #606060;
+  color: #424242;
+}
+
+.select .myBtnSelected {
+  background: #37D5AC;
+  color: #fff;
+}
+
+.x {
+  padding: 10px 0px;
+}
+

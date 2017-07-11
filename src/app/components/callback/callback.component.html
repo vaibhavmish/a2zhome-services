@@ -1,0 +1,85 @@
+<div class="height-50px"></div>
+<div class="container animated">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h3 class="text-center">Request Callback</h3>
+            <hr class="u-hr">
+        </div>
+    </div>
+    <div class="row row-centered">
+        <div class="col-md-5 col-centered bs-outer">
+            <div *ngIf="showForm; else notification" class="bs-inner">
+                <form role="form" #RequestCallbackForm="ngForm" novalidate (ngSubmit)="submitRequestCallback(RequestCallbackForm.value,RequestCallbackForm.valid,RequestCallbackForm);">
+                    <div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="fullName" [(ngModel)]="userData.name" required #fullName="ngModel" class="form-control" placeholder="Full Name">
+                                    <div [hidden]="fullName.valid || (fullName.untouched && !RequestCallbackForm.submitted)" class="error-textbox text-left">
+                                        <span [hidden]="!fullName.hasError('required')">Name is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="email" name="email" [(ngModel)]="userData.email" required #email="ngModel" class="form-control" placeholder="Email Address" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+                                    <div [hidden]="email.valid || (email.untouched && !RequestCallbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!email.hasError('required')">Email is required</span>
+                                        <span [hidden]="!email.hasError('pattern')">Email is invalid</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="mobile" [(ngModel)]="userData.mobile" required #mobile="ngModel" class="form-control input-sm" placeholder="Mobile Number" pattern="^[0-9]{10,10}">
+                                    <div [hidden]="mobile.valid || (mobile.untouched && !RequestCallbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!mobile.hasError('required')">Mobile Number is required</span>
+                                        <span [hidden]="!mobile.hasError('pattern')">Mobile Number is invalid. It must be 10 digit & will contains only numbers </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-centered">
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-centered">
+                                <div class="form-group">
+                                    <input type="hidden" name="type" [(ngModel)]="userData.type">
+                                    <input type="hidden" name="user_id" [(ngModel)]="userData.user_id">
+                                    <input type="hidden" name="location" [(ngModel)]="userData.location">
+                                    <input type="submit" value="Submit" class="btn bttn2">
+                                </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-centered">
+                                <div class="form-group">
+                                    <input type="button" routerLink="/" value="Home" class="btn bttn2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ng-template #notification>
+                <div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h3>Request Callback</h3><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h4 class="success-textbox">{{message}}</h4><br>
+                            <input type="button" routerLink="/" value="Home" class="btn bttn2">
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

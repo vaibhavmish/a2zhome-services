@@ -1,0 +1,17 @@
+{
+  "app-version": "1.0",
+  "environment": "dev",
+  "WEB_API_URL": "https://handy-service-server.herokuapp.com",
+  "showLog": "true",
+  "trace_route": "false",
+  "authConfig": {
+    "facebook": {
+      "clientId": "635586089948511",
+      "client_secret": "5f131445b966ef80608d501c2f2b4ade"
+    },
+    "google": {
+      "clientId": "219459112816-ja2kh2465ic9u0vbjc68fmagaf63v9mo.apps.googleusercontent.com",
+      "client_secret": "Uhtq_mvsSxJsEeE5tNfjd__k"
+    }
+  }
+}

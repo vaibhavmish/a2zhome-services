@@ -1,0 +1,41 @@
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: center;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+.rating {
+  line-height: 40px
+}
+
+#reviewModal .modal-dialog {
+  width: 500px;
+  margin: 120px auto;
+}
+
+@media (max-width: 412px) {
+  #reviewModal .modal-dialog {
+    width: 334px;
+    margin: 120px auto 20px auto;
+  }
+  .rating {
+    line-height: 10px;
+  }
+  .bttn2 {
+    margin: auto;
+  }
+}
+
+@media (max-width: 768) {
+  #reviewModal .modal-dialog {
+    width: 500px;
+    margin: 120px auto;
+  }
+}

@@ -1,0 +1,117 @@
+<app-carousel id="service-banner" [interval]="4000" [noWrap]="false" [showControl]="false">
+  <app-slide *ngFor="let img of banner; let index=index" [active]="banner.active" class="noCarousol">
+    <div class="">
+      <img [src]="img.photo">
+    </div>
+  </app-slide>
+</app-carousel>
+<section id="s-detail">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bs-outer1">
+          <div class="panel-body">
+            <div class="row row-centered">
+              <div class="col-md-7 col-sm-6 col-xs-12 col-centered vb">
+                <div class="row row-centered">
+                  <div class="col-md-12 col-centered">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                      <h4 class="s-name pull-left">{{_service.name}}</h4>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <a type="button" class="btn bttn1" type="button" (click)="bookService()">Book</a>
+                    </div>
+                    <hr class="u-hr pull-left">
+                  </div>
+                </div>
+                <!--<img class="s-image" src="https://s3.ap-south-1.amazonaws.com/handy-api/1492761897391_handy_services.jpg"> -->
+                <p class="text-center p-desc">{{_service.description}}</p>
+              </div>
+              <div class="col-md-5 col-sm-5 s-t-detail col-centered vb" style="border-left: 1px dashed #cdcdcd;">
+                <table class="table table-responsive">
+                  <tr>
+                    <th colspan="2" class="head">Rate Chart</th>
+                  </tr>
+                  <tr>
+                    <th>
+                      Category
+                    </th>
+                    <th>
+                      Price / Unit
+                    </th>
+                  </tr>
+                  <tr *ngFor="let pr of _service.price">
+                    <td>{{pr.option}}</td>
+                    <td>{{pr.amount}}</td>
+                  </tr>
+                </table>
+                <hr style="border-top: 1px dashed #ddd;">
+                <div class="more-off">
+                  <p>15% GST extra somthing like this</p>
+                </div>
+
+              </div>
+            </div>
+            <hr>
+            <div class="row row-centered" style="padding-top:5px;">
+              <div class="col-md-12 col-centered">
+                <div>
+                  <h5 class="s-name">{{_service.name}} : Customer Reviews</h5>
+                </div>
+                <hr class="u-hr">
+              </div>
+              <div class="col-md-12 col-sm-12 col-centered" *ngIf="_service_reviews else NO_REVIEW">
+                <app-carousel [interval]="2000" [noWrap]="false" [showControl]="false">
+                  <app-slide *ngFor="let slidez of _service_reviews; let index=index">
+                    <div class=" col-md-4 col-sm-4 col-centered" *ngIf="slidez[0]">
+                      <div class="card">
+                        <div class="cr-image">
+                          <img [src]="slidez[0].cust_photo" class="avatar">
+                        </div>
+                        <h4 class="cr-name">{{slidez[0].cust_name}}</h4>
+                        <p class="cr-desc">{{slidez[0].comment}}</p>
+
+                      </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-4 col-centered" *ngIf="slidez[1]">
+                      <div class="card">
+                        <div class="cr-image">
+                          <img [src]="slidez[1].cust_photo" class="avatar">
+                        </div>
+                        <h4 class="cr-name">{{slidez[1].cust_name}}</h4>
+                        <p class="cr-desc">{{slidez[1].comment}}</p>
+
+                      </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-4 col-centered" *ngIf="slidez[2]">
+                      <div class="card">
+                        <div class="cr-image">
+                          <img [src]="slidez[2].cust_photo" class="avatar">
+                        </div>
+                        <h4 class="cr-name">{{slidez[2].cust_name}}</h4>
+                        <p class="cr-desc">{{slidez[2].comment}}</p>
+
+                      </div>
+                    </div>
+                  </app-slide>
+                </app-carousel>
+              </div>
+              <ng-template #NO_REVIEW>
+                <div class="col-md-12 col-sm-12 col-xs-12 col-centered">
+                  <div>
+                    <h6 class="s-name">No Review Found</h6>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-comp-mobile-app></app-comp-mobile-app>
+<br>
+<app-media-coverage></app-media-coverage>
+<app-comp-client></app-comp-client>
+<br>

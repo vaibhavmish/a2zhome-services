@@ -1,0 +1,48 @@
+<app-navbar-comp [step]="3"></app-navbar-comp><br>
+<div class=" bs-outer">
+    <form #scheduleForm="ngForm" class="editForm" novalidate (click)="formClick()">
+        <div class="form-horizontal">
+            <div class="tab-pane fade in active">
+                <h4 class="head text-center">{{title}}</h4>
+                <div class='row'>
+                    <div class=' col-xs-12 col-sm-offset-1 col-sm-10 col-md-8 col-md-offset-2 bs-inner'>
+                        <div class='col-xs-12 col-md-5 col-sm-5'>
+                            <div class="form-group">
+                                <label class="control-label" for="fullName">Schedule Date</label>
+                                <div class="input-group bootstrap-timepicker timepicker">
+                                    <input class="form-control input-md" #scheduleDate="ngModel" required id="scheduleDate" name="scheduleDate" type="text" placeholder="schedule Date" [(ngModel)]="schedule.scheduleDate">
+                                    <span class="input-group-addon" (click)="toggleshowDatePicker()"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+                                <div *ngIf="showDatePicker">
+                                    <datepicker #scheduleDate name="schduleDate" todayHighlight="true" [(ngModel)]="dd" autoclose="true" [minDate]="minDate" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-xs-12 col-md-2 col-sm-2'>
+                        </div>
+                        <div class='col-xs-12 col-md-5 col-sm-5'>
+                            <div class="form-group">
+                                <label class="control-label" for="email">Schedule Time</label>
+                                <div class="input-group bootstrap-timepicker timepicker">
+                                    <input #scheduleTime="ngModel" required id="scheduleTime" name="scheduleTime" class="form-control input-small" type="text" [(ngModel)]="schedule.scheduleTime">
+                                    <span class="input-group-addon" (click)="toggleshowTimePicker()"><i class="glyphicon glyphicon-time"></i></span>
+                                </div>
+                                <div *ngIf="showTimePicker" style="position: absolute; z-index:10; min-height:90px;">
+                                    <timepicker #schTime name="schTime" [(ngModel)]="tt" autoclose="true" showSpinners='false' [min]="minTime" minuteStep="30"></timepicker>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center space-20">
+                    <button class="btn bttn2 btn-outline-rounded" (click)="gotoPersonal(scheduleForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                    <button class="btn bttn2 btn-outline-rounded" (click)="save(scheduleForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:120px;">
+        </div>
+    </form>
+</div>

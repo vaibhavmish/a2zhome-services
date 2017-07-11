@@ -1,0 +1,102 @@
+<div class="form-gap"></div>
+<div class="container animated slideInDown">
+    <div class="row row-centered">
+        <div class="col-md-5 col-centered col-sm-7 col-xs-12">
+            <h3 class="text-center">OTP Verification</h3>
+            <hr class="u-hr"><br>
+            <div class="panel bs-outer">
+                <div class="panel-body bs-inner">
+                    <div class="text-center">
+                        <h4 class="text-center">{{getTitle()}}</h4>
+                        <section class="panel-body" *ngIf="step===1">
+                            <img src="assets/images/loading.gif" alt="" width="50%" height="50%">
+                        </section>
+
+                        <section class="panel-body" *ngIf="step===2">
+                            <!--<form name="sendOtp" novalidate #formSendOtp="ngForm">-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                            <input type="text" class="form-control" name="pName" value="{{profileInfo.name}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <input type="text" class="form-control" name="pemail" value="{{profileInfo.email}}" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone color-blue"></i></span>
+                                            <input type="text" class="form-control" name="number" id="number" placeholder="Mobile Number" required [(ngModel)]="inputMobileNo">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-3">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="btnSendOtp" (click)="sendOtp()" class="btn  btn-block bttn2" value="Send OTP" type="button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div *ngIf="responseMessage" class="{{alertType==='ERROR'? 'error-textbox':'success-textbox'}}">
+                                        {{responseMessage}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!--</form>-->
+                        </section>
+
+                        <section class="panel-body" *ngIf="step===3">
+                            <!--<form name="verifyOtp">-->
+                            <div class="row row-centered">
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone color-blue"></i></span>
+                                            <input type="text" class="form-control" name="inputOtp" id="verifyOtp" placeholder="OTP" required [(ngModel)]="inputOtp">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-centered">
+                                <div class="col-md-12 col-centered">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input name="btnVerifyOtp" (click)="verifyOtp()" class="btn btn-primary btn-block bttn2" value="Verify OTP" type="button">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row row-centered">
+                                <div class="col-md-12 col-centered">
+                                    <div *ngIf="responseMessage" class="{{alertType==='ERROR'? 'error-textbox':'success-textbox'}}">
+                                        {{responseMessage}}
+                                    </div>
+                                </div>
+                            </div>
+                            <!--</form>-->
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

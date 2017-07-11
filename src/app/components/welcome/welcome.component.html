@@ -1,0 +1,76 @@
+<div class="form-gap"></div>
+<div class="container animated slideInDown">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-4">
+      <!--<h3 class="text-center">OTP VERIFICATION</h3>
+      <hr class="u-hr"><br>-->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="text-center">
+            <h4 class="text-center">{{getTitle()}}</h4>
+
+            <section id="welcomePage" class="panel-body" *ngIf="step===1">
+              <app-comp-loading></app-comp-loading>
+            </section>
+
+            <section class="panel-body" *ngIf="step===2">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                      <input type="text" class="form-control" name="pName" value="{{profileInfo.name}}" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                      <input type="text" class="form-control" name="pemail" value="{{profileInfo.email}}" readonly>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group" *ngIf="otpVerified else messageVerified">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-phone color-blue"></i></span>
+                      <input type="text" class="form-control" name="number" id="number" placeholder="Mobile Number" required value="{{profileInfo.mobile}}"
+                        readonly>
+                    </div>
+                  </div>
+                </div>
+                <ng-template #messageVerified>
+                  <h5>Your mobile number is not registered.<br>Please proceed with OTP verification.</h5><br>
+                </ng-template>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div *ngIf="responseMessage" class="{{alertType==='ERROR'? 'error-textbox':'success-textbox'}}">
+                    {{responseMessage}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-10 col-md-offset-3">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input name="btnSubmit" (click)="goToNext()" class="btn btn-block bttn2" value="{{submitBtnText}}" type="submit">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

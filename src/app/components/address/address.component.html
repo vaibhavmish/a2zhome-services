@@ -1,0 +1,120 @@
+<div class="height-50px"></div>
+<div class="container">
+  <div class="row row-centered bs-outer">
+    <div class="col-md-8 col-centered bs-inner">
+      <form role="form" #addressForm="ngForm" novalidate (ngSubmit)="saveAddress(addressForm.value,addressForm.valid,addressForm);">
+        <div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <h3>Add Address</h3><br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="houseno" [(ngModel)]="address.houseno" required #houseno="ngModel" class="form-control input-sm"
+                  placeholder="House No">
+                <div [hidden]="houseno.valid || (houseno.untouched && !addressForm.submitted)" class="error-text text-left">
+                  <span [hidden]="!houseno.hasError('required')">House No is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="society" [(ngModel)]="address.society" required #society="ngModel" class="form-control input-sm"
+                  placeholder="Society">
+                <div [hidden]="society.valid || (society.untouched && !addressForm.submitted)" class="error-text  text-left">
+                  <span [hidden]="!society.hasError('required')">Society is required</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="road" [(ngModel)]="address.road" #road="ngModel" class="form-control input-sm"
+                  placeholder="Road">
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="area" [(ngModel)]="address.area" #area="ngModel" class="form-control input-sm"
+                  placeholder="Area">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="landmark" [(ngModel)]="address.landmark" required #landmark="ngModel" class="form-control input-sm"
+                  placeholder="Landmark">
+                <div [hidden]="landmark.valid || (landmark.untouched && !addressForm.submitted)" class="error-text  text-left">
+                  <span [hidden]="!landmark.hasError('required')">Landmark is required</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="zip_code" [(ngModel)]="address.zip_code" required #zip_code="ngModel" class="form-control input-sm"
+                  placeholder="Zipcode" pattern="^[0-9]{6,6}">
+                <div [hidden]="zip_code.valid || (zip_code.untouched && !addressForm.submitted)" class="error-text  text-left">
+                  <span [hidden]="!zip_code.hasError('required')">Zipcode is required</span>
+                  <span [hidden]="!zip_code.hasError('pattern')">Zipcode is invalid</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <select id="city" name="city" class="form-control" (change)="onCityChange($event.target.value)" [(ngModel)]="address.city">
+                    <option *ngFor="let location of locationData"
+                            [value]="location.city_name">
+                            {{location.city_name}}
+                    </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <input type="text" name="state" [(ngModel)]="address.state" required #state="ngModel" class="form-control input-sm" placeholder="State"
+                  readonly>
+                <input type="hidden" [(ngModel)]="address.id" name="id">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6">
+              <div class="form-group">
+                <div *ngIf="successMessage" class="success-text">{{successMessage}}</div>
+                <div *ngIf="errorMessage" class="error-text">{{errorMessage}}</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row row-centered">
+            <div class="col-xs-10 col-sm-8 col-md-6 col-centered">
+              <div class="form-group">
+
+                <input type="submit" value="Save" class="btn bttn2">
+                <input type="button" value="Close" class="btn bttn2" (click)="handleClose()">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

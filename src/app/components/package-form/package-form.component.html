@@ -1,0 +1,132 @@
+<section id="form">
+  <div class="container animated ">
+    <div class="height-50px"></div>
+    <div class="text-center">
+      <h3 class="title">{{title}}</h3>
+      <hr class="u-hr">
+    </div>
+    <br class="clear">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row" style="border:0px solid #fff;border-radius:4px;text-align:left;">
+          <p *ngIf="formType===2 || formType===3">The company description section of your business plan is typically the second section, coming after the executive
+            summary. The company description outlines vital details about your company, such as where you are located, how
+            large the company is, what you do and what you hope to accomplish.The company description section of your business
+            plan is typically the second section, coming after the executive summary. The company description outlines vital
+            details about your company, such as where you are located, how large the company is, what you do and what you
+            hope to accomplish.</p>
+          <span *ngIf="formType===1" class="package-desc">
+              <h4>We Provide below services</h4>
+             <div class="row">
+               <div class="col-md-6 col-sm-12">
+                  <ul>
+                    <li><i class="fa fa-circle-o fa-1x" aria-hidden="true"></i> Services</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Plumbing</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Carpentry</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Electrical</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Painting</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Civil/mason</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> POP/False ceiling</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Tiling/ Flooring</li>
+                </ul>
+              </div>
+               <div class="col-md-6 col-sm-12">
+                  <ul>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Glass Work</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Tapestry/Curtains</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Ac Installation</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> CaWallpaper workpentry</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Interior Designing</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Iron/steel Fabrication</li>
+                    <li><i class="fa fa-circle-o" aria-hidden="true"></i> Turn key projects</li>
+                </ul>
+              </div>
+             </div>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <div class="col-md-12">
+            <form role="form" novalidate #formPkg="ngForm" [formGroup]="formPackageForm" (ngSubmit)="submitPackageForm()">
+              <div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" formControlName="name" placeholder="Name" required>
+                    <div *ngIf="formErrors.name && formPkg.submitted" class="error-textbox">
+                      {{formErrors.name}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <div class="form-group">
+                    <input type="text" name="number" class="form-control" maxlength="10" minlength="10" formControlName="number" placeholder="Mobile Number">
+                    <div *ngIf="formErrors.number && formPkg.submitted" class="error-textbox">
+                      {{formErrors.number}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" formControlName="email" required>
+                    <div *ngIf="formErrors.email && formPkg.submitted" class="error-textbox">
+                      {{formErrors.email}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <select id="location" name="location" class="form-control" formControlName="location">
+                                      <option *ngFor="let location of locationData"
+                                            [value]="location.city_name">
+                                      {{location.city_name}}
+                                    </option>
+                                    </select>
+                  </div>
+                </div>
+
+
+                <div *ngIf="formType===2">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" name="org_name" class="form-control" formControlName="org_name" placeholder="Organization Name">
+                      <div *ngIf="formErrors.org_name && formPkg.submitted" class="error-textbox">
+                        {{formErrors.org_name}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Message..." rows="{{rows}}" name="message" formControlName="message" required></textarea>
+                    <div *ngIf="formErrors.message && formPkg.submitted" class="error-textbox">
+                      {{formErrors.message}}
+                    </div>
+                  </div>
+                </div>-->
+
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn bttn2 btn-lg">
+                  </div>
+                </div>
+
+                <div class="col-md-12" *ngIf="formSubmitted">
+                  <div class="form-group success-textbox">
+                    Thank You! Request has been submitted successfully.
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

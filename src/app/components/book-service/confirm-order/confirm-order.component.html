@@ -1,0 +1,109 @@
+<app-navbar-comp [step]="4"></app-navbar-comp><br>
+<div *ngIf="!bookingDone; else result" class="tab-pane fade in active bs-outer">
+  <h4 *ngIf="!successMessage" class="head text-center">{{title}}</h4>
+  <div class='row'>
+    <div class='col-sm-offset-2 col-sm-8'>
+      <p *ngIf="successMessage" class="head success-textbox">{{successMessage}}</p>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-sm-offset-2 col-sm-8 bs-inner'>
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="name">Name: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{userName}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="phone">Phone: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{formData.number}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="location">Location: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{formData.location}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="address">Address: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{formData.address}}
+          <address class="">
+
+          </address>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="Schedule">Schedule Date: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{formData.scheduled_date}} &nbsp; {{formData.scheduled_time}}
+        </div>
+      </div>
+      <div class="row">
+        <div class='col-xs-3'>
+          <div class="form-group">
+            <label class="control-label" for="Service">Service Selected: </label>
+          </div>
+        </div>
+        <div class='col-xs-8'>
+          {{serviceName}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class='col-sm-12'>
+          <div class="text-center">
+            <button class="btn bttn2 btn-outline-rounded" (click)="gotoSchedule()"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+            <button class="btn bttn2 btn-outline-rounded" (click)="submit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<ng-template #result>
+  <div class="tab-pane fade in active bs-outer">
+    <div class='row'>
+      <div class='col-sm-offset-2 col-sm-8 bs-inner'>
+        <div class="row" *ngIf="successMessage">
+          <div class="head text-center success-textbox" style="width:auto">
+            <h4>{{successMessage}}</h4><br>
+            <h5>Our executive will allocate a Techinician to your place shortly</h5><br>
+            <h5>*Cost is subject to change after inspection of work.</h5><br>
+            <h6>Service/s Selected: {{serviceName}}</h6><br>
+            Booking Order Id
+            <ul *ngFor="let order of orderIdList">
+              <li>{{order}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

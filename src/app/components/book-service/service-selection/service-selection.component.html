@@ -1,0 +1,42 @@
+<div *ngIf="serviceList else loading">
+  <app-navbar-comp [step]="1"></app-navbar-comp><br>
+  <div class="tab-pane fade in active bs-outer" *ngIf="serviceList">
+    <h4 class="head text-center">Select one or more service</h4>
+    <div class="row row-centered">
+      <div class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1 bs-inner">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <ul>
+              <li (click)="select(item)" *ngFor="let item of serviceList">
+                <span [innerHtml]="item.name"></span>
+                <i class="fa fa-fw pull-right" [ngClass]="{'fa-check-square-o': item.selected, 'fa-square-o': !item.selected}"></i>
+              </li>
+            </ul>
+            <p *ngIf="noOfService"><span>{{noOfService}}</span> services selected
+              <br>
+            </p>
+            <span *ngIf="errorMessage" class="error-textbox">{{errorMessage}}</span>
+          </div>
+        </div>
+        <br>
+
+
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="text-center">
+              <button class="btn bttn2 btn-wide" (click)="goToPersonal()">Next<span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <app-comp-loading></app-comp-loading>
+</ng-template>

@@ -1,0 +1,107 @@
+<div class="height-50px"></div>
+
+<div class="container animated" id="feedback">
+
+    <div class="row row-centered">
+
+        <h3 class="text-center">Feedback</h3>
+        <hr class="u-hr">
+
+        <div class="col-md-5 col-centered bs-outer">
+
+            <div *ngIf="showForm; else notification">
+
+                <form role="form" #FeedbackForm="ngForm" novalidate (ngSubmit)="submitFeedback(FeedbackForm.value,FeedbackForm.valid,FeedbackForm);">
+
+                    <div>
+                        <div class="row pull-left h">
+                            <p>Select feedback type -</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group" style="border:1px solid lightgrey;padding:10px 3px;border-radius: 2px">
+                                    <span><input type="radio" name="type" required value="service" [(ngModel)]="feedbackForm.type" #type="ngModel"> Service</span>
+                                    <span><input type="radio" name="type" required value="user-experience" [(ngModel)]="feedbackForm.type" #type="ngModel"> User Experience</span>
+                                    <span><input type="radio" name="type" required value="functionality" [(ngModel)]="feedbackForm.type" #type="ngModel"> Functionality</span>
+                                    <span><input type="radio" name="type" required value="other" [(ngModel)]="feedbackForm.type" #type="ngModel"> Other</span>
+                                    <div [hidden]="type.valid || (type.untouched && !FeedbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!type.hasError('required')">Type is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pull-left h">
+                        <p>Personal Details -</p>
+                    </div>
+                    <div class="bs-inner">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="fullName" [(ngModel)]="feedbackForm.name" required #fullName="ngModel" required class="form-control" placeholder="Full Name">
+                                    <div [hidden]="fullName.valid || (fullName.untouched && !FeedbackForm.submitted)" class="error-textbox text-left">
+                                        <span [hidden]="!fullName.hasError('required')">Name is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="email" name="email" [(ngModel)]="feedbackForm.email" #email="ngModel" required class="form-control" placeholder="Email Address" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+                                    <div [hidden]="email.valid || (email.untouched && !FeedbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!email.hasError('required')">Email is required</span>
+                                        <span [hidden]="!email.hasError('pattern')">Email is invalid</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="mobile" [(ngModel)]="feedbackForm.number" #mobile="ngModel" required class="form-control input-sm" placeholder="Mobile Number" pattern="^[0-9]{10,10}">
+                                    <div [hidden]="mobile.valid || (mobile.untouched && !FeedbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!mobile.hasError('required')">Mobile Number is required</span>
+                                        <span [hidden]="!mobile.hasError('pattern')">Mobile Number is invalid. It must be 10 digit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Message..." rows="6" name="message" required [(ngModel)]="feedbackForm.message" #message="ngModel"></textarea>
+                                    <div [hidden]="message.valid || (message.untouched && !FeedbackForm.submitted)" class="error-textbox  text-left">
+                                        <span [hidden]="!message.hasError('required')">Message is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-centered">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-centered">
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn bttn2">
+                                    <input type="button" routerLink="/" value="Home" class="btn bttn2 ">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <ng-template #notification>
+                <div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h3>Feedback</h3><br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <h4 class="" success-text>{{message}}</h4><br>
+                            <input type="button" routerLink="/" value="Home" class="btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+    </div>

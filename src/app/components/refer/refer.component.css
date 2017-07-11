@@ -1,0 +1,14 @@
+.refer-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.refer-flex-item {
+  flex-wrap: nowrap;
+  text-align: center;
+  padding: 10px;
+}
+
+.refer-flex-item img{
+          /*width: 100%;*/
+}

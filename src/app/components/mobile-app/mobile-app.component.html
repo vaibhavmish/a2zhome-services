@@ -1,0 +1,65 @@
+<section id="handy-app">
+  <div class="container hidden-xs">
+    <div class="row row-centered">
+      <div class="col-md-5 col-centered">
+        <div>
+          <h3>Download Handy App</h3>
+        </div>
+        <hr class="u-hr">
+        <h3>Handyservices is now more handy</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <br>
+      <div class="row">
+        <div class="col-md-5">
+          <img class="img-responsive handy-app" src="assets/images/handy-app.jpg" alt="handy app">
+        </div>
+        <div class="col-md-5">
+          <h3>Features</h3>
+          <h5>Virus free and secured</h5>
+          <h5>Fast Service</h5>
+          <p>Choose and Book from 100+ services and track them on the go with the Handyservices App.</p>
+          <br>
+          <div class="send">
+            <form role="form" novalidate #myForm="ngForm" (ngSubmit)="sendLink(myForm.valid)" autocomplete="off">
+              <p class="text-80"><b>Send a link via SMS to install the app</b></p>
+              <div class="form-group">
+                <div class="col-sm-9 ennr">
+                  <span>+91</span>
+                  <input type="tel" name="sendlink" #mobile="ngModel" [(ngModel)]="mobileNo" required pattern="^[0-9]{10,10}" maxlength="10"
+                    minlength="10" style="letter-spacing:2px;width:40%">
+                </div>
+                <div class="col-sm-2">
+                  <input type="submit" class="btn btn-f bttn2 btn-xs" name="btnTextLink" value="{{buttonText}}">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 ennr">
+                  <div [hidden]="mobile.valid || (mobile.untouched && !myForm.submitted)" class="error-textbox  text-left">
+                    <span [hidden]="!mobile.hasError('required')">Mobile Number is required</span>
+                    <span [hidden]="!mobile.hasError('pattern')">Mobile Number is invalid. It must be 10 digit & will contains only numbers </span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 ennr" style="margin-top:10px;">
+                  <span *ngIf="responseMessage" class="success-textbox">{{responseMessage}}</span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <br class="clear">
+          <div>
+            <p><b>Available on</b></p>
+            <a href="https://play.google.com/store/apps/details?id=in.handyservices.handyservices&hl=en"><img class="app" src="assets/images/app-store-android-download.png"></a>
+            <a href=""><img class="app" src="assets/images/download-in-app-store.png"></a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

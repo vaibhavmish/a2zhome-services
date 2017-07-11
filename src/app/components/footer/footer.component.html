@@ -1,0 +1,89 @@
+<section id="footer">
+
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-8">
+                <div class="col-md-4 col-sm-4">
+                    <h4 class="contents">Handy Services</h4>
+                    <hr class="u-hr hr-small">
+                    <div class="contents">
+                        <p><a href="#">About Us</a></p>
+                        <p><a routerLink="/service-search">Services</a></p>
+                        <p><a routerLink="/maintenance-package">Maintanance Package</a></p>
+                        <p><a href="#">Privacy Policy</a></p>
+                        <p><a href="#">Terms &amp;Conditions</a></p>
+                    </div>
+                    <div class="social-links">
+                        <h5 class="contents">Follow us on</h5>
+                        <hr class="u-hr hr-small">
+                        <ul class="social">
+                            <a href="https://www.facebook.com/handyservices.in/" title="Facebook" target="blank">
+                                <li class="social-item"><span class="fa fa-facebook"></span></li>
+                            </a>
+                            <a href="#" title="Instagram" target="blank">
+                                <li class="social-item"><span class="fa fa-instagram"></span></li>
+                            </a>
+                            <a href="https://twitter.com/handyservicesin" title="Twitter" target="blank">
+                                <li class="social-item"><span class="fa fa-twitter"></span></li>
+                            </a>
+                        </ul>
+                    </div>
+                    <div class="bot"></div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 paddingtop-bottom">
+                    <h4 class="contents">Available Area</h4>
+                    <hr class="u-hr hr-small">
+                    <div class="contents" *ngIf="locationData">
+                        <p *ngFor="let city of locationData">{{city.city_name | titlecase}}</p>
+                    </div>
+                    <div class="bot"></div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 paddingtop-bottom">
+                    <h4 class="contents">Contact Us</h4>
+                    <hr class="u-hr hr-small">
+                    <div class="contents">
+
+                        <p><span class="fa fa-home"></span> Surendra Nagar,209/1</p>
+                        <p>Netaji Mark, Navrangpur,</p>
+                        <p>Ahemdabad-38001</p>
+                        <p><span class="fa fa-envelope"></span><a href="mailto:services@handyservices.in"> services@handyservices.in</a> </p>
+                        <p><i class="fa fa-phone-square" aria-hidden="true"></i> 7878000666</p>
+                    </div>
+
+                    <div class="bot"></div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 paddingtop-bottom">
+                <h4 class="contents text-center">Drop Us A Message</h4>
+                <hr class="u-hr hr-small hr-center">
+                <form class="form form-signup" role="form" #MessageForm="ngForm" novalidate (ngSubmit)="saveMessage(MessageForm.valid);">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Name" #name="ngModel" [(ngModel)]="messageData.name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="m_email" placeholder="Email Address" #email="ngModel" [(ngModel)]="messageData.email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="m_phone" placeholder="Phone" #phone="ngModel" [(ngModel)]="messageData.phone" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Message..." rows="2" name="message" required #message="ngModel" [(ngModel)]="messageData.message"></textarea>
+                            </div>
+                            <div *ngIf="responseMessage" [ngClass]="alertType">
+                                {{responseMessage}}
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn bttn2" role="button">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

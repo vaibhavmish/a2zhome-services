@@ -1,0 +1,102 @@
+#footer {
+    background-color: #202020;
+    padding: 20px 0px 20px;
+    z-index: auto;
+}
+
+#footer a {
+    color: #f9f9f9;
+}
+
+#footer a:hover {
+    color: #37D5AC;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.contents {
+    color: white;
+}
+
+.contents p {
+    color: white;
+    font-size: 13px;
+    line-height: 28px;
+}
+
+.contents p>a {
+    color: white;
+}
+
+.social-links {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.social-links .social a {
+    float: left;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #f9f9f9;
+    text-align: center;
+    line-height: 35px;
+    color: #f9f9f9;
+    margin: 5px;
+    transition-duration: .5s;
+}
+
+.social-links .social a:hover {
+    background: rgba(255, 255, 255, 0);
+    font-size: 20px;
+}
+
+.social-item:hover span {
+    color: #37D5AC;
+}
+
+#save_msg:hover {
+    background: #444 !important;
+}
+
+.bot {
+    height: 40px;
+    display: none;
+}
+
+@media (max-width:768px) {
+    .bot {
+        display: block;
+    }
+}
+
+.form-control {
+    outline: 0;
+    border: 0px;
+    box-shadow: none;
+}
+
+form input,
+form textarea {
+    border-bottom: 1.5px solid #cdcdcd;
+    padding: 10px 10px;
+    color: #1e1e1e;
+    border-radius: 0px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-bottom-color: #37D5AC;
+    background-color: rgba(55, 213, 172, .1)
+}
+
+button {
+    box-shadow: none;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #444 !important;
+}

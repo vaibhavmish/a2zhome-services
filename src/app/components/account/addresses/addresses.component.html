@@ -1,0 +1,23 @@
+<div class="container111">
+    <a (click)="addAddress()" class="btn bttn2">Add New Address</a><br>
+    <h4>Your Saved Addresses: </h4>
+    <span *ngIf="message" class="success-text">{{message}}</span>
+    <div class="row">
+        <span *ngIf="addressList; else dataNotLoaded">
+        <div class="col-md-2 addr" *ngFor="let address of addressList">
+      <ul>
+        <li>{{address.houseno}}</li>
+        <li>{{address.society}}</li>
+        <li>{{address.landmark}}</li>
+        <li>{{address.city}}</li>
+        <li>{{address.state}}-{{address.zip_code}}</li>
+        <hr>
+        <li><a (click)="editAddress(address._id)">Edit</a> | <a (click)="deleteAddress(address._id)">Delete</a></li>
+      </ul>
+    </div>
+</span>
+        <ng-template #dataNotLoaded>
+            <h3>Please wait...</h3>
+        </ng-template>
+    </div>
+</div>

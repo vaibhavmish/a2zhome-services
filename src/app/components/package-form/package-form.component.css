@@ -1,0 +1,38 @@
+.half-col {
+  padding-left: 0px;
+}
+
+.col-md-12 {
+  padding-left: 15px;
+}
+
+.col-sm-6 {
+  margin-right: 0px;
+}
+
+#form {
+  background-color: rgba(0, 0, 0, .3);
+  background-image: url(http://il6.picdn.net/shutterstock/videos/12017714/thumb/1.jpg);
+  background-blend-mode: multiply;
+  padding: 30px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  color: #fff;
+}
+
+p {
+  color: #fff;
+}
+
+.package-desc {
+  color: #fff;
+}
+
+.package-desc h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}

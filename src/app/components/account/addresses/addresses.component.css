@@ -1,0 +1,29 @@
+.addr{
+      border:1px solid gray;
+      font-family: Courier New, Courier, monospace;
+      font-size: 10pt;
+      margin-right: 10px;
+      padding:15px;
+      background-color:lightgray;
+}
+.ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.li {
+  list-style: none;
+}
+a:hover{
+    font-weight: bold;
+    
+}
+a:active{
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+hr{
+    margin:0.625em 0 0.675em;
+    border-style: dotted;
+}

@@ -1,0 +1,67 @@
+#handy-app {
+    font-family: sans-serif;
+    padding: 15px;
+}
+
+@media(max-width:480px) {
+    #handy-app {
+        display: none;
+    }
+}
+
+.text-80 {
+    font-size: 80%;
+}
+
+h5 {
+    margin: 12px 5px;
+}
+
+p {
+    margin-left: 5px;
+}
+
+.app {
+    width: 140px;
+    height: 35px;
+}
+
+.form-group div {
+    float: left;
+}
+
+.handy-app {
+    padding: 5px;
+    border: 2px solid #f8f8f8;
+    height: 400px;
+    min-width: 300px;
+    width: auto;
+    margin: 0px auto;
+    border-radius: 4px;
+}
+
+.form-group .ennr {
+    padding: 10px;
+    border: 1px solid #efefef;
+    background: #f9f9f9;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.form-group input,
+.form-group input:hover,
+.form-group input:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    min-width: 85%;
+}
+
+.form-group .btn-f {
+    padding: 9px !important;
+    font-size: 16px;
+    box-shadow: none;
+    margin-left: 0px;
+    border-radius: 3px;
+}

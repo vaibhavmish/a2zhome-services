@@ -1,0 +1,90 @@
+<div class="container animated" *ngIf="profilePhotoUrl else loading">
+  <div class="row">
+    <h3 class="text-center">Profile</h3>
+    <hr class="u-hr"><br>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="text-center">
+        <img [src]="profilePhotoUrl" class="profile-avatar img-circle" alt="avatar">
+        <h6>Upload a photo...</h6>
+
+        <input type="file" value="Upload" class="form-control" (change)="onChange($event)">
+      </div>
+    </div>
+
+    <div class="col-md-9 personal-info">
+      <form class="form-horizontal" #formDir="ngForm" novalidate (ngSubmit)="saveUserProfile()" [formGroup]="formProfile">
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Name:</label>
+          <div class="col-md-4">
+            <input class="form-control" id="name" formControlName="name" type="text" placeholder="Name">
+            <div *ngIf="formErrors.name && formDir.submitted" class="error-text">
+              {{ formErrors.name }}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">DOB:</label>
+          <div class="col-md-4">
+            <div class="input-group bootstrap-timepicker timepicker">
+              <input class="form-control input-md" id="dob" name="dob" type="text" placeholder="" formControlName="dob">
+              <span class="input-group-addon" (click)="toggleShowDatePicker()"><i class="glyphicon glyphicon-calendar"></i></span>
+            </div>
+            <div *ngIf="showDatePicker" style="position: absolute; z-index:10; min-height:290px;">
+              <datepicker name="dpDob" [showWeeks]="false" (selectionDone)="onSelectionDone($event)"></datepicker>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-md-4">
+            <input class="form-control" type="text" placeholder="email" formControlName="email">
+            <div *ngIf="formErrors.email && formDir.submitted" class="error-text">
+              {{ formErrors.email }}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Gender:</label>
+          <div class="col-md-4">
+            <div class="ui-select">
+              <select id="gender" name="gender" class="form-control" formControlName="gender">
+                <option value="-1">&nbsp;</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Mobile Number:</label>
+          <div class="col-md-4">
+            <input class="form-control" type="text" placeholder="mobile number" formControlName="number">
+            <div *ngIf="formErrors.number && formDir.submitted" class="error-text">
+              {{ formErrors.number }}
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-4">
+            <input type="submit" class="btn bttn2" value="Save">
+            <span></span>
+            <input type="reset" class="btn bttn2" value="Cancel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-4 success-text" [hidden]="!message">{{message}}</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<hr>
+<ng-template #loading>
+  <app-comp-loading></app-comp-loading>
+</ng-template>

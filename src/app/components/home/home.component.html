@@ -1,0 +1,132 @@
+<app-comp-banner></app-comp-banner>
+<app-comp-packages></app-comp-packages>
+
+<div class="container">
+  <div class="row row-centered">
+    <div class="col-md-4 col-centered">
+      <h3 style="text-align:center; margin-top:20px;">Our Services</h3>
+      <hr class="u-hr">
+
+      <h4 style="text-align:center">What we Provide</h4>
+    </div>
+  </div>
+
+  <div *ngIf="serviceData">
+    <app-comp-services [data]="serviceData"></app-comp-services>
+  </div>
+
+  <div *ngIf="serviceData && serviceData.length===0">
+    <div class="row row-centered">
+      <div class="col-md-6 col-centered">
+        <div>
+          <h4>No services found for selected city: {{city}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-centered" *ngIf="serviceData && serviceData.length>0">
+    <div class="col-md-2 col-centered">
+      <input class="btn bttn2" type="button" routerLink="/service-search" value="View More">
+    </div>
+  </div>
+
+</div>
+
+<br>
+<div style="background-color: #F9F9F9; padding:30px 5px;">
+  <div class="container" style="text-align:center">
+    <div class="row">
+      Calculate your Maintenance Packages as per your requirement &nbsp;&nbsp;&nbsp;
+      <input class="btn bttn2" (click)="maintenancePackage()" type="button" value="Get Maintenance Package">
+    </div>
+  </div>
+</div>
+
+<app-comp-customer-review></app-comp-customer-review>
+<app-comp-about></app-comp-about>
+<app-comp-mobile-app></app-comp-mobile-app>
+<br>
+<app-media-coverage></app-media-coverage>
+<app-comp-client></app-comp-client>
+<br>
+<div style="background-color: #f9f9f9; padding:30px 5px;">
+  <div class="row ">
+    <div class="container " style="text-align:center ">
+      <b>Now you can be partners with Handy! &nbsp;&nbsp;&nbsp;&nbsp;</b>
+      <input class="btn bttn2" (click)="becomePartner() " type="button " value="Become Partner ">
+    </div>
+  </div>
+</div>
+
+<!-- Review -->
+<section id='reviewModal' *ngIf="showReviewModal" [config]="{ show: true, keyboard:true }" class="modal fade" bsModal #ReviewModal="bs-modal"
+  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color:#37d5ac">
+        <h4 class="modal-title">Rate Your Last Service</h4>
+      </div>
+      <div class="modal-body" *ngIf="!reviewCompleted else REVIEW_DONE">
+        <div class="row form-group">
+          <div class="col-md-12 col-sm-12">
+            <p class="text-center">Thanks for Booking service with us.<br> You have paid Rs {{order_amt}} for the booking ID #{{order_id}}</p><br>
+          </div>
+        </div>
+        <form novalidate #reviewForm="ngForm" (ngSubmit)="submitReview(reviewForm.value,reviewForm.valid);">
+          <div class="row form-group">
+            <div class="col-md-7 col-sm-12 rating">
+              Customer Care Executive
+            </div>
+            <div class="col-md-5 col-sm-12">
+              <app-rating (change)="onExcutiveRatingChange($event)"></app-rating>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-7 col-sm-12 rating">
+              Serviceman
+            </div>
+            <div class="col-md-5 col-sm-12">
+             <app-rating (change)="onServicemanRatingChange($event)"></app-rating>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-7 col-sm-12 rating">
+              Service Audit
+            </div>
+            <div class="col-md-5 col-sm-12">
+               <app-rating (change)="onserviceAuditRatingChange($event)"></app-rating>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <textarea rows="3" class="form-control" name="comment" [(ngModel)]="comment" placeholder="Your valuable suggestion to improve our services."></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col form-group" style="text-align:center;margin-top:30px">
+              <input type="submit" value="{{btnSubmitReview}}" class="btn bttn2">
+            </div>
+          </div>
+          <div *ngIf="errorReviewMessage" class="error-textbox">
+            {{errorReviewMessage}}
+          </div>
+        </form>
+      </div>
+
+      <ng-template #REVIEW_DONE>
+        <div class="modal-body">
+          <div class="row form-group">
+            <div class="col-md-12 col-sm-6">
+              <h3 class="text-center">Thank You for your valuable feedback.</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-6 form-group" style="text-align:center;margin-top:30px">
+              <input type="button" value="close" (click)="reviewModal.hide()" class="btn bttn2">
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</section>

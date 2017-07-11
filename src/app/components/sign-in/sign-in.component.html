@@ -1,0 +1,58 @@
+<div class="form-gap"></div>
+<div class="container animated slideInDown">
+  <div class="row row-centered">
+    <div class="col-md-5  col-sm-7 col-centered">
+      <div class="panel bs-outer">
+        <div class="">
+          <div class="text-center">
+            <h3 class="icon-user"><i class="fa fa-user-circle fa-4x"></i></h3>
+            <h3 class="text-center">Sign In</h3>
+            <div class="">
+              <form class="form-signin" id="login" role="form" #signInForm="ngForm" novalidate (submit)="signIn(signInForm.value,signInForm.valid)">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                    <input name="loginEmail" id="loginEmail" #email="ngModel" [(ngModel)]="loginUser.email" placeholder="Email Address" class="form-control"
+                      type="email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock color-blue"></i></span>
+                    <input id="loginPaas" name="loginPass" id="loginPass" #password="ngModel" [(ngModel)]="loginUser.password" placeholder="Password"
+                      class="form-control" type="password" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input name="submit" class="btn bttn2 btn-block btn-lg" value="Submit" type="submit">
+                  <div class="margin-small"></div>
+                  <a class="pull-right forgot" routerLink="/reset-password">&nbsp;Forgot Password?</a>
+                  <div class="text-center">
+                    <br>
+                    <p *ngIf="errorMessage " class="error-textbox">{{errorMessage}}</p>
+                  </div>
+                </div>
+              </form>
+              <div class="">
+                <div class="row row-centered">
+                  <div class="col-md-12 col-centered">
+                    <hr style="width:100%;" class="hr1">
+                    <p class="or">or</p>
+                    <h5>SignIn with</h5>
+                  </div>
+                </div>
+                <div class="row row-centered">
+                  <div class="col-md-6 col-sm-6">
+                    <button (click)="facebookLogin()" class="btn btn-fb" type="button"><span style="margin-right:15px;" class="fa fa-facebook"></span>Facebook&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <button (click)="googleLogin()" class="btn btn-gl" type="button"><span style="margin-right:15px;" class="fa fa-google-plus"></span>Google&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

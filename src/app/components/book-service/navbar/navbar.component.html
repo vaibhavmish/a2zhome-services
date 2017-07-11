@@ -1,0 +1,36 @@
+<div class="height-50px"></div>
+<h3 style="text-align:center">Book Service</h3>
+<hr class="u-hr">
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <span *ngIf="step===1; else service" title="Service" class="btn bttn btn-circle">1</span>
+            <p>Service</p>
+            <ng-template #service>
+                <span title="service" class="btn btn-default btn-circle" disabled="disabled">1</span>
+            </ng-template>
+        </div>
+        <div class="stepwizard-step">
+            <span *ngIf="step===2; else personal" title="Personal" class="btn bttn btn-circle">2</span>
+            <p>Personal</p>
+            <ng-template #personal>
+                <span title="Personal" class="btn btn-default btn-circle" disabled="disabled">2</span>
+            </ng-template>
+        </div>
+        <div class="stepwizard-step">
+            <span *ngIf="step===3; else schedule" title="Schedule" class="btn bttn btn-circle">3</span>
+            <p>Schedule</p>
+            <ng-template #schedule>
+                <span title="schedule" class="btn btn-default btn-circle" disabled="disabled">3</span>
+            </ng-template>
+        </div>
+
+        <div class="stepwizard-step">
+            <span *ngIf="step===4; else confirm" title="Confirm" class="btn bttn btn-circle">4</span>
+            <p>Confirm</p>
+            <ng-template #confirm>
+                <span title="Personal" class="btn btn-default btn-circle" disabled="disabled">4</span>
+            </ng-template>
+        </div>
+    </div>
+</div>

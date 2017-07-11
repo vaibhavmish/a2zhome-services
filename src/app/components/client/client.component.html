@@ -1,0 +1,38 @@
+<section id="clients">
+    <div class="container">
+        <div class="row">
+            <div class="row row-centered">
+                <div class="col-md-3 col-centered">
+                    <div>
+                        <h3>Our Clients</h3>
+                    </div>
+                    <hr class="u-hr">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
+                    <app-slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img [src]="slidez.photo[0]" style="margin:5px">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img [src]="slidez.photo[1]" style="margin:5px">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img [src]="slidez.photo[2]" style="margin:5px">
+                            </div>
+                        </div>
+                    </app-slide>
+                </app-carousel>
+            </div>
+        </div>
+    </div>
+</section>

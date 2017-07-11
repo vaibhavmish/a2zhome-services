@@ -1,0 +1,59 @@
+<section id="media-coverage">
+    <div class="container">
+        <div class="row">
+            <div class="row row-centered">
+                <div class="col-md-3 col-sm-4 col-centered">
+                    <div>
+                        <h3>Media Coverage</h3>
+                    </div>
+                    <hr class="u-hr">
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-centered">
+            <div>
+                <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
+                    <app-slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
+                        <div class="col-md-3 col-sm-4 col-centered">
+                            <div class="card">
+                                <div class="media">
+                                    <a href="{{slidez.link[0]}}">
+                                        <img [src]="slidez.photo[0]">
+                                        <div class="desc">
+                                            <p>{{slidez.desc[0]}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-centered">
+                            <div class="card">
+                                <div class="media">
+                                    <a href="{{slidez.link[1]}}">
+                                        <img [src]="slidez.photo[1]">
+                                        <div class="desc">
+                                            <p>{{slidez.desc[1]}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-centered">
+                            <div class="card">
+                                <div class="media">
+                                    <a href="{{slidez.link[2]}}">
+                                        <img [src]="slidez.photo[2]">
+                                        <div class="desc">
+                                            <p>{{slidez.desc[2]}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </app-slide>
+                </app-carousel>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<div class="record-picker1">
+    <ul class="list-group">
+        <li class="list-group-item" style="background-color: #337ab7;text-align: center;font-style: bold;color:white">{{headerText}}
+            <span [hidden]="!showHeaderRowCount">({{source.length}})</span>
+        </li>
+        <li class="list-group-item" *ngIf="source.length==0">No data selected</li>
+    </ul>
+    <ul class="list-group" *ngFor="let item of source; let idx=index;" (click)="selectItem(item)">
+        <div *ngIf="multiple">
+            <a class="list-group-item" [ngClass]="{selected: isSelectedItem(item._id)}">
+                <!--<span class="glyphicon glyphicon-remove-sign" [ngClass]="{selectedIcon: isSelectedItem(item._id)}">&nbsp;</span> {{item.text}}-->
+                <span class="glyphicon" [ngClass]="isSelectedItem(item._id) ? 'glyphicon-ok-sign':'glyphicon-remove-sign'">&nbsp;</span> {{item.text}}
+            </a>
+        </div>
+        <div *ngIf="!multiple">
+            <a class="list-group-item" [ngClass]="{selected: selected==item._id}">
+                <span class="glyphicon glyphicon-record" [ngClass]="{selectedIcon: selected==item._id}">&nbsp;</span> {{item.text}}
+            </a>
+        </div>
+    </ul>
+</div>

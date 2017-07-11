@@ -1,0 +1,25 @@
+<div class="container animated">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-6 col-centered outerbox" *ngFor="let service of serviceData">
+            <a class="s-boxlink" (click)="viewDeails(service)">
+                <div class="anim">
+                    <div class="service s-box">
+                        <div class="open-text">
+                            <img [src]="service.icon" (click)="viewDeails(service)" class="s-image">
+                            <!--<div class="overlay">
+                                    <div class="text">
+                                        <p style="color:#fefefe">{{service.description}}</p>
+                                        <div style="margin-top: 0px;cursor:pointer" data-target="modal">
+                                            <a class="btn bttn1" type="button" (click)="bookService(service._id)">Book</a>
+                                            <a class="btn bttn1" type="button" (click)="viewDeails(service)">Details</a>
+                                        </div>
+                                    </div>
+                                </div> -->
+                        </div>
+                        <h4 class="s-name">{{service.name}}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

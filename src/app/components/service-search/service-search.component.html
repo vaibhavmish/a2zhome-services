@@ -1,0 +1,19 @@
+<div class="height-50px"></div>
+<div class="container" *ngIf="serviceData else loading">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <span class="input-group">
+            <input #searchService id="searchService" [(ngModel)]="terms" type="text" class="form-control input-md" placeholder="Start typing name of service">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-comp-services [data]="serviceData  | filterBy:{name:terms}"></app-comp-services>
+  </div>
+</div>
+<ng-template #loading>
+  <app-comp-loading></app-comp-loading>
+</ng-template>

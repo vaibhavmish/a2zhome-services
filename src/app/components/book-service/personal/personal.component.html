@@ -1,0 +1,73 @@
+<div *ngIf="!showAddAddress">
+    <app-navbar-comp [step]="2"></app-navbar-comp><br>
+    <form #personalForm="ngForm" class="editForm" novalidate (ngSubmit)="save(personalForm)">
+        <div class="tab-pane fade in active bs-outer">
+            <!-- <h4 class="head text-center">{{title}}</h4>
+        <br/> -->
+            <div class='row'>
+                <div class=' col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 bs-inner'>
+                    <div class="row">
+                        <div class='col-xs-12 col-sm-6'>
+                            <div class="form-group">
+                                <label class="control-label" for="fullName">Full Name</label>
+                                <input class="form-control" #fullName="ngModel" required id="fullName" name="fullName" type="text" placeholder="Full Name" [(ngModel)]="personal.fullName">
+                                <div [hidden]="fullName.valid || (fullName.untouched && !personalForm.submitted)" class="error-text">
+                                    <span [hidden]="!fullName.hasError('required')">Name is required</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-xs-12 col-sm-6'>
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="personal.email">
+                                <div [hidden]="email.valid || (email.untouched && !personalForm.submitted)" class="error-text">
+                                    <span [hidden]="!email.hasError('required')">Email is required</span>
+                                    <span [hidden]="!email.hasError('pattern')">Email is invalid</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class='col-xs-12 col-sm-6'>
+                            <div class="form-group">
+                                <label class="control-label" for="phone">Mobile Number</label>
+                                <input class="form-control input-md" #mobile="ngModel" required id="phone" name="phone" type="text" placeholder="Phone" [(ngModel)]="personal.phone" pattern="[0-9]{10,10}">
+                                <div [hidden]="mobile.valid || (mobile.untouched && !personalForm.submitted)" class="error-text">
+                                    <span [hidden]="!mobile.hasError('required')">Mobile Number is required</span>
+                                    <span [hidden]="!mobile.hasError('pattern')">Mobile Number is invalid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-xs-12 col-sm-6'>
+                            <div class="form-group">
+                                <label class="control-label" for="address">Select Address</label>
+                                <select class="form-control" #address="ngModel" name="address" [(ngModel)]="personal.address" required>
+                                  <option *ngFor="let address of addressList"
+                                          [value]="getCompleteAddress(address)">
+                                          <!--{{address.houseno}}, {{address.society}}&nbsp;{{address.landmark}}&nbsp;{{address.city}}&nbsp;{{address.state}}-->
+                                          {{getCompleteAddress(address)}}
+                                  </option>
+                                </select>
+                                <div [hidden]="address.valid || (address.untouched && !personalForm.submitted)" class="error-textbox">
+                                    <span [hidden]="!address.hasError('required')">Address is required</span>
+                                </div>
+                                <br>
+                                <span class="pull-right"><button type="button" name="addAddr"class="btn-sm bttn2" (click)="showAddAddressModel()">Add New Address</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="height-30px"></div>
+                    <div class="form-group text-center">
+                        <button class="btn bttn2 btn-outline-rounded" (click)="gotoService()"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                        <button class="btn bttn2 btn-outline-rounded"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<section *ngIf="showAddAddress">
+    <app-comp-address (onButtonSave)="onSaveAddress($event)" (onButtonClose)="hideAddAddress($event)"></app-comp-address>
+</section>

@@ -1,0 +1,343 @@
+/*form input,
+form textarea {
+  border: 1px solid #cdcdcd !important;
+  padding: 10px 10px !important;
+  color: #1e1e1e !important;
+  border-radius: 0px !important;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #37D5AC !important;
+  background-color: white !important;
+}*/
+
+a:hover {
+  text-decoration: none;
+}
+
+.u-hr {
+  width: 200px;
+  color: #37D5AC;
+  height: 1.5px;
+  margin: 10px auto;
+  background-color: #37D5AC;
+  border-radius: 50%;
+}
+
+.hr-small {
+  width: 90px;
+  margin-left: 0px;
+  margin-right: auto;
+}
+
+.hr-center {
+  margin: 10px auto !important;
+}
+
+hr {
+  width: 100%;
+  color: #f5f5f5;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.btn {
+  font-family: "Proxima Nova Regular", "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  border-radius: 3px;
+  box-shadow: 0px 2px 5px #999;
+}
+
+.bttn1 {
+  background: #202020;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 5px;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.bttn1:hover {
+  background: #37D5AC;
+  color: #FFF;
+}
+
+.bttn2 {
+  background: #37D5AC !important;
+  color: #fff;
+  padding: 7px 12px !important;
+  border-radius: 5px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.bttn2:hover {
+  background: #202020 !important;
+  color: #FFF;
+  outline: 0px;
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: 0px;
+  box-shadow: none;
+}
+
+@media(max-width:768px) {
+  .bttn2 {
+    margin: 8px 0px;
+  }
+}
+
+.height-50px {
+  width: 100%;
+  height: 80px !important;
+  background: transparent;
+}
+
+.height-40px {
+  width: 100%;
+  height: 40px;
+}
+
+.height-30px {
+  width: 100%;
+  height: 30px;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.col-md-12 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.row-centered {
+  text-align: center;
+}
+
+.col-centered {
+  display: inline-block;
+  float: none;
+  text-align: center;
+  margin-right: -4px;
+}
+
+.coloumn-centered {
+  display: inline-block;
+  margin-right: -4px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.error-text {
+  color: #ed7b7b;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid #409e65;
+  padding: 5px;
+  border-radius: 4px;
+  width: auto;
+}
+
+.success-text {
+  color: #4fd684;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid #409e65;
+  padding: 5px;
+  border-radius: 4px;
+  width: auto;
+}
+
+.success-textbox {
+  color: #409e65;
+  background-color: #b7f7cf;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid #409e65;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 4px;
+  width: auto;
+  text-align: center;
+}
+
+.error-textbox {
+  color: #c44c4c;
+  background-color: #ffc9c9;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid #c44c4c;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 4px;
+  width: auto;
+  text-align: center;
+}
+
+.message-text {
+  color: #ed7b7b;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 5px;
+  width: 250px;
+}
+
+.modal-header {
+  background-color: #37D5AC;
+  padding: 15px 20px;
+  text-align: center;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 30px;
+  min-height: 120px;
+}
+
+.modal-footer {
+  padding: 10px 20px;
+}
+
+.s-box {
+  border: 1px solid #dddeee;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: -5px -3px 50px #eee;
+  max-width: 300px;
+  margin: 0px auto;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 400px;
+    margin: 200px auto;
+  }
+  .modal-sm {
+    width: 400px;
+  }
+}
+
+.carousel-indicators {
+  bottom: -15px !important;
+}
+
+.carousel-indicators li {
+  background: #202020;
+}
+
+.carousel-indicators .active {
+  background: #37D5AC !important;
+}
+
+.form-gap {
+  padding-top: 70px;
+}
+
+.bs-outer {
+  padding: 10px;
+  border: 1px solid #f2f2f2;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.bs-inner {
+  padding: 30px;
+}
+
+@media(max-width:767px) {
+  .bs-inner {
+    padding: 30px 10px;
+  }
+}
+
+@media(max-width:480px) {
+  .bs-inner {
+    padding: 15px 5px;
+  }
+}
+
+
+/* =======================================
+        Date and Timepicker style
+========================================*/
+
+datepicker {
+  z-index: 9999 !important;
+  position: absolute;
+}
+
+.well {
+  z-index: 9998 !important;
+}
+
+.well .btn-info.active {
+  background: #37D5AC;
+  color: #fff;
+  font-size: 110%;
+}
+
+.well .text-info {
+  color: #fff;
+}
+
+.well .btn-info {
+  box-shadow: none;
+  border: 0px;
+}
+
+.well .btn {
+  box-shadow: none !important;
+  border-width: 0px !important;
+  background: transparent;
+}
+
+.well .btn:disabled {
+  color: #cdcdcd
+}
+
+timepicker table {
+  background: #f2f2f2;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px !important;
+  padding: 0px 15px !important;
+}
+
+timepicker table .btn {
+  background: transparent;
+  box-shadow: none;
+}
+
+timepicker table .btn:focus {
+  outline: 0px;
+}
+
+timepicker table .btn-link {
+  color: #37D5AC;
+}
+
+timepicker table .btn-link:hover {
+  color: #202020;
+}
+
+timepicker table tr td:first-child {
+  padding-left: 10px;
+}
+
+timepicker table tr td:last-child {
+  padding-right: 10px;
+  padding-left: 4px;
+}

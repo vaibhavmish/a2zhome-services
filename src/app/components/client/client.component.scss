@@ -1,0 +1,32 @@
+#clients {
+    padding: 30px 0px !important;
+}
+
+.s-box {
+    overflow: hidden;
+    border: 1px solid #dedede;
+    box-shadow: none;
+}
+
+.s-box img {
+    height: 50%;
+    width: 50%;
+    min-width: 200px;
+    min-height: auto;
+}
+
+.card {
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    margin: 15px auto;
+    padding: 20px;
+    overflow: hidden;
+    height: auto;
+    max-width: 250px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+}
