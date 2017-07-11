@@ -1,7 +1,7 @@
 {
   "app-version": "1.0",
   "environment": "prod",
-  "WEB_API_URL": "http://35.154.204.21/",
+  "WEB_API_URL": "https://handy-service-server.herokuapp.com",
   "showLog": "false",
   "trace_route": "false",
   "authConfig": {

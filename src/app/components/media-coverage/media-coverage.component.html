@@ -14,38 +14,38 @@
         <div class="row row-centered">
             <div>
                 <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
-                    <app-slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
-                        <div class="col-md-3 col-sm-4 col-centered">
+                    <app-slide *ngFor="let slidez of testimonials; let index=index">
+                        <div class="col-md-3 col-sm-4 col-centered" *ngIf="slidez[0]">
                             <div class="card">
                                 <div class="media">
-                                    <a href="{{slidez.link[0]}}">
-                                        <img [src]="slidez.photo[0]">
+                                    <a [href]="slidez[0].news_link" target="_blank">
+                    <img [src]="slidez[0].news_photo">
+                    <div class="desc">
+                    <p>{{slidez[0].news_desc}}</p>
+                    </div>
+                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-centered" *ngIf="slidez[1]">
+                            <div class="card">
+                                <div class="media">
+                                    <a [href]="slidez[1].news_link" target="_blank">
+                                        <img [src]="slidez[1].news_photo">
                                         <div class="desc">
-                                            <p>{{slidez.desc[0]}}</p>
+                                            <p>{{slidez[1].news_desc}}</p>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-4 col-centered">
+                        <div class="col-md-3 col-sm-4 col-centered" *ngIf="slidez[2]">
                             <div class="card">
                                 <div class="media">
-                                    <a href="{{slidez.link[1]}}">
-                                        <img [src]="slidez.photo[1]">
+                                    <a [href]="slidez[2].news_link" target="_blank">
+                                        <img [src]="slidez[2].news_photo">
                                         <div class="desc">
-                                            <p>{{slidez.desc[1]}}</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-4 col-centered">
-                            <div class="card">
-                                <div class="media">
-                                    <a href="{{slidez.link[2]}}">
-                                        <img [src]="slidez.photo[2]">
-                                        <div class="desc">
-                                            <p>{{slidez.desc[2]}}</p>
+                                            <p>{{slidez[2].news_desc}}</p>
                                         </div>
                                     </a>
                                 </div>
@@ -55,5 +55,6 @@
                 </app-carousel>
             </div>
         </div>
+
     </div>
 </section>

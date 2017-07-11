@@ -1,8 +1,8 @@
-import { Testimonial } from './../../models/testimonial.model';
 import { Component, OnInit } from '@angular/core';
 
-import { TestimonialService } from '../../providers';
-import { Service } from '../../models';
+import { GLOBAL_CONSTANTS } from './../../global-constants';
+import { ReviewService, LocalStorageService } from '../../providers';
+import { Review } from '../../models';
 
 @Component({
   selector: 'app-comp-customer-review',
@@ -10,21 +10,23 @@ import { Service } from '../../models';
   styleUrls: ['./customer-review.component.scss']
 })
 export class CustomerReviewComponent implements OnInit {
-  testimonials: Testimonial[];
+  reviewList: Review[];
 
-  constructor(private testimonialService: TestimonialService) {
+  constructor(
+    private localStorageService: LocalStorageService,
+    private reviewService: ReviewService) {
   }
 
   ngOnInit() {
-    this.testimonialService.getTestimonials()
+    this.reviewService.getReviews()
       .subscribe(res => {
-        this.testimonials = this.rebuildData(res);
+        this.reviewList = this.rebuildData(res);
       });
   }
 
-  rebuildData(data: Testimonial[]) {
+  rebuildData(data: Review[]) {
     const chunks = [];
-    for (let i = 0; i < data.length; ) {
+    for (let i = 0; i < data.length;) {
       chunks.push(data.slice(i, i += 3));
     }
     return chunks;

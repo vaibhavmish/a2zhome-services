@@ -1,50 +1,56 @@
 <section style="padding:30px 0px;">
-    <div class="container">
+  <div class="container">
 
-        <div class="row row-centered">
-            <div class="col-md-3 col-centered">
-                <div>
-                    <h3>Customer Reviews</h3>
-                </div>
-                <hr class="u-hr">
-            </div>
+    <div class="row row-centered">
+      <div class="col-md-3 col-centered">
+        <div>
+          <h3>Customer Reviews</h3>
         </div>
-
-        <div class="row">
-            <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
-                <app-slide *ngFor="let slidez of testimonials; let index=index">
-                    <div class="col-md-4 col-sm-4 col-sm-4 outer col-centered" *ngIf="slidez[0]">
-                        <div class="card">
-                            <div class="cr-image">
-                                <img [src]="slidez[0].news_photo" class="avatar">
-                            </div>
-                            <h4 class="cr-name">Name</h4>
-                            <p class="cr-desc">{{slidez[0].news_desc}}</p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[1]">
-                        <div class="card">
-                            <div class="cr-image">
-                                <img [src]="slidez[1].news_photo" class="avatar">
-                            </div>
-                            <h4 class="cr-name">Name</h4>
-                            <p class="cr-desc">{{slidez[1].news_desc}}</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[2]">
-                        <div class="card">
-                            <div class="cr-image">
-                                <img [src]="slidez[2].news_photo" class="avatar">
-                            </div>
-                            <h4 class="cr-name">Name</h4>
-                            <p class="cr-desc">{{slidez[2].news_desc}}</p>
-                        </div>
-                    </div>
-                </app-slide>
-            </app-carousel>
-        </div>
-
+        <hr class="u-hr">
+      </div>
     </div>
+
+    <div class="row" *ngIf="reviewList else NO_REVIEW">
+      <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
+        <app-slide *ngFor="let slidez of reviewList; let index=index">
+          <div class="col-md-4 col-sm-4 col-sm-4 outer col-centered" *ngIf="slidez[0]">
+            <div class="card">
+              <div>
+                <img [src]="slidez[0].cust_photo" class="profile-avatar img-circle">
+              </div>
+              <h4 class="cr-name">{{slidez[0].cust_name}}</h4>
+              <p class="cr-desc">{{slidez[0].comment}}</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[1]">
+            <div class="card">
+              <div>
+                <img [src]="slidez[1].cust_photo" class="profile-avatar img-circle">
+              </div>
+              <h4 class="cr-name">{{slidez[1].cust_name}}</h4>
+              <p class="cr-desc">{{slidez[1].comment}}</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[2]">
+            <div class="card">
+              <div>
+                <img [src]="slidez[2].cust_photo" class="profile-avatar img-circle">
+              </div>
+              <h4 class="cr-name">{{slidez[2].cust_name}}</h4>
+              <p class="cr-desc">{{slidez[2].comment}}</p>
+            </div>
+          </div>
+        </app-slide>
+      </app-carousel>
+    </div>
+
+    <ng-template #NO_REVIEW>
+      <div class="row">
+        <div class="col-md-12 col-centered">
+            No Review found.
+        </div>
+      </div>
+    </ng-template>
+  </div>
 
 </section>

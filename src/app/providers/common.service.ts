@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { RequestCallback, Feedback, Message } from '../models';
+import { RequestCallback, Feedback, Message, Client } from '../models';
 import { BaseService } from './base.service';
 import { GLOBAL_CONSTANTS } from '../global-constants';
 
@@ -22,6 +22,14 @@ export class CommonService extends BaseService {
     return this.http.get(`${GLOBAL_CONSTANTS.BASE_API_URL}/send/link?number=${mobileNo}`)
       .map(res => {
         return res.json() as string;
+      })
+      .catch(err => super.handleError(err));
+  }
+
+  getClients(): Observable<Client[]> {
+    return this.http.get(`${GLOBAL_CONSTANTS.BASE_API_URL}/client`)
+      .map(res => {
+        return res.json() as Client[];
       })
       .catch(err => super.handleError(err));
   }

@@ -16,7 +16,20 @@ export class ReviewService extends BaseService {
                     super();
           }
 
-          getReviews(service_id: string): Observable<Review[]> {
+
+          getReviews(): Observable<Review[]> {
+                    const headers = new Headers({ 'Content-Type': 'application/json' });
+                    const options = new RequestOptions({ headers: headers });
+
+                    return this.http.get(`${GLOBAL_CONSTANTS.BASE_API_URL}/reviews`)
+                              .map(res => {
+                                        const result = res.json();
+                                        return this.buildReviewData(result);
+                              })
+                              .catch((error: any) => Observable.throw(error.json().error || 'Server Error'));
+          }
+
+          getReviewsByService(service_id: string): Observable<Review[]> {
                     const headers = new Headers({ 'Content-Type': 'application/json' });
                     const options = new RequestOptions({ headers: headers });
 

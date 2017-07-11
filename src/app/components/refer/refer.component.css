@@ -9,6 +9,12 @@
   padding: 10px;
 }
 
-.refer-flex-item img{
-          /*width: 100%;*/
+.refer-flex-item img {
+  width: auto;
+}
+
+@media(max-width:768px) {
+  .refer-flex-item img {
+    width: 100%;
+  }
 }

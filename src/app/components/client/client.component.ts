@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'app/providers';
+import { Client } from './../../models';
 
 @Component({
   selector: 'app-comp-client',
@@ -6,30 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-  public slides: Array<any> = [];
-  constructor() {
+  public clientList: Array<Client> = [];
+  constructor(private commonService: CommonService) {
   }
 
   ngOnInit() {
-    this.slides = [
-      {
-        '_id': '58dcf966734d1d01a2382743',
-        'photo': [
-          'assets/images/client-1.png',
-          'assets/images/client-2.png',
-          'assets/images/client-3.png'
-        ]
-      },
-      {
-        '_id': '58dcf966734d1d01a2382744',
-        'photo': [
-          'https://s3.ap-south-1.amazonaws.com/handy-api/1490784530432_fridge.jpg',
-          'https://s3.ap-south-1.amazonaws.com/handy-api/1492761456861_handy_services.jpg',
-          'assets/images/client-3.png'
-        ]
-      }
-    ];
+    this.commonService.getClients()
+      .subscribe(res => {
+        this.clientList = this.rebuildData(res);
+      });
+  }
 
+  rebuildData(data: Client[]) {
+    const chunks = [];
+    for (let i = 0; i < data.length;) {
+      chunks.push(data.slice(i, i += 3));
+    }
+    return chunks;
   }
 
 }

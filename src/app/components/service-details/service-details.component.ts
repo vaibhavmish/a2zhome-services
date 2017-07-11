@@ -46,7 +46,7 @@ export class ServiceDetailsComponent implements OnInit {
   }
 
   fetchReviewData(service_id) {
-    this.reviewService.getReviews(service_id)
+    this.reviewService.getReviewsByService(service_id)
       .subscribe(res => {
         this._service_reviews = this.rebuildData(res);
         this.logger.log(' this._service_reviews', this._service_reviews);

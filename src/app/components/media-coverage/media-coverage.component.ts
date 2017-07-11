@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Testimonial } from './../../models/testimonial.model';
+
+import { TestimonialService } from '../../providers';
+
 
 @Component({
   selector: 'app-media-coverage',
@@ -6,49 +10,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./media-coverage.component.scss']
 })
 export class MediaCoverageComponent implements OnInit {
-  public slides: Array<any> = [];
-  constructor() {
+  testimonials: Testimonial[];
+
+  constructor(
+    private testimonialService: TestimonialService
+  ) {
   }
 
   ngOnInit() {
-    this.slides = [
-      {
-        '_id': '58dcf966734d1d01a2382743',
-        'photo': [
-          'assets/images/client-1.png',
-          'assets/images/client-2.png',
-          'assets/images/client-3.png'
-        ],
-        'link': [
-          'http://google.com',
-          'http://facebook.com',
-          'http://twitter.com'
-        ],
-        'desc' : [
-          'desc 1',
-          'desc 2',
-          'desc 3'
-        ]
-      },
-      {
-        '_id': '58dcf966734d1d01a2382744',
-        'photo': [
-          'https://s3.ap-south-1.amazonaws.com/handy-api/1490784530432_fridge.jpg',
-          'https://s3.ap-south-1.amazonaws.com/handy-api/1492761456861_handy_services.jpg',
-          'assets/images/client-3.png'
-        ],
-        'link': [
-          'http://google.com',
-          'http://facebook.com',
-          'http://twitter.com'
-        ],
-        'desc' : [
-          'desc 4',
-          'desc 5',
-          'desc 6'
-        ]
-      }
-    ];
+    this.testimonialService.getTestimonials()
+      .subscribe(res => {
+        this.testimonials = this.rebuildData(res);
+      });
+  }
+
+  rebuildData(data: Testimonial[]) {
+    const chunks = [];
+    for (let i = 0; i < data.length;) {
+      chunks.push(data.slice(i, i += 3));
+    }
+    return chunks;
   }
 
 }
