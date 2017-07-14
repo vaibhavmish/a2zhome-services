@@ -14,19 +14,19 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <a href="tel:+917878000666">
-            <i class="fa fa-phone" aria-hidden="true" style="color:#37D5AC; font-size:16px;margin-top:-2px;vertical-align:middle;"></i>
+            <i class="fa fa-phone" aria-hidden="true" style="color:#37D5AC; font-size:25px;margin-top:-3px;vertical-align:middle;"></i>
             7878000666
           </a>
         </li>
-        <li routerLinkActive=""><a routerLink="/service-search">Services</a></li>
-        <li routerLinkActive="active"><a routerLink="/feedback">Feedback</a></li>
+        <li routerLinkActive=""><a routerLink="/service-search"><i class="fa fa-wrench" aria-hidden="true" style="color:#37D5AC; font-size:16px;margin-top:-2px;vertical-align:middle;"></i>Services</a></li>
+        <li routerLinkActive="active"><a routerLink="/feedback"><i class="fa fa-star" aria-hidden="true" style="color:#37D5AC; font-size:16px;margin-top:-2px;vertical-align:middle;"></i>Feedback</a></li>
         <li>
           <a (click)="showCityModal()" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <span>{{city}}</span>
                         <span class="caret"></span></a>
         </li>
-        <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signin">SignIn</a></li>
-        <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signup">SignUp</a></li>
+        <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signin"><i class="fa fa-user" aria-hidden="true" style="color:#37D5AC; font-size:16px;margin-top:-2px;vertical-align:middle;"></i>SignIn</a></li>
+        <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signup"><i class="fa fa-user-plus" aria-hidden="true" style="color:#37D5AC; font-size:16px;margin-top:-2px;vertical-align:middle;"></i>SignUp</a></li>
         <li class="dropdown" *ngIf="isLoggedIn">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{loginUser}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
