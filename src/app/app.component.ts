@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router, NavigationEnd } from "@angular/router";
 
-import { Logger } from './logger/default-log.service';
-import { GLOBAL_CONSTANTS } from './global-constants';
-import { LoaderService } from './providers';
+import { Logger } from "./logger/default-log.service";
+import { GLOBAL_CONSTANTS } from "./global-constants";
+import { LoaderService } from "./providers";
 
+declare let ga: Function;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   public options = {
     position: ['bottom', 'right'],
     timeOut: 3000,
-    lastOnBottom: true,
+    lastOnBottom: true
   };
 
   constructor(
@@ -23,19 +24,18 @@ export class AppComponent implements OnInit {
     private logger: Logger,
     private _router: Router
   ) {
-    this._router.events.forEach((event) => {
-      if (GLOBAL_CONSTANTS.trace_route === 'true') {
-        // if (event instanceof NavigationEnd) {
-        //   console.log(event);
-        // }
-        console.log(event);
-        // NavigationEnd
-        // NavigationCancel
-        // NavigationError
-        // RoutesRecognized
+    this._router.events.forEach(event => {
+      if (event instanceof NavigationEnd) {
+         ga('set', 'page', event.urlAfterRedirects);
+         ga('send', 'pageview');
+         // console.log(event.urlAfterRedirects);
       }
+      // console.log(event);
+      // NavigationEnd
+      // NavigationCancel
+      // NavigationError
+      // RoutesRecognized
     });
-
   }
 
   ngOnInit() {

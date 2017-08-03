@@ -41,8 +41,9 @@
     </div>
   </div>
 </div>
-
-<app-comp-customer-review></app-comp-customer-review>
+<div *ngIf="reviewList">
+  <app-comp-customer-review [data]="reviewList"></app-comp-customer-review>
+</div>
 <app-comp-about></app-comp-about>
 <app-comp-mobile-app></app-comp-mobile-app>
 <br>
@@ -86,7 +87,7 @@
               Serviceman
             </div>
             <div class="col-md-5 col-sm-12">
-             <app-rating (change)="onServicemanRatingChange($event)"></app-rating>
+              <app-rating (change)="onServicemanRatingChange($event)"></app-rating>
             </div>
           </div>
           <div class="row form-group">
@@ -94,7 +95,7 @@
               Service Audit
             </div>
             <div class="col-md-5 col-sm-12">
-               <app-rating (change)="onserviceAuditRatingChange($event)"></app-rating>
+              <app-rating (change)="onserviceAuditRatingChange($event)"></app-rating>
             </div>
           </div>
           <div class="row">

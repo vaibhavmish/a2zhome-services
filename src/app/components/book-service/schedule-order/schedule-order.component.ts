@@ -25,8 +25,8 @@ export class ScheduleOrderComponent implements OnInit {
   constructor(
     private bookingService: BookingService,
     private router: Router,
-    private route: ActivatedRoute) {
-  }
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -35,7 +35,7 @@ export class ScheduleOrderComponent implements OnInit {
     this.schedule = this.bookingService.getSchedule();
     if (!this.schedule.scheduleDate) {
       const currDate = new Date();
-      this.schedule.scheduleDate = currDate.toLocaleDateString();
+      this.schedule.scheduleDate = this.formatDate(currDate);
       this.schedule.scheduleTime = currDate.toLocaleTimeString();
     } else {
       this.bookingService.setSchedule(this.schedule);
@@ -48,6 +48,7 @@ export class ScheduleOrderComponent implements OnInit {
     }
     this.showDatePicker = !this.showDatePicker;
     this.schedule.scheduleTime = this.tt.toLocaleTimeString();
+
     return this.showDatePicker;
   }
 
@@ -68,9 +69,16 @@ export class ScheduleOrderComponent implements OnInit {
     }
   }
 
-  public onSelectionDone(a) {
+  public onSelectionDone(selDate) {
     this.showDatePicker = false;
-    this.schedule.scheduleDate = a.toLocaleDateString();
+    this.schedule.scheduleDate = this.formatDate(selDate);
+    this.schedule.scheduleTime = new Date().toLocaleTimeString();
+    this.tt=new Date();
+    if (this.isTodayDate(selDate)) {
+      this.minTime = new Date();
+    } else {
+      this.minTime = new Date('01/01/1900');
+    }
   }
   save(form: any) {
     if (form.valid) {
@@ -78,11 +86,19 @@ export class ScheduleOrderComponent implements OnInit {
       if (this.service_id === '') {
         this.router.navigate(['booking/confirm']);
       } else {
-        this.router.navigate(['booking/confirm'], { queryParams: { service_id: this.service_id } });
+        this.router.navigate(['booking/confirm'], {
+          queryParams: { service_id: this.service_id }
+        });
       }
-
     }
   }
+
+  formatDate(inputDate) {
+    return new Date(inputDate)
+      .toString()
+      .replace(/\S+\s(\S+)\s(\d+)\s(\d+)\s.*/, '$2-$1-$3');
+  }
+    
   gotoPersonal(form: any) {
     if (form.valid) {
       this.save(form);
@@ -90,8 +106,19 @@ export class ScheduleOrderComponent implements OnInit {
     if (this.service_id === '') {
       this.router.navigate(['booking/personal']);
     } else {
-      this.router.navigate(['booking/personal'], { queryParams: { service_id: this.service_id } });
+      this.router.navigate(['booking/personal'], {
+        queryParams: { service_id: this.service_id }
+      });
     }
+  }
 
+  isTodayDate(inputDate: string): boolean {
+    const date1 = new Date(inputDate);
+    const date2 = new Date();
+    return (
+      date1.getDay() === date2.getDay() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getFullYear() === date2.getFullYear()
+    );
   }
 }

@@ -10,7 +10,6 @@ import { HttpModule, XHRBackend, RequestOptions } from '@angular/http';
 import { MyModalModule } from './core/modal/modal.module';
 import { Modal2Module } from './core/modal2/modal2.module';
 import { LoadingModule } from './core/loading/loading.module';
-import { ShareModule } from './core/ng4share/share.module';
 import { ModalModule, DatepickerModule, TimepickerModule, AlertModule } from 'ngx-bootstrap';
 
 
@@ -41,7 +40,6 @@ export function loadConfig(context: AppConfigService) {
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
-        ShareModule,
         MyModalModule,
         Modal2Module,
         LoadingModule,

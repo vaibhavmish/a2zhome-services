@@ -1,0 +1,35 @@
+.profile-avatar {
+  float: none;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  border: 1px solid #ccc;
+}
+
+.card {
+  margin: 20px auto 15px;
+  padding: 15px;
+  /* overflow: hidden; */
+  /* height: 300px; */
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+}
+
+.card-item{
+  text-align:center;
+}
+.cr-desc{
+  overflow-y: auto;
+  height: auto;
+}
+.card img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}

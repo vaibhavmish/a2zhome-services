@@ -1,0 +1,50 @@
+.share-btn-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.share-btn-flex-item {
+  text-align: center;
+  padding: 4px;
+}
+
+.share-btn {
+  height: 32px;
+  /*width: 32px;
+  font-size: 24px;*/
+  cursor: pointer;
+  color: #eee;
+  border-radius: 2px;
+  /*center icons*/
+  /*display: flex;
+  justify-content: center;*/
+  align-items: center;
+  margin: 5px 0;
+  /*disallow selection*/
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.share-btn:hover {
+  color: #ffffff;
+}
+
+.share-btn-facebook {
+  background: #2d609b;
+}
+
+.share-btn-twitter {
+  background: #00c3f3;
+}
+
+.share-btn-whatsapp {
+  background: #1d9e11;
+}
+
+.share-btn-google-plus {
+  background: #eb4026;
+}

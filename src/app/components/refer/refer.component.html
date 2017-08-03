@@ -8,56 +8,12 @@
         <li class="refer-flex-item">
           <img src="assets/images/refer.png" alt="Please wait..">
           <h4>Your Code: {{_referal_code}}</h4>
-          <!-- <p style="margin-left:10px;margin-right:10px">I'm giving you <i class="fa fa-inr" aria-hidden="true"></i>50 off on your first Booking. To accept, use code '{{_referal_code}}'
-            to sign up. Enjoy!</p> -->
+          <p style="margin-left:10px;margin-right:10px">I'm giving you <i class="fa fa-inr" aria-hidden="true"></i>50 off on your first Booking. To accept, use code '{{_referal_code}}'
+            to sign up. Enjoy!</p>
           <button type="button" class="btn btn-sm bttn2" style="margin:10px 0px;" (click)="copyToClipboard()">Copy To clipboard</button><br>
-          <div class="hidden-sm hidden-xs">
-            <share-container direction="horizontal" [expandable]="true" [textEnabled]="true" [platforms]="['facebook','googlePlus','twitter','mail']">
-            </share-container>
-          </div>
-           <div class="visible-sm visible-xs">
-               <a href="whatsapp://send?text=Web development scripts | Tutorials and examples | Free script downloads - http://webdevelopmentscripts.com"><span style="color:rgb(0, 0, 255)">Click to share on whatsapp</span></a><br>
-            <share-container direction="horizontal" [expandable]="true" [textEnabled]="true" [platforms]="['facebook','twitter','whatsapp']">
-            </share-container>
-          </div>
+          <app-share-button [referalcode]="_referal_code"></app-share-button>
         </li>
       </ul>
-      <!--<div class="panel panel-primary">
-                <div class="panel-body">
-                    <section>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-centered">
-                                <img src="assets/images/refer.png" alt="Please wait..">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-centered">
-                                <h4>Your Code: {{_referal_code}}</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-centered">
-                                <p style="margin-left:10px;margin-right:10px">I'm giving you <i class="fa fa-inr" aria-hidden="true"></i>50 off on your first Booking. To accept, use code '{{_referal_code}}' to sign up. Enjoy!
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-centered">
-                                <button type="button" class="btn btn-sm bttn2" (click)="copyToClipboard()">Copy To clipboard</button>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-centered">
-                                <share-container direction="horizontal" [expandable]="true" [textEnabled]="true" [platforms]="['facebook','googlePlus','twitter','mail']">
-                                </share-container>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <ng-template #lineBreak>
-                    <br><br>
-                </ng-template>
-            </div>-->
     </div>
   </div>
 </div>

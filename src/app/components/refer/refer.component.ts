@@ -15,11 +15,13 @@ export class ReferComponent implements OnInit {
 
   constructor(
     private localStorageService: LocalStorageService
-  ) { }
+  ) {
+    this._referal_code = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, 'referal_code');
+   }
 
   ngOnInit() {
     this.userId = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, '_id');
-    this._referal_code = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, 'referal_code');
+    
 
   }
 

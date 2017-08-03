@@ -128,7 +128,7 @@ export class VerifyOtpComponent implements OnInit {
     this.responseMessage = 'Please wait...';
     this.profileInfo.mobile = this.inputMobileNo;
     this.authService.updateUser(this.profileInfo.id, this.profileInfo.mobile)
-      .then(res => {
+      .subscribe(res => {
         this.setupUser();
       });
   }

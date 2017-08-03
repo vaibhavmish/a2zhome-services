@@ -1,177 +1,194 @@
 #service-banner {
-    max-height: 380px;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding-bottom: 20px;
+  max-height: 380px;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .noCarousol .carousel-indicators li {
-    position: absolute;
-    margin-top: -15px;
-    margin-bottom: auto;
-    border: none;
-    display: none;
+  position: absolute;
+  margin-top: -15px;
+  margin-bottom: auto;
+  border: none;
+  display: none;
 }
 
 #service-banner img {
-    width: 100%;
-    height: 380px;
-    background-repeat: no-repeat;
-    background-size: contain;
+  width: 100%;
+  height: 380px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 #s-detail {
-    //background: url(http://images.guidetrip.com/images/uploads/experiences/2754/The_new_developing_city_ahmedabad.JPG);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 20px 0px;
+  //background: url(http://images.guidetrip.com/images/uploads/experiences/2754/The_new_developing_city_ahmedabad.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 0px;
 }
 
+.price-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 100%;
+  background: #2eb693;
+  line-height: 15px;
+}
+.price-item {
+  border-color: #2eb693;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 1px;
+}
+.btn-book {
+  color: black;
+  background: #eb7777;
+  padding: 7px 12px !important;
+  border-radius: 2px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-book :hover {
+  background: red;
+}
 .vb {
-    vertical-align: middle;
-    height: 220px;
+  vertical-align: middle;
+  height: 220px;
 }
 
 .more-off {
-    width: 100%;
-    padding: 15px;
+  width: 100%;
+  padding: 15px;
 }
 
 .bs-outer {
-    background-color: rgba(249, 249, 249, .3);
+  background-color: rgba(249, 249, 249, .3);
 }
 
 .card {
-    border: 1px solid #cdcdcd;
-    border-radius: 5px;
-    background: #f9f9f9;
-    margin: 40px 0px 25px;
-    padding: 20px 20px;
-    height: 150px;
-    width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  background: #f9f9f9;
+  margin: 40px 0px 25px;
+  padding: 20px 20px;
+  height: 150px;
+  width: 100%;
 }
 
 .cr-image {
-    width: 80px;
-    height: 80px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 1px solid #cdcdcd;
-    margin: -60px 10px 10px auto;
-    overflow: hidden;
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+  margin: -60px 10px 10px auto;
+  overflow: hidden;
 }
 
 .cr-image img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .cr-desc {
-    height: 80px !important;
+  height: 80px !important;
 }
 
 .p-desc {
-    text-align: justify;
+  text-align: justify;
 }
 
-@media(min-width:769px) {
-    .p-desc {
-        padding: 0px 30px;
-    }
+@media (min-width: 769px) {
+  .p-desc {
+    padding: 0px 30px;
+  }
 }
 
 .s-t-detail {
-    padding: 20px;
-    width: auto;
-    margin: 10px auto;
-    background: rgba(255, 255, 255, .85);
-    border-radius: 4px;
-    //box-shadow: 1px 1px 10px #ddd;
+  padding: 20px;
+  width: auto;
+  margin: 10px auto;
+  background: rgba(255, 255, 255, .85);
+  border-radius: 4px;
+  //box-shadow: 1px 1px 10px #ddd;
 }
 
 .pricing-table {
-    margin: 0px;
+  margin: 0px;
 }
 
 .s-box {
-    border: 1px solid #dddeee;
-    border-radius: 5px;
-    padding: 0px;
-    box-shadow: -5px -3px 50px #eee;
-    max-width: 300px;
-    margin: 0px auto;
+  border: 1px solid #dddeee;
+  border-radius: 5px;
+  padding: 0px;
+  box-shadow: -5px -3px 50px #eee;
+  max-width: 300px;
+  margin: 0px auto;
 }
 
 table {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.head {
-    text-align: center;
-    font-weight: 700;
-    font-size: 110%;
-    background: #37D5AC;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 th {
-    background-color: #f1f1f1;
-    padding: 7px 10px;
-    font-weight: 600;
+  background-color: #f1f1f1;
+  padding: 7px 10px;
+  font-weight: 600;
 }
 
 td {
-    text-align: left;
-    padding: 5px 10px;
-    font-size: 85%;
+  text-align: left;
+  padding: 5px 10px;
+  font-size: 85%;
 }
 
 th,
 td {
-    border: 1px solid #cdcdcd;
-    border-collapse: collapse;
+  border: 1px solid #cdcdcd;
+  border-collapse: collapse;
 }
 
 .bookButton {
-    position: relative;
-    bottom: 10px;
-    top: auto;
-    text-align: center;
-    -moz-box-align: center;
+  position: relative;
+  bottom: 10px;
+  top: auto;
+  text-align: center;
+  -moz-box-align: center;
 }
 
 .s-box img {
-    width: 100%;
-    height: 175px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: block;
+  width: 100%;
+  height: 175px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
 }
 
 .s-box h4 {
-    height: 70px;
-    line-height: 70px;
-    color: #444;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    background: #f9f9f9;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    overflow: hidden;
+  height: 70px;
+  line-height: 70px;
+  color: #444;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  background: #f9f9f9;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  overflow: hidden;
 }
 
-@media(max-width:480px) {
-    .bs-outer {
-        padding: 5px;
-    }
-    .card {
-        margin: 5px;
-        width: 90% !important;
-        height: auto;
-    }
+@media (max-width: 480px) {
+  .bs-outer {
+    padding: 5px;
+  }
+  .card {
+    margin: 5px;
+    width: 90% !important;
+    height: auto;
+  }
 }

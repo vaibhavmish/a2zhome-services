@@ -4,13 +4,14 @@ export class Service {
   icon: string;
   description: string;
   includeInPackage: boolean;
-  enabled; boolean;
+  enabled;
+  boolean;
   used: number;
   price: Array<PriceOption>;
   locations: Array<string>;
   selected: boolean;
+  service_code: string;
 }
-
 
 export class PriceOption {
   option: string;

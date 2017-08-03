@@ -92,18 +92,30 @@
     <div class='row'>
       <div class='col-sm-offset-2 col-sm-8 bs-inner'>
         <div class="row" *ngIf="successMessage">
-          <div class="head text-center success-textbox" style="width:auto">
+          <div class="head text-center" style="width:auto">
             <h4>{{successMessage}}</h4><br>
-            <h5>Our executive will allocate a Techinician to your place shortly</h5><br>
+            <h5>Our executive will allocate a Technician to your place shortly</h5>
             <h5>*Cost is subject to change after inspection of work.</h5><br>
-            <h6>Service/s Selected: {{serviceName}}</h6><br>
-            Booking Order Id
-            <ul *ngFor="let order of orderIdList">
-              <li>{{order}}</li>
-            </ul>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-3"  style="background:lightgrey;border:1px solid lightgrey;text-align:left">
+                <b>Service Name</b>
+              </div>
+              <div class="col-md-3" style="background:lightgrey;border:1px solid lightgrey;">
+                <b>Order ID</b>
+              </div>
+            </div>
+            <div class="row" *ngFor="let item of bookingOrders">
+              <div class="col-md-4 col-md-offset-3" style="border:1px solid lightgrey;text-align:left">
+                {{item.service_name}}
+              </div>
+              <div class="col-md-3" style="border:1px solid lightgrey">
+                {{item.order_id}}
+              </div>
+            </div><br>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </ng-template>

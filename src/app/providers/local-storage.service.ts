@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class LocalStorageService {
-
-  constructor() { }
+  constructor() {}
 
   getItem(key: string, item?: string) {
     const data = localStorage.getItem(key);

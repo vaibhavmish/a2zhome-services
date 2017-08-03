@@ -1,0 +1,17 @@
+<ul class="share-btn-flex-container">
+  <li class="share-btn-flex-item visible-sm visible-xs">
+    <a [href]="whatsup_url">
+      <button type="button" class="share-btn share-btn-whatsapp"><i class="ic fa fa-whatsapp"></i>&nbsp;Share</button>
+    </a>
+  </li>
+  <li class="share-btn-flex-item">
+    <div (click)="click('facebook')">
+      <button type="button" class="share-btn share-btn-facebook"><i class="ic fa fa-facebook"></i>&nbsp;Share</button>
+    </div>
+  </li>
+ <li class="share-btn-flex-item">
+     <div (click)="click('twitter')">
+      <button type="button" class="share-btn share-btn-twitter"><i class="ic fa fa-twitter"></i>&nbsp;Tweet</button>
+    </div>
+  </li>
+</ul>

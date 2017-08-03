@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { GLOBAL_CONSTANTS } from './../../global-constants';
-import { ReviewService, LocalStorageService } from '../../providers';
+import { Component, Input, OnInit } from '@angular/core';
 import { Review } from '../../models';
 
 @Component({
@@ -11,24 +8,11 @@ import { Review } from '../../models';
 })
 export class CustomerReviewComponent implements OnInit {
   reviewList: Review[];
+  @Input() data: Review[];
 
-  constructor(
-    private localStorageService: LocalStorageService,
-    private reviewService: ReviewService) {
-  }
+  constructor() {}
 
   ngOnInit() {
-    this.reviewService.getReviews()
-      .subscribe(res => {
-        this.reviewList = this.rebuildData(res);
-      });
-  }
-
-  rebuildData(data: Review[]) {
-    const chunks = [];
-    for (let i = 0; i < data.length;) {
-      chunks.push(data.slice(i, i += 3));
-    }
-    return chunks;
+    this.reviewList = this.data;
   }
 }

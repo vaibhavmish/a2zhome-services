@@ -13,7 +13,6 @@ import { GLOBAL_CONSTANTS } from '../../global-constants';
 export class SignInComponent implements OnInit {
   loginUser: LoginUserRequest = new LoginUserRequest();
   errorMessage: string;
-  isLoggedIn = false;
   alertType = 'danger';
   returnUrl: string;
   client: string;
@@ -48,7 +47,6 @@ export class SignInComponent implements OnInit {
   signIn(form: any, isFormValid: boolean) {
     this.errorMessage = '';
     this.alertType = 'danger';
-    this.isLoggedIn = false;
     if (isFormValid) {
       this.loaderService.display(true);
       this.authService.loginUser(this.loginUser)
@@ -77,11 +75,7 @@ export class SignInComponent implements OnInit {
   }
 
   setupUser(res: any) {
-    localStorage.setItem(GLOBAL_CONSTANTS.LS_IS_LOGGED_IN, 'true');
-    localStorage.setItem(GLOBAL_CONSTANTS.LS_LOGGEDINUSERNAME, res.name);
-    localStorage.setItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, JSON.stringify(res));
-    this.isLoggedIn = true;
-    this.broadcastService.broadcast(GLOBAL_CONSTANTS.BROASCAST_ISLOGGEDIN, this.isLoggedIn);
+    this.broadcastService.broadcast(GLOBAL_CONSTANTS.BROASCAST_ISLOGGEDIN, true);
     const redirectUrl = this.authService.redirectUrl || '/';
     this.authService.redirectUrl = null;
     this.router.navigate([redirectUrl]);

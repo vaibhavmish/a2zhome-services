@@ -131,6 +131,7 @@ export class ProfileComponent implements OnInit {
         .then(res => {
           this.message = res;
           localStorage.setItem(GLOBAL_CONSTANTS.LS_LOGGEDINUSERNAME, this.formProfile.get('name').value);
+          localStorage.setItem(GLOBAL_CONSTANTS.LS_MOBILE, this.formProfile.get('number').value);
           this.broadcastService.broadcast(GLOBAL_CONSTANTS.BROASCAST_ISLOGGEDIN, true);
           this.loaderService.display(false);
         },

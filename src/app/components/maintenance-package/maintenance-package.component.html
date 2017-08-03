@@ -4,263 +4,204 @@
     <h3 class="text-center">{{pageTitle}}</h3>
     <hr class="u-hr"><br>
   </div>
-  <div class="row bs-outer">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="">
-        <div class="panel-body">
-          <div *ngIf="showNavbar row">
-            <div class="btn-group btn-group-justified" role="group" aria-label="..." style="width:100%; margin-bottom:20px;">
-              <label class="btn btn-default" [ngClass]="{tabSelected: step===STEP.PROPERTY_SELECTION}">{{stepTitles[0]}}</label>
-              <label class="btn btn-default" [ngClass]="{tabSelected: step===STEP.SERVICE_SELECTION}">{{stepTitles[1]}}</label>
-              <label class="btn btn-default" [ngClass]="{tabSelected: step===STEP.VISIT_SELECTION}">{{stepTitles[2]}}</label>
-              <label class="btn btn-default" [ngClass]="{tabSelected: step===STEP.DURATION_SELECTION}">{{stepTitles[3]}}</label>
-            </div>
-          </div>
-          <section *ngIf="step===STEP.PROPERTY_SELECTION">
-            <div class="row row-centered">
-              <div class="col-md-8 col-md-offset-2 select">
-                <div class="col-md-3 col-centered">
-                  <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[0]}" (click)="setPropertyType(propertyTypes[0])">{{propertyTypes[0] |titlecase}}</button>
-                </div>
-                <div class="col-md-3 col-centered">
-                  <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[1]}" (click)="setPropertyType(propertyTypes[1])">{{propertyTypes[1] |titlecase }}</button>
-                </div>
-                <div class="col-md-3 col-centered">
-                  <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[2]}" (click)="setPropertyType(propertyTypes[2])">{{propertyTypes[2] |titlecase}} </button>
-                </div>
-                <div class="col-md-6 col-centered">
-                  <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[3]}" (click)="setPropertyType(propertyTypes[3])">{{propertyTypes[3] |titlecase }} </button>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12" style="padding:20px">
+          The company description section of your business plan is typically the second section, coming after the executive summary.
+          The company description outlines vital details about your company, such as where you are located, how large the
+          company is, what you do and what you hope to accomplish.The company description section of your business plan is
+          typically the second section, coming after the executive summary. The company description outlines vital details
+          about your company, such as where you are located, how large the company is, what you do and what you hope to accomplish.
+        </div>
+      </div>
+      <div class="row" style="display:flex;justify-content:space-between;padding-top:20px">
+        <div style="text-align: center;">
+          <i class="fa fa-commenting-o fa-4x"></i>
+          <h6>Fast Communication</h6>
+        </div>
+        <div style="text-align: center;">
+          <i class="fa fa-ambulance fa-4x"></i>
+          <h6>24/7 Available</h6>
+        </div>
+        <div style="text-align: center;">
+          <i class="fa fa-map-marker fa-4x"></i>
+          <h6>Feasable in your location</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row bs-outer">
+        <div class="col-md-12">
+          <div class="">
+            <div class="panel-body">
+              <div *ngIf="showNavbar row">
+                <div style="width:100%; background:lightgrey;margin-bottom:20px;text-align:center">
+                  <h4>{{getStepTitle()}}</h4>
                 </div>
               </div>
-            </div>
-          </section>
-          <!--property type section ends here-->
+              <section *ngIf="step===STEP.PROPERTY_SELECTION">
+                <div class="row row-centered">
+                  <div class="col-md-8 col-md-offset-2 select">
+                    <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[0]}" (click)="setPropertyType(propertyTypes[0])">{{propertyTypes[0] |titlecase}}</button>
+                    <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[1]}" (click)="setPropertyType(propertyTypes[1])">{{propertyTypes[1] |titlecase }}</button>
+                    <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[2]}" (click)="setPropertyType(propertyTypes[2])">{{propertyTypes[2] |titlecase}} </button>
+                    <button type="button" class="btn btn-md btn-block bttn1" [ngClass]="{myBtnSelected: _propertyType===propertyTypes[3]}" (click)="setPropertyType(propertyTypes[3])">{{propertyTypes[3] |titlecase }} </button>
+                  </div>
+                </div>
+              </section>
+              <!--property type section ends here-->
 
-          <section *ngIf="step===STEP.PACKAGE_FORM_SHOW" class="form-content">
-            <h4 class="text-center">{{stepTitle}}</h4><br>
-            <div *ngIf="!packageFormSubmitted; else packageFormSubmittedMessage" class="col-md-8 col-md-offset-2 ">
-              <div class="row">
-                <div class="col-md-6 pad-15">
+              <section *ngIf="step===STEP.PACKAGE_FORM_SHOW" class="form-content">
+                <h4 class="text-center">{{stepTitle}}</h4><br>
+                <div *ngIf="!packageFormSubmitted; else packageFormSubmittedMessage" class="col-md-12">
                   <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="packageForm.name" required>
                   </div>
-                </div>
-                <div class="col-md-6 pad-15">
                   <div class="form-group">
                     <input type="text" name="mobile" class="form-control" placeholder="Mobile Number" [(ngModel)]="packageForm.number" required>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
                   <div class="form-group">
                     <input type="text" name="orgName" class="form-control" placeholder="{{packageForm.type}}" [(ngModel)]="packageForm.societyOrOrg"
                       required>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
                   <div class="form-group">
                     <textarea rows="3" name="message" class="form-control" placeholder="Message" [(ngModel)]="packageForm.message" required></textarea>
                   </div>
+                  <div class="form-group error-textbox" *ngIf="packageErrorMessage">
+                    {{packageErrorMessage}}
+                  </div>
                 </div>
-              </div>
-              <div class="row" *ngIf="packageErrorMessage">
-                <div class="col-md-6 col-md-offset-3 error-textbox">
-                  {{packageErrorMessage}}
+                <ng-template #packageFormSubmittedMessage>
+                  <h4 class="text-center success-textbox">Package Booked</h4><br>
+                  <h5 class="text-center">Your Package has been booked. We will contact you shortly.</h5>
+                </ng-template>
+              </section>
+              <!--Form Submission for Society/Commercial Complex section ends here-->
+
+              <section *ngIf="step===STEP.SERVICE_SELECTION">
+                <div class="row" style="padding-left:50px;padding-top:10px">
+                  <div class="form-group">
+                    <input type="checkbox" name="chkCarpentry" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isCarpentry_Selected"
+                      (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[0]}}">{{serviceTypes[0]}}
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" name="chkPlumbing" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isPlumbing_Selected"
+                      (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[1]}}">{{serviceTypes[1]}}
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" name="chkElctrical" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isElectrical_Selected"
+                      (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[2]}}">{{serviceTypes[2]}}
+                  </div>
+                  <div class="form-group">
+                    <input type="checkbox" name="chkAC" style="margin-right:10px" [disabled]="isACServiceEnabled" [(ngModel)]="isAC_Selected"
+                      (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[3]}}">{{serviceTypes[3]}}
+                    <span *ngIf="isAC_Selected">
+                        <input type="number" min="1" class="form-control" min="1" name="AC_Count" [(ngModel)]="txtACCount" placeholder="Number of AC" style="margin-left:23px;width:130px">  
+                    </span>
+                  </div>
+                </div><br>
+              </section>
+              <!-- Service selection section ends here-->
+
+              <section *ngIf="step===STEP.VISIT_SELECTION">
+                <div class="row" style="padding-left:50px">
+                  <div class="form-group" *ngFor="let visit of packageVisits">
+                    <input type="radio" name="visit" style="margin-right:10px;margin-bottom:15px" value="{{visit.value}}" [(ngModel)]="_visit"><span>{{visit.text}}</span>
+                  </div>
+                  <span [hidden]="_visit!=='unlimited'">
+                    <input type="number" name="area" min="1" [(ngModel)]="txtArea" placeholder="Area in sq.ft" style="margin-left: 3px;width: 110px;">&nbsp;(sq.ft)
+                  </span>
                 </div>
-              </div>
+              </section>
+              <!-- Number Of Visits section ends here-->
+
+              <section *ngIf="step===STEP.DURATION_SELECTION">
+                <div class="row" style="padding-left:50px">
+                  <div class="form-group" *ngFor="let duration of packageDurations">
+                    <input type="radio" name="duration" value="{{duration.value}}" style="margin-right:10px;margin-bottom:15px" [(ngModel)]="_duration">{{duration.text}}
+                  </div>
+                </div>
+              </section>
+              <!-- Package Duration section ends here-->
+
+              <section *ngIf="step===STEP.SHOW_PRICE">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-responsive">
+                      <tr>
+                        <td colspan="2" style="background:lightgrey;text-align:center">
+                          <h4>Package Summary</h4>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Property:</td>
+                        <td>{{_propertyType | titlecase}}</td>
+                      </tr>
+                      <tr>
+                        <td>Services:</td>
+                        <td>{{getSelectedServices()}}</td>
+                      </tr>
+                      <tr>
+                        <td>No of AC:</td>
+                        <td> {{txtACCount}}</td>
+                      </tr>
+                      <tr>
+                        <td>Area:</td>
+                        <td>{{_area}}</td>
+                      </tr>
+                      <tr>
+                        <td>Visits:</td>
+                        <td>{{_visit}}</td>
+                      </tr>
+                      <tr>
+                        <td>Duration:</td>
+                        <td> {{_duration}} months</td>
+                      </tr>
+                      <tr>
+                        <td>Price:</td>
+                        <td>Rs. {{price | number}}/-</td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="row row-centered">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <b>*All Applicable Taxes will be Extra</b>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row row-centered" *ngIf="isAC_Selected">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <b>*3 Wet Ac Services For 1 year</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!--show calculated price ends here-->
+
             </div>
-            <ng-template #packageFormSubmittedMessage>
-              <h4 class="text-center success-textbox">Package Booked</h4><br>
-              <h5 class="text-center">Your Package booking has been registered. We will contact you shortly.</h5>
+
+            <div *ngIf="message else lineBreak">
+              <div class="row row-centered">
+                <div class="col-md-6 col-centered error-textbox">
+                  {{message}}
+                </div>
+              </div>
+              <br>
+            </div>
+            <ng-template #lineBreak>
             </ng-template>
-          </section>
-          <!--Form Submission for Society/Commercial Complex section ends here-->
-
-          <section *ngIf="step===STEP.SERVICE_SELECTION">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-2">
-                <input type="checkbox" name="chkCarpentry" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isCarpentry_Selected"
-                  (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[0]}}">{{serviceTypes[0]}}
-              </div>
-              <div class="col-md-6">
-                <input type="checkbox" name="chkPlumbing" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isPlumbing_Selected"
-                  (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[1]}}">{{serviceTypes[1]}}
-              </div>
-            </div><br>
-            <div class="row">
-              <div class="col-md-4 col-md-offset-2">
-                <input type="checkbox" name="chkElctrical" style="margin-right:10px" [disabled]="isNonACServiceEnabled" [(ngModel)]="isElectrical_Selected"
-                  (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[2]}}">{{serviceTypes[2]}}
-              </div>
-              <div class="col-md-6">
-                <input type="checkbox" name="chkAC" style="margin-right:10px" [disabled]="isACServiceEnabled" [(ngModel)]="isAC_Selected"
-                  (change)="setServiceType($event.target.value,$event.target.checked)" value="{{serviceTypes[3]}}">{{serviceTypes[3]}}
-                <span *ngIf="isAC_Selected">
-                                  <input type="number" min="1" class="form-control" min="1" name="AC_Count" [(ngModel)]="txtACCount" placeholder="Number of AC" style="margin-left:23px;width:110px">  
-                                </span>
-              </div>
-            </div>
-          </section>
-          <!-- Service selection section ends here-->
-
-          <section *ngIf="step===STEP.VISIT_SELECTION">
-            <div class="row row-centered">
-              <div class="col-md-3 col-centered" *ngFor="let visit of packageVisits">
-                <input type="radio" name="visit" style="margin-right:10px;margin-bottom:15px" value="{{visit.value}}" [(ngModel)]="_visit"><span>{{visit.text}}</span>
-              </div>
-              <span [hidden]="_visit!=='unlimited'">
-                <input type="number" name="area" min="1" [(ngModel)]="txtArea" placeholder="Area in sq.ft" style="margin-left: 3px;width: 110px;">
-              </span>
-            </div>
-          </section>
-          <!-- Number Of Visits section ends here-->
-
-          <section *ngIf="step===STEP.DURATION_SELECTION">
-            <div class="row row-centered">
-              <div class="col-md-4 col-centered" *ngFor="let duration of packageDurations">
-                <input type="radio" name="duration" value="{{duration.value}}" style="margin-right:10px;margin-bottom:15px" [(ngModel)]="_duration">{{duration.text}}
-              </div>
-            </div><br>
-
-          </section>
-          <!-- Package Duration section ends here-->
-
-          <section *ngIf="step===STEP.SHOW_PRICE">
-            <div class="row">
-              <div class="col-md-12 col-md-offset-2">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Property Type:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{_propertyType | titlecase}}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Services:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{getSelectedServices()}}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row" *ngIf="txtACCount">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Number Of AC:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{txtACCount}}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row" *ngIf="txtArea">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Area:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{_area}}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row" *ngIf="_visit!='-1'">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Visits:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{_visit}}
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Duration:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      {{_duration}} months
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      Price:
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      Rs. {{price | number}}/-
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row row-centered">
-                  <div class="col-md-9">
-                    <div class="form-group">
-                      <b>*All Applicable Taxes will be Extra</b>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row row-centered" *ngIf="isAC_Selected">
-                  <div class="col-md-9">
-                    <div class="form-group">
-                      <b>*3 Wet Ac Services For 1 year</b>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-          <!--show calculated price ends here-->
-
-        </div>
-
-        <div *ngIf="message else lineBreak">
-          <div class="row row-centered">
-            <div class="col-md-6 col-centered error-textbox">
-              {{message}}
+          </div>
+          <div class="row row-centered" *ngIf="showNavButtons">
+            <div class="col-md-12 col-centered">
+              <button type="button" class="btn btn-md bttn2" *ngIf="step!==STEP.PROPERTY_SELECTION " (click)="goToPrev()">Back</button>
+              <button type="button" class="btn btn-md bttn2" (click)="goToNext()">{{navButtonText}}</button>
             </div>
           </div>
-          <br>
-        </div>
-        <ng-template #lineBreak>
-        </ng-template>
-      </div>
-      <div class="row row-centered" *ngIf="showNavButtons">
-        <div class="col-md-8 col-centered">
-          <button type="button" class="btn btn-md btn1 bttn2" *ngIf="step!==STEP.PROPERTY_SELECTION " (click)="goToPrev()">Back</button>
-
-          <button type="button" class="btn btn-md btn1 bttn2" (click)="goToNext()">{{navButtonText}}</button>
         </div>
       </div>
     </div>

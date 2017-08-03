@@ -27,10 +27,12 @@
         </li>
         <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signin">SignIn</a></li>
         <li routerLinkActive="active" *ngIf="!isLoggedIn"><a routerLink="/signup">SignUp</a></li>
-        <li class="dropdown" *ngIf="isLoggedIn">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi {{loginUser}},<span class="caret"></span></a>
+        <li  *ngIf="isLoggedIn" style="padding-right:0px"><img class="navbar-brand" style="border-radius: 50%;" [src]="profilePhoto"></li>
+        <li class="dropdown" *ngIf="isLoggedIn" >
+          <a href="#" class="dropdown-toggle" style="padding-left:0px" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{loginUser}}<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a routerLink="account/profile">Profile</a></li>
+            <li><a routerLink="account/change-password">Change Password</a></li>
             <li><a routerLink="refer">Refer & Earn</a></li>
             <li><a routerLink="book-order-list">My Bookings</a></li>
             <li><a (click)="logoutUser()">Logout</a></li>

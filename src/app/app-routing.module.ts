@@ -18,12 +18,12 @@ import {
   BookServiceComponent, ServiceSelectionComponent, PersonalComponent, ScheduleOrderComponent, ConfirmOrderComponent,
   PageNotFoundComponent,
   NavbarTopComponent, BannerComponent,
-  CustomerReviewComponent, PackagesComponent, FooterComponent, MediaCoverageComponent,
+  CustomerReviewComponent, CustomerReviewItemComponent,PackagesComponent, FooterComponent, MediaCoverageComponent,
   ServicesComponent, AboutComponent,
-  AddressComponent, ReferComponent,RatingComponent,
+  AddressComponent, ReferComponent, RatingComponent,
   NavbarComponent, UserPackagesComponent,
   CarouselComponent, SlideComponent, MobileAppComponent,
-  ClientComponent, FeedbackComponent, MyListComponent
+  ClientComponent, FeedbackComponent, MyListComponent, ShareButtonComponent
 } from './components';
 
 export const routes: Routes = [
@@ -92,11 +92,11 @@ export const RoutedComponents = [
 
 export const SubComponents = [
   MultiSelectComponent, MultiSelectComponent, NavbarTopComponent, BannerComponent,
-  CustomerReviewComponent, PackagesComponent, FooterComponent, MediaCoverageComponent,
+  CustomerReviewComponent, CustomerReviewItemComponent,PackagesComponent, FooterComponent, MediaCoverageComponent,
   ServicesComponent, AboutComponent,
   AddressComponent,
-  NavbarComponent,RatingComponent,
+  NavbarComponent, RatingComponent,
   CarouselComponent, SlideComponent, MobileAppComponent,
-  ClientComponent, MyListComponent
+  ClientComponent, MyListComponent, ShareButtonComponent
 ];
 

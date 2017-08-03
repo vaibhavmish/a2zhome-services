@@ -29,14 +29,14 @@ export class PersonalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.loaderService.display(true);
+    // this.loaderService.display(true);
     this.personal = this.bookingService.getPersonal();
     this.route.queryParams.subscribe(params => {
       this.service_id = params['service_id'] || ''; // (+) converts string 'id' to a number
     });
 
     this.personal.fullName = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, 'name');
-    this.personal.phone = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, 'mobile');
+    this.personal.phone = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_MOBILE);
     this.personal.email = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, 'email');
     this.personal.user_id = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_LOGIN_USER_DATA, '_id');
     this.personal.location = this.localStorageService.getItem(GLOBAL_CONSTANTS.LS_CITY);
@@ -46,14 +46,14 @@ export class PersonalComponent implements OnInit {
   }
 
   getAddressList(user_id: string) {
-    this.loaderService.display(true);
+    // this.loaderService.display(true);
     this.addressService.getAllAddress(user_id)
       .then(res => {
         this.addressList = res;
-        this.loaderService.display(false);
+        // this.loaderService.display(false);
       },
       err => {
-        this.loaderService.display(false);
+        // this.loaderService.display(false);
       });
   }
 

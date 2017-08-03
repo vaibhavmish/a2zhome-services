@@ -11,34 +11,19 @@
     </div>
 
     <div class="row" *ngIf="reviewList else NO_REVIEW">
-      <app-carousel [interval]="3000" [noWrap]="false" [showControl]="false">
+      <app-carousel [interval]="3000000" [noWrap]="false" [showControl]="false">
         <app-slide *ngFor="let slidez of reviewList; let index=index">
-          <div class="col-md-4 col-sm-4 col-sm-4 outer col-centered" *ngIf="slidez[0]">
-            <div class="card">
-              <div>
-                <img [src]="slidez[0].cust_photo" class="profile-avatar img-circle">
-              </div>
-              <h4 class="cr-name">{{slidez[0].cust_name}}</h4>
-              <p class="cr-desc">{{slidez[0].comment}}</p>
-            </div>
+          <div class="col-md-3 col-sm-4 col-sm-4 outer col-centered" *ngIf="slidez[0]">
+            <cm-customer-review-item [data]="slidez[0]"></cm-customer-review-item>
           </div>
-          <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[1]">
-            <div class="card">
-              <div>
-                <img [src]="slidez[1].cust_photo" class="profile-avatar img-circle">
-              </div>
-              <h4 class="cr-name">{{slidez[1].cust_name}}</h4>
-              <p class="cr-desc">{{slidez[1].comment}}</p>
-            </div>
+          <div class="col-md-3 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[1]">
+            <cm-customer-review-item [data]="slidez[1]"></cm-customer-review-item>
           </div>
-          <div class="col-md-4 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[2]">
-            <div class="card">
-              <div>
-                <img [src]="slidez[2].cust_photo" class="profile-avatar img-circle">
-              </div>
-              <h4 class="cr-name">{{slidez[2].cust_name}}</h4>
-              <p class="cr-desc">{{slidez[2].comment}}</p>
-            </div>
+          <div class="col-md-3 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[2]">
+            <cm-customer-review-item [data]="slidez[2]"></cm-customer-review-item>
+          </div>
+          <div class="col-md-3 col-sm-4 col-sm-4 col-centered" *ngIf="slidez[3]">
+            <cm-customer-review-item [data]="slidez[3]"></cm-customer-review-item>
           </div>
         </app-slide>
       </app-carousel>
@@ -47,7 +32,7 @@
     <ng-template #NO_REVIEW>
       <div class="row">
         <div class="col-md-12 col-centered">
-            No Review found.
+          No Review found.
         </div>
       </div>
     </ng-template>

@@ -26,6 +26,7 @@ export const GLOBAL_CONSTANTS = {
   LS_LOGGEDINUSERNAME: 'LS_LoggedInUserName',
   LS_LOGIN_USER_DATA: 'LS_LoginUserData',
   LS_CITY: 'LS_City',
+  LS_MOBILE: 'LS_Mobile',
   APP: {
     NAME: 'HandyServices.in',
     VERSION: '1.0'

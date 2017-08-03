@@ -127,7 +127,7 @@
                   <span class="input-group-addon" (click)="toggleshowTimePicker()"><i class="glyphicon glyphicon-time"></i></span>
                 </div>
                 <div *ngIf="showTimePicker" style="position: absolute; z-index:10; min-height:90px;background-color: lightgray">
-                  <timepicker name="schTime" [(ngModel)]="schTime" showSpinners='false'></timepicker>
+                  <timepicker name="schTime" [(ngModel)]="schTime" [min]="minTime" showSpinners='false'></timepicker>
                 </div>
               </div>
             </div>

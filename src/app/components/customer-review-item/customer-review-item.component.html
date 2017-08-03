@@ -1,0 +1,14 @@
+<ul class="card">
+  <li class="card-item">
+    <img [src]="data.cust_photo" class="profile-avatar img-circle">
+  </li>
+  <li class="card-item">
+    <app-rating [value]="data.overall_rating" [readOnly]="true"></app-rating>
+  </li>
+  <li class="card-item">
+    <h4 class="cr-name">{{data.cust_name}}</h4>
+  </li>
+  <li class="card-item">
+    <span class="cr-desc">{{data.comment}}</span>
+  </li>
+</ul>

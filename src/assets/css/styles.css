@@ -12,16 +12,46 @@ form textarea:focus {
   background-color: white !important;
 }*/
 
+.btn-fb {
+  background: #3b5998;
+}
+
+.btn-gl {
+  background: #eb4338;
+}
+
+.btn-fb,
+.btn-gl {
+  box-shadow: none;
+  width: 100%;
+  color: #fff;
+  margin: 8px 0px;
+}
+.or {
+  position: absolute;
+  background: #efefef;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 23px;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: -22px;
+  margin-left: calc(50% - 11px);
+}
+
 a:hover {
   text-decoration: none;
 }
 
 .u-hr {
   width: 200px;
-  color: #37D5AC;
+  color: #37d5ac;
   height: 1.5px;
   margin: 10px auto;
-  background-color: #37D5AC;
+  background-color: #37d5ac;
   border-radius: 50%;
 }
 
@@ -45,7 +75,8 @@ hr {
 }
 
 .btn {
-  font-family: "Proxima Nova Regular", "Segoe UI", Roboto, "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Proxima Nova Regular", "Segoe UI", Roboto, "Droid Sans",
+    "Helvetica Neue", Arial, sans-serif;
   border-radius: 3px;
   box-shadow: 0px 2px 5px #999;
 }
@@ -60,12 +91,12 @@ hr {
 }
 
 .bttn1:hover {
-  background: #37D5AC;
-  color: #FFF;
+  background: #37d5ac;
+  color: #fff;
 }
 
 .bttn2 {
-  background: #37D5AC !important;
+  background: #37d5ac !important;
   color: #fff;
   padding: 7px 12px !important;
   border-radius: 5px;
@@ -75,7 +106,7 @@ hr {
 
 .bttn2:hover {
   background: #202020 !important;
-  color: #FFF;
+  color: #fff;
   outline: 0px;
   box-shadow: none;
 }
@@ -85,7 +116,7 @@ hr {
   box-shadow: none;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .bttn2 {
     margin: 8px 0px;
   }
@@ -194,7 +225,7 @@ a:hover {
 }
 
 .modal-header {
-  background-color: #37D5AC;
+  background-color: #37d5ac;
   padding: 15px 20px;
   text-align: center;
   border-top-right-radius: 4px;
@@ -239,7 +270,7 @@ a:hover {
 }
 
 .carousel-indicators .active {
-  background: #37D5AC !important;
+  background: #37d5ac !important;
 }
 
 .form-gap {
@@ -258,18 +289,17 @@ a:hover {
   padding: 30px;
 }
 
-@media(max-width:767px) {
+@media (max-width: 767px) {
   .bs-inner {
     padding: 30px 10px;
   }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
   .bs-inner {
     padding: 15px 5px;
   }
 }
-
 
 /* =======================================
         Date and Timepicker style
@@ -285,7 +315,7 @@ datepicker {
 }
 
 .well .btn-info.active {
-  background: #37D5AC;
+  background: #37d5ac;
   color: #fff;
   font-size: 110%;
 }
@@ -306,7 +336,7 @@ datepicker {
 }
 
 .well .btn:disabled {
-  color: #cdcdcd
+  color: #cdcdcd;
 }
 
 timepicker table {
@@ -326,7 +356,7 @@ timepicker table .btn:focus {
 }
 
 timepicker table .btn-link {
-  color: #37D5AC;
+  color: #37d5ac;
 }
 
 timepicker table .btn-link:hover {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -6,9 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./rating.component.css']
 })
 export class RatingComponent implements OnInit {
-  @Output()
-  change: EventEmitter<string> = new EventEmitter<string>();
-  selValue = '0';
+  @Input() readOnly: boolean = false;
+  @Input() value: string;
+  @Output() change: EventEmitter<string> = new EventEmitter<string>();
+  selValue: string;
 
   ratingData = [
     { value: '5', title: '5 stars', cssClass: 'full' },
@@ -23,24 +24,32 @@ export class RatingComponent implements OnInit {
     { value: '.5', title: '.5 star', cssClass: 'half' }
   ];
   ratingID = [];
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     for (let i = 0; i < 10; i++) {
       const id = this.generateUUID();
       this.ratingID.push(id);
     }
+    if (this.value) {
+      this.selValue = this.value;
+    } else {
+      this.selValue = '0';
+    }
   }
 
   onSelectionChange(event: Event, val: string) {
     event.stopPropagation();
-    this.selValue = val;
-    this.change.emit(val);
+    if (this.readOnly === false) {
+      this.selValue = val;
+      this.change.emit(val);
+    }
   }
 
   generateUUID() {
-    return 'xxxxxxxx'.replace(/[xy]/g, function (c) {
-      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return 'xxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (Math.random() * 16) | 0,
+        v = c === 'x' ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
   }
